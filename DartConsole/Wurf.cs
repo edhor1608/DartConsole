@@ -6,7 +6,40 @@ using System.Threading.Tasks;
 
 namespace DartConsole
 {
+    [Serializable]
     class Wurf
     {
+        int wurfNummer;
+        static int wurfZähler = 1;
+        int multiplikator;
+        int wert;
+
+        public Wurf(int multi, int wert)
+        {
+            wurfNummer = wurfZähler;
+            wurfZähler++;
+            this.multiplikator = multi;
+            this.wert = wert;
+        }
+
+        public int getWurfGesamt()
+        {
+            return multiplikator * wert;
+        }
+
+        public int getMulti()
+        {
+            return multiplikator;
+        }
+
+        public int getWert()
+        {
+            return wert;
+        }
+
+        public int getNr()
+        {
+            return wurfNummer;
+        }
     }
 }

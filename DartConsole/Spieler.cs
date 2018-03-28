@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace DartConsole
 {
+    [Serializable]
     class Spieler
     {
         private String name;
@@ -37,6 +38,19 @@ namespace DartConsole
         public void setEMail(String eMail)
         {
             this.eMail = eMail;
+        }
+
+        public static bool ValidateMailAddress(String email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
     }
