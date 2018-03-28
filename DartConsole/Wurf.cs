@@ -22,22 +22,22 @@ namespace DartConsole
             this.wert = wert;
         }
 
-        public int getWurfGesamt()
+        public int GetWurfGesamt()
         {
             return multiplikator * wert;
         }
 
-        public int getMulti()
+        public int GetMulti()
         {
             return multiplikator;
         }
 
-        public int getWert()
+        public int GetWert()
         {
             return wert;
         }
 
-        public int getNr()
+        public int GetNr()
         {
             return wurfNummer;
         }

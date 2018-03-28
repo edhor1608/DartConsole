@@ -13,6 +13,7 @@ namespace DartConsole
         Spieler spieler;
         int setNummer;
         static int setZähler = 1;
+        int legsGewonnen = 0;
 
         public Set(Spieler spieler)
         {
@@ -28,6 +29,29 @@ namespace DartConsole
             setZähler++;
         }
 
-        
+        public Spieler GetSpieler()
+        {
+            return spieler;
+        }
+
+        public void AddLeg()
+        {
+            legs.Add(new Leg());
+        }
+
+        public Leg GetAktuellLeg()
+        {
+            return legs[legs.Count() - 1];
+        }
+
+        public void AddLegGewonnen()
+        {
+            legsGewonnen++;
+        }
+
+        public int GetLegGewonnen()
+        {
+            return legsGewonnen;
+        }
     }
 }

@@ -82,7 +82,7 @@ namespace DartConsole
             }
         }
 
-        public static void AddSpielerConsole()
+        public static Spieler AddSpielerConsole()
         {
             Console.Clear();
             bool invalid;
@@ -94,7 +94,7 @@ namespace DartConsole
             while (invalid)
             {
                 Console.WriteLine("Name:");
-                name = Console.ReadLine();
+                name = Console.ReadLine().ToLower();
                 if (name == "")
                 {
                     Console.WriteLine("KEINE EINGABE");
@@ -148,12 +148,13 @@ namespace DartConsole
             //-------------
             if (spieler.ContainsKey(name))
             {
-                Console.WriteLine("SPIELER BEREITS VORHANDEN");
+                Console.WriteLine("SPIELER BEREITS VORHANDEN -> NICHT HINZUGEFÜGT");
+                return null;
             }
             else
             {
                 Console.Clear();
-                Console.WriteLine("Angaben korrekt? (y/n)");
+                //Console.WriteLine("Angaben korrekt? (y/n)");
                 Console.WriteLine("Name: " + name);
                 if (alter == 0)
                 {
@@ -171,18 +172,19 @@ namespace DartConsole
                 {
                     Console.WriteLine("eMail: " + eMail);
                 }
-                String eingabe = Console.ReadLine();
-                if (eingabe == "Y" || eingabe == "y")
+                if (YN_Dialog("Angaben korrekt?"))
                 {
                     spieler.Add(name, new Spieler(name, alter, eMail));
-                    Console.WriteLine("Spieler hizugefügt");
+                    Speichern();
+                    Console.WriteLine("Spieler erstellt");
+                    return GetSpieler(name);
                 }
-                else if (eingabe == "N" || eingabe == "n")
+                else
                 {
                     AddSpielerConsole();
+                    return null;
                 }
             }
-            Speichern();
         }
 
         public static void AddSpielerConsoleMehrere()
@@ -205,12 +207,17 @@ namespace DartConsole
 
         public static List<Spiel> SearchSpielePlayedBy(String name)
         {
-            return spiele.FindAll((Spiel x) => x.HasPlayed(GetSpieler(name)));
+            return spiele.FindAll((Spiel x) => x.HasPlayed(GetSpieler(name.ToLower())));
         }
 
         public static Spieler GetSpieler(String name)
         {
-            return spieler[name];
+            return spieler[name.ToLower()];
+        }
+
+        public static bool IsSpielerVorhanden(String name)
+        {
+            return spieler.ContainsKey(name);
         }
 
         private static void CreateCheckout()
@@ -247,18 +254,18 @@ namespace DartConsole
             catch (IOException e) { }
         }
 
-        static void ShowSpieler()
+        public static void ShowSpieler()
         {
             Console.WriteLine("Spieler:");
             for (int i = 0; i < spieler.Count; i++)
             {
-                Console.WriteLine(spieler.ElementAt(i).Value.getName() + ", " + spieler.ElementAt(i).Value.getAlter() + ", " + spieler.ElementAt(i).Value.getEMail());
+                Console.WriteLine(spieler.ElementAt(i).Value.GetName() + ", " + spieler.ElementAt(i).Value.GetAlter() + ", " + spieler.ElementAt(i).Value.GetEMail());
             }
             Console.WriteLine("Zum fortfahren beliebige Taste drücken");
             Console.ReadKey();
         }
 
-        static bool YN_Dialog(String s)
+        public static bool YN_Dialog(String s)
         {
             Console.WriteLine(s + " (y/n)");
             String eingabe = "";
@@ -277,7 +284,29 @@ namespace DartConsole
             return false;
         }
 
-        static void Menu()
+        public static int Int_Dialog(String s)
+        {
+            int integer = 0;
+            bool invalid = true;
+            while (invalid)
+            {
+                invalid = false;
+                try
+                {
+                    Console.WriteLine(s+":");
+                    String eingabe = Console.ReadLine();
+                    integer = int.Parse(eingabe);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("FALSCHE EINGABE");
+                    invalid = true;
+                }
+            }
+            return integer;
+        }
+
+        private static void Menu()
         {
             bool invalid = true;
             while (invalid)
@@ -298,6 +327,7 @@ namespace DartConsole
                             AddSpielerConsoleMehrere();
                             break;
                         case 3:
+                            AddSpiel();
                             break;
                         case 4:
                             break;

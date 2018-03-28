@@ -20,22 +20,27 @@ namespace DartConsole
             this.eMail = eMail;
         }
 
-        public String getName()
+        public String GetName()
         {
             return name;
         }
 
-        public int getAlter()
+        public int GetAlter()
         {
             return alter;
         }
 
-        public String getEMail()
+        public void SetAlter(int alter)
+        {
+            this.alter = alter;
+        }
+
+        public String GetEMail()
         {
             return eMail;
         }
 
-        public void setEMail(String eMail)
+        public void SetEMail(String eMail)
         {
             this.eMail = eMail;
         }
