@@ -11,18 +11,24 @@ namespace DartConsole
     {
         List<Durchgang> durchgänge;
         int legNummer;
-        static int legZähler = 1;
+        public static int legZähler = 0;
         private int rest;
 
         public Leg()
         {
             legNummer = legZähler;
-            legZähler++;
+            durchgänge = new List<Durchgang>();
+            //legZähler++;
         }
 
         public void SetRest(int rest)
         {
             this.rest = rest;
+        }
+
+        public void RedRest(int wurf)
+        {
+            this.rest -= wurf;
         }
 
         public int GetRest()
@@ -35,7 +41,7 @@ namespace DartConsole
             return durchgänge.Count();
         }
 
-        public void addDurchgang()
+        public void AddDurchgang()
         {
             durchgänge.Add(new Durchgang());
         }

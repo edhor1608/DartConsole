@@ -12,21 +12,22 @@ namespace DartConsole
         List<Leg> legs;
         Spieler spieler;
         int setNummer;
-        static int setZähler = 1;
+        public static int setZähler = 0;
         int legsGewonnen = 0;
 
         public Set(Spieler spieler)
         {
             this.spieler = spieler;
             setNummer = setZähler;
-            setZähler++;
+            legs = new List<Leg>();
+            //setZähler++;
         }
 
         public Set(String name)
         {
             this.spieler = Dart.GetSpieler(name);
             setNummer = setZähler;
-            setZähler++;
+            //setZähler++;
         }
 
         public Spieler GetSpieler()

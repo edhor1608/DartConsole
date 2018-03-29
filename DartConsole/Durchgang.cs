@@ -10,18 +10,19 @@ namespace DartConsole
     class Durchgang
     {
         int durchgangNummer;
-        static int durchgangZähler = 1;
+        public static int durchgangZähler = 1;
         Wurf[] würfe = new Wurf[3];
 
         public Durchgang()
         {
             durchgangNummer = durchgangZähler;
-            durchgangZähler++;
+            //durchgangZähler++;
         }
 
-        public void AddWurf(int i, int multi, int wert)
+        public int AddWurf(Wurf w, int i)
         {
-            würfe[i+1] = new Wurf(multi, wert);
+            würfe[i] = w;
+            return w.GetWurfGesamt();
         }
 
         public int GetDurchgangWert()

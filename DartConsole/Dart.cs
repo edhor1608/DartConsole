@@ -82,18 +82,18 @@ namespace DartConsole
             }
         }
 
-        public static Spieler AddSpielerConsole()
+        public static Spieler AddSpielerConsole(String name = "")
         {
             Console.Clear();
             bool invalid;
             int alter = 0;
-            String name = "";
             String eMail = "";
             //----------------
             invalid = true;
             while (invalid)
             {
                 Console.WriteLine("Name:");
+                //Console.Write(name);
                 name = Console.ReadLine().ToLower();
                 if (name == "")
                 {
@@ -284,7 +284,7 @@ namespace DartConsole
             return false;
         }
 
-        public static int Int_Dialog(String s)
+        public static int Int_Dialog(String s, int min = int.MinValue,int max = int.MaxValue,int einzeln = int.MaxValue)
         {
             int integer = 0;
             bool invalid = true;
@@ -296,6 +296,10 @@ namespace DartConsole
                     Console.WriteLine(s+":");
                     String eingabe = Console.ReadLine();
                     integer = int.Parse(eingabe);
+                    if ((integer < min || integer > max) && integer != einzeln)
+                    {
+                        throw new Exception();
+                    }
                 }
                 catch (Exception e)
                 {
