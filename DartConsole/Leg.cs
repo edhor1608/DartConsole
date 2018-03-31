@@ -26,9 +26,21 @@ namespace DartConsole
             this.rest = rest;
         }
 
-        public void RedRest(int wurf)
+        public int RedRest(int wurf)
         {
             this.rest -= wurf;
+            // Finish
+            if (this.rest == 0)
+            {
+                return 1;
+            }
+            //No Socre
+            else if (this.rest < 0 || this.rest == 1)
+            {
+                return 2;
+            }
+            // Normal
+            return 0;
         }
 
         public int GetRest()

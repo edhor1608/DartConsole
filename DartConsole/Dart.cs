@@ -14,7 +14,7 @@ namespace DartConsole
     {
         static List<Spiel> spiele;
         static Dictionary<String, Spieler> spieler;
-        static Dictionary<int, String> checkout = new Dictionary<int, string>();
+        public static Dictionary<int, String> checkout = new Dictionary<int, string>();
         static FileStream stream;
         static BinaryFormatter formatter = new BinaryFormatter();
         static bool running = true;
@@ -23,10 +23,10 @@ namespace DartConsole
         {
             try
             {
-                stream = new FileStream(@"C:\Users\rohde\Dart\Spieler.dat", FileMode.Create);
+                stream = new FileStream(@"C:\Users\Public\Dart\Spieler.dat", FileMode.Create);
                 formatter.Serialize(stream, spieler);
                 stream.Close();
-                stream = new FileStream(@"C:\Users\rohde\Dart\Spiele.dat", FileMode.Create);
+                stream = new FileStream(@"C:\Users\Public\Dart\Spiele.dat", FileMode.Create);
                 formatter.Serialize(stream, spiele);
                 stream.Close();
             }
@@ -44,10 +44,10 @@ namespace DartConsole
         {
             try
             {
-                stream = new FileStream(@"C:\Users\rohde\Dart\Spieler.dat", FileMode.OpenOrCreate);
+                stream = new FileStream(@"C:\Users\Public\Dart\Spieler.dat", FileMode.OpenOrCreate);
                 spieler = (Dictionary<String, Spieler>)formatter.Deserialize(stream);
                 stream.Close();
-                stream = new FileStream(@"C:\Users\rohde\Dart\Spiele.dat", FileMode.OpenOrCreate);
+                stream = new FileStream(@"C:\Users\Public\Dart\Spiele.dat", FileMode.OpenOrCreate);
                 spiele = (List<Spiel>)formatter.Deserialize(stream);
                 stream.Close();
             }
@@ -64,7 +64,7 @@ namespace DartConsole
         private static void Init()
         {
             CreateCheckout();
-            System.IO.Directory.CreateDirectory(@"C:\Users\rohde\Dart");
+            System.IO.Directory.CreateDirectory(@"C:\Users\Public\Dart");
             spieler = new Dictionary<string, Spieler>();
             spiele = new List<Spiel>();
             Lesen();
@@ -261,8 +261,7 @@ namespace DartConsole
             {
                 Console.WriteLine(spieler.ElementAt(i).Value.GetName() + ", " + spieler.ElementAt(i).Value.GetAlter() + ", " + spieler.ElementAt(i).Value.GetEMail());
             }
-            Console.WriteLine("Zum fortfahren beliebige Taste drücken");
-            Console.ReadKey();
+            Confirm_Dialog();
         }
 
         public static bool YN_Dialog(String s)
@@ -282,6 +281,12 @@ namespace DartConsole
                 }
             }
             return false;
+        }
+
+        public static void Confirm_Dialog(String s = "Zum fortfahren beliebige Taste drücken")
+        {
+            Console.WriteLine(s);
+            Console.ReadKey();
         }
 
         public static int Int_Dialog(String s, int min = int.MinValue,int max = int.MaxValue,int einzeln = int.MaxValue)
@@ -352,6 +357,33 @@ namespace DartConsole
                     invalid = true;
                 }
             }
+        }
+
+        public static void WriteChar(char c, int j)
+        {
+            for (int i = 0; i < j; i++)
+            {
+                Console.Write(c);
+            }
+            Console.WriteLine();
+        }
+
+        public static int MaxLengthSpielerAll()
+        {
+            int l = 0;
+            for (int i = 0; i < spieler.Count(); i++)
+            {
+                if (spieler.ElementAt(i).Key.Count() > l)
+                {
+                    l = LengthSpieler(spieler.ElementAt(i).Value);
+                }
+            }
+            return l;
+        }
+
+        public static int LengthSpieler(Spieler s)
+        {
+            return s.GetName().Count();
         }
 
         static void Main(string[] args)

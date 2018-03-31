@@ -17,6 +17,9 @@ namespace DartConsole
         {
             durchgangNummer = durchgangZähler;
             //durchgangZähler++;
+            würfe[0] = new Wurf(0,0);
+            würfe[1] = new Wurf(0, 0);
+            würfe[2] = new Wurf(0, 0);
         }
 
         public int AddWurf(Wurf w, int i)

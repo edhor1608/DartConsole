@@ -50,6 +50,11 @@ namespace DartConsole
             legsGewonnen++;
         }
 
+        public void SubLegGewonnen()
+        {
+            legsGewonnen--;
+        }
+
         public int GetLegGewonnen()
         {
             return legsGewonnen;
