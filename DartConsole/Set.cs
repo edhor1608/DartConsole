@@ -30,6 +30,17 @@ namespace DartConsole
             //setZähler++;
         }
 
+        public bool HasPlayed(String name)
+        {
+            return HasPlayed(Dart.GetSpieler(name));
+        }
+
+        public bool HasPlayed(Spieler s)
+        {
+            if (this.spieler.Equals(s)) return true;
+            return false;
+        }
+
         public Spieler GetSpieler()
         {
             return spieler;
@@ -48,6 +59,11 @@ namespace DartConsole
         public void AddLegGewonnen()
         {
             legsGewonnen++;
+        }
+
+        public List<Leg> GetLegs()
+        {
+            return legs;
         }
 
         public void SubLegGewonnen()

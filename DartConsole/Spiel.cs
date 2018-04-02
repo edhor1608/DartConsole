@@ -16,6 +16,7 @@ namespace DartConsole
         const int start = 501;
         private int spielerAktuell = 0;
         int[] setsGewonnen;
+        private DateTime datum;
 
         public Spiel()
         {
@@ -32,7 +33,9 @@ namespace DartConsole
 
         public void ShowSpieler()
         {
-            Console.WriteLine("--------");
+            Console.Clear();
+            Console.WriteLine("Liste der Spieler");
+            Dart.WriteChar('-',20);
             for (int i = 0; i < spieler.Count(); i++)
             {
                 Console.WriteLine("Spieler " + (i + 1) + ": " + spieler.ElementAt(i).Value.GetName());
@@ -43,6 +46,10 @@ namespace DartConsole
 
         public void Init()
         {
+            datum = DateTime.Today;
+            Console.Clear();
+            Console.WriteLine("Neues Spiel");
+            Dart.WriteChar('-', 20);
             setsToWin = Dart.Int_Dialog("Sets (First to)", 1);
             legsToWin = Dart.Int_Dialog("Legs (First to)", 1);
             SpielerAuswählen();
@@ -54,14 +61,21 @@ namespace DartConsole
             ShowSpieler();
         }
 
+        public DateTime GetDatum()
+        {
+            return datum;
+        }
+
         public void SpielerAuswählen()
         {
             bool b = true;
-            Console.WriteLine("Welche Spieler spielen mit?");
             do
             {
-                Console.WriteLine("Name:");
-                String name = Console.ReadLine().ToLower();
+                Console.Clear();
+                Console.WriteLine("Neues Spiel / Sets " + setsToWin + " - Legs " + legsToWin + " \\");
+                Dart.WriteChar('-', 20);
+                Console.WriteLine("Welche Spieler spielen mit?");
+                String name = Dart.String_Dialog("Name",true);
                 if (Dart.IsSpielerVorhanden(name))
                 {
                     spieler.Add(Dart.GetSpieler(name).GetName(), Dart.GetSpieler(name));
@@ -218,6 +232,21 @@ namespace DartConsole
 
         }
 
+        public List<Set> GetSetsAll()
+        {
+            return sets;
+        }
+
+        public List<Set> GetSetsPlayer(Spieler s)
+        {
+            return sets.FindAll((Set x) => x.HasPlayed(s));
+        }
+
+        public List<Set> GetSetsPlayer(String s)
+        {
+            return sets.FindAll((Set x) => x.HasPlayed(s));
+        }
+
         public void Starting()
         {
             bool spielGewonnen = false;
@@ -336,6 +365,7 @@ namespace DartConsole
                     spielGewonnen = true;
                 }
             } while (!spielGewonnen);
+
         }
     }
 }

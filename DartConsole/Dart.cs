@@ -14,6 +14,7 @@ namespace DartConsole
     {
         static List<Spiel> spiele;
         static Dictionary<String, Spieler> spieler;
+        static Object[] daten = new Object[2];
         public static Dictionary<int, String> checkout = new Dictionary<int, string>();
         static FileStream stream;
         static BinaryFormatter formatter = new BinaryFormatter();
@@ -21,14 +22,21 @@ namespace DartConsole
 
         public static void Speichern()
         {
+            //FileStream stream;
             try
             {
-                stream = new FileStream(@"C:\Users\Public\Dart\Spieler.dat", FileMode.Create);
-                formatter.Serialize(stream, spieler);
+                daten[0] = spieler;
+                daten[1] = spiele;
+                stream = new FileStream(@"C:\Users\Public\Dart\Daten.dat", FileMode.Create);
+                formatter.Serialize(stream, daten);
                 stream.Close();
-                stream = new FileStream(@"C:\Users\Public\Dart\Spiele.dat", FileMode.Create);
-                formatter.Serialize(stream, spiele);
-                stream.Close();
+                //stream = new FileStream(@"C:\Users\Public\Dart\Spiele.dat", FileMode.Create);
+                //formatter.Serialize(stream, spiele);
+                //stream.Close();
+                //stream = new FileStream(@"C:\Users\Public\Dart\Spieler.dat", FileMode.Create);
+                //formatter.Serialize(stream, spieler);
+                //stream.Close();
+
             }
             catch (Exception e)
             {
@@ -44,12 +52,19 @@ namespace DartConsole
         {
             try
             {
-                stream = new FileStream(@"C:\Users\Public\Dart\Spieler.dat", FileMode.OpenOrCreate);
-                spieler = (Dictionary<String, Spieler>)formatter.Deserialize(stream);
-                stream.Close();
-                stream = new FileStream(@"C:\Users\Public\Dart\Spiele.dat", FileMode.OpenOrCreate);
-                spiele = (List<Spiel>)formatter.Deserialize(stream);
-                stream.Close();
+                stream = new FileStream(@"C:\Users\Public\Dart\Daten.dat", FileMode.OpenOrCreate);
+                daten = (Object[])formatter.Deserialize(stream);
+                spieler = (Dictionary<String, Spieler>)daten[0];
+                spiele = (List<Spiel>)daten[1];
+                //stream = new FileStream(@"C:\Users\Public\Dart\Spieler.dat", FileMode.OpenOrCreate);
+                //spieler = (Dictionary<String, Spieler>)formatter.Deserialize(stream);
+                //stream.Close();
+                //stream = new FileStream(@"C:\Users\Public\Dart\Spiele.dat", FileMode.OpenOrCreate);
+                //spiele = (List<Spiel>)formatter.Deserialize(stream);
+                //stream.Close();
+
+                Console.WriteLine(spiele.ElementAt(0).GetSetAktuell(0).GetAktuellLeg().GetDurchgangAktuell().GetDurchgangWert());
+                Dart.Confirm_Dialog();
             }
             catch (System.Runtime.Serialization.SerializationException e)
             {
@@ -89,22 +104,7 @@ namespace DartConsole
             int alter = 0;
             String eMail = "";
             //----------------
-            invalid = true;
-            while (invalid)
-            {
-                Console.WriteLine("Name:");
-                //Console.Write(name);
-                name = Console.ReadLine().ToLower();
-                if (name == "")
-                {
-                    Console.WriteLine("KEINE EINGABE");
-                    invalid = true;
-                }
-                else
-                {
-                    invalid = false;
-                }
-            }
+            name = String_Dialog("Name",true);
             //-------------
             invalid = true;
             while (invalid)
@@ -289,6 +289,34 @@ namespace DartConsole
             Console.ReadKey();
         }
 
+        public static String String_Dialog(String s, bool lower)
+        {
+            String sR = "";
+            bool invalid = true;
+            while (invalid)
+            {
+                Console.WriteLine(s);
+                if (lower)
+                {
+                    sR = Console.ReadLine().ToLower();
+                }
+                else
+                {
+                    sR = Console.ReadLine();
+                }
+                if (sR == "" || sR == null)
+                {
+                    Console.WriteLine("KEINE EINGABE");
+                    invalid = true;
+                }
+                else
+                {
+                    invalid = false;
+                }
+            }
+            return sR;
+        }
+
         public static int Int_Dialog(String s, int min = int.MinValue,int max = int.MaxValue,int einzeln = int.MaxValue)
         {
             int integer = 0;
@@ -339,11 +367,26 @@ namespace DartConsole
                             AddSpiel();
                             break;
                         case 4:
+                            Statistik.Starting();
                             break;
                         case 5:
                             running = false;
+                            Speichern();
                             //Console.WriteLine("Zum Beenden beliebige Taste drücken");
                             //Console.ReadKey();
+                            break;
+                        case 6:
+                            Wurf w = new Wurf(3,20);
+                            Wurf w2 = new Wurf(3,19);
+                            Wurf w3 = new Wurf(2,12);
+                            Durchgang d1 = new Durchgang(false);
+                            Durchgang d2 = new Durchgang(false);
+                            Durchgang d3 = new Durchgang(true);
+                            Leg l = new Leg();
+                            Set s = new Set("test");
+                            Spiel sp = new Spiel();
+                            Spieler spi = new Spieler("test");
+
                             break;
                         default:
                             Console.WriteLine("FLASCHE EINGABE");
@@ -359,13 +402,13 @@ namespace DartConsole
             }
         }
 
-        public static void WriteChar(char c, int j)
+        public static void WriteChar(char c, int j, bool line=true)
         {
             for (int i = 0; i < j; i++)
             {
                 Console.Write(c);
             }
-            Console.WriteLine();
+            if (line) Console.WriteLine();
         }
 
         public static int MaxLengthSpielerAll()
@@ -388,6 +431,7 @@ namespace DartConsole
 
         static void Main(string[] args)
         {
+            //Console.SetWindowSize(250,250);
             Init();
             while (running)
             {

@@ -72,6 +72,7 @@
     <Compile Include="Set.cs" />
     <Compile Include="Spiel.cs" />
     <Compile Include="Spieler.cs" />
+    <Compile Include="Statistik.cs" />
     <Compile Include="Wurf.cs" />
   </ItemGroup>
   <ItemGroup>

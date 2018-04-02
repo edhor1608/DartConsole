@@ -53,14 +53,26 @@ namespace DartConsole
             return durchgänge.Count();
         }
 
+        public List<Durchgang> GetDurchgänge()
+        {
+            return durchgänge;
+        }
+
         public void AddDurchgang()
         {
-            durchgänge.Add(new Durchgang());
+            if (rest > 170)
+            {
+                durchgänge.Add(new Durchgang(false));
+            }
+            else
+            {
+                durchgänge.Add(new Durchgang(true));
+            }
         }
 
         public Durchgang GetDurchgangAktuell()
         {
-            return durchgänge[AnzahlDurchgänge()-1];
+            return durchgänge[AnzahlDurchgänge() - 1];
         }
     }
 }
