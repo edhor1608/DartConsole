@@ -63,8 +63,8 @@ namespace DartConsole
                 //spiele = (List<Spiel>)formatter.Deserialize(stream);
                 //stream.Close();
 
-                Console.WriteLine(spiele.ElementAt(0).GetSetAktuell(0).GetAktuellLeg().GetDurchgangAktuell().GetDurchgangWert());
-                Dart.Confirm_Dialog();
+                //Console.WriteLine(spiele.ElementAt(0).GetSetAktuell(0).GetAktuellLeg().GetDurchgangAktuell().GetDurchgangWert());
+                //Dart.Confirm_Dialog();
             }
             catch (System.Runtime.Serialization.SerializationException e)
             {

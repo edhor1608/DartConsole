@@ -13,6 +13,7 @@ namespace DartConsole
         int legNummer;
         public static int legZähler = 0;
         private int rest;
+        private int finish = -1;
 
         public Leg()
         {
@@ -51,6 +52,22 @@ namespace DartConsole
         public int AnzahlDurchgänge()
         {
             return durchgänge.Count();
+        }
+
+        public void SetFinish(int finish)
+        {
+            this.finish = finish;
+        }
+
+        public int GetFinish()
+        {
+            return finish;
+        }
+
+        public bool HasFinished()
+        {
+            if (finish != -1) return true;
+            return false;
         }
 
         public List<Durchgang> GetDurchgänge()

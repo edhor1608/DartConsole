@@ -91,7 +91,13 @@ namespace DartConsole
                             Console.WriteLine("Wurf "+(w+1)+": "+würfe[w].GetMulti()+"x"+ würfe[w].GetWert());
                         }
                     }
+                    Dart.WriteChar(' ', 4, false);
+                    Console.WriteLine("Finish: "+ legs.ElementAt(leg).GetFinish());
                 }
+                Dart.WriteChar(' ', 2, false);
+                Console.WriteLine("Highest Finish: " + Highest_Finish_Set(sets.ElementAt(set)));
+                Dart.WriteChar(' ', 2, false);
+                Console.WriteLine("Avg Finish: " + Average_Finish_Set(sets.ElementAt(set)));
             }
         }
 
@@ -120,6 +126,174 @@ namespace DartConsole
         public static Spiel GetLastGame(Spieler s)
         {
             return Dart.SearchSpielePlayedBy(s).Last();
+        }
+
+        public static int Highest_Finish_Gesamt(String s)
+        {
+            return Highest_Finish_Gesamt(s);
+        }
+
+        public static int Highest_Finish_Gesamt(Spieler s)
+        {
+            int height = -1;
+            List<Spiel> spiele = Dart.SearchSpielePlayedBy(s);
+            for (int i = 0; i < spiele.Count; i++)
+            {
+                if (height < Highest_Finish_Spiel(spiele.ElementAt(i),s))
+                {
+                    height = Highest_Finish_Spiel(spiele.ElementAt(i), s);
+                }
+            }
+            return height;
+        }
+
+        public static int Highest_Finish_Spiel(Spiel s, String spieler)
+        {
+            return Highest_Finish_Spiel(s, Dart.GetSpieler(spieler));
+        }
+
+        public static int Highest_Finish_Spiel(Spiel s, Spieler spieler)
+        {
+            int height = -1;
+            List<Set> sets = s.GetSetsPlayer(spieler);
+            for (int i = 0; i < sets.Count; i++)
+            {
+                if (height < Highest_Finish_Set(sets.ElementAt(i)))
+                {
+                    height = Highest_Finish_Set(sets.ElementAt(i));
+                }
+            }
+            return height;
+        }
+
+        public static int Highest_Finish_Set(Set s)
+        {
+            int height = -1;
+            for (int i = 0; i < s.GetLegs().Count; i++)
+            {
+                if (height < Get_Finish(s.GetLegs().ElementAt(i)))
+                {
+                    height = s.GetLegs().ElementAt(i).GetFinish();
+                }
+            }
+            return height;
+        }
+
+        public static double Average_Finish_Set(Set s)
+        {
+            if (AnzahlFinishSet(s)==0) return -1;
+            return SummeFinishSet(s) / AnzahlFinishSet(s);
+        }
+
+        public static double Average_Finish_Spiel(Spiel sp, String s)
+        {
+            return Average_Finish_Spiel(sp, Dart.GetSpieler(s));
+        }
+
+        public static double Average_Finish_Spiel(Spiel sp, Spieler s)
+        {
+            if (AnzahlFinishSpiel(sp,s) == 0) return -1;
+            return SummeFinishSpiel(sp,s) / AnzahlFinishSpiel(sp,s);
+        }
+
+        public static double Average_Finish_Gesamt(String s)
+        {
+            return Average_Finish_Gesamt(Dart.GetSpieler(s));
+        }
+
+        public static double Average_Finish_Gesamt(Spieler s)
+        {
+            if (AnzahlFinishGesamt(s) == 0) return -1;
+            return SummeFinishGesamt(s) / AnzahlFinishGesamt(s);
+        }
+
+        public static int Get_Finish(Leg l)
+        {
+            return l.GetFinish();
+        }
+
+        public static double SummeFinishSet(Set s)
+        {
+            int summe = 0;
+            for (int i = 0; i < s.GetLegs().Count; i++)
+            {
+                    summe += s.GetLegs().ElementAt(i).GetFinish();
+            }
+            return summe;
+        }
+
+        public static double AnzahlFinishSet(Set s)
+        {
+            double anzahl = 0;
+            for (int i = 0; i < s.GetLegs().Count; i++)
+            {
+                if (s.GetLegs().ElementAt(i).HasFinished()) anzahl++;
+            }
+            return anzahl;
+        }
+
+        public static double SummeFinishSpiel(Spiel sp, String s)
+        {
+            return SummeFinishSpiel(sp, Dart.GetSpieler(s));
+        }
+
+        public static double SummeFinishSpiel(Spiel sp, Spieler s)
+        {
+            double summe = 0;
+            List<Set> sets = sp.GetSetsPlayer(s);
+            for (int i = 0; i < sets.Count; i++)
+            {
+                summe += SummeFinishSet(sets.ElementAt(i));
+            }
+            return summe;
+        }
+
+        public static double AnzahlFinishSpiel(Spiel sp, String s)
+        {
+            return AnzahlFinishSpiel(sp, Dart.GetSpieler(s));
+        }
+
+        public static double AnzahlFinishSpiel(Spiel sp, Spieler s)
+        {
+            double anzahl = 0;
+            List<Set> sets = sp.GetSetsPlayer(s);
+            for (int i = 0; i < sets.Count; i++)
+            {
+                anzahl += AnzahlFinishSet(sets.ElementAt(i));
+            }
+            return anzahl;
+        }
+
+        public static double SummeFinishGesamt(String s)
+        {
+            return SummeFinishGesamt(Dart.GetSpieler(s));
+        }
+
+        public static double SummeFinishGesamt(Spieler s)
+        {
+            double summe = 0;
+            List<Spiel> spiele = Dart.SearchSpielePlayedBy(s);
+            for (int i = 0; i < spiele.Count; i++)
+            {
+                summe += SummeFinishSpiel(spiele.ElementAt(i), s);
+            }
+            return summe;
+        }
+
+        public static double AnzahlFinishGesamt(String s)
+        {
+            return AnzahlFinishGesamt(Dart.GetSpieler(s));
+        }
+
+        public static double AnzahlFinishGesamt(Spieler s)
+        {
+            double anzahl = 0;
+            List<Spiel> spiele = Dart.SearchSpielePlayedBy(s);
+            for (int i = 0; i < spiele.Count; i++)
+            {
+                anzahl += AnzahlFinishSpiel(spiele.ElementAt(i),s);
+            }
+            return anzahl;
         }
 
         public static double Avg_Durchgang(Durchgang d)

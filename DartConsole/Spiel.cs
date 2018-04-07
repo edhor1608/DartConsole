@@ -282,6 +282,7 @@ namespace DartConsole
                             {
                                 GetSetAktuell(spielerAktuell).SubLegGewonnen();
                                 legGewonnen = false;
+                                GetSetAktuell(spielerAktuell).GetAktuellLeg().SetFinish(-1);
                             }
                             if (noDouble)
                             {
@@ -319,6 +320,7 @@ namespace DartConsole
                                             durchgangLaufend = false;
                                             legGewonnen = true;
                                             GetSetAktuell(spielerAktuell).AddLegGewonnen();
+                                            GetSetAktuell(spielerAktuell).GetAktuellLeg().SetFinish(GetSetAktuell(spielerAktuell).GetAktuellLeg().GetDurchgangAktuell().GetDurchgangWert());
                                         }
                                         else
                                         {
