@@ -24,6 +24,7 @@ namespace DartConsole
             bool invalid = true;
             while (invalid)
             {
+                Console.ReadKey();
                 Console.Clear();
                 Console.WriteLine("--- Statistik Menü ---");
                 Console.WriteLine("(1)Zeige letztes Spiel\n(2)Spieler hinzufügen\n(3)Spiel starten\n(4)Statistik aufrufen\n(5)Beenden");
@@ -57,7 +58,7 @@ namespace DartConsole
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("FALSCHE EINGABE");
+                    Console.WriteLine(e.Message);
                     invalid = true;
                 }
             }

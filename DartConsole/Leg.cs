@@ -9,6 +9,8 @@ namespace DartConsole
     [Serializable]
     class Leg
     {
+        private int id_leg;
+        public static int id_leg_zähler = 0;
         List<Durchgang> durchgänge;
         int legNummer;
         public static int legZähler = 0;
@@ -17,9 +19,35 @@ namespace DartConsole
 
         public Leg()
         {
+            id_leg = id_leg_zähler;
+            id_leg_zähler++;
             legNummer = legZähler;
             durchgänge = new List<Durchgang>();
             //legZähler++;
+        }
+
+        public Leg(int id, int legNummer, int rest, int finish)
+        {
+            id_leg = id;
+            this.legNummer = legNummer;
+            this.rest = rest;
+            this.finish = finish;
+            durchgänge = new List<Durchgang>();
+        }
+
+        public void SetDurchgänge(List<Durchgang> durchgänge)
+        {
+            this.durchgänge = durchgänge;
+        }
+
+        public int GetId()
+        {
+            return id_leg;
+        }
+
+        public int GetLegNummer()
+        {
+            return legNummer;
         }
 
         public void SetRest(int rest)

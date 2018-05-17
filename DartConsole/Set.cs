@@ -9,6 +9,8 @@ namespace DartConsole
     [Serializable]
     class Set
     {
+        private int id_set;
+        public static int id_set_zähler = 0;
         List<Leg> legs;
         Spieler spieler;
         int setNummer;
@@ -17,8 +19,28 @@ namespace DartConsole
 
         public Set(Spieler spieler)
         {
+            id_set = id_set_zähler;
+            id_set_zähler++;
             this.spieler = spieler;
             setNummer = setZähler;
+            legs = new List<Leg>();
+            //setZähler++;
+        }
+
+        public Set(int id_set, Spieler spieler, int setNummer, int legsGewonnen)
+        {
+            this.id_set = id_set;
+            this.spieler = spieler;
+            this.setNummer = setNummer;
+            legs = new List<Leg>();
+            //setZähler++;
+        }
+
+        public Set(int id_set, String name, int setNummer, int legsGewonnen)
+        {
+            this.id_set = id_set;
+            this.spieler = Dart.GetSpieler(name);
+            this.setNummer = setNummer;
             legs = new List<Leg>();
             //setZähler++;
         }
@@ -28,6 +50,26 @@ namespace DartConsole
             this.spieler = Dart.GetSpieler(name);
             setNummer = setZähler;
             //setZähler++;
+        }
+
+        public void SetLegs(List<Leg> legs)
+        {
+            this.legs = legs;
+        }
+
+        public int GetLegsGewonnen()
+        {
+            return legsGewonnen;
+        }
+
+        public int GetSetNummer()
+        {
+            return setNummer;
+        }
+
+        public int GetId()
+        {
+            return id_set;
         }
 
         public bool HasPlayed(String name)

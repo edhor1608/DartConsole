@@ -9,6 +9,8 @@ namespace DartConsole
     [Serializable]
     class Spiel
     {
+        private int id_spiel;
+        public static int id_spiel_zähler = 0;
         Dictionary<String, Spieler> spieler;
         List<Set> sets;
         int setsToWin;
@@ -20,10 +22,62 @@ namespace DartConsole
 
         public Spiel()
         {
+            id_spiel = id_spiel_zähler;
+            id_spiel_zähler++;
             spieler = new Dictionary<string, Spieler>();
             sets = new List<Set>();
             Init();
             Starting();
+        }
+
+        public Spiel(int id_spiel, DateTime datum, int start, int setsToWin, int legsToWin)
+        {
+            this.id_spiel = id_spiel;
+            this.datum = datum;
+            this.setsToWin = setsToWin;
+            this.legsToWin = legsToWin;
+            spieler = new Dictionary<string, Spieler>();
+            sets = new List<Set>();
+        }
+
+        public void SetSets(List<Set> sets)
+        {
+            this.sets = sets;
+        }
+
+        public void SetSpieler(Dictionary<String, Spieler> spieler)
+        {
+            this.spieler = spieler;
+        }
+
+        public void SetSetsGewonnen(int[] setsGewonnen)
+        {
+            this.setsGewonnen = setsGewonnen;
+        }
+
+        public int[] GetSetsGewonnen()
+        {
+            return setsGewonnen;
+        }
+
+        public Dictionary<String, Spieler> GetSpieler()
+        {
+            return spieler;
+        }
+
+        public int GetId()
+        {
+            return id_spiel;
+        }
+
+        public int GetSetsToWin()
+        {
+            return setsToWin;
+        }
+
+        public int GetLegsToWin()
+        {
+            return legsToWin;
         }
 
         public bool HasPlayed(Spieler spieler)
@@ -38,7 +92,7 @@ namespace DartConsole
             Dart.WriteChar('-',20);
             for (int i = 0; i < spieler.Count(); i++)
             {
-                Console.WriteLine("Spieler " + (i + 1) + ": " + spieler.ElementAt(i).Value.GetName());
+                Console.WriteLine("Spieler " + (i + 1) + ": " + spieler.ElementAt(i).Value.GetUsername());
             }
             Console.WriteLine("Zum fortfahren beliebige Taste drücken");
             Console.ReadKey();
@@ -78,7 +132,7 @@ namespace DartConsole
                 String name = Dart.String_Dialog("Name",true);
                 if (Dart.IsSpielerVorhanden(name))
                 {
-                    spieler.Add(Dart.GetSpieler(name).GetName(), Dart.GetSpieler(name));
+                    spieler.Add(Dart.GetSpieler(name).GetUsername(), Dart.GetSpieler(name));
                     Console.WriteLine("Spieler hinzugefügt");
                 }
                 else
@@ -89,7 +143,7 @@ namespace DartConsole
                         Spieler s = Dart.AddSpielerConsole(name);
                         if (s != null)
                         {
-                            spieler.Add(s.GetName(), s);
+                            spieler.Add(s.GetUsername(), s);
                             Console.WriteLine("Spieler hinzugefügt");
                         }
                         else
@@ -202,8 +256,8 @@ namespace DartConsole
             Dart.WriteChar('-', 30+tAll*8);
             for (int s = 0; s < spieler.Count(); s++)
             {
-                Console.Write(GetSetAktuell(s).GetSpieler().GetName());
-                int tE = tAll - GetSetAktuell(s).GetSpieler().GetName().Length / 8;
+                Console.Write(GetSetAktuell(s).GetSpieler().GetUsername());
+                int tE = tAll - GetSetAktuell(s).GetSpieler().GetUsername().Length / 8;
                 for (int i = 0; i < tE; i++)
                 {
                     Console.Write("\t");
@@ -352,7 +406,7 @@ namespace DartConsole
                         }
                         if (legGewonnen)
                         {
-                            Console.WriteLine(GetSetAktuell(spielerAktuell).GetSpieler().GetName() + " hat das Leg gewonnen");
+                            Console.WriteLine(GetSetAktuell(spielerAktuell).GetSpieler().GetUsername() + " hat das Leg gewonnen");
                             Dart.Confirm_Dialog();
                         }
                         SpielerWeiter();

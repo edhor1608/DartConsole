@@ -9,30 +9,63 @@ namespace DartConsole
     [Serializable]
     class Spieler
     {
-        private String name;
-        private int alter;
+        private int id_spieler;
+        public static int id_spieler_zähler = 0;
+        private String username;
+        private String firstName;
+        private String lastName;
+        private DateTime geburtstag;
         private String eMail;
 
-        public Spieler(String name, int alter=0, String eMail="")
+        public Spieler(String name, String eMail, String firstName, String lastName, DateTime geburtstag)
         {
-            this.name = name;
-            this.alter = alter;
+            id_spieler = id_spieler_zähler;
+            id_spieler_zähler++;
+            this.username = name;
             this.eMail = eMail;
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.geburtstag = geburtstag;
         }
 
-        public String GetName()
+        public Spieler(int id_spieler, String name, String eMail, String firstName, String lastName, DateTime geburtstag)
         {
-            return name;
+            this.id_spieler = id_spieler;
+            this.username = name;
+            this.eMail = eMail;
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.geburtstag = geburtstag;
+        }
+
+        public int GetId()
+        {
+            return id_spieler;
+        }
+
+        public String GetFirstName()
+        {
+            return firstName;
+        }
+
+        public String GetLastName()
+        {
+            return lastName;
+        }
+
+        public DateTime GetGeburtstag()
+        {
+            return geburtstag;
+        }
+
+        public String GetUsername()
+        {
+            return username;
         }
 
         public int GetAlter()
         {
-            return alter;
-        }
-
-        public void SetAlter(int alter)
-        {
-            this.alter = alter;
+            return Dart.GetAgeFromDate(geburtstag);
         }
 
         public String GetEMail()

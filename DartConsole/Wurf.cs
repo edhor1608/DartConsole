@@ -9,17 +9,39 @@ namespace DartConsole
     [Serializable]
     class Wurf
     {
+        private int id_wurf;
+        public static int id_wurf_zähler = 0;
         int wurfNummer;
-        static int wurfZähler = 1;
+        public static int wurfZähler = 1;
         int multiplikator;
         int wert;
 
         public Wurf(int multi, int wert)
         {
+            id_wurf = id_wurf_zähler;
+            id_wurf_zähler++;
             wurfNummer = wurfZähler;
             wurfZähler++;
             this.multiplikator = multi;
             this.wert = wert;
+        }
+
+        public Wurf(int id, int wurfNummer, int multi, int wert)
+        {
+            id_wurf = id;
+            this.wurfNummer = wurfNummer;
+            this.multiplikator = multi;
+            this.wert = wert;
+        }
+
+        public int GetId()
+        {
+            return id_wurf;
+        }
+
+        public int GetWurfNummer()
+        {
+            return wurfNummer;
         }
 
         public int GetWurfGesamt()
