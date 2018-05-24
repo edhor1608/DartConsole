@@ -328,7 +328,7 @@ namespace DartConsole
 
         public static int GetMaxIDSet()
         {
-            string query = "SELECT Max(id_set) FROM set";
+            string query = "SELECT Max(id_set) FROM `set`";
             int Count = -1;
 
             //Open Connection
@@ -591,7 +591,8 @@ namespace DartConsole
 
         public static void InsertSpiel(Spiel s)
         {
-            string query = "INSERT INTO spiel (`id_spiel`, `datum`, `start`, `setsToWin`, `legsToWin`) VALUES ('" + s.GetId() + "', '" + s.GetDatum().Year + "-" + s.GetDatum().Month + "-" + s.GetDatum().Day + "', '501', '" + s.GetSetsToWin() + "', '" + s.GetLegsToWin() + "')";
+            //string query = "INSERT INTO spiel (`id_spiel`, `datum`, `start`, `setsToWin`, `legsToWin`) VALUES ('" + s.GetId() + "', '" + s.GetDatum().Year + "-" + s.GetDatum().Month + "-" + s.GetDatum().Day + "', '501', '" + s.GetSetsToWin() + "', '" + s.GetLegsToWin() + "')";
+            string query = "INSERT INTO spiel (`id_spiel`, `datum`, `start`, `setsToWin`, `legsToWin`) VALUES ('" + s.GetId() + "', '" + s.GetDatum().Year + "-" + s.GetDatum().Month + "-" + s.GetDatum().Day + " " + s.GetDatum().Hour + ":" + s.GetDatum().Minute + ":" + s.GetDatum().Second +"', '501', '" + s.GetSetsToWin() + "', '" + s.GetLegsToWin() + "')";
 
             //open connection
             if (OpenConnection() == true)
@@ -1012,7 +1013,7 @@ namespace DartConsole
 
         public static List<string>[] SelectSpiele()
         {
-            string query = "SELECT * FROM `spiel`";
+            string query = "SELECT * FROM `spiel` ORDER BY `datum` ASC";
 
             //Create a list to store the result
             List<string>[] list = new List<string>[5];

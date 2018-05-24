@@ -2,49 +2,19 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Xml.Serialization;
-using System.Xml;
 
 namespace DartConsole
 {
     [Serializable]
     class Dart
     {
-        static List<Spiel> spiele;
+        public static List<Spiel> spiele;
         static Dictionary<String, Spieler> spieler;
-        static Object[] daten = new Object[2];
+        //static Object[] daten = new Object[2];
         public static Dictionary<int, String> checkout = new Dictionary<int, string>();
-        static FileStream stream;
-        static BinaryFormatter formatter = new BinaryFormatter();
+        //static FileStream stream;
         static bool running = true;
         DBConnect co = new DBConnect();
-
-        public static byte[] Serialize(Object[] obj)
-        {
-            if (obj == null)
-                return null;
-
-            BinaryFormatter bf = new BinaryFormatter();
-            MemoryStream ms = new MemoryStream();
-            bf.Serialize(ms, obj);
-
-            return ms.ToArray();
-        }
-
-        public static Object[] Deserialize(byte[] arrBytes)
-        {
-            MemoryStream memStream = new MemoryStream();
-            BinaryFormatter binForm = new BinaryFormatter();
-            memStream.Write(arrBytes, 0, arrBytes.Length);
-            memStream.Seek(0, SeekOrigin.Begin);
-            Object[] obj = (Object[])binForm.Deserialize(memStream);
-
-            return obj;
-        }
 
         public static void Speichern()
         {
@@ -205,7 +175,7 @@ namespace DartConsole
         private static void Init()
         {
             CreateCheckout();
-            System.IO.Directory.CreateDirectory(@"C:\Users\Public\Dart");
+            //System.IO.Directory.CreateDirectory(@"C:\Users\Public\Dart");
             spieler = new Dictionary<string, Spieler>();
             spiele = new List<Spiel>();
             Lesen();
@@ -246,17 +216,66 @@ namespace DartConsole
             String lastName = "";
             DateTime geburtstag = new DateTime(1900, 1, 1);
             //----------------
-            name = String_Dialog("Name", true);
-
-            //-------------
-            if (YN_Dialog("Geburtstag angeben?"))
+            name = String_Dialog("Username", true);
+            //---------------
+            invalid = true;
+            while (invalid)
             {
-                int jahr = 1900;
-                int monat = 1;
-                int tag = 1;
-                invalid = true;
-                while (invalid)
+                if (YN_Dialog("Vorname angeben?"))
                 {
+
+                    Console.WriteLine("Vorname:");
+                    firstName = Console.ReadLine();
+                    if (firstName != "")
+                    {
+                        invalid = false;
+                    }
+                    else
+                    {
+                        invalid = true;
+                    }
+
+                }
+                else
+                {
+                    invalid = false;
+                    firstName = "";
+                }
+            }
+            //-------------
+            invalid = true;
+            while (invalid)
+            {
+                if (YN_Dialog("Nachname angeben?"))
+                {
+
+                    Console.WriteLine("Nachname:");
+                    lastName = Console.ReadLine();
+                    if (lastName != "")
+                    {
+                        invalid = false;
+                    }
+                    else
+                    {
+                        invalid = true;
+                    }
+
+                }
+                else
+                {
+                    invalid = false;
+                    lastName = "";
+                }
+            }
+            //-------------
+            invalid = true;
+            while (invalid)
+            {
+                if (YN_Dialog("Geburtstag angeben?"))
+                {
+                    int jahr = 1900;
+                    int monat = 1;
+                    int tag = 1;
                     invalid = false;
                     try
                     {
@@ -269,31 +288,45 @@ namespace DartConsole
                         Console.WriteLine("FALSCHE EINGABE");
                         invalid = true;
                     }
-                }
-                geburtstag = new DateTime(jahr, monat, tag);
-            }
-            //-------------
 
-            invalid = true;
-            while (invalid)
-            {
-                Console.WriteLine("eMail:");
-                eMail = Console.ReadLine();
-                if (eMail != "")
-                {
-                    if (Spieler.ValidateMailAddress(eMail))
-                    {
-                        invalid = false;
-                    }
-                    else
-                    {
-                        Console.WriteLine("INVALIDE EMAIL");
-                        invalid = true;
-                    }
+                    geburtstag = new DateTime(jahr, monat, tag);
                 }
                 else
                 {
                     invalid = false;
+                }
+            }
+            //-------------
+            invalid = true;
+            while (invalid)
+            {
+                if (YN_Dialog("eMail angeben?"))
+                {
+                    
+                        Console.WriteLine("eMail:");
+                        eMail = Console.ReadLine();
+                        if (eMail != "")
+                        {
+                            if (Spieler.ValidateMailAddress(eMail))
+                            {
+                                invalid = false;
+                            }
+                            else
+                            {
+                                Console.WriteLine("INVALIDE EMAIL");
+                                invalid = true;
+                            }
+                        }
+                        else
+                        {
+                            invalid = true;
+                        }
+                    
+                }
+                else
+                {
+                    invalid = false;
+                    eMail = "";
                 }
             }
             //-------------
@@ -306,8 +339,26 @@ namespace DartConsole
             {
                 Console.Clear();
                 //Console.WriteLine("Angaben korrekt? (y/n)");
-                Console.WriteLine("Name: " + name);
-
+                Console.WriteLine("Username " + name);
+                //--------------
+                if (firstName == "")
+                {
+                    Console.WriteLine("Vorname: KEINE ANGABE");
+                }
+                else
+                {
+                    Console.WriteLine("Vorname: " + firstName);
+                }
+                //--------------
+                if (lastName == "")
+                {
+                    Console.WriteLine("Nachname: KEINE ANGABE");
+                }
+                else
+                {
+                    Console.WriteLine("Nachname: " + lastName);
+                }
+                //-------------
                 if (geburtstag.Equals(new DateTime(1900, 1, 1)))
                 {
                     Console.WriteLine("Geburtstag: KEINE ANGABE");
@@ -317,7 +368,7 @@ namespace DartConsole
                     Console.WriteLine("Geburtstag: " + geburtstag.ToShortDateString());
                     Console.WriteLine("Alter: " + GetAgeFromDate(geburtstag));
                 }
-
+                //---------------
                 if (eMail == "")
                 {
                     Console.WriteLine("eMail: KEINE ANGABE");
@@ -549,22 +600,9 @@ namespace DartConsole
                             break;
                         case 5:
                             running = false;
-                            Speichern();
-                            Console.WriteLine("Zum Beenden beliebige Taste drücken");
-                            Console.ReadKey();
-                            break;
-                        case 6:
-                            Wurf w = new Wurf(3, 20);
-                            Wurf w2 = new Wurf(3, 19);
-                            Wurf w3 = new Wurf(2, 12);
-                            Durchgang d1 = new Durchgang(false);
-                            Durchgang d2 = new Durchgang(false);
-                            Durchgang d3 = new Durchgang(true);
-                            Leg l = new Leg();
-                            Set s = new Set("test");
-                            Spiel sp = new Spiel();
-                            Spieler spi = new Spieler("test", "", "", "", new DateTime(1900, 1, 1));
-
+                            //Speichern();
+                            //Console.WriteLine("Zum Beenden beliebige Taste drücken");
+                            //Console.ReadKey();
                             break;
                         default:
                             Console.WriteLine("FLASCHE EINGABE");
@@ -724,7 +762,7 @@ namespace DartConsole
             List<string>[] list = DBConnect.SelectSpiele();
             for (int y = 0; y < list[0].Count; y++)
             {
-                Spiel s = new Spiel(int.Parse(list[0].ElementAt(y)), TimeOfString(list[1].ElementAt(y)), int.Parse(list[2].ElementAt(y)), int.Parse(list[3].ElementAt(y)), int.Parse(list[4].ElementAt(y)));
+                Spiel s = new Spiel(int.Parse(list[0].ElementAt(y)), TimeOfStringTime(list[1].ElementAt(y)), int.Parse(list[2].ElementAt(y)), int.Parse(list[3].ElementAt(y)), int.Parse(list[4].ElementAt(y)));
                 s.SetSpieler(GetSpielerInSpielFromDB(s.GetId()));
                 s.SetSetsGewonnen(GetSetsGewonnenFromDB(s.GetId()));
                 s.SetSets(GetSetsOfSpiel(s.GetId()));
@@ -821,16 +859,33 @@ namespace DartConsole
             return new DateTime(jahr, monat, tag);
         }
 
+        public static DateTime TimeOfStringTime(String s)
+        {
+            string jahrString = "" + s.ElementAt(6) + s.ElementAt(7) + s.ElementAt(8) + s.ElementAt(9);
+            int jahr = int.Parse(jahrString);
+            string monatString = "" + s.ElementAt(3) + s.ElementAt(4);
+            int monat = int.Parse(monatString);
+            string tagString = "" + s.ElementAt(0) + s.ElementAt(1);
+            int tag = int.Parse(tagString);
+            string stundeString = "" + s.ElementAt(11) + s.ElementAt(12);
+            int stunde = int.Parse(stundeString);
+            string minuteString = "" + s.ElementAt(14) + s.ElementAt(15);
+            int minute = int.Parse(minuteString);
+            string sekundeString = "" + s.ElementAt(17) + s.ElementAt(18);
+            int sekunde = int.Parse(sekundeString);
+            return new DateTime(jahr, monat, tag, stunde, minute, sekunde);
+        }
+
         static void Main(string[] args)
         {
             //Console.SetWindowSize(250,250);
             Init();
-            Console.ReadKey();
+            //Console.ReadKey();
             while (running)
             {
                 Menu();
             }
-            Speichern();
+            //Speichern();
         }
     }
 }

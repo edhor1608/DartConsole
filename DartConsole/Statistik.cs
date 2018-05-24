@@ -24,7 +24,7 @@ namespace DartConsole
             bool invalid = true;
             while (invalid)
             {
-                Console.ReadKey();
+                //Console.ReadKey();
                 Console.Clear();
                 Console.WriteLine("--- Statistik Menü ---");
                 Console.WriteLine("(1)Zeige letztes Spiel\n(2)Spieler hinzufügen\n(3)Spiel starten\n(4)Statistik aufrufen\n(5)Beenden");
@@ -465,6 +465,98 @@ namespace DartConsole
         public static double SummeGesamtDurchgängeNotFinish(String spieler)
         {
             return SummeGesamtDurchgängeNotFinish(Dart.GetSpieler(spieler));
+        }
+
+        public static double GetMöglicheFinishLeg(Leg l)
+        {
+            int summeWürfe = 0;
+            int mögliche = 0;
+            int rest;
+            bool finish = false;
+            for (int z = 0; z < l.GetDurchgänge().Count ; z++)
+            {
+                for (int y = 0; y < 3; y++)
+                {
+                    summeWürfe += l.GetDurchgänge().ElementAt(z).GetWürfe()[y].GetWurfGesamt();
+                    rest = 501 - summeWürfe;
+                    if (rest == 0)
+                    {
+                        finish = true;
+                        break;
+                    }
+                    if (rest == 50 || (rest <= 40 && (rest % 2) == 0))
+                    {
+                        mögliche++;
+                    }
+                }
+                if (finish) break;
+            }
+            return mögliche;
+        }
+
+        public static double GetDoubleFinishQuoteLeg(Leg l)
+        {
+            if (l.GetRest() == 0)
+            {
+                return 1 / GetMöglicheFinishLeg(l);
+            }
+            return 0;
+        }
+
+        public static double GetMöglicheFinishSet(Set s)
+        {
+            double mögliche = 0;
+            for (int z = 0; z < s.GetLegs().Count; z++)
+            {
+                mögliche += GetMöglicheFinishLeg(s.GetLegs().ElementAt(z));
+            }
+            return mögliche;
+        }
+
+        //Anzahl Legs Gewonnen notwendig
+        //public static double GetDoubleFinishQuoteSet(Set s)
+        //{
+
+        //}
+
+        public static double GetMöglicheFinishSpielAll(Spiel s)
+        {
+            double mögliche = 0;
+            for (int z = 0; z < s.GetSetsAll().Count; z++)
+            {
+                mögliche += GetMöglicheFinishSet(s.GetSetsAll().ElementAt(z));
+            }
+            return mögliche;
+        }
+
+        public static double GetMöglicheFinishSpielSpieler(Spiel s, Spieler sp)
+        {
+            double mögliche = 0;
+            for (int z = 0; z < s.GetSetsPlayer(sp).Count; z++)
+            {
+                mögliche += GetMöglicheFinishSet(s.GetSetsPlayer(sp).ElementAt(z));
+            }
+            return mögliche;
+        }
+
+        public static double GetMöglicheFinishAllSpieler(Spieler sp)
+        {
+            double mögliche = 0;
+            for (int z = 0; z < Dart.SearchSpielePlayedBy(sp).Count; z++)
+            {
+                mögliche += GetMöglicheFinishSpielSpieler(Dart.SearchSpielePlayedBy(sp).ElementAt(z), sp);
+            }
+            return mögliche;
+        }
+
+        public static double GetMöglicheFinishAll()
+        {
+            double mögliche = 0;
+            for (int z = 0; z < Dart.spiele.Count; z++)
+            {
+                mögliche += GetMöglicheFinishSpielAll(Dart.spiele.ElementAt(z));
+            }
+            return mögliche;
         }
     }
 }

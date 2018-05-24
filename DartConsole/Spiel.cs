@@ -100,7 +100,7 @@ namespace DartConsole
 
         public void Init()
         {
-            datum = DateTime.Today;
+            datum = DateTime.Now;
             Console.Clear();
             Console.WriteLine("Neues Spiel");
             Dart.WriteChar('-', 20);
