@@ -29,8 +29,8 @@ namespace DartConsole
             server = "jonas-rohde.de";
             database = "dart";
             port = 3306;
-            username = "edhor";
-            password = "Tierchen2467";
+            username = "dartConsole";
+            password = "GhlIyJRnSeAhaXyt";
             string connectionString;
             connectionString = "Server=" + server + ";Database=" + database
                 + ";port=" + port + ";User Id=" + username + ";password=" + password + ";SslMode=" + "none";
