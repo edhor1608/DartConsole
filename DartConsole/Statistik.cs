@@ -490,6 +490,7 @@ namespace DartConsole
             return SummeGesamtDurchgängeNotFinish(Dart.GetSpieler(spieler));
         }
 
+        //Methode zum Zählen der Möglichkeiten zum Finish in einem Leg
         public static double GetMöglicheFinishLeg(Leg l)
         {
             int summeWürfe = 0;
@@ -498,35 +499,47 @@ namespace DartConsole
             bool finish = false;
             for (int z = 0; z < l.GetDurchgänge().Count; z++)
             {
-                summeWürfe += l.GetDurchgänge().ElementAt(z).GetDurchgangWert();
-                rest = 501 - summeWürfe;
-                if (rest < 0 || rest == 1)
-                {
-                    summeWürfe -= l.GetDurchgänge().ElementAt(z).GetDurchgangWert();
-                    rest = 501 - summeWürfe;
-                    continue;
-                }
-                else
-                {
-                    summeWürfe -= l.GetDurchgänge().ElementAt(z).GetDurchgangWert();
-                    rest = 501 - summeWürfe;
-                }
+                //summeWürfe += l.GetDurchgänge().ElementAt(z).GetDurchgangWert();
+                //rest = 501 - summeWürfe;
+                //if (rest < 0 || rest == 1)
+                //{
+                //    summeWürfe -= l.GetDurchgänge().ElementAt(z).GetDurchgangWert();
+                //    rest = 501 - summeWürfe;
+                //    continue;
+                //}
+                //else
+                //{
+                //    summeWürfe -= l.GetDurchgänge().ElementAt(z).GetDurchgangWert();
+                //    rest = 501 - summeWürfe;
+                //}
                 for (int y = 0; y < 3; y++)
                 {
                     summeWürfe += l.GetDurchgänge().ElementAt(z).GetWürfe()[y].GetWurfGesamt();
                     rest = 501 - summeWürfe;
-                    if (rest == 0)
+                    if (rest < 0 || rest == 1)
                     {
-                        finish = true;
-                        break;
+                        summeWürfe -= l.GetDurchgänge().ElementAt(z).GetDurchgangWert();
+                        rest = 501 - summeWürfe;
                     }
-                    if (rest == 50 || (rest <= 40 && (rest % 2) == 0))
+                    else
                     {
-                        mögliche++;
+                        if (rest == 0)
+                        {
+                            finish = true;
+                            break;
+                        }
+                        if (rest == 50 || (rest <= 40 && (rest % 2) == 0))
+                        {
+                            //Console.WriteLine(z + "," + y);
+                            //Dart.Confirm_Dialog();
+                            mögliche++;
+                        }
                     }
                 }
                 if (finish) break;
             }
+            //Console.WriteLine(mögliche);
+            //Dart.Confirm_Dialog();
             return mögliche;
         }
 
