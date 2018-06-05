@@ -19,8 +19,7 @@ namespace DartConsole
 
         public Leg()
         {
-            id_leg = id_leg_zähler;
-            id_leg_zähler++;
+            SetIDFree();
             legNummer = legZähler;
             durchgänge = new List<Durchgang>();
             //legZähler++;
@@ -33,6 +32,15 @@ namespace DartConsole
             this.rest = rest;
             this.finish = finish;
             durchgänge = new List<Durchgang>();
+        }
+
+        private void SetIDFree()
+        {
+            do
+            {
+                id_leg = id_leg_zähler;
+                id_leg_zähler++;
+            } while (!Dart.IsLegIDFree(id_leg));
         }
 
         public void SetDurchgänge(List<Durchgang> durchgänge)

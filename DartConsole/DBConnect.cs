@@ -503,11 +503,16 @@ namespace DartConsole
                 }
                 catch (Exception e)
                 {
-                    //Console.WriteLine(e.Message);
-                    //Console.ReadLine();
+                    Console.WriteLine("Wurf:"+e.Message);
+                    Console.ReadLine();
                 }
                 //close connection
                 CloseConnection();
+            }
+            else
+            {
+                Console.WriteLine("NO");
+                Console.ReadLine();
             }
         }
 
@@ -531,8 +536,8 @@ namespace DartConsole
                 }
                 catch (Exception e)
                 {
-                    //Console.WriteLine(e.Message);
-                    //Console.ReadLine();
+                    Console.WriteLine("Durchgang: "+e.Message);
+                    Console.ReadLine();
                 }
                 //close connection
                 CloseConnection();
@@ -556,8 +561,8 @@ namespace DartConsole
                 }
                 catch (Exception e)
                 {
-                    //Console.WriteLine(e.Message);
-                    //Console.ReadLine();
+                    Console.WriteLine("Leg:"+e.Message);
+                    Console.ReadLine();
                 }
                 //close connection
                 CloseConnection();
@@ -581,8 +586,8 @@ namespace DartConsole
                 }
                 catch (Exception e)
                 {
-                    //Console.WriteLine(e.Message);
-                    //Console.ReadLine();
+                    Console.WriteLine("Set: "+e.Message);
+                    Console.ReadLine();
                 }
                 //close connection
                 CloseConnection();
@@ -607,8 +612,8 @@ namespace DartConsole
                 }
                 catch (Exception e)
                 {
-                    //Console.WriteLine(e.Message);
-                    //Console.ReadLine();
+                    Console.WriteLine("Spiel: "+e.Message);
+                    Console.ReadLine();
                 }
                 //close connection
                 CloseConnection();

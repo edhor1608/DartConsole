@@ -16,6 +16,126 @@ namespace DartConsole
         static bool running = true;
         DBConnect co = new DBConnect();
 
+        public static bool IsWurfIDFree(int i)
+        {
+            for (int z = 0; z < spiele.Count; z++)
+            {
+                for (int y = 0; y < spiele.ElementAt(z).GetSetsAll().Count; y++)
+                {
+                    for (int x = 0; x < spiele.ElementAt(z).GetSetsAll().ElementAt(y).GetLegs().Count; x++)
+                    {
+                        for (int w = 0; w < spiele.ElementAt(z).GetSetsAll().ElementAt(y).GetLegs().ElementAt(x).GetDurchgänge().Count; w++)
+                        {
+                            for (int v = 0; v < 3; v++)
+                            {
+                                if (spiele.ElementAt(z).GetSetsAll().ElementAt(y).GetLegs().ElementAt(x).GetDurchgänge().ElementAt(w).GetWürfe()[v].GetId() == i)
+                                {
+                                    Console.WriteLine("-----------------");
+                                    Console.ReadKey();
+                                    return false;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+
+        public static bool IsDurchgangIDFree(int i)
+        {
+            for (int z = 0; z < spiele.Count; z++)
+            {
+                for (int y = 0; y < spiele.ElementAt(z).GetSetsAll().Count; y++)
+                {
+                    for (int x = 0; x < spiele.ElementAt(z).GetSetsAll().ElementAt(y).GetLegs().Count; x++)
+                    {
+                        for (int w = 0; w < spiele.ElementAt(z).GetSetsAll().ElementAt(y).GetLegs().ElementAt(x).GetDurchgänge().Count; w++)
+                        {
+
+                            if (spiele.ElementAt(z).GetSetsAll().ElementAt(y).GetLegs().ElementAt(x).GetDurchgänge().ElementAt(w).GetId() == i)
+                            {
+                                Console.WriteLine("-----------------");
+                                Console.ReadKey();
+                                return false;
+                            }
+
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+
+        public static bool IsLegIDFree(int i)
+        {
+            for (int z = 0; z < spiele.Count; z++)
+            {
+                for (int y = 0; y < spiele.ElementAt(z).GetSetsAll().Count; y++)
+                {
+                    for (int x = 0; x < spiele.ElementAt(z).GetSetsAll().ElementAt(y).GetLegs().Count; x++)
+                    {
+
+
+                        if (spiele.ElementAt(z).GetSetsAll().ElementAt(y).GetLegs().ElementAt(x).GetId() == i)
+                        {
+                            Console.WriteLine("-----------------");
+                            Console.ReadKey();
+                            return false;
+                        }
+
+
+                    }
+                }
+            }
+            return true;
+        }
+
+        public static bool IsSetIDFree(int i)
+        {
+            for (int z = 0; z < spiele.Count; z++)
+            {
+                for (int y = 0; y < spiele.ElementAt(z).GetSetsAll().Count; y++)
+                {
+
+
+
+                    if (spiele.ElementAt(z).GetSetsAll().ElementAt(y).GetId() == i)
+                    {
+                        Console.WriteLine("-----------------");
+                        Console.ReadKey();
+                        return false;
+                    }
+
+
+
+                }
+            }
+            return true;
+        }
+
+        public static bool IsSpielIDFree(int i)
+        {
+            for (int z = 0; z < spiele.Count; z++)
+            {
+
+
+
+
+                if (spiele.ElementAt(z).GetId() == i)
+                {
+                    Console.WriteLine("-----------------");
+                    Console.ReadKey();
+                    return false;
+                }
+
+
+
+
+            }
+            return true;
+        }
+
         public static void Speichern()
         {
             //FileStream stream;
@@ -302,26 +422,26 @@ namespace DartConsole
             {
                 if (YN_Dialog("eMail angeben?"))
                 {
-                    
-                        Console.WriteLine("eMail:");
-                        eMail = Console.ReadLine();
-                        if (eMail != "")
+
+                    Console.WriteLine("eMail:");
+                    eMail = Console.ReadLine();
+                    if (eMail != "")
+                    {
+                        if (Spieler.ValidateMailAddress(eMail))
                         {
-                            if (Spieler.ValidateMailAddress(eMail))
-                            {
-                                invalid = false;
-                            }
-                            else
-                            {
-                                Console.WriteLine("INVALIDE EMAIL");
-                                invalid = true;
-                            }
+                            invalid = false;
                         }
                         else
                         {
+                            Console.WriteLine("INVALIDE EMAIL");
                             invalid = true;
                         }
-                    
+                    }
+                    else
+                    {
+                        invalid = true;
+                    }
+
                 }
                 else
                 {
@@ -710,7 +830,7 @@ namespace DartConsole
                 Console.WriteLine(e.Message);
                 Console.ReadKey();
             }
-            
+
         }
 
         public static void SaveSpieleToDB()

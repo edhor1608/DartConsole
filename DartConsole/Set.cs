@@ -19,8 +19,7 @@ namespace DartConsole
 
         public Set(Spieler spieler)
         {
-            id_set = id_set_zähler;
-            id_set_zähler++;
+            SetIDFree();
             this.spieler = spieler;
             setNummer = setZähler;
             legs = new List<Leg>();
@@ -32,6 +31,7 @@ namespace DartConsole
             this.id_set = id_set;
             this.spieler = spieler;
             this.setNummer = setNummer;
+            this.legsGewonnen = legsGewonnen;
             legs = new List<Leg>();
             //setZähler++;
         }
@@ -41,15 +41,27 @@ namespace DartConsole
             this.id_set = id_set;
             this.spieler = Dart.GetSpieler(name);
             this.setNummer = setNummer;
+            this.legsGewonnen = legsGewonnen;
             legs = new List<Leg>();
             //setZähler++;
         }
 
         public Set(String name)
         {
+            SetIDFree();
             this.spieler = Dart.GetSpieler(name);
             setNummer = setZähler;
+            legs = new List<Leg>();
             //setZähler++;
+        }
+
+        private void SetIDFree()
+        {
+            do
+            {
+                id_set = id_set_zähler;
+                id_set_zähler++;
+            } while (!Dart.IsSetIDFree(id_set));
         }
 
         public void SetLegs(List<Leg> legs)

@@ -22,8 +22,7 @@ namespace DartConsole
 
         public Spiel()
         {
-            id_spiel = id_spiel_zähler;
-            id_spiel_zähler++;
+            SetIDFree();
             spieler = new Dictionary<string, Spieler>();
             sets = new List<Set>();
             Init();
@@ -38,6 +37,15 @@ namespace DartConsole
             this.legsToWin = legsToWin;
             spieler = new Dictionary<string, Spieler>();
             sets = new List<Set>();
+        }
+
+        private void SetIDFree()
+        {
+            do
+            {
+                id_spiel = id_spiel_zähler;
+                id_spiel_zähler++;
+            } while (!Dart.IsSpielIDFree(id_spiel));
         }
 
         public void SetSets(List<Set> sets)
@@ -332,6 +340,7 @@ namespace DartConsole
                         bool noDouble = false;
                         do
                         {
+                            GetSetAktuell(spielerAktuell).GetAktuellLeg().GetDurchgangAktuell().SetAnzahlWürfe(0);
                             if (legGewonnen)
                             {
                                 GetSetAktuell(spielerAktuell).SubLegGewonnen();

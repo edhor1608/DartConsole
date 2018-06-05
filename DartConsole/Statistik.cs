@@ -19,6 +19,11 @@ namespace DartConsole
             }
         }
 
+        public static double RoundDouble(double d, int r=2)
+        {
+            return Math.Round(d, r);
+        }
+
         private static void Menu(Spieler s)
         {
             bool invalid = true;
@@ -27,7 +32,7 @@ namespace DartConsole
                 //Console.ReadKey();
                 Console.Clear();
                 Console.WriteLine("--- Statistik Menü ---");
-                Console.WriteLine("(1)Zeige letztes Spiel\n(2)Spieler hinzufügen\n(3)Spiel starten\n(4)Statistik aufrufen\n(5)Beenden");
+                Console.WriteLine("(1)Zeige letztes Spiel\n(2)Statistik Gesamt\n(3)Zeige Spiel (ID)\n(4)Statistik aufrufen\n(5)Beenden");
                 invalid = false;
                 try
                 {
@@ -39,10 +44,12 @@ namespace DartConsole
                             Dart.Confirm_Dialog();
                             break;
                         case 2:
-                            //AddSpielerConsoleMehrere();
+                            ShowStatistikGesamt(s);
+                            Dart.Confirm_Dialog();
                             break;
                         case 3:
-                            //AddSpiel();
+                            ShowSpiel(Dart.spiele.ElementAt(Dart.Int_Dialog("ID",0, Dart.spiele.Count-1)), s);
+                            Dart.Confirm_Dialog();
                             break;
                         case 4:
                             Statistik.Starting();
@@ -67,39 +74,55 @@ namespace DartConsole
         private static void ShowSpiel(Spiel sp, Spieler s)
         {
             Console.Clear();
-            Console.WriteLine("Spiel vom: "+sp.GetDatum().ToString("g"));
-            Dart.WriteChar('~',30);
-            Console.WriteLine("Gesamt - Avg: "+AvgD_Spiel_NotFinish(sp, s)+" -> W: "+AvgW_Spiel_NotFinish(sp,s)+"| D: XX%");
-            List<Set> sets = sp.GetSetsPlayer(s);
-            for(int set = 0; set < sets.Count(); set++)
+            try
             {
-                Dart.WriteChar(' ', 2, false);
-                Console.WriteLine("Set "+(set+1)+ " - Avg: " + AvgD_Set_NotFinish(sets.ElementAt(set)) + " -> W: " + AvgW_Set_NotFinish(sets.ElementAt(set)) + "| D: XX%");
-                List<Leg> legs = sets.ElementAt(set).GetLegs();
-                for (int leg = 0; leg < legs.Count(); leg++)
+                Console.WriteLine("Spiel vom: " + sp.GetDatum().ToString("g"));
+                Dart.WriteChar('~', 30);
+                Console.WriteLine("Gesamt - Avg: " + RoundDouble(AvgD_Spiel_NotFinish(sp, s), 2) + " -> W: " + RoundDouble(AvgW_Spiel_NotFinish(sp, s), 2) + "| D: " + RoundDouble(100 * GetDoubleFinishQuoteSpielSpieler(sp, s), 2) + "%");
+                List<Set> sets = sp.GetSetsPlayer(s);
+                for (int set = 0; set < sets.Count(); set++)
                 {
-                    Dart.WriteChar(' ', 4, false);
-                    Console.WriteLine("Leg " + (leg + 1)+ " - Avg: " + AvgD_Leg_NotFinish(legs.ElementAt(leg)) + " -> W: " + AvgW_Leg_NotFinish(legs.ElementAt(leg)) + "| D: XX%");
-                    List<Durchgang> durchgänge = legs.ElementAt(leg).GetDurchgänge();
-                    for (int ds = 0; ds < durchgänge.Count(); ds++)
+                    Dart.WriteChar(' ', 2, false);
+                    Console.WriteLine("Set " + (set + 1) + " - Avg: " + RoundDouble(AvgD_Set_NotFinish(sets.ElementAt(set)), 2) + " -> W: " + RoundDouble(AvgW_Set_NotFinish(sets.ElementAt(set)), 2) + "| D: " + RoundDouble(100 * GetDoubleFinishQuoteSet(sets.ElementAt(set)), 2) + "%");
+                    List<Leg> legs = sets.ElementAt(set).GetLegs();
+                    for (int leg = 0; leg < legs.Count(); leg++)
                     {
-                        Dart.WriteChar(' ', 6, false);
-                        Console.WriteLine("Aufnahme " + (ds + 1));
-                        Wurf[] würfe = durchgänge.ElementAt(ds).GetWürfe();
-                        for (int w = 0; w < durchgänge.ElementAt(ds).GetAnzahlWürfe(); w++)
+                        Dart.WriteChar(' ', 4, false);
+                        Console.WriteLine("Leg " + (leg + 1) + " - Avg: " + RoundDouble(AvgD_Leg_NotFinish(legs.ElementAt(leg)), 2) + " -> W: " + RoundDouble(AvgW_Leg_NotFinish(legs.ElementAt(leg)), 2) + "| D: " + RoundDouble(100 * GetDoubleFinishQuoteLeg(legs.ElementAt(leg)), 2) + "%");
+                        List<Durchgang> durchgänge = legs.ElementAt(leg).GetDurchgänge();
+                        for (int ds = 0; ds < durchgänge.Count(); ds++)
                         {
-                            Dart.WriteChar(' ',8, false);
-                            Console.WriteLine("Wurf "+(w+1)+": "+würfe[w].GetMulti()+"x"+ würfe[w].GetWert());
+                            Dart.WriteChar(' ', 6, false);
+                            Console.WriteLine("Aufnahme " + (ds + 1));
+                            Wurf[] würfe = durchgänge.ElementAt(ds).GetWürfe();
+                            for (int w = 0; w < durchgänge.ElementAt(ds).GetAnzahlWürfe(); w++)
+                            {
+                                Dart.WriteChar(' ', 8, false);
+                                Console.WriteLine("Wurf " + (w + 1) + ": " + würfe[w].GetMulti() + "x" + würfe[w].GetWert());
+                            }
                         }
+                        Dart.WriteChar(' ', 4, false);
+                        Console.WriteLine("Finish: " + legs.ElementAt(leg).GetFinish());
                     }
-                    Dart.WriteChar(' ', 4, false);
-                    Console.WriteLine("Finish: "+ legs.ElementAt(leg).GetFinish());
+                    Dart.WriteChar(' ', 2, false);
+                    Console.WriteLine("Highest Finish: " + Highest_Finish_Set(sets.ElementAt(set)));
+                    Dart.WriteChar(' ', 2, false);
+                    Console.WriteLine("Avg Finish: " + RoundDouble(Average_Finish_Set(sets.ElementAt(set)), 2));
                 }
-                Dart.WriteChar(' ', 2, false);
-                Console.WriteLine("Highest Finish: " + Highest_Finish_Set(sets.ElementAt(set)));
-                Dart.WriteChar(' ', 2, false);
-                Console.WriteLine("Avg Finish: " + Average_Finish_Set(sets.ElementAt(set)));
+            }catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Dart.Confirm_Dialog();
             }
+        }
+
+        private static void ShowStatistikGesamt(Spieler s)
+        {
+            Console.Clear();
+            Console.WriteLine("Gespielte Spiele: " + Dart.SearchSpielePlayedBy(s).Count);
+            Console.WriteLine("Letztes Spiel: " + GetLastGame(s).GetDatum().ToString());
+            Console.WriteLine("Durchschnitt ohne Finishbereich: " + RoundDouble(Average_Finish_Gesamt(s),2));
+            Console.WriteLine("Doppelquote: " + RoundDouble(100*GetDoubleFinishQuoteAllSpieler(s)));
         }
 
         private static Spieler SpielerAuswählen()
@@ -140,7 +163,7 @@ namespace DartConsole
             List<Spiel> spiele = Dart.SearchSpielePlayedBy(s);
             for (int i = 0; i < spiele.Count; i++)
             {
-                if (height < Highest_Finish_Spiel(spiele.ElementAt(i),s))
+                if (height < Highest_Finish_Spiel(spiele.ElementAt(i), s))
                 {
                     height = Highest_Finish_Spiel(spiele.ElementAt(i), s);
                 }
@@ -182,7 +205,7 @@ namespace DartConsole
 
         public static double Average_Finish_Set(Set s)
         {
-            if (AnzahlFinishSet(s)==0) return -1;
+            if (AnzahlFinishSet(s) == 0) return -1;
             return SummeFinishSet(s) / AnzahlFinishSet(s);
         }
 
@@ -193,8 +216,8 @@ namespace DartConsole
 
         public static double Average_Finish_Spiel(Spiel sp, Spieler s)
         {
-            if (AnzahlFinishSpiel(sp,s) == 0) return -1;
-            return SummeFinishSpiel(sp,s) / AnzahlFinishSpiel(sp,s);
+            if (AnzahlFinishSpiel(sp, s) == 0) return -1;
+            return SummeFinishSpiel(sp, s) / AnzahlFinishSpiel(sp, s);
         }
 
         public static double Average_Finish_Gesamt(String s)
@@ -218,7 +241,7 @@ namespace DartConsole
             int summe = 0;
             for (int i = 0; i < s.GetLegs().Count; i++)
             {
-                    summe += s.GetLegs().ElementAt(i).GetFinish();
+                summe += s.GetLegs().ElementAt(i).GetFinish();
             }
             return summe;
         }
@@ -292,7 +315,7 @@ namespace DartConsole
             List<Spiel> spiele = Dart.SearchSpielePlayedBy(s);
             for (int i = 0; i < spiele.Count; i++)
             {
-                anzahl += AnzahlFinishSpiel(spiele.ElementAt(i),s);
+                anzahl += AnzahlFinishSpiel(spiele.ElementAt(i), s);
             }
             return anzahl;
         }
@@ -441,7 +464,7 @@ namespace DartConsole
             List<Spiel> spiele = Dart.SearchSpielePlayedBy(spieler);
             for (int i = 0; i < spiele.Count(); i++)
             {
-                anzahl += AnzahlSpielDurchgängeNotFinish(spiele.ElementAt(i),spieler);
+                anzahl += AnzahlSpielDurchgängeNotFinish(spiele.ElementAt(i), spieler);
             }
             return anzahl;
         }
@@ -471,10 +494,23 @@ namespace DartConsole
         {
             int summeWürfe = 0;
             int mögliche = 0;
-            int rest;
+            int rest=501;
             bool finish = false;
-            for (int z = 0; z < l.GetDurchgänge().Count ; z++)
+            for (int z = 0; z < l.GetDurchgänge().Count; z++)
             {
+                summeWürfe += l.GetDurchgänge().ElementAt(z).GetDurchgangWert();
+                rest = 501 - summeWürfe;
+                if (rest < 0 || rest == 1)
+                {
+                    summeWürfe -= l.GetDurchgänge().ElementAt(z).GetDurchgangWert();
+                    rest = 501 - summeWürfe;
+                    continue;
+                }
+                else
+                {
+                    summeWürfe -= l.GetDurchgänge().ElementAt(z).GetDurchgangWert();
+                    rest = 501 - summeWürfe;
+                }
                 for (int y = 0; y < 3; y++)
                 {
                     summeWürfe += l.GetDurchgänge().ElementAt(z).GetWürfe()[y].GetWurfGesamt();
@@ -494,10 +530,24 @@ namespace DartConsole
             return mögliche;
         }
 
-        public static double GetDoubleFinishQuoteLeg(Leg l)
+        public static bool GetLegGewonnen(Leg l)
         {
             if (l.GetRest() == 0)
             {
+                return true;
+            }
+            return false;
+        }
+
+        public static double GetDoubleFinishQuoteLeg(Leg l)
+        {
+            if (GetLegGewonnen(l))
+            {
+                if (GetMöglicheFinishLeg(l) == 0)
+                {
+                    return 999;
+
+                }
                 return 1 / GetMöglicheFinishLeg(l);
             }
             return 0;
@@ -513,11 +563,16 @@ namespace DartConsole
             return mögliche;
         }
 
-        //Anzahl Legs Gewonnen notwendig
-        //public static double GetDoubleFinishQuoteSet(Set s)
-        //{
+        public static double GetAnzahlGewonnenLegsSet(Set s)
+        {
+            return s.GetLegGewonnen();
+            //return 1;
+        }
 
-        //}
+        public static double GetDoubleFinishQuoteSet(Set s)
+        {
+            return GetAnzahlGewonnenLegsSet(s) / GetMöglicheFinishSet(s);
+        }
 
         public static double GetMöglicheFinishSpielAll(Spiel s)
         {
@@ -527,6 +582,21 @@ namespace DartConsole
                 mögliche += GetMöglicheFinishSet(s.GetSetsAll().ElementAt(z));
             }
             return mögliche;
+        }
+
+        public static double GetAnzahlGewonnenLegsSpielAll(Spiel s)
+        {
+            double summe = 0;
+            for (int z = 0; z < s.GetSetsAll().Count; z++)
+            {
+                summe += GetAnzahlGewonnenLegsSet(s.GetSetsAll().ElementAt(z));
+            }
+            return summe;
+        }
+
+        public static double GetDoubleFinishQuoteSpielAll(Spiel s)
+        {
+            return GetAnzahlGewonnenLegsSpielAll(s) / GetMöglicheFinishSpielAll(s);
         }
 
         public static double GetMöglicheFinishSpielSpieler(Spiel s, Spieler sp)
@@ -539,6 +609,21 @@ namespace DartConsole
             return mögliche;
         }
 
+        public static double GetAnzahlGewonnenLegsSpielSpieler(Spiel s, Spieler sp)
+        {
+            double summe = 0;
+            for (int z = 0; z < s.GetSetsPlayer(sp).Count; z++)
+            {
+                summe += GetAnzahlGewonnenLegsSet(s.GetSetsPlayer(sp).ElementAt(z));
+            }
+            return summe;
+        }
+
+        public static double GetDoubleFinishQuoteSpielSpieler(Spiel s, Spieler sp)
+        {
+            return GetAnzahlGewonnenLegsSpielSpieler(s, sp) / GetMöglicheFinishSpielSpieler(s, sp);
+        }
+
         public static double GetMöglicheFinishAllSpieler(Spieler sp)
         {
             double mögliche = 0;
@@ -549,6 +634,21 @@ namespace DartConsole
             return mögliche;
         }
 
+        public static double GetAnzahlGewonnenLegsAllSpieler(Spieler sp)
+        {
+            double summe = 0;
+            for (int z = 0; z < Dart.SearchSpielePlayedBy(sp).Count; z++)
+            {
+                summe += GetAnzahlGewonnenLegsSpielSpieler(Dart.SearchSpielePlayedBy(sp).ElementAt(z), sp);
+            }
+            return summe;
+        }
+
+        public static double GetDoubleFinishQuoteAllSpieler(Spieler sp)
+        {
+            return GetAnzahlGewonnenLegsAllSpieler(sp) / GetMöglicheFinishAllSpieler(sp);
+        }
+
         public static double GetMöglicheFinishAll()
         {
             double mögliche = 0;
@@ -557,6 +657,21 @@ namespace DartConsole
                 mögliche += GetMöglicheFinishSpielAll(Dart.spiele.ElementAt(z));
             }
             return mögliche;
+        }
+
+        public static double GetAnzahlGewonnenLegsAll()
+        {
+            double summe = 0;
+            for (int z = 0; z < Dart.spiele.Count; z++)
+            {
+                summe += GetAnzahlGewonnenLegsSpielAll(Dart.spiele.ElementAt(z));
+            }
+            return summe;
+        }
+
+        public static double GetDoubleFinishQuoteAll()
+        {
+            return GetAnzahlGewonnenLegsAll() / GetMöglicheFinishAll();
         }
     }
 }

@@ -18,8 +18,7 @@ namespace DartConsole
 
         public Wurf(int multi, int wert)
         {
-            id_wurf = id_wurf_zähler;
-            id_wurf_zähler++;
+            SetIDFree();
             wurfNummer = wurfZähler;
             wurfZähler++;
             this.multiplikator = multi;
@@ -32,6 +31,15 @@ namespace DartConsole
             this.wurfNummer = wurfNummer;
             this.multiplikator = multi;
             this.wert = wert;
+        }
+
+        private void SetIDFree()
+        {
+            do
+            {
+                id_wurf = id_wurf_zähler;
+                id_wurf_zähler++;
+            } while (!Dart.IsWurfIDFree(id_wurf));
         }
 
         public int GetId()

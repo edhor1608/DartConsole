@@ -19,8 +19,7 @@ namespace DartConsole
 
         public Durchgang(bool finishBereich)
         {
-            id_durchgang = id_durchgang_zähler;
-            id_durchgang_zähler++;
+            SetIDFree();
             durchgangNummer = durchgangZähler;
             durchgangZähler++;
             würfe[0] = new Wurf(0,0);
@@ -45,6 +44,20 @@ namespace DartConsole
             {
                 finishBereich = false;
             }
+        }
+
+        private void SetIDFree()
+        {
+            do
+            {
+                id_durchgang = id_durchgang_zähler;
+                id_durchgang_zähler++;
+            } while (!Dart.IsDurchgangIDFree(id_durchgang));
+        }
+
+        public void SetAnzahlWürfe(int anzahl)
+        {
+            anzahlWürfe = anzahl;
         }
 
         public void SetWürfe(Wurf[] würfe)
