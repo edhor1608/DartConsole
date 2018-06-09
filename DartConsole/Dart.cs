@@ -16,6 +16,11 @@ namespace DartConsole
         static bool running = true;
         DBConnect co = new DBConnect();
 
+        /// <summary>
+        /// testet, ob übergebener Wert schon eine WurfID ist
+        /// </summary>
+        /// <param name="i">eine mögliche WurfID</param>
+        /// <returns>true, wenn WurfID noch nicht vergeben</returns>
         public static bool IsWurfIDFree(int i)
         {
             for (int z = 0; z < spiele.Count; z++)
@@ -42,6 +47,11 @@ namespace DartConsole
             return true;
         }
 
+        /// <summary>
+        /// testet, ob übergebener Wert schon eine DurchgangID ist
+        /// </summary>
+        /// <param name="i">eine mögliche DurchgangID</param>
+        /// <returns>true, wenn DurchgangID noch nicht vergeben</returns>
         public static bool IsDurchgangIDFree(int i)
         {
             for (int z = 0; z < spiele.Count; z++)
@@ -67,6 +77,11 @@ namespace DartConsole
             return true;
         }
 
+        /// <summary>
+        /// testet, ob übergebener Wert schon eine LegID ist
+        /// </summary>
+        /// <param name="i">eine mögliche LegID</param>
+        /// <returns>true, wenn LegID noch nicht vergeben</returns>
         public static bool IsLegIDFree(int i)
         {
             for (int z = 0; z < spiele.Count; z++)
@@ -91,6 +106,11 @@ namespace DartConsole
             return true;
         }
 
+        /// <summary>
+        /// testet, ob übergebener Wert schon eine SetID ist
+        /// </summary>
+        /// <param name="i">eine mögliche SetID</param>
+        /// <returns>true, wenn SetID noch nicht vergeben</returns>
         public static bool IsSetIDFree(int i)
         {
             for (int z = 0; z < spiele.Count; z++)
@@ -114,6 +134,11 @@ namespace DartConsole
             return true;
         }
 
+        /// <summary>
+        /// testet, ob übergebener Wert schon eine SpielID ist
+        /// </summary>
+        /// <param name="i">eine mögliche SpielID</param>
+        /// <returns>true, wenn SpielID noch nicht vergeben</returns>
         public static bool IsSpielIDFree(int i)
         {
             for (int z = 0; z < spiele.Count; z++)
@@ -161,6 +186,9 @@ namespace DartConsole
             }
         }
 
+        /// <summary>
+        /// liest Daten aus der Datenbank komplett ein und erstellt alle Objekte, inklusive Verweise
+        /// </summary>
         public static void Lesen()
         {
             try
@@ -319,6 +347,11 @@ namespace DartConsole
             }
         }
 
+        /// <summary>
+        /// rechnet Alter aufgrund eines übergebenen Geburtstags aus
+        /// </summary>
+        /// <param name="birthday">ein Geburtsdatum</param>
+        /// <returns>aktuelles Alter</returns>
         public static int GetAgeFromDate(DateTime birthday)
         {
             int years = DateTime.Now.Year - birthday.Year;
@@ -327,6 +360,11 @@ namespace DartConsole
             return years;
         }
 
+        /// <summary>
+        /// erstellt Spieler mit allen Daten über Consoleneingabe und übergibt diesen
+        /// </summary>
+        /// <param name="name">Preload des Names (aktuell ohne Funktion)</param>
+        /// <returns>erstellter Spieler</returns>
         public static Spieler AddSpielerConsole(String name = "")
         {
             Console.Clear();
@@ -514,6 +552,9 @@ namespace DartConsole
             }
         }
 
+        /// <summary>
+        /// Dialog um mehrere Spieler nacheinander zu erstellen
+        /// </summary>
         public static void AddSpielerConsoleMehrere()
         {
             do
@@ -522,6 +563,9 @@ namespace DartConsole
             } while (YN_Dialog("Weitere Spieler hizufügen"));
         }
 
+        /// <summary>
+        /// erstellt neues Spiel, fügt es in die Spielliste ein und speichert es in der Datenbank
+        /// </summary>
         public static void AddSpiel()
         {
             Spiel s = new Spiel();
@@ -529,21 +573,41 @@ namespace DartConsole
             SaveSpielToDB(s);
         }
 
+        /// <summary>
+        /// sucht alle Spiele raus, in welchen ein gegebener Spieler gespielt hat
+        /// </summary>
+        /// <param name="spieler">Spieler für welchen die entsprechenden Spiele gesucht werden</param>
+        /// <returns>Spiele als Liste in denen Spieler vorhanden ist</returns>
         public static List<Spiel> SearchSpielePlayedBy(Spieler spieler)
         {
             return spiele.FindAll((Spiel x) => x.HasPlayed(spieler));
         }
 
+        /// <summary>
+        /// sucht alle Spiele raus, in welchen ein gegebener Spieler gespielt hat über username
+        /// </summary>
+        /// <param name="name">Username für Spieler für welchen die entsprechenden Spiele gesucht werden</param>
+        /// <returns>Spiele als Liste in denen Spieler vorhanden ist</returns>
         public static List<Spiel> SearchSpielePlayedBy(String name)
         {
             return spiele.FindAll((Spiel x) => x.HasPlayed(GetSpieler(name.ToLower())));
         }
 
+        /// <summary>
+        /// gibt Spieler zu entsprechendem Username zurück
+        /// </summary>
+        /// <param name="name">username für welchen Spieler zurückgegeben werden soll</param>
+        /// <returns>Spieler mit entsprechendem Username</returns>
         public static Spieler GetSpieler(String name)
         {
             return spieler[name.ToLower()];
         }
 
+        /// <summary>
+        /// gibt Spieler zu entsprechender ID zurück
+        /// </summary>
+        /// <param name="id">id für Spieler</param>
+        /// <returns>Spieler mit entsprechender ID</returns>
         public static Spieler GetSpielerID(int id)
         {
             for (int i = 0; i < spieler.Count; i++)
@@ -556,11 +620,19 @@ namespace DartConsole
             return null;
         }
 
+        /// <summary>
+        /// prüft über username, ob Spieler bereits vorhanden ist
+        /// </summary>
+        /// <param name="name">username, welcher überprüft werden soll</param>
+        /// <returns>true wenn Spieler bereits vorhanden</returns>
         public static bool IsSpielerVorhanden(String name)
         {
             return spieler.ContainsKey(name);
         }
 
+        /// <summary>
+        /// erstellt Checkout Tabelle als Dictionary aus Datei "checkout.txt"
+        /// </summary>
         private static void CreateCheckout()
         {
             try
@@ -595,6 +667,9 @@ namespace DartConsole
             catch (IOException e) { }
         }
 
+        /// <summary>
+        /// zeigt alle vorhanden Spieler in der Console an mit allen Daten
+        /// </summary>
         public static void ShowSpieler()
         {
             Console.WriteLine("Spieler:");
@@ -610,6 +685,11 @@ namespace DartConsole
             Confirm_Dialog();
         }
 
+        /// <summary>
+        /// Ja/Nein Dialog mit übergebener Frage
+        /// </summary>
+        /// <param name="s">Frage</param>
+        /// <returns>Antwort der Frage</returns>
         public static bool YN_Dialog(String s)
         {
             Console.WriteLine(s + " (y/n)");
@@ -629,13 +709,23 @@ namespace DartConsole
             return false;
         }
 
+        /// <summary>
+        /// Bestätigungs Dialog mit Möglichkeit Text zu übergeben
+        /// </summary>
+        /// <param name="s">Text zum Übergeben</param>
         public static void Confirm_Dialog(String s = "Zum fortfahren beliebige Taste drücken")
         {
             Console.WriteLine(s);
             Console.ReadKey();
         }
 
-        public static String String_Dialog(String s, bool lower)
+        /// <summary>
+        /// String eingabe Dialog in der Console mit der Möglichkeit alles auf lowercase zu wandeln
+        /// </summary>
+        /// <param name="s">Dialogtext</param>
+        /// <param name="lower"></param>
+        /// <returns>Eingabe als String als ggf lowercase</returns>
+        public static String String_Dialog(String s, bool lower=true)
         {
             String sR = "";
             bool invalid = true;
