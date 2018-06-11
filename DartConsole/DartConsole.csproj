@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{3338B924-3137-4AD1-B79F-FAA2716B453D}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>DartConsole</RootNamespace>
     <AssemblyName>DartConsole</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -47,7 +47,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>DartConsole.Dart</StartupObject>
+    <StartupObject>DartConsole.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Google.Protobuf, Version=3.5.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
@@ -66,6 +66,7 @@
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -74,10 +75,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddSpielerView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSpielerView.Designer.cs">
+      <DependentUpon>AddSpielerView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dart.cs" />
     <Compile Include="DBConnect.cs" />
     <Compile Include="Durchgang.cs" />
+    <Compile Include="InfoDartConsoleView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoDartConsoleView.Designer.cs">
+      <DependentUpon>InfoDartConsoleView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Leg.cs" />
+    <Compile Include="MainView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainView.Designer.cs">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhpMyAdminView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhpMyAdminView.Designer.cs">
+      <DependentUpon>PhpMyAdminView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -92,6 +118,12 @@
     <Compile Include="Set.cs" />
     <Compile Include="Spiel.cs" />
     <Compile Include="Spieler.cs" />
+    <Compile Include="SpielerInformationView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpielerInformationView.Designer.cs">
+      <DependentUpon>SpielerInformationView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Statistik.cs" />
     <Compile Include="Wurf.cs" />
   </ItemGroup>
@@ -116,9 +148,22 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddSpielerView.resx">
+      <DependentUpon>AddSpielerView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="data\checkout.txt" />
+    <EmbeddedResource Include="InfoDartConsoleView.resx">
+      <DependentUpon>InfoDartConsoleView.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Resources\Resources.resx" />
+    <EmbeddedResource Include="SpielerInformationView.resx">
+      <DependentUpon>SpielerInformationView.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="PhpMyAdminView.resx">
+      <DependentUpon>PhpMyAdminView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -127,9 +172,6 @@
   <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\TextFile1.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

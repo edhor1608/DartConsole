@@ -148,7 +148,7 @@ namespace DartConsole
                     Console.WriteLine("Spieler nicht vorhanden");
                     if (Dart.YN_Dialog("Spieler erstellen?"))
                     {
-                        Spieler s = Dart.AddSpielerConsole(name);
+                        Spieler s = Dart.AddSpieler(name);
                         if (s != null)
                         {
                             spieler.Add(s.GetUsername(), s);
