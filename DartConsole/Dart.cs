@@ -15,6 +15,11 @@ namespace DartConsole
         //static FileStream stream;
         DBConnect co = new DBConnect();
 
+        /// <summary>	
+        /// testet, ob übergebener Wert schon eine WurfID ist	
+        /// </summary>	
+        /// <param name="i">eine mögliche WurfID</param>	
+        /// <returns>true, wenn WurfID noch nicht vergeben</returns>
         public static bool IsWurfIDFree(int i)
         {
             for (int z = 0; z < spiele.Count; z++)
@@ -41,6 +46,11 @@ namespace DartConsole
             return true;
         }
 
+        /// <summary>	
+        /// testet, ob übergebener Wert schon eine DurchgangID ist	
+        /// </summary>	
+        /// <param name="i">eine mögliche DurchgangID</param>	
+        /// <returns>true, wenn DurchgangID noch nicht vergeben</returns>
         public static bool IsDurchgangIDFree(int i)
         {
             for (int z = 0; z < spiele.Count; z++)
@@ -66,6 +76,11 @@ namespace DartConsole
             return true;
         }
 
+        /// <summary>	
+        /// testet, ob übergebener Wert schon eine LegID ist	
+        /// </summary>	
+        /// <param name="i">eine mögliche LegID</param>	
+        /// <returns>true, wenn LegID noch nicht vergeben</returns>
         public static bool IsLegIDFree(int i)
         {
             for (int z = 0; z < spiele.Count; z++)
@@ -90,6 +105,11 @@ namespace DartConsole
             return true;
         }
 
+        /// <summary>	
+        /// testet, ob übergebener Wert schon eine SetID ist	
+        /// </summary>	
+        /// <param name="i">eine mögliche SetID</param>	
+        /// <returns>true, wenn SetID noch nicht vergeben</returns>
         public static bool IsSetIDFree(int i)
         {
             for (int z = 0; z < spiele.Count; z++)
@@ -113,6 +133,11 @@ namespace DartConsole
             return true;
         }
 
+        /// <summary>	
+        /// testet, ob übergebener Wert schon eine SpielID ist	
+        /// </summary>	
+        /// <param name="i">eine mögliche SpielID</param>	
+        /// <returns>true, wenn SpielID noch nicht vergeben</returns>
         public static bool IsSpielIDFree(int i)
         {
             for (int z = 0; z < spiele.Count; z++)
@@ -160,6 +185,9 @@ namespace DartConsole
             }
         }
 
+        /// <summary>	
+        /// liest Daten aus der Datenbank komplett ein und erstellt alle Objekte, inklusive Verweise	
+        /// </summary>
         public static void Lesen()
         {
             try
@@ -318,6 +346,11 @@ namespace DartConsole
             }
         }
 
+        /// <summary>	
+        /// rechnet Alter aufgrund eines übergebenen Geburtstags aus	
+        /// </summary>	
+        /// <param name="birthday">ein Geburtsdatum</param>	
+        /// <returns>aktuelles Alter</returns>
         public static int GetAgeFromDate(DateTime birthday)
         {
             int years = DateTime.Now.Year - birthday.Year;
@@ -326,6 +359,7 @@ namespace DartConsole
             return years;
         }
 
+        
         public static Spieler AddSpieler(String name = "")
         {
             String eMail = "";
@@ -349,6 +383,9 @@ namespace DartConsole
             } while (YN_Dialog("Weitere Spieler hizufügen"));
         }
 
+        /// <summary>	
+        /// erstellt neues Spiel, fügt es in die Spielliste ein und speichert es in der Datenbank	
+        /// </summary>
         public static void AddSpiel()
         {
             Spiel s = new Spiel();
