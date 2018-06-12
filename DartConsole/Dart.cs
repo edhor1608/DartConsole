@@ -1,4 +1,4 @@
-﻿  using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -334,6 +334,15 @@ namespace DartConsole
             Wurf.id_wurf_zähler = DBConnect.GetMaxIDWurf() + 1;
         }
 
+        /// <summary>
+        /// fügt einen Spieler hinzu mit übergebenen Daten
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="alter"></param>
+        /// <param name="eMail"></param>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <param name="geburtstag"></param>
         public static void AddSpieler(String name, int alter, String eMail, String firstName, String lastName, DateTime geburtstag)
         {
             if (spieler.ContainsKey(name))
@@ -359,7 +368,11 @@ namespace DartConsole
             return years;
         }
 
-        
+        /// <summary>
+        /// erstellt einen neuen Spieler
+        /// </summary>
+        /// <param name="name">kann als preLoad angegeben werden</param>
+        /// <returns>gibt den erstellten Spieler zurück</returns>
         public static Spieler AddSpieler(String name = "")
         {
             String eMail = "";
@@ -374,7 +387,12 @@ namespace DartConsole
             return s;
         }
 
-        public static void AddSpielerConsoleMehrere()
+        /// <summary>
+        /// Möglichkeit mehrere Spieler nacheinander zu erstellen
+        /// </summary>
+        //public static void AddSpielerConsoleMehrere()
+        //{
+        public static void AddSpielerMehrere()
         {
             do
             {
@@ -393,21 +411,41 @@ namespace DartConsole
             SaveSpielToDB(s);
         }
 
+        /// <summary>	
+        /// sucht alle Spiele raus, in welchen ein gegebener Spieler gespielt hat	
+        /// </summary>	
+        /// <param name="spieler">Spieler für welchen die entsprechenden Spiele gesucht werden</param>	
+        /// <returns>Spiele als Liste in denen Spieler vorhanden ist</returns>
         public static List<Spiel> SearchSpielePlayedBy(Spieler spieler)
         {
             return spiele.FindAll((Spiel x) => x.HasPlayed(spieler));
         }
 
+        /// <summary>	
+        /// sucht alle Spiele raus, in welchen ein gegebener Spieler gespielt hat über username	
+        /// </summary>	
+        /// <param name="name">Username für Spieler für welchen die entsprechenden Spiele gesucht werden</param>	
+        /// <returns>Spiele als Liste in denen Spieler vorhanden ist</returns>
         public static List<Spiel> SearchSpielePlayedBy(String name)
         {
             return spiele.FindAll((Spiel x) => x.HasPlayed(GetSpieler(name.ToLower())));
         }
 
+        /// <summary>	
+        /// gibt Spieler zu entsprechendem Username zurück	
+        /// </summary>	
+        /// <param name="name">username für welchen Spieler zurückgegeben werden soll</param>	
+        /// <returns>Spieler mit entsprechendem Username</returns>
         public static Spieler GetSpieler(String name)
         {
             return spieler[name.ToLower()];
         }
 
+        /// <summary>	
+        /// gibt Spieler zu entsprechender ID zurück	
+        /// </summary>	
+        /// <param name="id">id für Spieler</param>	
+        /// <returns>Spieler mit entsprechender ID</returns>
         public static Spieler GetSpielerID(int id)
         {
             for (int i = 0; i < spieler.Count; i++)
@@ -420,11 +458,19 @@ namespace DartConsole
             return null;
         }
 
+        /// <summary>	
+        /// prüft über username, ob Spieler bereits vorhanden ist	
+        /// </summary>	
+        /// <param name="name">username, welcher überprüft werden soll</param>	
+        /// <returns>true wenn Spieler bereits vorhanden</returns>
         public static bool IsSpielerVorhanden(String name)
         {
             return spieler.ContainsKey(name);
         }
 
+        /// <summary>	
+        /// erstellt Checkout Tabelle als Dictionary aus Datei "checkout.txt"	
+        /// </summary>
         private static void CreateCheckout()
         {
             try
@@ -459,7 +505,10 @@ namespace DartConsole
             catch (IOException e) { }
         }
 
-        public static void ShowSpieler()
+        /// <summary>	
+        /// zeigt alle vorhanden Spieler in der Console an mit allen Daten	
+        /// </summary>
+        public static void ShowSpielerConsole()
         {
             Console.WriteLine("Spieler:");
             for (int i = 0; i < spieler.Count; i++)
@@ -474,6 +523,11 @@ namespace DartConsole
             Confirm_Dialog();
         }
 
+        /// <summary>	
+        /// Ja/Nein Dialog mit übergebener Frage	
+        /// </summary>	
+        /// <param name="s">Frage</param>	
+        /// <returns>Antwort der Frage</returns>
         public static bool YN_Dialog(String s)
         {
             Console.WriteLine(s + " (y/n)");
@@ -493,12 +547,22 @@ namespace DartConsole
             return false;
         }
 
+        /// <summary>	
+        /// Bestätigungs Dialog mit Möglichkeit Text zu übergeben	
+        /// </summary>	
+        /// <param name="s">Text zum Übergeben</param>
         public static void Confirm_Dialog(String s = "Zum fortfahren beliebige Taste drücken")
         {
             Console.WriteLine(s);
             Console.ReadKey();
         }
 
+        /// <summary>
+        /// String eingabe Dialog in der Console mit der Möglichkeit alles auf lowercase zu wandeln	
+        /// </summary>	
+        /// <param name="s">Dialogtext</param>	
+        /// <param name="lower"></param>	
+        /// <returns>Eingabe als String als ggf lowercase</returns>
         public static String String_Dialog(String s, bool lower)
         {
             String sR = "";
@@ -527,6 +591,14 @@ namespace DartConsole
             return sR;
         }
 
+        /// <summary>
+        /// Int eingabe Dialog in der Console mit der Möglichkeit den Eingabe Bereich zu beschränken
+        /// </summary>
+        /// <param name="s">EingabeText/Frage</param>
+        /// <param name="min">Minimaler möglicher Eingabe Wert</param>
+        /// <param name="max">Maximaler möglicher Eingabe Wert</param>
+        /// <param name="einzeln">möglicher einzelner Wert außerhalb des Min/Max Bereiches</param>
+        /// <returns></returns>
         public static int Int_Dialog(String s, int min = int.MinValue, int max = int.MaxValue, int einzeln = int.MaxValue)
         {
             int integer = 0;
@@ -571,10 +643,10 @@ namespace DartConsole
                             Test();
                             break;
                         case 1:
-                            ShowSpieler();
+                            ShowSpielerConsole();
                             break;
                         case 2:
-                            AddSpielerConsoleMehrere();
+                            AddSpielerMehrere();
                             break;
                         case 3:
                             AddSpiel();
@@ -602,6 +674,12 @@ namespace DartConsole
             }
         }
 
+        /// <summary>
+        /// schreibt den Char c j-mal mit Zeilenumbruch, wenn line = true
+        /// </summary>
+        /// <param name="c">Char der geschrieben werden soll</param>
+        /// <param name="j">Anzahl, wie oft c geschreiben werden soll</param>
+        /// <param name="line">boolean, ob am Ende ein Zeilenumbruch gemacht werden soll</param>
         public static void WriteChar(char c, int j, bool line = true)
         {
             for (int i = 0; i < j; i++)
@@ -611,6 +689,10 @@ namespace DartConsole
             if (line) Console.WriteLine();
         }
 
+        /// <summary>
+        /// gibt die maximale/höchste länge aller Spieler Usernames zurück 
+        /// </summary>
+        /// <returns>maximale/höchste länge aller Spieler Usernames</returns>
         public static int MaxLengthSpielerAll()
         {
             int l = 0;
@@ -624,11 +706,20 @@ namespace DartConsole
             return l;
         }
 
+        /// <summary>
+        /// gibt die länge des Usernames des übergebenen Spielers zurück
+        /// </summary>
+        /// <param name="s">Spieler dessen Länge des Usernames überprüft werden soll</param>
+        /// <returns>länge des Usernames des übergebenen Spielers</returns>
         public static int LengthSpieler(Spieler s)
         {
             return s.GetUsername().Count();
         }
 
+        /// <summary>
+        /// speichert alle Würfe eines übergebenen Durchgangs in der DB
+        /// </summary>
+        /// <param name="d">Durchgang dessen Würfe gespeichert werden sollen</param>
         public static void SaveWürfeToDB(Durchgang d)
         {
             for (int y = 0; y < d.GetWürfe().Count(); y++)
@@ -637,7 +728,11 @@ namespace DartConsole
                     );
             }
         }
-
+        
+        /// <summary>
+        /// speichert alle Durchgänge des übergebenen Legs in der DB
+        /// </summary>
+        /// <param name="l">Leg dessen Durchgänge gespeichert werden sollen</param>
         public static void SaveDurchgängeToDB(Leg l)
         {
             for (int y = 0; y < l.GetDurchgänge().Count; y++)
@@ -647,6 +742,10 @@ namespace DartConsole
             }
         }
 
+        /// <summary>
+        /// speichert alle Legs des übergeben Sets in der DB
+        /// </summary>
+        /// <param name="s">Set dessen Legs gespeichert werden sollen</param>
         public static void SaveLegsToDB(Set s)
         {
             for (int y = 0; y < s.GetLegs().Count; y++)
@@ -656,6 +755,10 @@ namespace DartConsole
             }
         }
 
+        /// <summary>
+        /// speichert alle Sets des übergebenen Spiels in der DB
+        /// </summary>
+        /// <param name="s">Spiel dessen Sets gespeichert werden sollen</param>
         public static void SaveSetsToDB(Spiel s)
         {
             for (int y = 0; y < s.GetSetsAll().Count; y++)
@@ -665,6 +768,9 @@ namespace DartConsole
             }
         }
 
+        /// <summary>
+        /// speichert alle Sets in der DB
+        /// </summary>
         public static void SaveSetsToDB()
         {
             for (int y = 0; y < spiele.Count; y++)
@@ -678,6 +784,10 @@ namespace DartConsole
             }
         }
 
+        /// <summary>
+        /// speichert übergebenes Spiel in der DB
+        /// </summary>
+        /// <param name="s">Spiel das gespeichert werden soll</param>
         public static void SaveSpielToDB(Spiel s)
         {
             try
@@ -697,6 +807,9 @@ namespace DartConsole
 
         }
 
+        /// <summary>
+        /// speichert alle Spiele in der DB
+        /// </summary>
         public static void SaveSpieleToDB()
         {
             for (int y = 0; y < spiele.Count; y++)
@@ -705,6 +818,9 @@ namespace DartConsole
             }
         }
 
+        /// <summary>
+        /// speichert alle Spieler in der DB
+        /// </summary>
         public static void SaveSpielerToDB()
         {
             for (int y = 0; y < spieler.Count; y++)
@@ -713,6 +829,10 @@ namespace DartConsole
             }
         }
 
+        /// <summary>
+        /// holt alle Spieler aus der DB, erstellt diese als Objekte und fügt sie einem Dictionary hinzu dass dann übergeben wird
+        /// </summary>
+        /// <returns>Dictionary mit allen erstellten SpielerObjekten aus der DB</returns>
         public static Dictionary<String, Spieler> GetSpielerFromDB()
         {
             Dictionary<String, Spieler> spieler = new Dictionary<string, Spieler>();
@@ -740,6 +860,10 @@ namespace DartConsole
             return spieler;
         }
 
+        /// <summary>
+        /// holt alle Spiele aus der DB, erstellt diese als Objekte, inkl. aller Verküpfungen und Attributen und fügt diese zu einer List hinzu, welche dann übergeben wird
+        /// </summary>
+        /// <returns>List mit allen komplett erstellten SpielObjekten aus der DB</returns>
         public static List<Spiel> GetSpieleFromDB()
         {
             List<Spiel> spiele = new List<Spiel>();
@@ -756,6 +880,11 @@ namespace DartConsole
             return spiele;
         }
 
+        /// <summary>
+        /// holt das Array der gewonnenen Sets für das Spiel mit der übergeben id aus der DB und gibt dies zurück
+        /// </summary>
+        /// <param name="id">id des Spiels für welches das Array geholt werden soll</param>
+        /// <returns>SetsGewonnen Array aus Spiel mit id</returns>
         public static int[] GetSetsGewonnenFromDB(int id)
         {
             int[] array = new int[DBConnect.CountSpielerInSpiel(id)];
@@ -766,6 +895,11 @@ namespace DartConsole
             return array;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static Dictionary<String, Spieler> GetSpielerInSpielFromDB(int id)
         {
             Dictionary<String, Spieler> spieler = new Dictionary<string, Spieler>();
@@ -778,6 +912,11 @@ namespace DartConsole
             return spieler;
         }
 
+        /// <summary>
+        /// holt alle Sets des Spiels mit der übergebenen id aus der Datenbank, erstellt die Objekte und fügt sie zu einer List hinzu, welche dann übergeben wird
+        /// </summary>
+        /// <param name="id">id des Spiels aus welchem alle Sets geholt werden sollen</param>
+        /// <returns>List mit allen geholten Sets</returns>
         public static List<Set> GetSetsOfSpiel(int id)
         {
             List<Set> sets = new List<Set>();
@@ -791,6 +930,11 @@ namespace DartConsole
             return sets;
         }
 
+        /// <summary>
+        /// holt alle Legs des Sets mit der übergebenen id aus der Datenbank, erstellt die Objekte und fügt sie zu einer List hinzu, welche dann übergeben wird
+        /// </summary>
+        /// <param name="id">id des Sets aus welchem alle Legs geholt werden sollen</param>
+        /// <returns>List mit allen geholten Legs</returns>
         public static List<Leg> GetLegsOfSet(int id)
         {
             List<Leg> legs = new List<Leg>();
@@ -804,6 +948,11 @@ namespace DartConsole
             return legs;
         }
 
+        /// <summary>
+        /// holt alle Durchgänge des Legs mit der übergebenen id aus der Datenbank, erstellt die Objekte und fügt sie zu einer List hinzu, welche dann übergeben wird
+        /// </summary>
+        /// <param name="id">id des Legs aus welchem alle Durchgänge geholt werden sollen</param>
+        /// <returns>List mit allen geholten Durchgängen</returns>
         public static List<Durchgang> GetDurchgängeOfLeg(int id)
         {
             List<Durchgang> durchgänge = new List<Durchgang>();
@@ -817,6 +966,11 @@ namespace DartConsole
             return durchgänge;
         }
 
+        /// <summary>
+        /// holt alle Würfe des Durchgangs mit der übergebenen id aus der Datenbank, erstellt die Objekte und fügt sie zu einem Array hinzu, welches dann übergeben wird
+        /// </summary>
+        /// <param name="id">id des Durchgangs aus welchem alle Würfe geholt werden sollen</param>
+        /// <returns>Array mit allen geholten Würfen</returns>
         public static Wurf[] GetWürfeOfDurchgang(int id)
         {
             Wurf[] würfe = new Wurf[3];
@@ -832,6 +986,11 @@ namespace DartConsole
             return würfe;
         }
 
+        /// <summary>
+        /// konvertiert den eingegebenen String in eine DateTime ohne Uhrzeit (zur verarbeitung der DB Ausgaben)
+        /// </summary>
+        /// <param name="s">String (aus DB Ausgabe) welcher in DateTime konvertiert werden soll</param>
+        /// <returns>DateTime aus String</returns>
         public static DateTime TimeOfString(String s)
         {
             string jahrString = "" + s.ElementAt(6) + s.ElementAt(7) + s.ElementAt(8) + s.ElementAt(9);
@@ -843,6 +1002,11 @@ namespace DartConsole
             return new DateTime(jahr, monat, tag);
         }
 
+        /// <summary>
+        /// konvertiert den eingegebenen String in eine DateTime mit Uhrzeit (zur verarbeitung der DB Ausgaben)
+        /// </summary>
+        ///<param name="s">String (aus DB Ausgabe) welcher in DateTime konvertiert werden soll</param>
+        /// <returns>DateTime aus String</returns>
         public static DateTime TimeOfStringTime(String s)
         {
             string jahrString = "" + s.ElementAt(6) + s.ElementAt(7) + s.ElementAt(8) + s.ElementAt(9);
