@@ -131,7 +131,7 @@
             this.wBr_Github_IO_View.Name = "wBr_Github_IO_View";
             this.wBr_Github_IO_View.Size = new System.Drawing.Size(350, 206);
             this.wBr_Github_IO_View.TabIndex = 27;
-            this.wBr_Github_IO_View.Url = new System.Uri("https://soeren3003.github.io/DartConsoleUI/", System.UriKind.Absolute);
+            this.wBr_Github_IO_View.Url = new System.Uri("https://edhor1608.github.io/DartConsole/", System.UriKind.Absolute);
             // 
             // picBx_Logo
             // 

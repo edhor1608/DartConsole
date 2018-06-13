@@ -58,5 +58,10 @@ namespace DartConsole
                 }
             }
         }
+
+        private void Spieler_hinzufuegen(object sender, EventArgs e)
+        {
+            new AddSpielerView().ShowDialog();
+        }
     }
 }
