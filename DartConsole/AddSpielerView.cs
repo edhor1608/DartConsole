@@ -33,11 +33,19 @@ namespace DartConsole
             {
                 MessageBox.Show("Bitte überprüfe deine eingegebene E-Mail-Adresse.");
                 tBx_eMail.BackColor = Color.Red;
+                
             }
             else
             {
                 tBx_eMail.BackColor = Color.White;
+
+                Dart.AddSpieler(tBx_FirstName.Text + "-" + tBx_LastName.Text, Dart.GetAgeFromDate(DateTime.Parse(tBx_Geburtsdatum.Text)), tBx_eMail.Text, tBx_FirstName.Text, tBx_LastName.Text, DateTime.Parse(tBx_Geburtsdatum.Text));
+
+                Dart.SaveSpielerToDB();
             }
+
+            this.Close();
+
         }
 
         /// <summary>

@@ -22,10 +22,7 @@ namespace DartConsole
 
         private void MainView_Load(object sender, EventArgs e)
         {
-            foreach(var spieler in Dart.GetSpielerFromDB())
-            {
-                lBx_Spieler.Items.Add(spieler.Key);
-            }
+            GetSpielerFromDBIntoUI();
         }
 
         /// <summary>
@@ -62,6 +59,19 @@ namespace DartConsole
         private void Spieler_hinzufuegen(object sender, EventArgs e)
         {
             new AddSpielerView().ShowDialog();
+
+            lBx_Spieler.Items.Clear();
+
+            GetSpielerFromDBIntoUI();
+
+        }
+
+        private void GetSpielerFromDBIntoUI()
+        {
+            foreach (var spieler in Dart.GetSpielerFromDB())
+            {
+                lBx_Spieler.Items.Add(spieler.Key);
+            }
         }
     }
 }
