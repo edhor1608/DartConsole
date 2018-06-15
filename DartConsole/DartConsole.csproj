@@ -116,6 +116,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="SelectDateDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectDateDialog.Designer.cs">
+      <DependentUpon>SelectDateDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Set.cs" />
     <Compile Include="Spiel.cs" />
     <Compile Include="Spieler.cs" />
@@ -157,6 +163,12 @@
       <DependentUpon>InfoDartConsoleView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Resources\Resources.resx" />
+    <EmbeddedResource Include="MainView.resx">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectDateDialog.resx">
+      <DependentUpon>SelectDateDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SpielerInformationView.resx">
       <DependentUpon>SpielerInformationView.cs</DependentUpon>
     </EmbeddedResource>
