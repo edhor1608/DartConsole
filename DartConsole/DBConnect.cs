@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
 using MySql.Data.MySqlClient;
 
 namespace DartConsole
@@ -26,11 +23,17 @@ namespace DartConsole
         //Initialize values
         private static void Initialize()
         {
-            server = "jonas-rohde.de";
-            database = "dart";
-            port = 3306;
-            username = "dartConsole";
-            password = "GhlIyJRnSeAhaXyt";
+            //server = "jonas-rohde.de";
+            server = ConfigurationManager.AppSettings["DBServer"].ToString();
+            //database = "dart";
+            database = ConfigurationManager.AppSettings["DBDatabase"].ToString();
+            //port = 3306;
+            port = int.Parse(ConfigurationManager.AppSettings["DBPort"].ToString());
+            //username = "dartConsole";
+            username = ConfigurationManager.AppSettings["DBUser"].ToString();
+            //password = "GhlIyJRnSeAhaXyt";
+            password = ConfigurationManager.AppSettings["DBPasswd"].ToString();
+            //string cs = System.Configuration.ConfigurationManager.ConnectionStrings["cs"].ConnectionString;
             string connectionString;
             connectionString = "Server=" + server + ";Database=" + database
                 + ";port=" + port + ";User Id=" + username + ";password=" + password + ";SslMode=" + "none";
@@ -239,7 +242,7 @@ namespace DartConsole
 
         public static int CountSpielerInSpiel(int id)
         {
-            string query = "SELECT Count(*) FROM spieltMit WHERE id_spiel="+id;
+            string query = "SELECT Count(*) FROM spieltMit WHERE id_spiel=" + id;
             int Count = -1;
 
             //Open Connection
@@ -488,7 +491,7 @@ namespace DartConsole
 
         public static void InsertWurf(Wurf w, Durchgang durchgang)
         {
-            string query = "INSERT INTO wurf (`id_wurf`, `id_durchgang`, `wurfNummer`, `multiplikator`, `wert`) VALUES ('"+w.GetId()+"', '"+durchgang.GetId()+"', '"+w.GetWurfNummer()+"', '"+w.GetMulti()+"', '"+w.GetWert()+"')";
+            string query = "INSERT INTO wurf (`id_wurf`, `id_durchgang`, `wurfNummer`, `multiplikator`, `wert`) VALUES ('" + w.GetId() + "', '" + durchgang.GetId() + "', '" + w.GetWurfNummer() + "', '" + w.GetMulti() + "', '" + w.GetWert() + "')";
 
             //open connection
             if (OpenConnection() == true)
@@ -503,7 +506,7 @@ namespace DartConsole
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Wurf:"+e.Message);
+                    Console.WriteLine("Wurf:" + e.Message);
                     Console.ReadLine();
                 }
                 //close connection
@@ -536,7 +539,7 @@ namespace DartConsole
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Durchgang: "+e.Message);
+                    Console.WriteLine("Durchgang: " + e.Message);
                     Console.ReadLine();
                 }
                 //close connection
@@ -561,7 +564,7 @@ namespace DartConsole
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Leg:"+e.Message);
+                    Console.WriteLine("Leg:" + e.Message);
                     Console.ReadLine();
                 }
                 //close connection
@@ -586,7 +589,7 @@ namespace DartConsole
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Set: "+e.Message);
+                    Console.WriteLine("Set: " + e.Message);
                     Console.ReadLine();
                 }
                 //close connection
@@ -597,7 +600,7 @@ namespace DartConsole
         public static void InsertSpiel(Spiel s)
         {
             //string query = "INSERT INTO spiel (`id_spiel`, `datum`, `start`, `setsToWin`, `legsToWin`) VALUES ('" + s.GetId() + "', '" + s.GetDatum().Year + "-" + s.GetDatum().Month + "-" + s.GetDatum().Day + "', '501', '" + s.GetSetsToWin() + "', '" + s.GetLegsToWin() + "')";
-            string query = "INSERT INTO spiel (`id_spiel`, `datum`, `start`, `setsToWin`, `legsToWin`) VALUES ('" + s.GetId() + "', '" + s.GetDatum().Year + "-" + s.GetDatum().Month + "-" + s.GetDatum().Day + " " + s.GetDatum().Hour + ":" + s.GetDatum().Minute + ":" + s.GetDatum().Second +"', '501', '" + s.GetSetsToWin() + "', '" + s.GetLegsToWin() + "')";
+            string query = "INSERT INTO spiel (`id_spiel`, `datum`, `start`, `setsToWin`, `legsToWin`) VALUES ('" + s.GetId() + "', '" + s.GetDatum().Year + "-" + s.GetDatum().Month + "-" + s.GetDatum().Day + " " + s.GetDatum().Hour + ":" + s.GetDatum().Minute + ":" + s.GetDatum().Second + "', '501', '" + s.GetSetsToWin() + "', '" + s.GetLegsToWin() + "')";
 
             //open connection
             if (OpenConnection() == true)
@@ -612,7 +615,7 @@ namespace DartConsole
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Spiel: "+e.Message);
+                    Console.WriteLine("Spiel: " + e.Message);
                     Console.ReadLine();
                 }
                 //close connection
@@ -750,7 +753,7 @@ namespace DartConsole
 
         public static List<string>[] SelectUserID(int id)
         {
-            string query = "SELECT * FROM user WHERE id_user="+id;
+            string query = "SELECT * FROM user WHERE id_user=" + id;
 
             //Create a list to store the result
             List<string>[] list = new List<string>[6];
@@ -797,7 +800,7 @@ namespace DartConsole
 
         public static List<string>[] SelectSpieltMit(int id)
         {
-            string query = "SELECT * FROM `spieltMit` WHERE id_spiel="+id;
+            string query = "SELECT * FROM `spieltMit` WHERE id_spiel=" + id;
 
             //Create a list to store the result
             List<string>[] list = new List<string>[3];
@@ -973,7 +976,7 @@ namespace DartConsole
 
         public static List<string>[] SelectSetSpielID(int id)
         {
-            string query = "SELECT * FROM `set` WHERE id_spiel="+id;
+            string query = "SELECT * FROM `set` WHERE id_spiel=" + id;
 
             //Create a list to store the result
             List<string>[] list = new List<string>[5];
