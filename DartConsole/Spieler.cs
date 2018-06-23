@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
 
 namespace DartConsole
 {
@@ -16,8 +17,9 @@ namespace DartConsole
         private String lastName;
         private DateTime geburtstag;
         private String eMail;
+        private String password;
 
-        public Spieler(String name, String eMail, String firstName, String lastName, DateTime geburtstag)
+        public Spieler(String name, String eMail, String firstName, String lastName, DateTime geburtstag, String passwd)
         {
             id_spieler = id_spieler_zähler;
             id_spieler_zähler++;
@@ -26,9 +28,10 @@ namespace DartConsole
             this.firstName = firstName;
             this.lastName = lastName;
             this.geburtstag = geburtstag;
+            this.password = passwd;
         }
 
-        public Spieler(int id_spieler, String name, String eMail, String firstName, String lastName, DateTime geburtstag)
+        public Spieler(int id_spieler, String name, String eMail, String firstName, String lastName, DateTime geburtstag, String passwd)
         {
             this.id_spieler = id_spieler;
             this.username = name;
@@ -36,6 +39,7 @@ namespace DartConsole
             this.firstName = firstName;
             this.lastName = lastName;
             this.geburtstag = geburtstag;
+            this.password = passwd;
         }
 
         public int GetId()
@@ -71,6 +75,16 @@ namespace DartConsole
         public String GetEMail()
         {
             return eMail;
+        }
+
+        public String GetPasswd()
+        {
+            return password;
+        }
+
+        public void SetPasswd(String passwd)
+        {
+            this.password = passwd;
         }
 
         public void SetEMail(String eMail)

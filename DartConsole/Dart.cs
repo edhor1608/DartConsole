@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace DartConsole
 {
@@ -335,6 +337,27 @@ namespace DartConsole
         }
 
         /// <summary>
+        /// Hashed einen übergebenen String mit sha256
+        /// </summary>
+        /// <param name="value">String welcher gehashed werden soll</param>
+        /// <returns>gehashter String</returns>
+        public static String HashString(String value)
+        {
+            StringBuilder Sb = new StringBuilder();
+
+            using (var hash = SHA256.Create())
+            {
+                Encoding enc = Encoding.UTF8;
+                Byte[] result = hash.ComputeHash(enc.GetBytes(value));
+
+                foreach (Byte b in result)
+                    Sb.Append(b.ToString("x2"));
+            }
+
+            return Sb.ToString();
+        }
+
+        /// <summary>
         /// fügt einen Spieler hinzu mit übergebenen Daten
         /// </summary>
         /// <param name="name"></param>
@@ -343,7 +366,7 @@ namespace DartConsole
         /// <param name="firstName"></param>
         /// <param name="lastName"></param>
         /// <param name="geburtstag"></param>
-        public static void AddSpieler(String name, int alter, String eMail, String firstName, String lastName, DateTime geburtstag)
+        public static void AddSpieler(String name, int alter, String eMail, String firstName, String lastName, DateTime geburtstag, String passwd)
         {
             if (spieler.ContainsKey(name))
             {
@@ -351,7 +374,7 @@ namespace DartConsole
             }
             else
             {
-                spieler.Add(name, new Spieler(name, eMail, firstName, lastName, geburtstag));
+                spieler.Add(name, new Spieler(name, eMail, firstName, lastName, geburtstag, passwd));
             }
         }
 
@@ -379,8 +402,9 @@ namespace DartConsole
             String firstName = "";
             String lastName = "";
             DateTime geburtstag = new DateTime(1900, 1, 1);
+            String passwd = "";
 
-            Spieler s = new Spieler(name, eMail, firstName, lastName, geburtstag);
+            Spieler s = new Spieler(name, eMail, firstName, lastName, geburtstag, passwd);
             spieler.Add(name, s);
             // Speichern();
             DBConnect.InsertUser(s);
@@ -844,6 +868,7 @@ namespace DartConsole
                 String firstName = list[2].ElementAt(y);
                 String lastName = list[3].ElementAt(y);
                 String eMail = list[5].ElementAt(y);
+                String passwd = list[6].ElementAt(y);
                 DateTime geburtstag = new DateTime(1900, 1, 1);
                 if (!list[4].ElementAt(y).Equals("NULL") && (list[4].ElementAt(y).Count() > 0))
                 {
@@ -855,7 +880,7 @@ namespace DartConsole
                     //int tag = int.Parse(tagString);
                     geburtstag = TimeOfString(list[4].ElementAt(y));
                 }
-                spieler.Add(username, new Spieler(id, username, eMail, firstName, lastName, geburtstag));
+                spieler.Add(username, new Spieler(id, username, eMail, firstName, lastName, geburtstag, passwd));
             }
             return spieler;
         }

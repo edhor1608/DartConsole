@@ -147,13 +147,14 @@ namespace DartConsole
             string query = "SELECT * FROM user";
 
             //Create a list to store the result
-            List<string>[] list = new List<string>[6];
+            List<string>[] list = new List<string>[7];
             list[0] = new List<string>();
             list[1] = new List<string>();
             list[2] = new List<string>();
             list[3] = new List<string>();
             list[4] = new List<string>();
             list[5] = new List<string>();
+            list[6] = new List<string>();
 
             //Open connection
             if (OpenConnection() == true)
@@ -171,6 +172,7 @@ namespace DartConsole
                     list[2].Add(dataReader["firstName"] + "");
                     list[2].Add(dataReader["lastName"] + "");
                     list[2].Add(dataReader["geburtstag"] + "");
+                    list[2].Add(dataReader["eMail"] + "");
                     list[2].Add(dataReader["eMail"] + "");
                 }
 
@@ -657,6 +659,7 @@ namespace DartConsole
                 String lastNameData = "'" + s.GetLastName() + "'";
                 String geburtstagData = "'" + s.GetGeburtstag().Year + "-" + s.GetGeburtstag().Month + "-" + s.GetGeburtstag().Day + "'";
                 String eMailData = "'" + s.GetEMail() + "'";
+                String passwdData = "'" + s.GetPasswd() + "'";
                 if (s.GetFirstName() == "")
                 {
                     firstNameData = "NULL";
@@ -669,11 +672,15 @@ namespace DartConsole
                 {
                     eMailData = "NULL";
                 }
+                if (s.GetPasswd() == "")
+                {
+                    passwdData = "NULL";
+                }
                 if (s.GetGeburtstag().Equals(new DateTime(1900, 1, 1)))
                 {
                     geburtstagData = "NULL";
                 }
-                string query = "INSERT INTO user (`id_user`, `username`, `firstName`, `lastName`, `geburtstag`, `eMail`) VALUES('" + s.GetId() + "', '" + s.GetUsername() + "', " + firstNameData + ", " + lastNameData + ", " + geburtstagData + ", " + eMailData + ")";
+                string query = "INSERT INTO user (`id_user`, `username`, `firstName`, `lastName`, `geburtstag`, `eMail`, `password`) VALUES('" + s.GetId() + "', '" + s.GetUsername() + "', " + firstNameData + ", " + lastNameData + ", " + geburtstagData + ", " + eMailData + ", " + passwdData + ")";
                 //Console.WriteLine(query);
                 //Console.ReadKey();
                 //open connection
@@ -709,13 +716,14 @@ namespace DartConsole
             string query = "SELECT * FROM user";
 
             //Create a list to store the result
-            List<string>[] list = new List<string>[6];
+            List<string>[] list = new List<string>[7];
             list[0] = new List<string>();
             list[1] = new List<string>();
             list[2] = new List<string>();
             list[3] = new List<string>();
             list[4] = new List<string>();
             list[5] = new List<string>();
+            list[6] = new List<string>();
 
             //Open connection
             if (OpenConnection() == true)
@@ -734,6 +742,7 @@ namespace DartConsole
                     list[3].Add(dataReader["lastName"] + "");
                     list[4].Add(dataReader["geburtstag"] + "");
                     list[5].Add(dataReader["eMail"] + "");
+                    list[6].Add(dataReader["password"] + "");
                 }
 
                 //close Data Reader
@@ -756,13 +765,14 @@ namespace DartConsole
             string query = "SELECT * FROM user WHERE id_user=" + id;
 
             //Create a list to store the result
-            List<string>[] list = new List<string>[6];
+            List<string>[] list = new List<string>[7];
             list[0] = new List<string>();
             list[1] = new List<string>();
             list[2] = new List<string>();
             list[3] = new List<string>();
             list[4] = new List<string>();
             list[5] = new List<string>();
+            list[6] = new List<string>();
 
             //Open connection
             if (OpenConnection() == true)
@@ -781,6 +791,7 @@ namespace DartConsole
                     list[3].Add(dataReader["lastName"] + "");
                     list[4].Add(dataReader["geburtstag"] + "");
                     list[5].Add(dataReader["eMail"] + "");
+                    list[6].Add(dataReader["password"] + "");
                 }
 
                 //close Data Reader
