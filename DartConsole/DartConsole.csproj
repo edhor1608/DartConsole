@@ -95,6 +95,12 @@
       <DependentUpon>InfoDartConsoleView.cs</DependentUpon>
     </Compile>
     <Compile Include="Leg.cs" />
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,12 @@
     <Compile Include="SpielerInformationView.Designer.cs">
       <DependentUpon>SpielerInformationView.cs</DependentUpon>
     </Compile>
+    <Compile Include="StartingScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartingScreen.Designer.cs">
+      <DependentUpon>StartingScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Statistik.cs" />
     <Compile Include="Wurf.cs" />
   </ItemGroup>
@@ -170,7 +182,13 @@
     <EmbeddedResource Include="InfoDartConsoleView.resx">
       <DependentUpon>InfoDartConsoleView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StartingScreen.resx">
+      <DependentUpon>StartingScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Resources\Resources.resx" />
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
     </EmbeddedResource>

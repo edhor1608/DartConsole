@@ -354,7 +354,8 @@ namespace DartConsole
                     Sb.Append(b.ToString("x2"));
             }
 
-            return Sb.ToString();
+            //return Sb.ToString();
+            return value;
         }
 
         /// <summary>

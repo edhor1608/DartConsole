@@ -63,9 +63,12 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_Entferne_Spieler = new System.Windows.Forms.Button();
             this.btn_Hinzufuegen_Spieler = new System.Windows.Forms.Button();
+            this.btn_zurück = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.meStr_HeadMenue.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // meStr_HeadMenue
@@ -297,13 +300,14 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.375F));
             this.tableLayoutPanel1.Controls.Add(this.lBx_Spieler, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 35);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1200, 657);
             this.tableLayoutPanel1.TabIndex = 1;
@@ -316,7 +320,7 @@
             this.lBx_Spieler.Location = new System.Drawing.Point(4, 5);
             this.lBx_Spieler.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lBx_Spieler.Name = "lBx_Spieler";
-            this.lBx_Spieler.Size = new System.Drawing.Size(263, 596);
+            this.lBx_Spieler.Size = new System.Drawing.Size(263, 583);
             this.lBx_Spieler.TabIndex = 0;
             this.lBx_Spieler.SelectedIndexChanged += new System.EventHandler(this.lBx_Spieler_SelectedIndexChanged);
             // 
@@ -328,12 +332,12 @@
             this.tableLayoutPanel2.Controls.Add(this.btn_Entferne_Spieler, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btn_Hinzufuegen_Spieler, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 611);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 598);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(263, 41);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(263, 54);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // btn_Entferne_Spieler
@@ -342,7 +346,7 @@
             this.btn_Entferne_Spieler.Location = new System.Drawing.Point(4, 5);
             this.btn_Entferne_Spieler.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Entferne_Spieler.Name = "btn_Entferne_Spieler";
-            this.btn_Entferne_Spieler.Size = new System.Drawing.Size(123, 31);
+            this.btn_Entferne_Spieler.Size = new System.Drawing.Size(123, 44);
             this.btn_Entferne_Spieler.TabIndex = 0;
             this.btn_Entferne_Spieler.Text = "Entfernen";
             this.btn_Entferne_Spieler.UseVisualStyleBackColor = true;
@@ -353,17 +357,37 @@
             this.btn_Hinzufuegen_Spieler.Location = new System.Drawing.Point(135, 5);
             this.btn_Hinzufuegen_Spieler.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Hinzufuegen_Spieler.Name = "btn_Hinzufuegen_Spieler";
-            this.btn_Hinzufuegen_Spieler.Size = new System.Drawing.Size(124, 31);
+            this.btn_Hinzufuegen_Spieler.Size = new System.Drawing.Size(124, 44);
             this.btn_Hinzufuegen_Spieler.TabIndex = 1;
             this.btn_Hinzufuegen_Spieler.Text = "Hinzufügen";
             this.btn_Hinzufuegen_Spieler.UseVisualStyleBackColor = true;
             this.btn_Hinzufuegen_Spieler.Click += new System.EventHandler(this.Spieler_hinzufuegen);
+            // 
+            // btn_zurück
+            // 
+            this.btn_zurück.Location = new System.Drawing.Point(716, 7);
+            this.btn_zurück.Name = "btn_zurück";
+            this.btn_zurück.Size = new System.Drawing.Size(173, 39);
+            this.btn_zurück.TabIndex = 2;
+            this.btn_zurück.Text = "Zurück";
+            this.btn_zurück.UseVisualStyleBackColor = true;
+            this.btn_zurück.Click += new System.EventHandler(this.btn_zurück_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btn_zurück);
+            this.groupBox1.Location = new System.Drawing.Point(274, 596);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(889, 58);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
             // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.meStr_HeadMenue);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -376,6 +400,7 @@
             this.meStr_HeadMenue.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -417,6 +442,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button btn_Entferne_Spieler;
         private System.Windows.Forms.Button btn_Hinzufuegen_Spieler;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btn_zurück;
     }
 }
 

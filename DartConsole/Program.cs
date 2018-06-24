@@ -8,6 +8,11 @@ namespace DartConsole
 {
     static class Program
     {
+        public static Spieler spieler;
+        public static MainMenu frmMainMenu;
+        public static MainView frmMainView;
+        public static StartingScreen frmStartingScreen;
+
         /// <summary>
         /// Der Haupteinstiegspunkt für die Anwendung.
         /// </summary>
@@ -16,7 +21,13 @@ namespace DartConsole
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainView());
+            frmMainMenu = new MainMenu();
+            frmMainView = new MainView();
+            frmStartingScreen = new StartingScreen();
+            //frmMainView.Show();
+            frmStartingScreen.Show();
+            Application.Run(); 
         }
+
     }
 }

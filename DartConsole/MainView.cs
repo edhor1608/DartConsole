@@ -73,5 +73,11 @@ namespace DartConsole
                 lBx_Spieler.Items.Add(spieler.Key);
             }
         }
+
+        private void btn_zurück_Click(object sender, EventArgs e)
+        {
+            Program.frmMainView.Hide();
+            Program.frmStartingScreen.Show();
+        }
     }
 }
