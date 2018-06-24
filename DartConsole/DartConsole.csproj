@@ -160,6 +160,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddSpielerView.de.resx">
+      <DependentUpon>AddSpielerView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddSpielerView.resx">
       <DependentUpon>AddSpielerView.cs</DependentUpon>
     </EmbeddedResource>
