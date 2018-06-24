@@ -28,7 +28,7 @@ namespace DartConsole
             this.firstName = firstName;
             this.lastName = lastName;
             this.geburtstag = geburtstag;
-            this.password = passwd;
+            this.password = Dart.HashString(passwd);
         }
 
         public Spieler(int id_spieler, String name, String eMail, String firstName, String lastName, DateTime geburtstag, String passwd)
