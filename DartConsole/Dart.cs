@@ -374,7 +374,8 @@ namespace DartConsole
             }
             else
             {
-                spieler.Add(name, new Spieler(name, eMail, firstName, lastName, geburtstag, passwd));
+                String passwdHash = Dart.HashString(passwd);
+                spieler.Add(name, new Spieler(name, eMail, firstName, lastName, geburtstag, passwdHash));
             }
         }
 
@@ -404,7 +405,8 @@ namespace DartConsole
             DateTime geburtstag = new DateTime(1900, 1, 1);
             String passwd = "";
 
-            Spieler s = new Spieler(name, eMail, firstName, lastName, geburtstag, passwd);
+            String passwdHash = Dart.HashString(passwd);
+            Spieler s = new Spieler(name, eMail, firstName, lastName, geburtstag, passwdHash);
             spieler.Add(name, s);
             // Speichern();
             DBConnect.InsertUser(s);

@@ -39,7 +39,9 @@ namespace DartConsole
             {
                 tBx_eMail.BackColor = Color.White;
 
-                Dart.AddSpieler(tBx_FirstName.Text + "-" + tBx_LastName.Text, Dart.GetAgeFromDate(DateTime.Parse(tBx_Geburtsdatum.Text)), tBx_eMail.Text, tBx_FirstName.Text, tBx_LastName.Text, DateTime.Parse(tBx_Geburtsdatum.Text));
+                //Passwort Wdh Überprüfung steht noch aus
+                String passwdHash = Dart.HashString(tBx_Passwort.Text);
+                Dart.AddSpieler(tBx_username.Text, Dart.GetAgeFromDate(DateTime.Parse(tBx_Geburtsdatum.Text)), tBx_eMail.Text, tBx_FirstName.Text, tBx_LastName.Text, DateTime.Parse(tBx_Geburtsdatum.Text), passwdHash);
 
                 Dart.SaveSpielerToDB();
             }
