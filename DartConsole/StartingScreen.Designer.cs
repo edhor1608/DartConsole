@@ -123,6 +123,7 @@
             // 
             // btn_Beenden
             // 
+            this.btn_Beenden.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_Beenden.Location = new System.Drawing.Point(652, 22);
             this.btn_Beenden.Name = "btn_Beenden";
             this.btn_Beenden.Size = new System.Drawing.Size(123, 46);
@@ -177,8 +178,10 @@
             // 
             // StartingScreen
             // 
+            this.AcceptButton = this.btn_login;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btn_Beenden;
             this.ClientSize = new System.Drawing.Size(800, 328);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
