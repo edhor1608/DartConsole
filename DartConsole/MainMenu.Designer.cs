@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.groupBox = new System.Windows.Forms.GroupBox();
-            lbl_Begruessung = new System.Windows.Forms.Label();
+            this.lbl_Begruessung = new System.Windows.Forms.Label();
             this.btn_Beenden = new System.Windows.Forms.Button();
             this.btn_statistik = new System.Windows.Forms.Button();
             this.btn_newGame = new System.Windows.Forms.Button();
@@ -62,7 +62,7 @@
             // 
             // groupBox
             // 
-            this.groupBox.Controls.Add(lbl_Begruessung);
+            this.groupBox.Controls.Add(this.lbl_Begruessung);
             this.groupBox.Controls.Add(this.btn_Beenden);
             this.groupBox.Controls.Add(this.btn_statistik);
             this.groupBox.Controls.Add(this.btn_newGame);
@@ -78,14 +78,14 @@
             // 
             // lbl_Begruessung
             // 
-            lbl_Begruessung.AutoSize = true;
-            lbl_Begruessung.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lbl_Begruessung.Location = new System.Drawing.Point(61, 17);
-            lbl_Begruessung.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            lbl_Begruessung.Name = "lbl_Begruessung";
-            lbl_Begruessung.Size = new System.Drawing.Size(122, 25);
-            lbl_Begruessung.TabIndex = 3;
-            lbl_Begruessung.Text = "Hallo Spieler";
+            this.lbl_Begruessung.AutoSize = true;
+            this.lbl_Begruessung.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Begruessung.Location = new System.Drawing.Point(61, 17);
+            this.lbl_Begruessung.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Begruessung.Name = "lbl_Begruessung";
+            this.lbl_Begruessung.Size = new System.Drawing.Size(122, 25);
+            this.lbl_Begruessung.TabIndex = 3;
+            this.lbl_Begruessung.Text = "Hallo Spieler";
             // 
             // btn_Beenden
             // 
@@ -120,6 +120,7 @@
             this.btn_newGame.TabIndex = 0;
             this.btn_newGame.Text = "Neues Spiel";
             this.btn_newGame.UseVisualStyleBackColor = true;
+            this.btn_newGame.Click += new System.EventHandler(this.btn_newGame_Click);
             // 
             // tabControl1
             // 
@@ -370,6 +371,6 @@
         private System.Windows.Forms.TextBox tBx_vorname;
         private System.Windows.Forms.TextBox tBx_username;
         private System.Windows.Forms.Button btn_Uebernehmen;
-        public static System.Windows.Forms.Label lbl_Begruessung;
+        public System.Windows.Forms.Label lbl_Begruessung;
     }
 }

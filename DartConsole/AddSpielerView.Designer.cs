@@ -69,26 +69,30 @@
             this.tableLayoutPanel1.Controls.Add(this.lbl_Passwort_Wdh, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.lbl_username, 0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // tBx_username
             // 
+            this.tBx_username.BackColor = System.Drawing.Color.Red;
             resources.ApplyResources(this.tBx_username, "tBx_username");
-            this.tBx_username.BackColor = System.Drawing.Color.White;
             this.tBx_username.Name = "tBx_username";
+            this.tBx_username.TextChanged += new System.EventHandler(this.tBx_username_TextChanged);
             // 
             // tBx_Passwort_Wdh
             // 
-            resources.ApplyResources(this.tBx_Passwort_Wdh, "tBx_Passwort_Wdh");
             this.tBx_Passwort_Wdh.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.tBx_Passwort_Wdh, "tBx_Passwort_Wdh");
             this.tBx_Passwort_Wdh.Name = "tBx_Passwort_Wdh";
             this.tBx_Passwort_Wdh.UseSystemPasswordChar = true;
+            this.tBx_Passwort_Wdh.TextChanged += new System.EventHandler(this.tBx_Passwort_Wdh_TextChanged);
             // 
             // tBx_Passwort
             // 
+            this.tBx_Passwort.BackColor = System.Drawing.Color.Red;
             resources.ApplyResources(this.tBx_Passwort, "tBx_Passwort");
-            this.tBx_Passwort.BackColor = System.Drawing.Color.White;
             this.tBx_Passwort.Name = "tBx_Passwort";
             this.tBx_Passwort.UseSystemPasswordChar = true;
+            this.tBx_Passwort.TextChanged += new System.EventHandler(this.tBx_Passwort_TextChanged);
             // 
             // tableLayoutPanel2
             // 
@@ -115,16 +119,19 @@
             // 
             // tBx_eMail
             // 
+            this.tBx_eMail.BackColor = System.Drawing.Color.Red;
             resources.ApplyResources(this.tBx_eMail, "tBx_eMail");
-            this.tBx_eMail.BackColor = System.Drawing.Color.White;
             this.tBx_eMail.Name = "tBx_eMail";
+            this.tBx_eMail.TextChanged += new System.EventHandler(this.tBx_eMail_TextChanged);
             // 
             // tBx_Geburtsdatum
             // 
+            this.tBx_Geburtsdatum.BackColor = System.Drawing.Color.Red;
             resources.ApplyResources(this.tBx_Geburtsdatum, "tBx_Geburtsdatum");
             this.tBx_Geburtsdatum.Name = "tBx_Geburtsdatum";
             this.tBx_Geburtsdatum.ReadOnly = true;
             this.tBx_Geburtsdatum.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Geburstsdatum_Aendern);
+            this.tBx_Geburtsdatum.TextChanged += new System.EventHandler(this.tBx_Geburtsdatum_TextChanged);
             // 
             // tBx_LastName
             // 

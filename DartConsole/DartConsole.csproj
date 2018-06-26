@@ -133,12 +133,24 @@
     </Compile>
     <Compile Include="Set.cs" />
     <Compile Include="Spiel.cs" />
+    <Compile Include="SpielEinstellungen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpielEinstellungen.Designer.cs">
+      <DependentUpon>SpielEinstellungen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Spieler.cs" />
     <Compile Include="SpielerInformationView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SpielerInformationView.Designer.cs">
       <DependentUpon>SpielerInformationView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpielView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpielView.Designer.cs">
+      <DependentUpon>SpielView.cs</DependentUpon>
     </Compile>
     <Compile Include="StartingScreen.cs">
       <SubType>Form</SubType>
@@ -181,6 +193,12 @@
     <EmbeddedResource Include="data\checkout.txt" />
     <EmbeddedResource Include="InfoDartConsoleView.resx">
       <DependentUpon>InfoDartConsoleView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpielEinstellungen.resx">
+      <DependentUpon>SpielEinstellungen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpielView.resx">
+      <DependentUpon>SpielView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StartingScreen.resx">
       <DependentUpon>StartingScreen.cs</DependentUpon>

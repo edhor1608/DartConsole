@@ -61,9 +61,9 @@ namespace DartConsole
             String passwort = Dart.HashString(tBx_passwort.Text);
             if (Dart.IsSpielerVorhanden(username))
             {
-                if(Dart.GetSpieler(username).GetPasswd().Equals(passwort))
+                if(Dart.GetSpieler(username).GetPasswd().ToLower().Equals(passwort.ToLower()))
                 {
-                    MainMenu.lbl_Begruessung.Text = "Hallo "+ username;
+                    Program.frmMainMenu.lbl_Begruessung.Text = "Hallo "+ username;
                     return true;
                 }
                 else

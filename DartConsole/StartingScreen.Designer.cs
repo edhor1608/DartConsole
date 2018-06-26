@@ -201,7 +201,7 @@
         private System.Windows.Forms.Label lbl_username;
         private System.Windows.Forms.Label lbl_Login;
         private System.Windows.Forms.Button btn_usrAuflistung;
-        private System.Windows.Forms.TextBox tBx_passwort;
+        public System.Windows.Forms.TextBox tBx_passwort;
         private System.Windows.Forms.TextBox tBx_username;
         private System.Windows.Forms.Button btn_Beenden;
         private System.Windows.Forms.Button btn_login;

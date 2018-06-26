@@ -29,6 +29,16 @@ namespace DartConsole
             Starting();
         }
 
+        public Spiel(Dictionary<string, Spieler> spieler, int sets, int legs, int rest)
+        {
+            SetIDFree();
+            this.spieler = spieler;
+            setsToWin = sets;
+            legsToWin = legs;
+            //start = rest;
+            datum = DateTime.Now;
+        }
+
         public Spiel(int id_spiel, DateTime datum, int start, int setsToWin, int legsToWin)
         {
             this.id_spiel = id_spiel;

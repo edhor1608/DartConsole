@@ -30,6 +30,7 @@ namespace DartConsole
             Program.spieler = null;
             Program.frmMainMenu.Hide();
             Program.frmStartingScreen.Show();
+            Program.frmStartingScreen.tBx_passwort.Clear();
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -44,7 +45,7 @@ namespace DartConsole
 
         private void btn_Uebernehmen_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void MainMenu_Load(object sender, EventArgs e)
@@ -54,6 +55,12 @@ namespace DartConsole
             tBx_nachname.Text = Program.spieler.GetLastName();
             tBx_username.Text = Program.spieler.GetUsername();
             tBx_vorname.Text = Program.spieler.GetFirstName();
+        }
+
+        private void btn_newGame_Click(object sender, EventArgs e)
+        {
+            Program.frmMainMenu.Hide();
+            Program.frmGameOptions.Show();
         }
     }
 }
