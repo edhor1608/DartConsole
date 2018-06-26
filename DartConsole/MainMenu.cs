@@ -12,9 +12,12 @@ namespace DartConsole
 {
     public partial class MainMenu : Form
     {
+       
+
         public MainMenu()
         {
             InitializeComponent();
+           
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -27,6 +30,30 @@ namespace DartConsole
             Program.spieler = null;
             Program.frmMainMenu.Hide();
             Program.frmStartingScreen.Show();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_Geburtstag_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Uebernehmen_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+            tBx_eMail.Text = Program.spieler.GetEMail();
+            tBx_geburtstag.Text = Program.spieler.GetGeburtstag().ToShortDateString();
+            tBx_nachname.Text = Program.spieler.GetLastName();
+            tBx_username.Text = Program.spieler.GetUsername();
+            tBx_vorname.Text = Program.spieler.GetFirstName();
         }
     }
 }
