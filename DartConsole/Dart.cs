@@ -36,8 +36,8 @@ namespace DartConsole
                             {
                                 if (spiele.ElementAt(z).GetSetsAll().ElementAt(y).GetLegs().ElementAt(x).GetDurchgänge().ElementAt(w).GetWürfe()[v].GetId() == i)
                                 {
-                                    Console.WriteLine("-----------------");
-                                    Console.ReadKey();
+                                    //Console.WriteLine("-----------------");
+                                    //Console.ReadKey();
                                     return false;
                                 }
                             }
@@ -438,6 +438,11 @@ namespace DartConsole
             SaveSpielToDB(s);
         }
 
+        public static void AddSpiel(Spiel s)
+        {
+            spiele.Add(s);
+        }
+
         /// <summary>	
         /// sucht alle Spiele raus, in welchen ein gegebener Spieler gespielt hat	
         /// </summary>	
@@ -755,7 +760,7 @@ namespace DartConsole
                     );
             }
         }
-        
+
         /// <summary>
         /// speichert alle Durchgänge des übergebenen Legs in der DB
         /// </summary>

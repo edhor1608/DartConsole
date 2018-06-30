@@ -60,6 +60,15 @@ namespace DartConsole
             anzahlWürfe = anzahl;
         }
 
+        public void ResetWürfe()
+        {
+            würfe = new Wurf[3];
+            würfe[0] = new Wurf(0, 0);
+            würfe[1] = new Wurf(0, 0);
+            würfe[2] = new Wurf(0, 0);
+            anzahlWürfe = 0;
+        }
+
         public void SetWürfe(Wurf[] würfe)
         {
             this.würfe = würfe;

@@ -11,7 +11,7 @@ namespace DartConsole
         public static Spieler spieler;
         public static Spiel spielAktuell;
         public static MainMenu frmMainMenu;
-        public static MainView frmMainView;
+        public static Spielerauflistung frmMainView;
         public static StartingScreen frmStartingScreen;
         public static SpielEinstellungen frmGameOptions;
         public static SpielView frmSpielView;
@@ -25,7 +25,7 @@ namespace DartConsole
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             frmMainMenu = new MainMenu();
-            frmMainView = new MainView();
+            frmMainView = new Spielerauflistung();
             frmStartingScreen = new StartingScreen();
             frmGameOptions = new SpielEinstellungen();
             frmSpielView = new SpielView();

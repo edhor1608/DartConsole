@@ -451,7 +451,7 @@ namespace DartConsole
                 //close Connection
                 CloseConnection();
 
-                return Count;
+                return Count+1;
             }
             else
             {

@@ -205,9 +205,22 @@ namespace DartConsole
 
         private void btn_starten_Click(object sender, EventArgs e)
         {
-            Program.frmGameOptions.Hide();
-            Program.spielAktuell = new Spiel(CreateSpielerDic(), (int)numUpDown_saetze.Value, (int)numUpDown_legs.Value, int.Parse(comB_rest.Text));
-            Program.frmSpielView.Show();   
+            if (IsUserValid())
+            {
+                Program.frmGameOptions.Hide();
+                Program.spielAktuell = new Spiel(CreateSpielerDic(), (int)numUpDown_saetze.Value, (int)numUpDown_legs.Value, int.Parse(comB_rest.Text));
+                //Dart.AddSpiel(Program.spielAktuell);
+                Program.spielAktuell.AddSet();
+                Program.spielAktuell.AddLeg();
+                Program.spielAktuell.AddDurchgangSpielerAktuell();
+                Program.frmSpielView = new SpielView();
+                Program.frmSpielView.Show();
+            }
+            else
+            {
+                MessageBox.Show("Ungültiger Username.");
+            }
+               
         }
 
         private bool IsUserValid()

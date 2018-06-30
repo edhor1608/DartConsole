@@ -132,21 +132,25 @@
             // 
             // comB_spielvariante
             // 
+            this.comB_spielvariante.Enabled = false;
             this.comB_spielvariante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comB_spielvariante.FormattingEnabled = true;
-            this.comB_spielvariante.Location = new System.Drawing.Point(379, 53);
+            this.comB_spielvariante.Location = new System.Drawing.Point(568, 82);
+            this.comB_spielvariante.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comB_spielvariante.Name = "comB_spielvariante";
-            this.comB_spielvariante.Size = new System.Drawing.Size(188, 28);
+            this.comB_spielvariante.Size = new System.Drawing.Size(280, 37);
             this.comB_spielvariante.TabIndex = 0;
             this.comB_spielvariante.Text = "Standart - Double Out";
             // 
             // comB_rest
             // 
+            this.comB_rest.Enabled = false;
             this.comB_rest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comB_rest.FormattingEnabled = true;
-            this.comB_rest.Location = new System.Drawing.Point(379, 94);
+            this.comB_rest.Location = new System.Drawing.Point(568, 145);
+            this.comB_rest.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comB_rest.Name = "comB_rest";
-            this.comB_rest.Size = new System.Drawing.Size(188, 28);
+            this.comB_rest.Size = new System.Drawing.Size(280, 37);
             this.comB_rest.TabIndex = 1;
             this.comB_rest.Text = "501";
             // 
@@ -154,9 +158,10 @@
             // 
             this.lbl_spielvariante.AutoSize = true;
             this.lbl_spielvariante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_spielvariante.Location = new System.Drawing.Point(273, 53);
+            this.lbl_spielvariante.Location = new System.Drawing.Point(410, 82);
+            this.lbl_spielvariante.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_spielvariante.Name = "lbl_spielvariante";
-            this.lbl_spielvariante.Size = new System.Drawing.Size(100, 20);
+            this.lbl_spielvariante.Size = new System.Drawing.Size(153, 29);
             this.lbl_spielvariante.TabIndex = 2;
             this.lbl_spielvariante.Text = "Spielvariante";
             this.lbl_spielvariante.Click += new System.EventHandler(this.label1_Click);
@@ -165,9 +170,10 @@
             // 
             this.lbl_rest.AutoSize = true;
             this.lbl_rest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_rest.Location = new System.Drawing.Point(273, 97);
+            this.lbl_rest.Location = new System.Drawing.Point(410, 149);
+            this.lbl_rest.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_rest.Name = "lbl_rest";
-            this.lbl_rest.Size = new System.Drawing.Size(43, 20);
+            this.lbl_rest.Size = new System.Drawing.Size(62, 29);
             this.lbl_rest.TabIndex = 3;
             this.lbl_rest.Text = "Rest";
             // 
@@ -175,9 +181,10 @@
             // 
             this.lbl_saetze.AutoSize = true;
             this.lbl_saetze.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_saetze.Location = new System.Drawing.Point(14, 53);
+            this.lbl_saetze.Location = new System.Drawing.Point(21, 82);
+            this.lbl_saetze.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_saetze.Name = "lbl_saetze";
-            this.lbl_saetze.Size = new System.Drawing.Size(51, 20);
+            this.lbl_saetze.Size = new System.Drawing.Size(73, 29);
             this.lbl_saetze.TabIndex = 4;
             this.lbl_saetze.Text = "Sätze";
             // 
@@ -185,23 +192,25 @@
             // 
             this.lbl_legs.AutoSize = true;
             this.lbl_legs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_legs.Location = new System.Drawing.Point(14, 94);
+            this.lbl_legs.Location = new System.Drawing.Point(21, 145);
+            this.lbl_legs.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_legs.Name = "lbl_legs";
-            this.lbl_legs.Size = new System.Drawing.Size(108, 20);
+            this.lbl_legs.Size = new System.Drawing.Size(160, 29);
             this.lbl_legs.TabIndex = 6;
             this.lbl_legs.Text = "Legs pro Satz";
             // 
             // numUpDown_saetze
             // 
             this.numUpDown_saetze.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numUpDown_saetze.Location = new System.Drawing.Point(128, 51);
+            this.numUpDown_saetze.Location = new System.Drawing.Point(192, 78);
+            this.numUpDown_saetze.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.numUpDown_saetze.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.numUpDown_saetze.Name = "numUpDown_saetze";
-            this.numUpDown_saetze.Size = new System.Drawing.Size(120, 26);
+            this.numUpDown_saetze.Size = new System.Drawing.Size(180, 35);
             this.numUpDown_saetze.TabIndex = 7;
             this.numUpDown_saetze.Value = new decimal(new int[] {
             1,
@@ -213,14 +222,15 @@
             // numUpDown_legs
             // 
             this.numUpDown_legs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numUpDown_legs.Location = new System.Drawing.Point(128, 92);
+            this.numUpDown_legs.Location = new System.Drawing.Point(192, 142);
+            this.numUpDown_legs.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.numUpDown_legs.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.numUpDown_legs.Name = "numUpDown_legs";
-            this.numUpDown_legs.Size = new System.Drawing.Size(120, 26);
+            this.numUpDown_legs.Size = new System.Drawing.Size(180, 35);
             this.numUpDown_legs.TabIndex = 8;
             this.numUpDown_legs.Value = new decimal(new int[] {
             1,
@@ -232,16 +242,18 @@
             // 
             this.lbl_anzahlSpieler.AutoSize = true;
             this.lbl_anzahlSpieler.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_anzahlSpieler.Location = new System.Drawing.Point(12, 9);
+            this.lbl_anzahlSpieler.Location = new System.Drawing.Point(18, 14);
+            this.lbl_anzahlSpieler.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_anzahlSpieler.Name = "lbl_anzahlSpieler";
-            this.lbl_anzahlSpieler.Size = new System.Drawing.Size(111, 20);
+            this.lbl_anzahlSpieler.Size = new System.Drawing.Size(168, 29);
             this.lbl_anzahlSpieler.TabIndex = 9;
             this.lbl_anzahlSpieler.Text = "Anzahl Spieler";
             // 
             // numUpDown_anzahlSpieler
             // 
             this.numUpDown_anzahlSpieler.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numUpDown_anzahlSpieler.Location = new System.Drawing.Point(129, 7);
+            this.numUpDown_anzahlSpieler.Location = new System.Drawing.Point(194, 11);
+            this.numUpDown_anzahlSpieler.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.numUpDown_anzahlSpieler.Maximum = new decimal(new int[] {
             8,
             0,
@@ -253,7 +265,7 @@
             0,
             0});
             this.numUpDown_anzahlSpieler.Name = "numUpDown_anzahlSpieler";
-            this.numUpDown_anzahlSpieler.Size = new System.Drawing.Size(120, 26);
+            this.numUpDown_anzahlSpieler.Size = new System.Drawing.Size(180, 35);
             this.numUpDown_anzahlSpieler.TabIndex = 10;
             this.numUpDown_anzahlSpieler.Value = new decimal(new int[] {
             1,
@@ -266,9 +278,10 @@
             // 
             this.lbl_spieler1.AutoSize = true;
             this.lbl_spieler1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_spieler1.Location = new System.Drawing.Point(8, 182);
+            this.lbl_spieler1.Location = new System.Drawing.Point(12, 280);
+            this.lbl_spieler1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_spieler1.Name = "lbl_spieler1";
-            this.lbl_spieler1.Size = new System.Drawing.Size(71, 20);
+            this.lbl_spieler1.Size = new System.Drawing.Size(110, 29);
             this.lbl_spieler1.TabIndex = 11;
             this.lbl_spieler1.Text = "Spieler 1";
             this.lbl_spieler1.Click += new System.EventHandler(this.label3_Click);
@@ -276,10 +289,11 @@
             // tBx_spieler1
             // 
             this.tBx_spieler1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBx_spieler1.Location = new System.Drawing.Point(12, 205);
+            this.tBx_spieler1.Location = new System.Drawing.Point(18, 315);
+            this.tBx_spieler1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tBx_spieler1.Name = "tBx_spieler1";
             this.tBx_spieler1.ReadOnly = true;
-            this.tBx_spieler1.Size = new System.Drawing.Size(175, 26);
+            this.tBx_spieler1.Size = new System.Drawing.Size(260, 35);
             this.tBx_spieler1.TabIndex = 19;
             this.tBx_spieler1.Text = "UsernameSpielleiter";
             this.tBx_spieler1.TextChanged += new System.EventHandler(this.tBx_spieler1_TextChanged);
@@ -287,9 +301,10 @@
             // tBx_spieler2
             // 
             this.tBx_spieler2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBx_spieler2.Location = new System.Drawing.Point(12, 268);
+            this.tBx_spieler2.Location = new System.Drawing.Point(18, 412);
+            this.tBx_spieler2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tBx_spieler2.Name = "tBx_spieler2";
-            this.tBx_spieler2.Size = new System.Drawing.Size(175, 26);
+            this.tBx_spieler2.Size = new System.Drawing.Size(260, 35);
             this.tBx_spieler2.TabIndex = 21;
             this.tBx_spieler2.Visible = false;
             this.tBx_spieler2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
@@ -298,9 +313,10 @@
             // 
             this.lbl_spieler2.AutoSize = true;
             this.lbl_spieler2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_spieler2.Location = new System.Drawing.Point(8, 245);
+            this.lbl_spieler2.Location = new System.Drawing.Point(12, 377);
+            this.lbl_spieler2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_spieler2.Name = "lbl_spieler2";
-            this.lbl_spieler2.Size = new System.Drawing.Size(71, 20);
+            this.lbl_spieler2.Size = new System.Drawing.Size(110, 29);
             this.lbl_spieler2.TabIndex = 20;
             this.lbl_spieler2.Text = "Spieler 2";
             this.lbl_spieler2.Visible = false;
@@ -309,9 +325,10 @@
             // tBx_spieler3
             // 
             this.tBx_spieler3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBx_spieler3.Location = new System.Drawing.Point(14, 329);
+            this.tBx_spieler3.Location = new System.Drawing.Point(21, 506);
+            this.tBx_spieler3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tBx_spieler3.Name = "tBx_spieler3";
-            this.tBx_spieler3.Size = new System.Drawing.Size(175, 26);
+            this.tBx_spieler3.Size = new System.Drawing.Size(260, 35);
             this.tBx_spieler3.TabIndex = 23;
             this.tBx_spieler3.Visible = false;
             this.tBx_spieler3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
@@ -320,9 +337,10 @@
             // 
             this.lbl_spieler3.AutoSize = true;
             this.lbl_spieler3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_spieler3.Location = new System.Drawing.Point(10, 306);
+            this.lbl_spieler3.Location = new System.Drawing.Point(15, 471);
+            this.lbl_spieler3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_spieler3.Name = "lbl_spieler3";
-            this.lbl_spieler3.Size = new System.Drawing.Size(71, 20);
+            this.lbl_spieler3.Size = new System.Drawing.Size(110, 29);
             this.lbl_spieler3.TabIndex = 22;
             this.lbl_spieler3.Text = "Spieler 3";
             this.lbl_spieler3.Visible = false;
@@ -331,9 +349,10 @@
             // tBx_spieler5
             // 
             this.tBx_spieler5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBx_spieler5.Location = new System.Drawing.Point(330, 205);
+            this.tBx_spieler5.Location = new System.Drawing.Point(495, 315);
+            this.tBx_spieler5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tBx_spieler5.Name = "tBx_spieler5";
-            this.tBx_spieler5.Size = new System.Drawing.Size(175, 26);
+            this.tBx_spieler5.Size = new System.Drawing.Size(260, 35);
             this.tBx_spieler5.TabIndex = 25;
             this.tBx_spieler5.Visible = false;
             this.tBx_spieler5.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
@@ -342,9 +361,10 @@
             // 
             this.lbl_spieler5.AutoSize = true;
             this.lbl_spieler5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_spieler5.Location = new System.Drawing.Point(326, 182);
+            this.lbl_spieler5.Location = new System.Drawing.Point(489, 280);
+            this.lbl_spieler5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_spieler5.Name = "lbl_spieler5";
-            this.lbl_spieler5.Size = new System.Drawing.Size(71, 20);
+            this.lbl_spieler5.Size = new System.Drawing.Size(110, 29);
             this.lbl_spieler5.TabIndex = 24;
             this.lbl_spieler5.Text = "Spieler 5";
             this.lbl_spieler5.Visible = false;
@@ -353,9 +373,10 @@
             // tBx_spieler6
             // 
             this.tBx_spieler6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBx_spieler6.Location = new System.Drawing.Point(330, 268);
+            this.tBx_spieler6.Location = new System.Drawing.Point(495, 412);
+            this.tBx_spieler6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tBx_spieler6.Name = "tBx_spieler6";
-            this.tBx_spieler6.Size = new System.Drawing.Size(175, 26);
+            this.tBx_spieler6.Size = new System.Drawing.Size(260, 35);
             this.tBx_spieler6.TabIndex = 27;
             this.tBx_spieler6.Visible = false;
             this.tBx_spieler6.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
@@ -364,9 +385,10 @@
             // 
             this.lbl_spieler6.AutoSize = true;
             this.lbl_spieler6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_spieler6.Location = new System.Drawing.Point(326, 245);
+            this.lbl_spieler6.Location = new System.Drawing.Point(489, 377);
+            this.lbl_spieler6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_spieler6.Name = "lbl_spieler6";
-            this.lbl_spieler6.Size = new System.Drawing.Size(71, 20);
+            this.lbl_spieler6.Size = new System.Drawing.Size(110, 29);
             this.lbl_spieler6.TabIndex = 26;
             this.lbl_spieler6.Text = "Spieler 6";
             this.lbl_spieler6.Visible = false;
@@ -375,9 +397,10 @@
             // tBx_spieler7
             // 
             this.tBx_spieler7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBx_spieler7.Location = new System.Drawing.Point(330, 329);
+            this.tBx_spieler7.Location = new System.Drawing.Point(495, 506);
+            this.tBx_spieler7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tBx_spieler7.Name = "tBx_spieler7";
-            this.tBx_spieler7.Size = new System.Drawing.Size(175, 26);
+            this.tBx_spieler7.Size = new System.Drawing.Size(260, 35);
             this.tBx_spieler7.TabIndex = 29;
             this.tBx_spieler7.Visible = false;
             this.tBx_spieler7.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
@@ -386,9 +409,10 @@
             // 
             this.lbl_spieler7.AutoSize = true;
             this.lbl_spieler7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_spieler7.Location = new System.Drawing.Point(326, 306);
+            this.lbl_spieler7.Location = new System.Drawing.Point(489, 471);
+            this.lbl_spieler7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_spieler7.Name = "lbl_spieler7";
-            this.lbl_spieler7.Size = new System.Drawing.Size(71, 20);
+            this.lbl_spieler7.Size = new System.Drawing.Size(110, 29);
             this.lbl_spieler7.TabIndex = 28;
             this.lbl_spieler7.Text = "Spieler 7";
             this.lbl_spieler7.Visible = false;
@@ -397,9 +421,10 @@
             // tBx_spieler4
             // 
             this.tBx_spieler4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBx_spieler4.Location = new System.Drawing.Point(14, 392);
+            this.tBx_spieler4.Location = new System.Drawing.Point(21, 603);
+            this.tBx_spieler4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tBx_spieler4.Name = "tBx_spieler4";
-            this.tBx_spieler4.Size = new System.Drawing.Size(175, 26);
+            this.tBx_spieler4.Size = new System.Drawing.Size(260, 35);
             this.tBx_spieler4.TabIndex = 31;
             this.tBx_spieler4.Visible = false;
             this.tBx_spieler4.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
@@ -408,9 +433,10 @@
             // 
             this.lbl_spieler4.AutoSize = true;
             this.lbl_spieler4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_spieler4.Location = new System.Drawing.Point(10, 369);
+            this.lbl_spieler4.Location = new System.Drawing.Point(15, 568);
+            this.lbl_spieler4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_spieler4.Name = "lbl_spieler4";
-            this.lbl_spieler4.Size = new System.Drawing.Size(71, 20);
+            this.lbl_spieler4.Size = new System.Drawing.Size(110, 29);
             this.lbl_spieler4.TabIndex = 30;
             this.lbl_spieler4.Text = "Spieler 4";
             this.lbl_spieler4.Visible = false;
@@ -419,9 +445,10 @@
             // tBx_spieler8
             // 
             this.tBx_spieler8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBx_spieler8.Location = new System.Drawing.Point(330, 392);
+            this.tBx_spieler8.Location = new System.Drawing.Point(495, 603);
+            this.tBx_spieler8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tBx_spieler8.Name = "tBx_spieler8";
-            this.tBx_spieler8.Size = new System.Drawing.Size(175, 26);
+            this.tBx_spieler8.Size = new System.Drawing.Size(260, 35);
             this.tBx_spieler8.TabIndex = 33;
             this.tBx_spieler8.Visible = false;
             this.tBx_spieler8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
@@ -430,9 +457,10 @@
             // 
             this.lbl_spieler8.AutoSize = true;
             this.lbl_spieler8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_spieler8.Location = new System.Drawing.Point(326, 369);
+            this.lbl_spieler8.Location = new System.Drawing.Point(489, 568);
+            this.lbl_spieler8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_spieler8.Name = "lbl_spieler8";
-            this.lbl_spieler8.Size = new System.Drawing.Size(71, 20);
+            this.lbl_spieler8.Size = new System.Drawing.Size(110, 29);
             this.lbl_spieler8.TabIndex = 32;
             this.lbl_spieler8.Text = "Spieler 8";
             this.lbl_spieler8.Visible = false;
@@ -442,9 +470,10 @@
             // 
             this.lbl_ueberschriftMitspieler.AutoSize = true;
             this.lbl_ueberschriftMitspieler.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ueberschriftMitspieler.Location = new System.Drawing.Point(7, 147);
+            this.lbl_ueberschriftMitspieler.Location = new System.Drawing.Point(10, 226);
+            this.lbl_ueberschriftMitspieler.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_ueberschriftMitspieler.Name = "lbl_ueberschriftMitspieler";
-            this.lbl_ueberschriftMitspieler.Size = new System.Drawing.Size(202, 25);
+            this.lbl_ueberschriftMitspieler.Size = new System.Drawing.Size(304, 36);
             this.lbl_ueberschriftMitspieler.TabIndex = 34;
             this.lbl_ueberschriftMitspieler.Text = "Mitspieler - Username";
             // 
@@ -453,9 +482,10 @@
             this.rB_spieler1.AutoSize = true;
             this.rB_spieler1.Checked = true;
             this.rB_spieler1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rB_spieler1.Location = new System.Drawing.Point(193, 205);
+            this.rB_spieler1.Location = new System.Drawing.Point(290, 315);
+            this.rB_spieler1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rB_spieler1.Name = "rB_spieler1";
-            this.rB_spieler1.Size = new System.Drawing.Size(110, 24);
+            this.rB_spieler1.Size = new System.Drawing.Size(170, 33);
             this.rB_spieler1.TabIndex = 35;
             this.rB_spieler1.TabStop = true;
             this.rB_spieler1.Text = "Spielerleiter";
@@ -466,9 +496,10 @@
             // 
             this.rB_spieler2.AutoSize = true;
             this.rB_spieler2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rB_spieler2.Location = new System.Drawing.Point(193, 269);
+            this.rB_spieler2.Location = new System.Drawing.Point(290, 414);
+            this.rB_spieler2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rB_spieler2.Name = "rB_spieler2";
-            this.rB_spieler2.Size = new System.Drawing.Size(110, 24);
+            this.rB_spieler2.Size = new System.Drawing.Size(170, 33);
             this.rB_spieler2.TabIndex = 36;
             this.rB_spieler2.Text = "Spielerleiter";
             this.rB_spieler2.UseVisualStyleBackColor = true;
@@ -479,9 +510,10 @@
             // 
             this.rB_spieler3.AutoSize = true;
             this.rB_spieler3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rB_spieler3.Location = new System.Drawing.Point(195, 330);
+            this.rB_spieler3.Location = new System.Drawing.Point(292, 508);
+            this.rB_spieler3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rB_spieler3.Name = "rB_spieler3";
-            this.rB_spieler3.Size = new System.Drawing.Size(110, 24);
+            this.rB_spieler3.Size = new System.Drawing.Size(170, 33);
             this.rB_spieler3.TabIndex = 37;
             this.rB_spieler3.Text = "Spielerleiter";
             this.rB_spieler3.UseVisualStyleBackColor = true;
@@ -492,9 +524,10 @@
             // 
             this.rB_spieler4.AutoSize = true;
             this.rB_spieler4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rB_spieler4.Location = new System.Drawing.Point(195, 393);
+            this.rB_spieler4.Location = new System.Drawing.Point(292, 605);
+            this.rB_spieler4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rB_spieler4.Name = "rB_spieler4";
-            this.rB_spieler4.Size = new System.Drawing.Size(110, 24);
+            this.rB_spieler4.Size = new System.Drawing.Size(170, 33);
             this.rB_spieler4.TabIndex = 38;
             this.rB_spieler4.Text = "Spielerleiter";
             this.rB_spieler4.UseVisualStyleBackColor = true;
@@ -505,9 +538,10 @@
             // 
             this.rB_spieler5.AutoSize = true;
             this.rB_spieler5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rB_spieler5.Location = new System.Drawing.Point(511, 206);
+            this.rB_spieler5.Location = new System.Drawing.Point(766, 317);
+            this.rB_spieler5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rB_spieler5.Name = "rB_spieler5";
-            this.rB_spieler5.Size = new System.Drawing.Size(110, 24);
+            this.rB_spieler5.Size = new System.Drawing.Size(170, 33);
             this.rB_spieler5.TabIndex = 39;
             this.rB_spieler5.Text = "Spielerleiter";
             this.rB_spieler5.UseVisualStyleBackColor = true;
@@ -518,9 +552,10 @@
             // 
             this.rB_spieler6.AutoSize = true;
             this.rB_spieler6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rB_spieler6.Location = new System.Drawing.Point(511, 269);
+            this.rB_spieler6.Location = new System.Drawing.Point(766, 414);
+            this.rB_spieler6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rB_spieler6.Name = "rB_spieler6";
-            this.rB_spieler6.Size = new System.Drawing.Size(110, 24);
+            this.rB_spieler6.Size = new System.Drawing.Size(170, 33);
             this.rB_spieler6.TabIndex = 40;
             this.rB_spieler6.Text = "Spielerleiter";
             this.rB_spieler6.UseVisualStyleBackColor = true;
@@ -531,9 +566,10 @@
             // 
             this.rB_spieler7.AutoSize = true;
             this.rB_spieler7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rB_spieler7.Location = new System.Drawing.Point(511, 330);
+            this.rB_spieler7.Location = new System.Drawing.Point(766, 508);
+            this.rB_spieler7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rB_spieler7.Name = "rB_spieler7";
-            this.rB_spieler7.Size = new System.Drawing.Size(110, 24);
+            this.rB_spieler7.Size = new System.Drawing.Size(170, 33);
             this.rB_spieler7.TabIndex = 41;
             this.rB_spieler7.Text = "Spielerleiter";
             this.rB_spieler7.UseVisualStyleBackColor = true;
@@ -544,9 +580,10 @@
             // 
             this.rB_spieler8.AutoSize = true;
             this.rB_spieler8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rB_spieler8.Location = new System.Drawing.Point(511, 393);
+            this.rB_spieler8.Location = new System.Drawing.Point(766, 605);
+            this.rB_spieler8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rB_spieler8.Name = "rB_spieler8";
-            this.rB_spieler8.Size = new System.Drawing.Size(110, 24);
+            this.rB_spieler8.Size = new System.Drawing.Size(170, 33);
             this.rB_spieler8.TabIndex = 42;
             this.rB_spieler8.Text = "Spielerleiter";
             this.rB_spieler8.UseVisualStyleBackColor = true;
@@ -556,9 +593,10 @@
             // btn_newSpieler
             // 
             this.btn_newSpieler.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_newSpieler.Location = new System.Drawing.Point(215, 147);
+            this.btn_newSpieler.Location = new System.Drawing.Point(322, 226);
+            this.btn_newSpieler.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_newSpieler.Name = "btn_newSpieler";
-            this.btn_newSpieler.Size = new System.Drawing.Size(352, 25);
+            this.btn_newSpieler.Size = new System.Drawing.Size(528, 38);
             this.btn_newSpieler.TabIndex = 43;
             this.btn_newSpieler.Text = "neuer Spieler";
             this.btn_newSpieler.UseVisualStyleBackColor = true;
@@ -567,9 +605,10 @@
             // btn_starten
             // 
             this.btn_starten.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_starten.Location = new System.Drawing.Point(638, 147);
+            this.btn_starten.Location = new System.Drawing.Point(957, 226);
+            this.btn_starten.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_starten.Name = "btn_starten";
-            this.btn_starten.Size = new System.Drawing.Size(139, 271);
+            this.btn_starten.Size = new System.Drawing.Size(208, 417);
             this.btn_starten.TabIndex = 44;
             this.btn_starten.Text = "Starten";
             this.btn_starten.UseVisualStyleBackColor = true;
@@ -578,9 +617,10 @@
             // btn_zurueck
             // 
             this.btn_zurueck.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_zurueck.Location = new System.Drawing.Point(638, 7);
+            this.btn_zurueck.Location = new System.Drawing.Point(957, 11);
+            this.btn_zurueck.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_zurueck.Name = "btn_zurueck";
-            this.btn_zurueck.Size = new System.Drawing.Size(138, 74);
+            this.btn_zurueck.Size = new System.Drawing.Size(207, 114);
             this.btn_zurueck.TabIndex = 45;
             this.btn_zurueck.Text = "Zurück";
             this.btn_zurueck.UseVisualStyleBackColor = true;
@@ -588,9 +628,9 @@
             // 
             // SpielEinstellungen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(791, 432);
+            this.ClientSize = new System.Drawing.Size(1186, 665);
             this.ControlBox = false;
             this.Controls.Add(this.btn_zurueck);
             this.Controls.Add(this.btn_starten);
@@ -630,6 +670,7 @@
             this.Controls.Add(this.lbl_spielvariante);
             this.Controls.Add(this.comB_rest);
             this.Controls.Add(this.comB_spielvariante);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "SpielEinstellungen";
             this.Text = "DartConsole - SpielEinstellungen";
             this.Load += new System.EventHandler(this.SpielEinstellungen_Load);

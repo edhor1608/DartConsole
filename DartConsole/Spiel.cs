@@ -19,6 +19,12 @@ namespace DartConsole
         private int spielerAktuell = 0;
         int[] setsGewonnen;
         private DateTime datum;
+        bool setGewonnen;
+        bool legGewonnen;
+        bool durchgangInvalide;
+        bool noScore;
+        bool noDouble;
+        bool spielGewonnen = false;
 
         public Spiel()
         {
@@ -29,14 +35,25 @@ namespace DartConsole
             Starting();
         }
 
+        public int GetSpielerAktuell()
+        {
+            return spielerAktuell;
+        }
+
         public Spiel(Dictionary<string, Spieler> spieler, int sets, int legs, int rest)
         {
             SetIDFree();
+            this.sets = new List<Set>();
             this.spieler = spieler;
             setsToWin = sets;
             legsToWin = legs;
             //start = rest;
             datum = DateTime.Now;
+            setsGewonnen = new int[spieler.Count];
+            for (int i = 0; i < setsGewonnen.Length; i++)
+            {
+                setsGewonnen[i] = 0;
+            }
         }
 
         public Spiel(int id_spiel, DateTime datum, int start, int setsToWin, int legsToWin)
@@ -204,7 +221,7 @@ namespace DartConsole
             return new Wurf(multiplikator, wert);
         }
 
-        private void SpielerWeiter()
+        public void SpielerWeiter()
         {
             spielerAktuell++;
             if (spielerAktuell == spieler.Count)
@@ -319,35 +336,49 @@ namespace DartConsole
             return sets.FindAll((Set x) => x.HasPlayed(s));
         }
 
+        public void AddSet()
+        {
+            Set.setZähler++;
+            Leg.legZähler = 0;
+            setGewonnen = false;
+            for (int s = 0; s < spieler.Count(); s++)
+            {
+                sets.Add(new Set(spieler.ElementAt(s).Value));
+            }
+        }
+
+        public void AddLeg()
+        {
+            Leg.legZähler++;
+            Durchgang.durchgangZähler = 0;
+            legGewonnen = false;
+            for (int s = 0; s < spieler.Count(); s++)
+            {
+                GetSetAktuell(s).AddLeg();
+                GetSetAktuell(s).GetAktuellLeg().SetRest(start);
+            }
+        }
+
+        public void AddDurchgangSpielerAktuell()
+        {
+            GetSetAktuell(spielerAktuell).GetAktuellLeg().AddDurchgang();
+            durchgangInvalide = false;
+            noScore = false;
+            noDouble = false;
+        }
+
         public void Starting()
         {
-            bool spielGewonnen = false;
             do
             {
-                Set.setZähler++;
-                Leg.legZähler = 0;
-                bool setGewonnen = false;
-                for (int s = 0; s < spieler.Count(); s++)
-                {
-                    sets.Add(new Set(spieler.ElementAt(s).Value));
-                }
+                AddSet();
                 do
                 {
-                    Leg.legZähler++;
-                    Durchgang.durchgangZähler = 0;
-                    bool legGewonnen = false;
-                    for (int s = 0; s < spieler.Count(); s++)
-                    {
-                        GetSetAktuell(s).AddLeg();
-                        GetSetAktuell(s).GetAktuellLeg().SetRest(start);
-                    }
+                    AddLeg();
                     do
                     {
                         Console.Clear();
-                        GetSetAktuell(spielerAktuell).GetAktuellLeg().AddDurchgang();
-                        bool durchgangInvalide = false;
-                        bool noScore = false;
-                        bool noDouble = false;
+                        AddDurchgangSpielerAktuell();
                         do
                         {
                             GetSetAktuell(spielerAktuell).GetAktuellLeg().GetDurchgangAktuell().SetAnzahlWürfe(0);

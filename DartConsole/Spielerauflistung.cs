@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace DartConsole
 {
-    public partial class MainView : Form
+    public partial class Spielerauflistung : Form
     {
-        public MainView()
+        public Spielerauflistung()
         {
             InitializeComponent();
 
