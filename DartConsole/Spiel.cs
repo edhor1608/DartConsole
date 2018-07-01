@@ -230,14 +230,14 @@ namespace DartConsole
             }
         }
 
-        private bool SearchSetWin()
+        public bool SearchSetWin()
         {
             for (int i = 0; i < spieler.Count(); i++)
             {
                 if (GetSetAktuell(i).GetLegGewonnen() >= legsToWin)
                 {
-                    Console.WriteLine(spieler.ElementAt(i).Key + " hat den Set gewonnen");
-                    Dart.Confirm_Dialog();
+                    //Console.WriteLine(spieler.ElementAt(i).Key + " hat den Set gewonnen");
+                    //Dart.Confirm_Dialog();
                     setsGewonnen[i]++;
                     return true;
                 }
@@ -245,14 +245,14 @@ namespace DartConsole
             return false;
         }
 
-        private bool SearchSpielWin()
+        public bool SearchSpielWin()
         {
             for (int i = 0; i < setsGewonnen.Length; i++)
             {
                 if (setsGewonnen[i] >= setsToWin)
                 {
-                    Console.WriteLine(spieler.ElementAt(i).Key + " hat das Spiel gewonnen");
-                    Dart.Confirm_Dialog();
+                    //Console.WriteLine(spieler.ElementAt(i).Key + " hat das Spiel gewonnen");
+                    //Dart.Confirm_Dialog();
                     return true;
                 }
             }
@@ -345,6 +345,7 @@ namespace DartConsole
             {
                 sets.Add(new Set(spieler.ElementAt(s).Value));
             }
+            //AddLeg();
         }
 
         public void AddLeg()
@@ -357,6 +358,7 @@ namespace DartConsole
                 GetSetAktuell(s).AddLeg();
                 GetSetAktuell(s).GetAktuellLeg().SetRest(start);
             }
+            //AddDurchgangSpielerAktuell();
         }
 
         public void AddDurchgangSpielerAktuell()
