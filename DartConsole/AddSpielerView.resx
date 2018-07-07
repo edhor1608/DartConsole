@@ -127,10 +127,13 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="tBx_username.Location" type="System.Drawing.Point, System.Drawing">
-    <value>159, 3</value>
+    <value>238, 5</value>
+  </data>
+  <data name="tBx_username.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="tBx_username.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 20</value>
+    <value>226, 26</value>
   </data>
   <data name="tBx_username.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -151,10 +154,13 @@
     <value>Fill</value>
   </data>
   <data name="tBx_Passwort_Wdh.Location" type="System.Drawing.Point, System.Drawing">
-    <value>159, 168</value>
+    <value>238, 260</value>
+  </data>
+  <data name="tBx_Passwort_Wdh.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="tBx_Passwort_Wdh.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 20</value>
+    <value>226, 26</value>
   </data>
   <data name="tBx_Passwort_Wdh.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -175,10 +181,13 @@
     <value>Fill</value>
   </data>
   <data name="tBx_Passwort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>159, 135</value>
+    <value>238, 209</value>
+  </data>
+  <data name="tBx_Passwort.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="tBx_Passwort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 20</value>
+    <value>226, 26</value>
   </data>
   <data name="tBx_Passwort.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -202,10 +211,13 @@
     <value>Fill</value>
   </data>
   <data name="btn_OK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>53, 3</value>
+    <value>80, 5</value>
+  </data>
+  <data name="btn_OK.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="btn_OK.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 26</value>
+    <value>142, 37</value>
   </data>
   <data name="btn_OK.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -229,13 +241,16 @@
     <value>Fill</value>
   </data>
   <data name="tableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>159, 234</value>
+    <value>238, 362</value>
+  </data>
+  <data name="tableLayoutPanel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="tableLayoutPanel2.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 32</value>
+    <value>226, 47</value>
   </data>
   <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -253,7 +268,7 @@
     <value>3</value>
   </data>
   <data name="tableLayoutPanel2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btn_OK" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,Absolute,100" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btn_OK" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,Absolute,150" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="lbl_FirstName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -262,10 +277,13 @@
     <value>Fill</value>
   </data>
   <data name="lbl_FirstName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 33</value>
+    <value>4, 51</value>
+  </data>
+  <data name="lbl_FirstName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="lbl_FirstName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 33</value>
+    <value>226, 51</value>
   </data>
   <data name="lbl_FirstName.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -292,10 +310,13 @@
     <value>Fill</value>
   </data>
   <data name="lbl_Nachname.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 66</value>
+    <value>4, 102</value>
+  </data>
+  <data name="lbl_Nachname.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="lbl_Nachname.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 33</value>
+    <value>226, 51</value>
   </data>
   <data name="lbl_Nachname.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -319,10 +340,13 @@
     <value>Fill</value>
   </data>
   <data name="tBx_eMail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>159, 102</value>
+    <value>238, 158</value>
+  </data>
+  <data name="tBx_eMail.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="tBx_eMail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 20</value>
+    <value>226, 26</value>
   </data>
   <data name="tBx_eMail.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -346,10 +370,13 @@
     <value>Microsoft Sans Serif, 8.25pt, style=Italic</value>
   </data>
   <data name="tBx_Geburtsdatum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>159, 201</value>
+    <value>238, 311</value>
+  </data>
+  <data name="tBx_Geburtsdatum.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="tBx_Geburtsdatum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 20</value>
+    <value>226, 26</value>
   </data>
   <data name="tBx_Geburtsdatum.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -373,10 +400,13 @@
     <value>Fill</value>
   </data>
   <data name="tBx_LastName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>159, 69</value>
+    <value>238, 107</value>
+  </data>
+  <data name="tBx_LastName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="tBx_LastName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 20</value>
+    <value>226, 26</value>
   </data>
   <data name="tBx_LastName.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -397,10 +427,13 @@
     <value>Fill</value>
   </data>
   <data name="tBx_FirstName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>159, 36</value>
+    <value>238, 56</value>
+  </data>
+  <data name="tBx_FirstName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="tBx_FirstName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 20</value>
+    <value>226, 26</value>
   </data>
   <data name="tBx_FirstName.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -424,10 +457,13 @@
     <value>Fill</value>
   </data>
   <data name="lbl_eMail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 99</value>
+    <value>4, 153</value>
+  </data>
+  <data name="lbl_eMail.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="lbl_eMail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 33</value>
+    <value>226, 51</value>
   </data>
   <data name="lbl_eMail.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -454,10 +490,13 @@
     <value>Fill</value>
   </data>
   <data name="lbl_Geburtsdatum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 198</value>
+    <value>4, 306</value>
+  </data>
+  <data name="lbl_Geburtsdatum.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="lbl_Geburtsdatum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 33</value>
+    <value>226, 51</value>
   </data>
   <data name="lbl_Geburtsdatum.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -481,13 +520,10 @@
     <value>True</value>
   </data>
   <data name="lbl_Passwort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 132</value>
-  </data>
-  <data name="lbl_Passwort.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+    <value>3, 204</value>
   </data>
   <data name="lbl_Passwort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 13</value>
+    <value>74, 20</value>
   </data>
   <data name="lbl_Passwort.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -511,13 +547,10 @@
     <value>True</value>
   </data>
   <data name="lbl_Passwort_Wdh.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 165</value>
-  </data>
-  <data name="lbl_Passwort_Wdh.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+    <value>3, 255</value>
   </data>
   <data name="lbl_Passwort_Wdh.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 13</value>
+    <value>115, 20</value>
   </data>
   <data name="lbl_Passwort_Wdh.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -541,13 +574,10 @@
     <value>True</value>
   </data>
   <data name="lbl_username.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 0</value>
-  </data>
-  <data name="lbl_username.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 2, 0</value>
+    <value>3, 0</value>
   </data>
   <data name="lbl_username.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 13</value>
+    <value>83, 20</value>
   </data>
   <data name="lbl_username.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -573,11 +603,14 @@
   <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="tableLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
   <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>312, 269</value>
+    <value>468, 414</value>
   </data>
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -601,10 +634,10 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>9, 20</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>312, 269</value>
+    <value>468, 414</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -824,6 +857,9 @@
         hGwFi3xN2cDvKNONOz02/YcyfXJWEQAVzwkhQzgJETHAbiDkFSDTEFWJmpEmLNqX/RSETHNEjY1lP78j
         rRrPtrL/IXwHzz6cfAjtGZLAYxT/D+/mEF00Ux2OAAAAAElFTkSuQmCC
 </value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Spieler hinzufügen</value>

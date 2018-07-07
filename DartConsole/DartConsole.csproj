@@ -163,6 +163,12 @@
     </Compile>
     <Compile Include="Statistik.cs" />
     <Compile Include="Wurf.cs" />
+    <Compile Include="WurfzielView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WurfzielView.Designer.cs">
+      <DependentUpon>WurfzielView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -205,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StartingScreen.resx">
       <DependentUpon>StartingScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WurfzielView.resx">
+      <DependentUpon>WurfzielView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Resources\Resources.resx" />
     <EmbeddedResource Include="MainMenu.resx">

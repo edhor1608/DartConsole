@@ -36,7 +36,7 @@ namespace DartConsole
 
                 //Passwort Wdh Überprüfung steht noch aus
                 //String passwdHash = Dart.HashString(tBx_Passwort.Text);
-                Dart.AddSpieler(tBx_username.Text, Dart.GetAgeFromDate(DateTime.Parse(tBx_Geburtsdatum.Text)), tBx_eMail.Text, tBx_FirstName.Text, tBx_LastName.Text, DateTime.Parse(tBx_Geburtsdatum.Text), tBx_Passwort.Text);
+                Dart.AddSpieler(tBx_username.Text.ToLower(), Dart.GetAgeFromDate(DateTime.Parse(tBx_Geburtsdatum.Text)), tBx_eMail.Text, tBx_FirstName.Text, tBx_LastName.Text, DateTime.Parse(tBx_Geburtsdatum.Text), tBx_Passwort.Text);
 
                 Dart.SaveSpielerToDB();
 

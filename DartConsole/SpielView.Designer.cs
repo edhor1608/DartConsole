@@ -365,6 +365,11 @@
             this.btn_wurf1_3 = new System.Windows.Forms.Button();
             this.btn_wurf1_2 = new System.Windows.Forms.Button();
             this.tBx_wurf1 = new System.Windows.Forms.TextBox();
+            this.cB_zielWurf1 = new System.Windows.Forms.ComboBox();
+            this.cB_zielWurf2 = new System.Windows.Forms.ComboBox();
+            this.cB_zielWurf3 = new System.Windows.Forms.ComboBox();
+            this.btn_weiter = new System.Windows.Forms.Button();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             groupBox2 = new System.Windows.Forms.GroupBox();
             groupBox2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -373,6 +378,8 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(this.progressBar);
+            groupBox2.Controls.Add(this.btn_weiter);
             groupBox2.Controls.Add(this.btn_beenden);
             groupBox2.ForeColor = System.Drawing.SystemColors.ControlText;
             groupBox2.Location = new System.Drawing.Point(774, -17);
@@ -1453,6 +1460,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cB_zielWurf3);
+            this.groupBox1.Controls.Add(this.cB_zielWurf2);
+            this.groupBox1.Controls.Add(this.cB_zielWurf1);
             this.groupBox1.Controls.Add(this.btn_loeschen);
             this.groupBox1.Controls.Add(this.btn_uebernehmen);
             this.groupBox1.Controls.Add(this.btn_nullWurf3);
@@ -2493,6 +2503,244 @@
             this.tBx_wurf1.Text = "3x20";
             this.tBx_wurf1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // cB_zielWurf1
+            // 
+            this.cB_zielWurf1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cB_zielWurf1.FormattingEnabled = true;
+            this.cB_zielWurf1.Items.AddRange(new object[] {
+            "3\tx\t20",
+            "3\tx\t19",
+            "3\tx\t18",
+            "3\tx\t17",
+            "3\tx\t16",
+            "3\tx\t15",
+            "3\tx\t14",
+            "3\tx\t13",
+            "3\tx\t12",
+            "3\tx\t11",
+            "3\tx\t10",
+            "3\tx\t9",
+            "3\tx\t8",
+            "3\tx\t7",
+            "3\tx\t6",
+            "3\tx\t5",
+            "3\tx\t4",
+            "3\tx\t3",
+            "3\tx\t2",
+            "3\tx\t1",
+            "2\tx\t20",
+            "2\tx\t19",
+            "2\tx\t18",
+            "2\tx\t17",
+            "2\tx\t16",
+            "2\tx\t15",
+            "2\tx\t14",
+            "2\tx\t13",
+            "2\tx\t12",
+            "2\tx\t11",
+            "2\tx\t10",
+            "2\tx\t9",
+            "2\tx\t8",
+            "2\tx\t7",
+            "2\tx\t6",
+            "2\tx\t5",
+            "2\tx\t4",
+            "2\tx\t3",
+            "2\tx\t2",
+            "2\tx\t1",
+            "1\tx\t20",
+            "1\tx\t19",
+            "1\tx\t18",
+            "1\tx\t17",
+            "1\tx\t16",
+            "1\tx\t15",
+            "1\tx\t14",
+            "1\tx\t13",
+            "1\tx\t12",
+            "1\tx\t11",
+            "1\tx\t10",
+            "1\tx\t9",
+            "1\tx\t8",
+            "1\tx\t7",
+            "1\tx\t6",
+            "1\tx\t5",
+            "1\tx\t4",
+            "1\tx\t3",
+            "1\tx\t2",
+            "1\tx\t1",
+            "DBull\t\t",
+            "SBull\t\t"});
+            this.cB_zielWurf1.Location = new System.Drawing.Point(12, 142);
+            this.cB_zielWurf1.Name = "cB_zielWurf1";
+            this.cB_zielWurf1.Size = new System.Drawing.Size(259, 44);
+            this.cB_zielWurf1.TabIndex = 1;
+            this.cB_zielWurf1.Visible = false;
+            // 
+            // cB_zielWurf2
+            // 
+            this.cB_zielWurf2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cB_zielWurf2.FormattingEnabled = true;
+            this.cB_zielWurf2.Items.AddRange(new object[] {
+            "3\tx\t20",
+            "3\tx\t19",
+            "3\tx\t18",
+            "3\tx\t17",
+            "3\tx\t16",
+            "3\tx\t15",
+            "3\tx\t14",
+            "3\tx\t13",
+            "3\tx\t12",
+            "3\tx\t11",
+            "3\tx\t10",
+            "3\tx\t9",
+            "3\tx\t8",
+            "3\tx\t7",
+            "3\tx\t6",
+            "3\tx\t5",
+            "3\tx\t4",
+            "3\tx\t3",
+            "3\tx\t2",
+            "3\tx\t1",
+            "2\tx\t20",
+            "2\tx\t19",
+            "2\tx\t18",
+            "2\tx\t17",
+            "2\tx\t16",
+            "2\tx\t15",
+            "2\tx\t14",
+            "2\tx\t13",
+            "2\tx\t12",
+            "2\tx\t11",
+            "2\tx\t10",
+            "2\tx\t9",
+            "2\tx\t8",
+            "2\tx\t7",
+            "2\tx\t6",
+            "2\tx\t5",
+            "2\tx\t4",
+            "2\tx\t3",
+            "2\tx\t2",
+            "2\tx\t1",
+            "1\tx\t20",
+            "1\tx\t19",
+            "1\tx\t18",
+            "1\tx\t17",
+            "1\tx\t16",
+            "1\tx\t15",
+            "1\tx\t14",
+            "1\tx\t13",
+            "1\tx\t12",
+            "1\tx\t11",
+            "1\tx\t10",
+            "1\tx\t9",
+            "1\tx\t8",
+            "1\tx\t7",
+            "1\tx\t6",
+            "1\tx\t5",
+            "1\tx\t4",
+            "1\tx\t3",
+            "1\tx\t2",
+            "1\tx\t1",
+            "DBull\t\t",
+            "SBull\t\t"});
+            this.cB_zielWurf2.Location = new System.Drawing.Point(281, 142);
+            this.cB_zielWurf2.Name = "cB_zielWurf2";
+            this.cB_zielWurf2.Size = new System.Drawing.Size(259, 44);
+            this.cB_zielWurf2.TabIndex = 2;
+            this.cB_zielWurf2.Visible = false;
+            // 
+            // cB_zielWurf3
+            // 
+            this.cB_zielWurf3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cB_zielWurf3.FormattingEnabled = true;
+            this.cB_zielWurf3.Items.AddRange(new object[] {
+            "3\tx\t20",
+            "3\tx\t19",
+            "3\tx\t18",
+            "3\tx\t17",
+            "3\tx\t16",
+            "3\tx\t15",
+            "3\tx\t14",
+            "3\tx\t13",
+            "3\tx\t12",
+            "3\tx\t11",
+            "3\tx\t10",
+            "3\tx\t9",
+            "3\tx\t8",
+            "3\tx\t7",
+            "3\tx\t6",
+            "3\tx\t5",
+            "3\tx\t4",
+            "3\tx\t3",
+            "3\tx\t2",
+            "3\tx\t1",
+            "2\tx\t20",
+            "2\tx\t19",
+            "2\tx\t18",
+            "2\tx\t17",
+            "2\tx\t16",
+            "2\tx\t15",
+            "2\tx\t14",
+            "2\tx\t13",
+            "2\tx\t12",
+            "2\tx\t11",
+            "2\tx\t10",
+            "2\tx\t9",
+            "2\tx\t8",
+            "2\tx\t7",
+            "2\tx\t6",
+            "2\tx\t5",
+            "2\tx\t4",
+            "2\tx\t3",
+            "2\tx\t2",
+            "2\tx\t1",
+            "1\tx\t20",
+            "1\tx\t19",
+            "1\tx\t18",
+            "1\tx\t17",
+            "1\tx\t16",
+            "1\tx\t15",
+            "1\tx\t14",
+            "1\tx\t13",
+            "1\tx\t12",
+            "1\tx\t11",
+            "1\tx\t10",
+            "1\tx\t9",
+            "1\tx\t8",
+            "1\tx\t7",
+            "1\tx\t6",
+            "1\tx\t5",
+            "1\tx\t4",
+            "1\tx\t3",
+            "1\tx\t2",
+            "1\tx\t1",
+            "DBull\t\t",
+            "SBull\t\t"});
+            this.cB_zielWurf3.Location = new System.Drawing.Point(550, 142);
+            this.cB_zielWurf3.Name = "cB_zielWurf3";
+            this.cB_zielWurf3.Size = new System.Drawing.Size(259, 44);
+            this.cB_zielWurf3.TabIndex = 2;
+            this.cB_zielWurf3.Visible = false;
+            // 
+            // btn_weiter
+            // 
+            this.btn_weiter.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_weiter.Location = new System.Drawing.Point(73, 340);
+            this.btn_weiter.Name = "btn_weiter";
+            this.btn_weiter.Size = new System.Drawing.Size(244, 99);
+            this.btn_weiter.TabIndex = 1;
+            this.btn_weiter.Text = "Weiter";
+            this.btn_weiter.UseVisualStyleBackColor = true;
+            this.btn_weiter.Click += new System.EventHandler(this.btn_weiter_Click);
+            // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(74, 340);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(244, 99);
+            this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.progressBar.TabIndex = 99;
+            // 
             // SpielView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -2677,5 +2925,10 @@
         private System.Windows.Forms.Label lbl_dqSpieler6;
         private System.Windows.Forms.Label lbl_dqSpieler7;
         private System.Windows.Forms.Label lbl_dqSpieler8;
+        private System.Windows.Forms.ComboBox cB_zielWurf1;
+        private System.Windows.Forms.ComboBox cB_zielWurf3;
+        private System.Windows.Forms.ComboBox cB_zielWurf2;
+        private System.Windows.Forms.Button btn_weiter;
+        private System.Windows.Forms.ProgressBar progressBar;
     }
 }

@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DartConsole
@@ -18,6 +12,8 @@ namespace DartConsole
         int multi2;
         Wurf wurf3 = new Wurf(0, 0);
         int multi3;
+
+        int info = 0;
 
         public SpielView()
         {
@@ -59,7 +55,7 @@ namespace DartConsole
 
         private int AddWurf(int w, int multi, int wert)
         {
-            int info = Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().RedRest(Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetDurchgangAktuell().AddWurf(new Wurf(multi, wert), w - 1));
+            info = Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().RedRest(Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetDurchgangAktuell().AddWurf(new Wurf(multi, wert), w - 1));
 
             switch (w)
             {
@@ -87,6 +83,12 @@ namespace DartConsole
 
             if (info == 1 && multi == 2 && Uebernehmen(false))
             {
+                SetVisibleWurf1Multi(false);
+                SetVisibleWurf1Wert(false);
+                SetVisibleWurf2Multi(false);
+                SetVisibleWurf2Wert(false);
+                SetVisibleWurf3Multi(false);
+                SetVisibleWurf3Wert(false);
                 //LegGewonnen bei Spieler erhöhen
                 Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).AddLegGewonnen();
                 //Finish zuweisen
@@ -97,6 +99,9 @@ namespace DartConsole
                     MessageBox.Show(Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetSpieler().GetUsername() + " hat den Set gewonnen");
                     if (Program.spielAktuell.SearchSpielWin())
                     {
+                        progressBar.Visible = true;
+                        progressBar.Style = ProgressBarStyle.Marquee;
+                        progressBar.MarqueeAnimationSpeed = 60;
                         MessageBox.Show(Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetSpieler().GetUsername() + " hat das Spiel gewonnen");
                         SpielBeenden();
                     }
@@ -112,6 +117,12 @@ namespace DartConsole
             }
             if (((info == 1 && multi != 2) || info == 2) && Uebernehmen(false))
             {
+                SetVisibleWurf1Multi(false);
+                SetVisibleWurf1Wert(false);
+                SetVisibleWurf2Multi(false);
+                SetVisibleWurf2Wert(false);
+                SetVisibleWurf3Multi(false);
+                SetVisibleWurf3Wert(false);
                 Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().SetRest(Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetRest() + Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetDurchgangAktuell().GetDurchgangWert());
                 if (info == 1)
                 {
@@ -133,6 +144,11 @@ namespace DartConsole
             btn_loeschen.Visible = false;
             btn_uebernehmen.Visible = false;
             btn_beenden.Visible = false;
+            Dart.AddSpiel(Program.spielAktuell);
+            progressBar.Style = ProgressBarStyle.Continuous;
+            progressBar.MarqueeAnimationSpeed = 0;
+            progressBar.Visible = false;
+            btn_weiter.Visible = true;
         }
 
         private void ResetEingabe()
@@ -272,6 +288,8 @@ namespace DartConsole
                 lblArrayAVG[i].Visible = false;
                 lblArrayDQ[i].Visible = false;
             }
+            progressBar.Visible = false;
+            btn_weiter.Visible = false;
             ResetEingabe();
         }
 
@@ -818,6 +836,14 @@ namespace DartConsole
             }
             return false;
 
+        }
+
+        private void btn_weiter_Click(object sender, EventArgs e)
+        {
+            //Aufruf Spiel Rückblick, Statistik etc.
+
+            Program.frmSpielView.Hide();
+            Program.frmMainMenu.Show();
         }
     }
 }

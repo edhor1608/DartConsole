@@ -407,8 +407,8 @@ namespace DartConsole
             String passwd = "";
 
             //String passwdHash = Dart.HashString(passwd);
-            Spieler s = new Spieler(name, eMail, firstName, lastName, geburtstag, passwd);
-            spieler.Add(name, s);
+            Spieler s = new Spieler(name.ToLower(), eMail, firstName, lastName, geburtstag, passwd);
+            spieler.Add(name.ToLower(), s);
             // Speichern();
             DBConnect.InsertUser(s);
             return s;
@@ -441,6 +441,7 @@ namespace DartConsole
         public static void AddSpiel(Spiel s)
         {
             spiele.Add(s);
+            SaveSpielToDB(s);
         }
 
         /// <summary>	
@@ -888,7 +889,7 @@ namespace DartConsole
                     //int tag = int.Parse(tagString);
                     geburtstag = TimeOfString(list[4].ElementAt(y));
                 }
-                spieler.Add(username, new Spieler(id, username, eMail, firstName, lastName, geburtstag, passwd));
+                spieler.Add(username.ToLower(), new Spieler(id, username.ToLower(), eMail, firstName, lastName, geburtstag, passwd));
             }
             return spieler;
         }
@@ -940,7 +941,7 @@ namespace DartConsole
             for (int y = 0; y < list[0].Count; y++)
             {
                 string username = GetSpielerID(int.Parse(list[0].ElementAt(y))).GetUsername();
-                spieler.Add(username, GetSpieler(username));
+                spieler.Add(username.ToLower(), GetSpieler(username.ToLower()));
             }
             return spieler;
         }
