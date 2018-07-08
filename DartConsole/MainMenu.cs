@@ -62,5 +62,11 @@ namespace DartConsole
             Program.frmMainMenu.Hide();
             Program.frmGameOptions.Show();
         }
+
+        private void btn_statistik_Click(object sender, EventArgs e)
+        {
+            Program.frmMainMenu.Hide();
+            Program.frmStatistikView.Show();
+        }
     }
 }

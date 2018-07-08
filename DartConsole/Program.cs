@@ -15,6 +15,7 @@ namespace DartConsole
         public static StartingScreen frmStartingScreen;
         public static SpielEinstellungen frmGameOptions;
         public static SpielView frmSpielView;
+        public static StatistikView frmStatistikView;
 
         /// <summary>
         /// Der Haupteinstiegspunkt für die Anwendung.
@@ -29,6 +30,7 @@ namespace DartConsole
             frmStartingScreen = new StartingScreen();
             frmGameOptions = new SpielEinstellungen();
             frmSpielView = new SpielView();
+            frmStatistikView = new StatistikView();
             //frmMainView.Show();
             frmStartingScreen.Show();
             Application.Run(); 
