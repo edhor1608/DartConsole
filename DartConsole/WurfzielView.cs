@@ -112,7 +112,6 @@ namespace DartConsole
             if (cB_zielWurf1.Visible)
             {
                 Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetDurchgangAktuell().GetWürfe()[0].SetMultiZiel(GetWurfOfCB(cB_zielWurf1.SelectedIndex)[0]);
-                Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetDurchgangAktuell().GetWürfe()[0].SetMultiZiel(3);
                 Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetDurchgangAktuell().GetWürfe()[0].SetWertZiel(GetWurfOfCB(cB_zielWurf1.SelectedIndex)[1]);
             }
             if (cB_zielWurf2.Visible)
