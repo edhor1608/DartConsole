@@ -56,5 +56,11 @@ namespace DartConsole
         {
             leg = set.GetLegs().ElementAt(cB_legAuswahl.SelectedIndex);
         }
+
+        private void btn_zurueck_Click(object sender, EventArgs e)
+        {
+            Program.frmMainMenu.Show();
+            Program.frmStatistikView.Hide();
+        }
     }
 }

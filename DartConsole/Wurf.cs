@@ -15,6 +15,8 @@ namespace DartConsole
         public static int wurfZähler = 1;
         int multiplikator;
         int wert;
+        int multiZiel;
+        int wertZiel;
 
         public Wurf(int multi, int wert)
         {

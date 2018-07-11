@@ -16,6 +16,7 @@ namespace DartConsole
         public static SpielEinstellungen frmGameOptions;
         public static SpielView frmSpielView;
         public static StatistikView frmStatistikView;
+        public static WurfzielView frmWurfView;
 
         /// <summary>
         /// Der Haupteinstiegspunkt für die Anwendung.
@@ -31,6 +32,7 @@ namespace DartConsole
             frmGameOptions = new SpielEinstellungen();
             frmSpielView = new SpielView();
             frmStatistikView = new StatistikView();
+            frmWurfView = new WurfzielView();
             //frmMainView.Show();
             frmStartingScreen.Show();
             Application.Run(); 

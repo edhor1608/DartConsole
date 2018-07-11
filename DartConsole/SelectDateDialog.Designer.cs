@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectDateDialog));
             this.dTimeP_Geburtsdatum_Waehlen = new System.Windows.Forms.DateTimePicker();
             this.btn_OK = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -55,8 +56,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(218, 67);
+            this.ControlBox = false;
             this.Controls.Add(this.btn_OK);
             this.Controls.Add(this.dTimeP_Geburtsdatum_Waehlen);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SelectDateDialog";
             this.Text = "SelectDateDialog";
             this.ResumeLayout(false);

@@ -122,18 +122,15 @@
     <value>2</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tBx_username.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="tBx_username.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="tBx_username.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 5</value>
-  </data>
-  <data name="tBx_username.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
+    <value>159, 3</value>
   </data>
   <data name="tBx_username.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 26</value>
+    <value>150, 20</value>
   </data>
   <data name="tBx_username.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -150,17 +147,14 @@
   <data name="&gt;&gt;tBx_username.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="tBx_Passwort_Wdh.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="tBx_Passwort_Wdh.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
   </data>
   <data name="tBx_Passwort_Wdh.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 260</value>
-  </data>
-  <data name="tBx_Passwort_Wdh.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
+    <value>159, 133</value>
   </data>
   <data name="tBx_Passwort_Wdh.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 26</value>
+    <value>150, 20</value>
   </data>
   <data name="tBx_Passwort_Wdh.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -177,17 +171,14 @@
   <data name="&gt;&gt;tBx_Passwort_Wdh.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="tBx_Passwort.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="tBx_Passwort.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
   </data>
   <data name="tBx_Passwort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 209</value>
-  </data>
-  <data name="tBx_Passwort.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
+    <value>159, 107</value>
   </data>
   <data name="tBx_Passwort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 26</value>
+    <value>150, 20</value>
   </data>
   <data name="tBx_Passwort.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -204,20 +195,20 @@
   <data name="&gt;&gt;tBx_Passwort.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="tableLayoutPanel2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <data name="tableLayoutPanel2.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="btn_OK.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="btn_OK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="btn_OK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 5</value>
-  </data>
-  <data name="btn_OK.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
+    <value>53, 3</value>
   </data>
   <data name="btn_OK.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 37</value>
+    <value>94, 33</value>
   </data>
   <data name="btn_OK.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -237,20 +228,14 @@
   <data name="&gt;&gt;btn_OK.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="tableLayoutPanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="tableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 362</value>
-  </data>
-  <data name="tableLayoutPanel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
+    <value>159, 185</value>
   </data>
   <data name="tableLayoutPanel2.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 47</value>
+    <value>150, 39</value>
   </data>
   <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -268,28 +253,28 @@
     <value>3</value>
   </data>
   <data name="tableLayoutPanel2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btn_OK" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,Absolute,150" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btn_OK" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,Absolute,100" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="lbl_FirstName.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
   </data>
   <data name="lbl_FirstName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lbl_FirstName.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="lbl_FirstName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 51</value>
-  </data>
-  <data name="lbl_FirstName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>3, 26</value>
   </data>
   <data name="lbl_FirstName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 51</value>
+    <value>49, 26</value>
   </data>
   <data name="lbl_FirstName.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="lbl_FirstName.Text" xml:space="preserve">
     <value>Vorname</value>
+  </data>
+  <data name="lbl_FirstName.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;lbl_FirstName.Name" xml:space="preserve">
     <value>lbl_FirstName</value>
@@ -303,26 +288,26 @@
   <data name="&gt;&gt;lbl_FirstName.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="lbl_Nachname.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
   <data name="lbl_Nachname.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lbl_Nachname.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="lbl_Nachname.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 102</value>
-  </data>
-  <data name="lbl_Nachname.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>3, 52</value>
   </data>
   <data name="lbl_Nachname.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 51</value>
+    <value>59, 26</value>
   </data>
   <data name="lbl_Nachname.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="lbl_Nachname.Text" xml:space="preserve">
     <value>Nachname</value>
+  </data>
+  <data name="lbl_Nachname.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;lbl_Nachname.Name" xml:space="preserve">
     <value>lbl_Nachname</value>
@@ -336,17 +321,14 @@
   <data name="&gt;&gt;lbl_Nachname.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="tBx_eMail.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="tBx_eMail.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
   </data>
   <data name="tBx_eMail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 158</value>
-  </data>
-  <data name="tBx_eMail.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
+    <value>159, 81</value>
   </data>
   <data name="tBx_eMail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 26</value>
+    <value>150, 20</value>
   </data>
   <data name="tBx_eMail.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -363,20 +345,17 @@
   <data name="&gt;&gt;tBx_eMail.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="tBx_Geburtsdatum.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="tBx_Geburtsdatum.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
   </data>
   <data name="tBx_Geburtsdatum.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Italic</value>
   </data>
   <data name="tBx_Geburtsdatum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 311</value>
-  </data>
-  <data name="tBx_Geburtsdatum.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
+    <value>159, 159</value>
   </data>
   <data name="tBx_Geburtsdatum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 26</value>
+    <value>150, 20</value>
   </data>
   <data name="tBx_Geburtsdatum.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -396,17 +375,14 @@
   <data name="&gt;&gt;tBx_Geburtsdatum.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="tBx_LastName.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="tBx_LastName.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
   </data>
   <data name="tBx_LastName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 107</value>
-  </data>
-  <data name="tBx_LastName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
+    <value>159, 55</value>
   </data>
   <data name="tBx_LastName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 26</value>
+    <value>150, 20</value>
   </data>
   <data name="tBx_LastName.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -423,17 +399,14 @@
   <data name="&gt;&gt;tBx_LastName.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="tBx_FirstName.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="tBx_FirstName.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
   </data>
   <data name="tBx_FirstName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 56</value>
-  </data>
-  <data name="tBx_FirstName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
+    <value>159, 29</value>
   </data>
   <data name="tBx_FirstName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 26</value>
+    <value>150, 20</value>
   </data>
   <data name="tBx_FirstName.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -450,26 +423,26 @@
   <data name="&gt;&gt;tBx_FirstName.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <data name="lbl_eMail.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
   <data name="lbl_eMail.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lbl_eMail.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="lbl_eMail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 153</value>
-  </data>
-  <data name="lbl_eMail.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>3, 78</value>
   </data>
   <data name="lbl_eMail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 51</value>
+    <value>36, 26</value>
   </data>
   <data name="lbl_eMail.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="lbl_eMail.Text" xml:space="preserve">
     <value>E-Mail</value>
+  </data>
+  <data name="lbl_eMail.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;lbl_eMail.Name" xml:space="preserve">
     <value>lbl_eMail</value>
@@ -483,26 +456,26 @@
   <data name="&gt;&gt;lbl_eMail.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
+  <data name="lbl_Geburtsdatum.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
   <data name="lbl_Geburtsdatum.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lbl_Geburtsdatum.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
   <data name="lbl_Geburtsdatum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 306</value>
-  </data>
-  <data name="lbl_Geburtsdatum.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>3, 156</value>
   </data>
   <data name="lbl_Geburtsdatum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 51</value>
+    <value>73, 26</value>
   </data>
   <data name="lbl_Geburtsdatum.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="lbl_Geburtsdatum.Text" xml:space="preserve">
     <value>Geburtsdatum</value>
+  </data>
+  <data name="lbl_Geburtsdatum.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;lbl_Geburtsdatum.Name" xml:space="preserve">
     <value>lbl_Geburtsdatum</value>
@@ -516,20 +489,29 @@
   <data name="&gt;&gt;lbl_Geburtsdatum.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
+  <data name="lbl_Passwort.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
   <data name="lbl_Passwort.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lbl_Passwort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 204</value>
+    <value>2, 104</value>
+  </data>
+  <data name="lbl_Passwort.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="lbl_Passwort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 20</value>
+    <value>50, 26</value>
   </data>
   <data name="lbl_Passwort.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
   <data name="lbl_Passwort.Text" xml:space="preserve">
     <value>Passwort</value>
+  </data>
+  <data name="lbl_Passwort.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;lbl_Passwort.Name" xml:space="preserve">
     <value>lbl_Passwort</value>
@@ -543,20 +525,29 @@
   <data name="&gt;&gt;lbl_Passwort.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
+  <data name="lbl_Passwort_Wdh.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
   <data name="lbl_Passwort_Wdh.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lbl_Passwort_Wdh.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 255</value>
+    <value>2, 130</value>
+  </data>
+  <data name="lbl_Passwort_Wdh.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="lbl_Passwort_Wdh.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 20</value>
+    <value>79, 26</value>
   </data>
   <data name="lbl_Passwort_Wdh.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
   <data name="lbl_Passwort_Wdh.Text" xml:space="preserve">
     <value>Passwort Wdh.</value>
+  </data>
+  <data name="lbl_Passwort_Wdh.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;lbl_Passwort_Wdh.Name" xml:space="preserve">
     <value>lbl_Passwort_Wdh</value>
@@ -570,20 +561,29 @@
   <data name="&gt;&gt;lbl_Passwort_Wdh.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
+  <data name="lbl_username.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
   <data name="lbl_username.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lbl_username.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
+    <value>2, 0</value>
+  </data>
+  <data name="lbl_username.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="lbl_username.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 20</value>
+    <value>55, 26</value>
   </data>
   <data name="lbl_username.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
   <data name="lbl_username.Text" xml:space="preserve">
     <value>Username</value>
+  </data>
+  <data name="lbl_username.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;lbl_username.Name" xml:space="preserve">
     <value>lbl_username</value>
@@ -603,14 +603,11 @@
   <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="tableLayoutPanel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
-  </data>
   <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>468, 414</value>
+    <value>312, 227</value>
   </data>
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -628,16 +625,19 @@
     <value>0</value>
   </data>
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tBx_username" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tBx_Passwort_Wdh" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tBx_Passwort" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel2" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lbl_FirstName" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbl_Nachname" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tBx_eMail" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tBx_Geburtsdatum" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tBx_LastName" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tBx_FirstName" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lbl_eMail" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbl_Geburtsdatum" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbl_Passwort" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbl_Passwort_Wdh" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbl_username" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Percent,12,5,Percent,12,5,Percent,12,5,Percent,12,5,Percent,12,5,Percent,12,5,Percent,12,5,Percent,12,5" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="tBx_username" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tBx_Passwort_Wdh" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tBx_Passwort" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel2" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lbl_FirstName" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbl_Nachname" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tBx_eMail" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tBx_Geburtsdatum" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tBx_LastName" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tBx_FirstName" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lbl_eMail" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbl_Geburtsdatum" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbl_Passwort" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbl_Passwort_Wdh" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbl_username" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>9, 20</value>
+    <value>6, 13</value>
+  </data>
+  <data name="$this.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>468, 414</value>
+    <value>312, 227</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -857,9 +857,6 @@
         hGwFi3xN2cDvKNONOz02/YcyfXJWEQAVzwkhQzgJETHAbiDkFSDTEFWJmpEmLNqX/RSETHNEjY1lP78j
         rRrPtrL/IXwHzz6cfAjtGZLAYxT/D+/mEF00Ux2OAAAAAElFTkSuQmCC
 </value>
-  </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Spieler hinzufügen</value>

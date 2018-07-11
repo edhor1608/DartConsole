@@ -13,6 +13,9 @@ namespace DartConsole
         Wurf wurf3 = new Wurf(0, 0);
         int multi3;
 
+        int multiAktuell;
+        int wertAktuell;
+
         int info = 0;
 
         public SpielView()
@@ -53,8 +56,10 @@ namespace DartConsole
             RefreshStand();
         }
 
-        private int AddWurf(int w, int multi, int wert)
+        private void AddWurf(int w, int multi, int wert)
         {
+            multiAktuell = multi;
+            wertAktuell = wert;
             info = Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().RedRest(Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetDurchgangAktuell().AddWurf(new Wurf(multi, wert), w - 1));
 
             switch (w)
@@ -62,81 +67,46 @@ namespace DartConsole
                 case 1:
                     SetVisibleWurf1Multi(false);
                     SetVisibleWurf1Wert(false);
-                    SetVisibleWurf2(true);
+                    if (info != 0)
+                    {
+                        btn_uebernehmen.Visible = true;
+                    }
+                    else
+                    {
+                        SetVisibleWurf2(true);
+                    }
                     wurf1 = new Wurf(multi, wert);
+                    Program.frmWurfView.SetVisibleWurf1(true);
+                    Program.frmWurfView.SetGeworfenWurf1(multi, wert);
                     break;
                 case 2:
                     SetVisibleWurf2Multi(false);
                     SetVisibleWurf2Wert(false);
-                    SetVisibleWurf3(true);
+                    if (info != 0)
+                    {
+                        btn_uebernehmen.Visible = true;
+                    }
+                    else
+                    {
+                        SetVisibleWurf3(true);
+                    }
                     wurf2 = new Wurf(multi, wert);
+                    Program.frmWurfView.SetVisibleWurf2(true);
+                    Program.frmWurfView.tB_wurf2.Text = multi + "x" + wert;
+                    Program.frmWurfView.SetGeworfenWurf2(multi, wert);
                     break;
                 case 3:
                     SetVisibleWurf3Multi(false);
                     SetVisibleWurf3Wert(false);
                     btn_uebernehmen.Visible = true;
                     wurf3 = new Wurf(multi, wert);
+                    Program.frmWurfView.SetVisibleWurf3(true);
+                    Program.frmWurfView.tB_wurf3.Text = multi + "x" + wert;
+                    Program.frmWurfView.SetGeworfenWurf3(multi, wert);
                     break;
             }
             RefreshStand();
             btn_loeschen.Visible = true;
-
-            if (info == 1 && multi == 2 && Uebernehmen(false))
-            {
-                SetVisibleWurf1Multi(false);
-                SetVisibleWurf1Wert(false);
-                SetVisibleWurf2Multi(false);
-                SetVisibleWurf2Wert(false);
-                SetVisibleWurf3Multi(false);
-                SetVisibleWurf3Wert(false);
-                //LegGewonnen bei Spieler erhöhen
-                Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).AddLegGewonnen();
-                //Finish zuweisen
-                Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().SetFinish(Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetDurchgangAktuell().GetDurchgangWert());
-                MessageBox.Show(Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetSpieler().GetUsername() + " hat das Leg gewonnen");
-                if (Program.spielAktuell.SearchSetWin())
-                {
-                    MessageBox.Show(Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetSpieler().GetUsername() + " hat den Set gewonnen");
-                    if (Program.spielAktuell.SearchSpielWin())
-                    {
-                        progressBar.Visible = true;
-                        progressBar.Style = ProgressBarStyle.Marquee;
-                        progressBar.MarqueeAnimationSpeed = 60;
-                        MessageBox.Show(Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetSpieler().GetUsername() + " hat das Spiel gewonnen");
-                        SpielBeenden();
-                    }
-                    else
-                    {
-                        NewSet();
-                    }
-                }
-                else
-                {
-                    NewLeg();
-                }
-            }
-            if (((info == 1 && multi != 2) || info == 2) && Uebernehmen(false))
-            {
-                SetVisibleWurf1Multi(false);
-                SetVisibleWurf1Wert(false);
-                SetVisibleWurf2Multi(false);
-                SetVisibleWurf2Wert(false);
-                SetVisibleWurf3Multi(false);
-                SetVisibleWurf3Wert(false);
-                Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().SetRest(Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetRest() + Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetDurchgangAktuell().GetDurchgangWert());
-                if (info == 1)
-                {
-                    MessageBox.Show("No Score --- Kein Doppel");
-                }
-                else
-                {
-                    MessageBox.Show("No Score --- Überworfen");
-                }
-                Program.spielAktuell.SpielerWeiter();
-                Program.spielAktuell.AddDurchgangSpielerAktuell();
-                ResetEingabe();
-            }
-            return info;
         }
 
         private void SpielBeenden()
@@ -153,6 +123,9 @@ namespace DartConsole
 
         private void ResetEingabe()
         {
+            Program.frmWurfView.SetVisibleWurf1(false);
+            Program.frmWurfView.SetVisibleWurf2(false);
+            Program.frmWurfView.SetVisibleWurf3(false);
             tBx_wurf1.Text = "";
             tBx_wurf2.Text = "";
             tBx_wurf3.Text = "";
@@ -800,7 +773,7 @@ namespace DartConsole
             Loeschen();
         }
 
-        private void Loeschen()
+        public void Loeschen()
         {
             //Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetDurchgangAktuell().SetAnzahlWürfe(0);
             Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetDurchgangAktuell().ResetWürfe();
@@ -810,31 +783,84 @@ namespace DartConsole
 
         private void btn_uebernehmen_Click(object sender, EventArgs e)
         {
-            Uebernehmen(true);
+            Program.frmWurfView.Show();
+            this.Hide();
+            Program.frmWurfView.SetLocation(Location.X + 290, Location.Y + 230);
+            //Uebernehmen(true);
         }
 
-        private bool Uebernehmen(bool button)
+        public void Uebernehmen()
         {
-            DialogResult dialogResult = MessageBox.Show("Würfe richtig?", "Übernehmen", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            //DialogResult dialogResult = MessageBox.Show("Würfe richtig?", "Übernehmen", MessageBoxButtons.YesNo);
+            //if (dialogResult == DialogResult.Yes)
+            //{
+            wurf1 = new Wurf(0, 0);
+            wurf2 = new Wurf(0, 0);
+            wurf3 = new Wurf(0, 0);
+
+            //Finish
+            if (info == 1 && multiAktuell == 2)
             {
-                wurf1 = new Wurf(0, 0);
-                wurf2 = new Wurf(0, 0);
-                wurf3 = new Wurf(0, 0);
-                if (button)
+                //LegGewonnen bei Spieler erhöhen
+                Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).AddLegGewonnen();
+
+                //Finish zuweisen
+                Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().SetFinish(Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetDurchgangAktuell().GetDurchgangWert());
+
+                //Hinweis wer Leg gewonnen hat
+                MessageBox.Show(Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetSpieler().GetUsername() + " hat das Leg gewonnen");
+
+                //Überprüfung ob Leg zu Ende, wenn ja dann gleichzeitig SetGewonnen bei Spieler erhöhen
+                if (Program.spielAktuell.SearchSetWin())
                 {
-                    Program.spielAktuell.SpielerWeiter();
-                    Program.spielAktuell.AddDurchgangSpielerAktuell();
-                    ResetEingabe();
+                    MessageBox.Show(Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetSpieler().GetUsername() + " hat den Set gewonnen");
+                    if (Program.spielAktuell.SearchSpielWin())
+                    {
+                        progressBar.Style = ProgressBarStyle.Marquee;
+                        progressBar.MarqueeAnimationSpeed = 100;
+                        progressBar.Visible = true;
+                        MessageBox.Show(Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetSpieler().GetUsername() + " hat das Spiel gewonnen");
+                        SpielBeenden();
+                        return;
+                    }
+                    else
+                    {
+                        NewSet();
+                    }
                 }
-                return true;
+                else
+                {
+                    NewLeg();
+                }
             }
-            else if (dialogResult == DialogResult.No)
+            if (((info == 1 && multiAktuell != 2) || info == 2))
             {
-                Loeschen();
-                return false;
+                Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().SetRest(Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetRest() + Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetDurchgangAktuell().GetDurchgangWert());
+                if (info == 1)
+                {
+                    MessageBox.Show("No Score --- Kein Doppel");
+                }
+                else
+                {
+                    MessageBox.Show("No Score --- Überworfen");
+                }
             }
-            return false;
+
+
+            // if (button)
+            //{
+            Program.spielAktuell.SpielerWeiter();
+            Program.spielAktuell.AddDurchgangSpielerAktuell();
+            ResetEingabe();
+            //}
+            //return true;
+            // }
+            // else if (dialogResult == DialogResult.No)
+            //{
+            //    Loeschen();
+            //    return false;
+            // }
+            // return false;
 
         }
 
