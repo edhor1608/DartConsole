@@ -35,6 +35,53 @@ namespace DartConsole
             this.wert = wert;
         }
 
+        public bool IsGetroffenExakt()
+        {
+            if (multiZiel == multiplikator && wertZiel == wert)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool IsGetroffenWert()
+        {
+            if (wertZiel == wert)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool IsGetroffenMulti()
+        {
+            if (multiZiel == multiplikator)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public void SetMultiZiel(int multi)
+        {
+            multiZiel = multi;
+        }
+
+        public void SetWertZiel(int wert)
+        {
+            wertZiel = wert;
+        }
+
+        public int GetMultiZiel()
+        {
+            return multiZiel;
+        }
+
+        public int GetWertZiel()
+        {
+            return wertZiel;
+        }
+
         private void SetIDFree()
         {
             do
