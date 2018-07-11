@@ -34,6 +34,15 @@ namespace DartConsole
                 lblArrayRest[i].Text = "" + Program.spielAktuell.GetSetAktuell(i).GetAktuellLeg().GetRest();
                 lblArrayAVG[i].Text = "" + Statistik.Average_Finish_Spiel(Program.spielAktuell, Program.spielAktuell.GetSpieler().ElementAt(i).Key);
                 lblArrayDQ[i].Text = "" + Statistik.GetDoubleFinishQuoteSpielSpieler(Program.spielAktuell, Program.spielAktuell.GetSpieler().ElementAt(i).Value);
+                if (Dart.checkout.ContainsKey(Program.spielAktuell.GetSetAktuell(i).GetAktuellLeg().GetRest()))
+                {
+                    lblArrayCheck[i].Visible = true;
+                    lblArrayCheck[i].Text = "" + Dart.checkout[Program.spielAktuell.GetSetAktuell(i).GetAktuellLeg().GetRest()];
+                }
+                else
+                {
+                    lblArrayCheck[i].Visible = false;
+                }
             }
             lblArrayPfeil[Program.spielAktuell.GetSpielerAktuell()].Visible = true;
         }
@@ -61,6 +70,11 @@ namespace DartConsole
             multiAktuell = multi;
             wertAktuell = wert;
             info = Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().RedRest(Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetDurchgangAktuell().AddWurf(new Wurf(multi, wert), w - 1));
+
+            if (Dart.checkout.ContainsKey(Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetRest()))
+            {
+                Console.Write("\t" + Dart.checkout[Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetRest()]);
+            }
 
             switch (w)
             {
