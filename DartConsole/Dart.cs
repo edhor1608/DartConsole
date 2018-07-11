@@ -1014,7 +1014,7 @@ namespace DartConsole
             List<string>[] list = DBConnect.SelectWurfDurchgangID(id);
             for (int y = 0; y < list[0].Count; y++)
             {
-                Wurf w = new Wurf(int.Parse(list[0].ElementAt(y)), int.Parse(list[2].ElementAt(y)), int.Parse(list[3].ElementAt(y)), int.Parse(list[4].ElementAt(y)));
+                Wurf w = new Wurf(int.Parse(list[0].ElementAt(y)), int.Parse(list[2].ElementAt(y)), int.Parse(list[3].ElementAt(y)), int.Parse(list[4].ElementAt(y)), int.Parse(list[5].ElementAt(y)), int.Parse(list[6].ElementAt(y)));
                 würfe[y] = w;
             }
             return würfe;

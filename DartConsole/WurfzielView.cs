@@ -109,6 +109,22 @@ namespace DartConsole
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (cB_zielWurf1.Visible)
+            {
+                Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetDurchgangAktuell().GetWürfe()[0].SetMultiZiel(GetWurfOfCB(cB_zielWurf1.SelectedIndex)[0]);
+                Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetDurchgangAktuell().GetWürfe()[0].SetMultiZiel(3);
+                Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetDurchgangAktuell().GetWürfe()[0].SetWertZiel(GetWurfOfCB(cB_zielWurf1.SelectedIndex)[1]);
+            }
+            if (cB_zielWurf2.Visible)
+            {
+                Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetDurchgangAktuell().GetWürfe()[1].SetMultiZiel(GetWurfOfCB(cB_zielWurf2.SelectedIndex)[0]);
+                Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetDurchgangAktuell().GetWürfe()[1].SetWertZiel(GetWurfOfCB(cB_zielWurf2.SelectedIndex)[1]);
+            }
+            if (cB_zielWurf3.Visible)
+            {
+                Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetDurchgangAktuell().GetWürfe()[2].SetMultiZiel(GetWurfOfCB(cB_zielWurf3.SelectedIndex)[0]);
+                Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetDurchgangAktuell().GetWürfe()[2].SetWertZiel(GetWurfOfCB(cB_zielWurf3.SelectedIndex)[1]);
+            }
             Program.frmSpielView.Show();
             this.Hide();
             Program.frmSpielView.Uebernehmen();
@@ -118,20 +134,22 @@ namespace DartConsole
         {
             int[] wurf = new int[2];
             wurf[1] = 20 - (i % 20);
-            if (i>=0&&i<=19)
+            if (i >= 0 && i <= 19)
             {
                 wurf[0] = 3;
                 return wurf;
-            } else if (i >= 20 && i <= 39)
+            }
+            else if (i >= 20 && i <= 39)
             {
                 wurf[0] = 2;
                 return wurf;
             }
-            else if(i >= 40 && i <= 59)
+            else if (i >= 40 && i <= 59)
             {
                 wurf[0] = 1;
                 return wurf;
-            } else if(i == 60)
+            }
+            else if (i == 60)
             {
                 wurf[0] = 2;
                 wurf[1] = 50;
@@ -147,21 +165,6 @@ namespace DartConsole
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (cB_zielWurf1.Visible)
-            {
-                Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetDurchgangAktuell().GetWürfe()[0].SetMultiZiel(GetWurfOfCB(cB_zielWurf1.SelectedIndex)[0]);
-                Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetDurchgangAktuell().GetWürfe()[0].SetWertZiel(GetWurfOfCB(cB_zielWurf1.SelectedIndex)[1]);
-            }
-            if (cB_zielWurf2.Visible)
-            {
-                Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetDurchgangAktuell().GetWürfe()[1].SetMultiZiel(GetWurfOfCB(cB_zielWurf2.SelectedIndex)[0]);
-                Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetDurchgangAktuell().GetWürfe()[1].SetWertZiel(GetWurfOfCB(cB_zielWurf2.SelectedIndex)[1]);
-            }
-            if (cB_zielWurf3.Visible)
-            {
-                Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetDurchgangAktuell().GetWürfe()[2].SetMultiZiel(GetWurfOfCB(cB_zielWurf3.SelectedIndex)[0]);
-                Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetDurchgangAktuell().GetWürfe()[2].SetWertZiel(GetWurfOfCB(cB_zielWurf3.SelectedIndex)[1]);
-            }
             Program.frmSpielView.Show();
             this.Hide();
             Program.frmSpielView.Loeschen();
@@ -169,7 +172,7 @@ namespace DartConsole
 
         public void SetLocation(int x, int y)
         {
-            Location = new Point(x,y);
+            Location = new Point(x, y);
         }
     }
 }

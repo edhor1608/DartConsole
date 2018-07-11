@@ -27,12 +27,14 @@ namespace DartConsole
             this.wert = wert;
         }
 
-        public Wurf(int id, int wurfNummer, int multi, int wert)
+        public Wurf(int id, int wurfNummer, int multi, int wert, int multiZiel, int wertZiel)
         {
             id_wurf = id;
             this.wurfNummer = wurfNummer;
             this.multiplikator = multi;
             this.wert = wert;
+            this.multiZiel = multiZiel;
+            this.wertZiel = wertZiel;
         }
 
         public bool IsGetroffenExakt()

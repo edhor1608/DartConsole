@@ -23,17 +23,11 @@ namespace DartConsole
         //Initialize values
         private static void Initialize()
         {
-            //server = "jonas-rohde.de";
             server = ConfigurationManager.AppSettings["DBServer"].ToString();
-            //database = "dart";
             database = ConfigurationManager.AppSettings["DBDatabase"].ToString();
-            //port = 3306;
             port = int.Parse(ConfigurationManager.AppSettings["DBPort"].ToString());
-            //username = "dartConsole";
             username = ConfigurationManager.AppSettings["DBUser"].ToString();
-            //password = "GhlIyJRnSeAhaXyt";
             password = ConfigurationManager.AppSettings["DBPasswd"].ToString();
-            //string cs = System.Configuration.ConfigurationManager.ConnectionStrings["cs"].ConnectionString;
             string connectionString;
             connectionString = "Server=" + server + ";Database=" + database
                 + ";port=" + port + ";User Id=" + username + ";password=" + password + ";SslMode=" + "none";
@@ -493,7 +487,7 @@ namespace DartConsole
 
         public static void InsertWurf(Wurf w, Durchgang durchgang)
         {
-            string query = "INSERT INTO wurf (`id_wurf`, `id_durchgang`, `wurfNummer`, `multiplikator`, `wert`) VALUES ('" + w.GetId() + "', '" + durchgang.GetId() + "', '" + w.GetWurfNummer() + "', '" + w.GetMulti() + "', '" + w.GetWert() + "')";
+            string query = "INSERT INTO wurf (`id_wurf`, `id_durchgang`, `wurfNummer`, `multiplikator`, `wert`, `multiZiel`, `wertZiel`) VALUES ('" + w.GetId() + "', '" + durchgang.GetId() + "', '" + w.GetWurfNummer() + "', '" + w.GetMulti() + "', '" + w.GetWert() + "', '" + w.GetMultiZiel() + "', '" + w.GetWertZiel() + "')";
 
             //open connection
             if (OpenConnection() == true)
@@ -855,12 +849,14 @@ namespace DartConsole
             string query = "SELECT * FROM `wurf` WHERE id_durchgang=" + id;
 
             //Create a list to store the result
-            List<string>[] list = new List<string>[5];
+            List<string>[] list = new List<string>[7];
             list[0] = new List<string>();
             list[1] = new List<string>();
             list[2] = new List<string>();
             list[3] = new List<string>();
             list[4] = new List<string>();
+            list[5] = new List<string>();
+            list[6] = new List<string>();
 
             //Open connection
             if (OpenConnection() == true)
@@ -878,6 +874,8 @@ namespace DartConsole
                     list[2].Add(dataReader["wurfNummer"] + "");
                     list[3].Add(dataReader["multiplikator"] + "");
                     list[4].Add(dataReader["wert"] + "");
+                    list[5].Add(dataReader["multiZiel"] + "");
+                    list[6].Add(dataReader["wertZiel"] + "");
                 }
 
                 //close Data Reader
