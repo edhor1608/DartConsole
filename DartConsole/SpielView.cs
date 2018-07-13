@@ -61,7 +61,7 @@ namespace DartConsole
             btn_loeschen.Visible = false;
             btn_uebernehmen.Visible = false;
             Program.spielAktuell.AddLeg();
-            Program.spielAktuell.AddDurchgangSpielerAktuell();
+            //Program.spielAktuell.AddDurchgangSpielerAktuell();
             RefreshStand();
         }
 
@@ -70,11 +70,6 @@ namespace DartConsole
             multiAktuell = multi;
             wertAktuell = wert;
             info = Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().RedRest(Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetDurchgangAktuell().AddWurf(new Wurf(multi, wert), w - 1));
-
-            if (Dart.checkout.ContainsKey(Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetRest()))
-            {
-                Console.Write("\t" + Dart.checkout[Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetRest()]);
-            }
 
             switch (w)
             {
@@ -793,6 +788,12 @@ namespace DartConsole
             Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetDurchgangAktuell().ResetWürfe();
             Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().SetRest(Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetRest() + GetWuerfeGesamt());
             ResetEingabe();
+            wurf1 = new Wurf(0, 0);
+            wurf2 = new Wurf(0, 0);
+            wurf3 = new Wurf(0, 0);
+            multi1 = 0;
+            multi2 = 0;
+            multi3 = 0;
         }
 
         private void btn_uebernehmen_Click(object sender, EventArgs e)

@@ -122,7 +122,7 @@ namespace DartConsole
         {
             Console.Clear();
             Console.WriteLine("Liste der Spieler");
-            Dart.WriteChar('-',20);
+            Dart.WriteChar('-', 20);
             for (int i = 0; i < spieler.Count(); i++)
             {
                 Console.WriteLine("Spieler " + (i + 1) + ": " + spieler.ElementAt(i).Value.GetUsername());
@@ -162,7 +162,7 @@ namespace DartConsole
                 Console.WriteLine("Neues Spiel / Sets " + setsToWin + " - Legs " + legsToWin + " \\");
                 Dart.WriteChar('-', 20);
                 Console.WriteLine("Welche Spieler spielen mit?");
-                String name = Dart.String_Dialog("Name",true);
+                String name = Dart.String_Dialog("Name", true);
                 if (Dart.IsSpielerVorhanden(name))
                 {
                     spieler.Add(Dart.GetSpieler(name).GetUsername(), Dart.GetSpieler(name));
@@ -276,9 +276,9 @@ namespace DartConsole
             int maxLAll = MaxLengthSpielerAll();
             int tAll = maxLAll / 8;
             Console.WriteLine("Set " + (Set.setZähler) + " / Leg " + (Leg.legZähler));
-            Dart.WriteChar('_',30 + tAll * 8);
+            Dart.WriteChar('_', 30 + tAll * 8);
             Console.Write("Name");
-            for (int i = 0; i < tAll;i++)
+            for (int i = 0; i < tAll; i++)
             {
                 Console.Write("\t");
             }
@@ -286,7 +286,7 @@ namespace DartConsole
             Console.Write("\tLegs");
             Console.Write("\tRest");
             Console.WriteLine();
-            Dart.WriteChar('-', 30+tAll*8);
+            Dart.WriteChar('-', 30 + tAll * 8);
             for (int s = 0; s < spieler.Count(); s++)
             {
                 Console.Write(GetSetAktuell(s).GetSpieler().GetUsername());
@@ -304,15 +304,15 @@ namespace DartConsole
                 }
                 if (Dart.checkout.ContainsKey(GetSetAktuell(s).GetAktuellLeg().GetRest()))
                 {
-                    Console.Write("\t"+Dart.checkout[GetSetAktuell(s).GetAktuellLeg().GetRest()]);
+                    Console.Write("\t" + Dart.checkout[GetSetAktuell(s).GetAktuellLeg().GetRest()]);
                 }
                 Console.WriteLine();
             }
             Dart.WriteChar('_', 30 + tAll * 8);
             Console.Write(" -");
-            for (int i = 0; i < w;i++)
+            for (int i = 0; i < w; i++)
             {
-                Console.Write(" "+GetSetAktuell(spielerAktuell).GetAktuellLeg().GetDurchgangAktuell().GetWürfe()[i].GetMulti()+"x"+ GetSetAktuell(spielerAktuell).GetAktuellLeg().GetDurchgangAktuell().GetWürfe()[i].GetWert() + " -");
+                Console.Write(" " + GetSetAktuell(spielerAktuell).GetAktuellLeg().GetDurchgangAktuell().GetWürfe()[i].GetMulti() + "x" + GetSetAktuell(spielerAktuell).GetAktuellLeg().GetDurchgangAktuell().GetWürfe()[i].GetWert() + " -");
             }
             Console.Write("> " + GetSetAktuell(spielerAktuell).GetAktuellLeg().GetDurchgangAktuell().GetDurchgangWert());
             Console.WriteLine();
@@ -415,7 +415,7 @@ namespace DartConsole
                                 //}
                                 int wurf = GetSetAktuell(spielerAktuell).GetAktuellLeg().GetDurchgangAktuell().AddWurf(Wurf(), w);
                                 int rInfo = GetSetAktuell(spielerAktuell).GetAktuellLeg().RedRest(wurf);
-                                ShowInfos(w+1);
+                                ShowInfos(w + 1);
                                 switch (rInfo)
                                 {
                                     case 1:

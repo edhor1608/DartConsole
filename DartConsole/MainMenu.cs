@@ -67,6 +67,7 @@ namespace DartConsole
         {
             Program.frmMainMenu.Hide();
             Program.frmStatistikView.Show();
+            Program.frmStatistikView.Reset();
         }
     }
 }
