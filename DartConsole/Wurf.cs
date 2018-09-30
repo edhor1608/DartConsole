@@ -39,7 +39,7 @@ namespace DartConsole
 
         public bool IsGetroffenExakt()
         {
-            if (multiZiel == multiplikator && wertZiel == wert)
+            if (IsGetroffenWert() && IsGetroffenMulti())
             {
                 return true;
             }

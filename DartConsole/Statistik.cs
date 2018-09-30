@@ -552,6 +552,16 @@ namespace DartConsole
             return false;
         }
 
+        public static double GetTrefferQuoteAlleExaktDurchgang(Durchgang d)
+        {
+            double getroffen = 0;
+            for (int i = 0; i < d.GetAnzahlWürfe(); i++)
+            {
+                if (d.GetWürfe()[i].IsGetroffenExakt()) getroffen++;
+            }
+            return getroffen / d.GetAnzahlWürfe();
+        }
+
         public static double GetDoubleFinishQuoteLeg(Leg l)
         {
             if (GetLegGewonnen(l))
