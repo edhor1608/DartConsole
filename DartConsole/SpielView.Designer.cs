@@ -383,30 +383,27 @@
             groupBox2.Controls.Add(this.btn_weiter);
             groupBox2.Controls.Add(this.btn_beenden);
             groupBox2.ForeColor = System.Drawing.SystemColors.ControlText;
-            groupBox2.Location = new System.Drawing.Point(516, -11);
-            groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            groupBox2.Location = new System.Drawing.Point(774, -17);
             groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            groupBox2.Size = new System.Drawing.Size(233, 302);
+            groupBox2.Size = new System.Drawing.Size(350, 465);
             groupBox2.TabIndex = 2;
             groupBox2.TabStop = false;
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(49, 221);
-            this.progressBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.progressBar.Location = new System.Drawing.Point(74, 340);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(163, 64);
+            this.progressBar.Size = new System.Drawing.Size(244, 98);
             this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBar.TabIndex = 99;
+            this.progressBar.Click += new System.EventHandler(this.progressBar_Click);
             // 
             // btn_weiter
             // 
             this.btn_weiter.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_weiter.Location = new System.Drawing.Point(49, 221);
-            this.btn_weiter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_weiter.Location = new System.Drawing.Point(74, 340);
             this.btn_weiter.Name = "btn_weiter";
-            this.btn_weiter.Size = new System.Drawing.Size(163, 64);
+            this.btn_weiter.Size = new System.Drawing.Size(244, 98);
             this.btn_weiter.TabIndex = 1;
             this.btn_weiter.Text = "Weiter";
             this.btn_weiter.UseVisualStyleBackColor = true;
@@ -415,10 +412,9 @@
             // btn_beenden
             // 
             this.btn_beenden.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_beenden.Location = new System.Drawing.Point(44, 19);
-            this.btn_beenden.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_beenden.Location = new System.Drawing.Point(66, 29);
             this.btn_beenden.Name = "btn_beenden";
-            this.btn_beenden.Size = new System.Drawing.Size(168, 29);
+            this.btn_beenden.Size = new System.Drawing.Size(252, 45);
             this.btn_beenden.TabIndex = 0;
             this.btn_beenden.Text = "Beenden";
             this.btn_beenden.UseVisualStyleBackColor = true;
@@ -431,14 +427,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 9;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 43F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 43F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 86F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 157F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 236F));
             this.tableLayoutPanel1.Controls.Add(this.lbl_name, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lbl_set, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lbl_leg, 2, 0);
@@ -511,28 +507,30 @@
             this.tableLayoutPanel1.Controls.Add(this.lbl_dqSpieler7, 7, 7);
             this.tableLayoutPanel1.Controls.Add(this.lbl_dqSpieler8, 7, 8);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, -1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, -2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 9;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(520, 288);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(780, 443);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // lbl_name
             // 
             this.lbl_name.AutoSize = true;
-            this.lbl_name.Location = new System.Drawing.Point(3, 0);
+            this.lbl_name.Location = new System.Drawing.Point(4, 0);
+            this.lbl_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_name.Name = "lbl_name";
-            this.lbl_name.Size = new System.Drawing.Size(51, 20);
+            this.lbl_name.Size = new System.Drawing.Size(78, 29);
             this.lbl_name.TabIndex = 0;
             this.lbl_name.Text = "Name";
             this.lbl_name.Click += new System.EventHandler(this.label1_Click);
@@ -542,9 +540,10 @@
             this.lbl_set.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_set.AutoSize = true;
-            this.lbl_set.Location = new System.Drawing.Point(76, 0);
+            this.lbl_set.Location = new System.Drawing.Point(116, 0);
+            this.lbl_set.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_set.Name = "lbl_set";
-            this.lbl_set.Size = new System.Drawing.Size(37, 20);
+            this.lbl_set.Size = new System.Drawing.Size(56, 29);
             this.lbl_set.TabIndex = 1;
             this.lbl_set.Text = "Set";
             this.lbl_set.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -554,9 +553,10 @@
             this.lbl_leg.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_leg.AutoSize = true;
-            this.lbl_leg.Location = new System.Drawing.Point(119, 0);
+            this.lbl_leg.Location = new System.Drawing.Point(180, 0);
+            this.lbl_leg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_leg.Name = "lbl_leg";
-            this.lbl_leg.Size = new System.Drawing.Size(37, 20);
+            this.lbl_leg.Size = new System.Drawing.Size(56, 29);
             this.lbl_leg.TabIndex = 2;
             this.lbl_leg.Text = "Leg";
             this.lbl_leg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -565,9 +565,10 @@
             // 
             this.lbl_rest.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_rest.AutoSize = true;
-            this.lbl_rest.Location = new System.Drawing.Point(166, 0);
+            this.lbl_rest.Location = new System.Drawing.Point(252, 0);
+            this.lbl_rest.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_rest.Name = "lbl_rest";
-            this.lbl_rest.Size = new System.Drawing.Size(43, 20);
+            this.lbl_rest.Size = new System.Drawing.Size(62, 29);
             this.lbl_rest.TabIndex = 3;
             this.lbl_rest.Text = "Rest";
             this.lbl_rest.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -578,9 +579,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_nameSpieler1.AutoSize = true;
-            this.lbl_nameSpieler1.Location = new System.Drawing.Point(3, 40);
+            this.lbl_nameSpieler1.Location = new System.Drawing.Point(4, 62);
+            this.lbl_nameSpieler1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_nameSpieler1.Name = "lbl_nameSpieler1";
-            this.lbl_nameSpieler1.Size = new System.Drawing.Size(67, 30);
+            this.lbl_nameSpieler1.Size = new System.Drawing.Size(104, 46);
             this.lbl_nameSpieler1.TabIndex = 13;
             this.lbl_nameSpieler1.Text = "Spieler1";
             this.lbl_nameSpieler1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -591,9 +593,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_nameSpieler2.AutoSize = true;
-            this.lbl_nameSpieler2.Location = new System.Drawing.Point(3, 70);
+            this.lbl_nameSpieler2.Location = new System.Drawing.Point(4, 108);
+            this.lbl_nameSpieler2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_nameSpieler2.Name = "lbl_nameSpieler2";
-            this.lbl_nameSpieler2.Size = new System.Drawing.Size(67, 30);
+            this.lbl_nameSpieler2.Size = new System.Drawing.Size(104, 46);
             this.lbl_nameSpieler2.TabIndex = 14;
             this.lbl_nameSpieler2.Text = "Spieler2";
             this.lbl_nameSpieler2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -604,9 +607,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_nameSpieler3.AutoSize = true;
-            this.lbl_nameSpieler3.Location = new System.Drawing.Point(3, 100);
+            this.lbl_nameSpieler3.Location = new System.Drawing.Point(4, 154);
+            this.lbl_nameSpieler3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_nameSpieler3.Name = "lbl_nameSpieler3";
-            this.lbl_nameSpieler3.Size = new System.Drawing.Size(67, 30);
+            this.lbl_nameSpieler3.Size = new System.Drawing.Size(104, 46);
             this.lbl_nameSpieler3.TabIndex = 15;
             this.lbl_nameSpieler3.Text = "Spieler3";
             this.lbl_nameSpieler3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -617,9 +621,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_nameSpieler4.AutoSize = true;
-            this.lbl_nameSpieler4.Location = new System.Drawing.Point(3, 130);
+            this.lbl_nameSpieler4.Location = new System.Drawing.Point(4, 200);
+            this.lbl_nameSpieler4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_nameSpieler4.Name = "lbl_nameSpieler4";
-            this.lbl_nameSpieler4.Size = new System.Drawing.Size(67, 30);
+            this.lbl_nameSpieler4.Size = new System.Drawing.Size(104, 46);
             this.lbl_nameSpieler4.TabIndex = 16;
             this.lbl_nameSpieler4.Text = "Spieler4";
             this.lbl_nameSpieler4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -630,9 +635,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_nameSpieler5.AutoSize = true;
-            this.lbl_nameSpieler5.Location = new System.Drawing.Point(3, 160);
+            this.lbl_nameSpieler5.Location = new System.Drawing.Point(4, 246);
+            this.lbl_nameSpieler5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_nameSpieler5.Name = "lbl_nameSpieler5";
-            this.lbl_nameSpieler5.Size = new System.Drawing.Size(67, 30);
+            this.lbl_nameSpieler5.Size = new System.Drawing.Size(104, 46);
             this.lbl_nameSpieler5.TabIndex = 17;
             this.lbl_nameSpieler5.Text = "Spieler5";
             this.lbl_nameSpieler5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -643,9 +649,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_nameSpieler6.AutoSize = true;
-            this.lbl_nameSpieler6.Location = new System.Drawing.Point(3, 190);
+            this.lbl_nameSpieler6.Location = new System.Drawing.Point(4, 292);
+            this.lbl_nameSpieler6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_nameSpieler6.Name = "lbl_nameSpieler6";
-            this.lbl_nameSpieler6.Size = new System.Drawing.Size(67, 30);
+            this.lbl_nameSpieler6.Size = new System.Drawing.Size(104, 46);
             this.lbl_nameSpieler6.TabIndex = 18;
             this.lbl_nameSpieler6.Text = "Spieler6";
             this.lbl_nameSpieler6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -656,9 +663,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_nameSpieler7.AutoSize = true;
-            this.lbl_nameSpieler7.Location = new System.Drawing.Point(3, 220);
+            this.lbl_nameSpieler7.Location = new System.Drawing.Point(4, 338);
+            this.lbl_nameSpieler7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_nameSpieler7.Name = "lbl_nameSpieler7";
-            this.lbl_nameSpieler7.Size = new System.Drawing.Size(67, 30);
+            this.lbl_nameSpieler7.Size = new System.Drawing.Size(104, 46);
             this.lbl_nameSpieler7.TabIndex = 19;
             this.lbl_nameSpieler7.Text = "Spieler7";
             this.lbl_nameSpieler7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -669,9 +677,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_nameSpieler8.AutoSize = true;
-            this.lbl_nameSpieler8.Location = new System.Drawing.Point(3, 250);
+            this.lbl_nameSpieler8.Location = new System.Drawing.Point(4, 384);
+            this.lbl_nameSpieler8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_nameSpieler8.Name = "lbl_nameSpieler8";
-            this.lbl_nameSpieler8.Size = new System.Drawing.Size(67, 38);
+            this.lbl_nameSpieler8.Size = new System.Drawing.Size(104, 59);
             this.lbl_nameSpieler8.TabIndex = 20;
             this.lbl_nameSpieler8.Text = "Spieler8";
             this.lbl_nameSpieler8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -680,9 +689,10 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(263, 0);
+            this.label1.Location = new System.Drawing.Point(399, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 20);
+            this.label1.Size = new System.Drawing.Size(114, 29);
             this.label1.TabIndex = 4;
             this.label1.Text = "Checkout";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -693,9 +703,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_pfeilSpieler1.AutoSize = true;
-            this.lbl_pfeilSpieler1.Location = new System.Drawing.Point(219, 40);
+            this.lbl_pfeilSpieler1.Location = new System.Drawing.Point(330, 62);
+            this.lbl_pfeilSpieler1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_pfeilSpieler1.Name = "lbl_pfeilSpieler1";
-            this.lbl_pfeilSpieler1.Size = new System.Drawing.Size(28, 30);
+            this.lbl_pfeilSpieler1.Size = new System.Drawing.Size(43, 46);
             this.lbl_pfeilSpieler1.TabIndex = 5;
             this.lbl_pfeilSpieler1.Text = "<--";
             this.lbl_pfeilSpieler1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -706,9 +717,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_pfeilSpieler2.AutoSize = true;
-            this.lbl_pfeilSpieler2.Location = new System.Drawing.Point(219, 70);
+            this.lbl_pfeilSpieler2.Location = new System.Drawing.Point(330, 108);
+            this.lbl_pfeilSpieler2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_pfeilSpieler2.Name = "lbl_pfeilSpieler2";
-            this.lbl_pfeilSpieler2.Size = new System.Drawing.Size(28, 30);
+            this.lbl_pfeilSpieler2.Size = new System.Drawing.Size(43, 46);
             this.lbl_pfeilSpieler2.TabIndex = 6;
             this.lbl_pfeilSpieler2.Text = "<--";
             this.lbl_pfeilSpieler2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -719,9 +731,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_pfeilSpieler3.AutoSize = true;
-            this.lbl_pfeilSpieler3.Location = new System.Drawing.Point(219, 100);
+            this.lbl_pfeilSpieler3.Location = new System.Drawing.Point(330, 154);
+            this.lbl_pfeilSpieler3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_pfeilSpieler3.Name = "lbl_pfeilSpieler3";
-            this.lbl_pfeilSpieler3.Size = new System.Drawing.Size(28, 30);
+            this.lbl_pfeilSpieler3.Size = new System.Drawing.Size(43, 46);
             this.lbl_pfeilSpieler3.TabIndex = 7;
             this.lbl_pfeilSpieler3.Text = "<--";
             this.lbl_pfeilSpieler3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -732,9 +745,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_pfeilSpieler4.AutoSize = true;
-            this.lbl_pfeilSpieler4.Location = new System.Drawing.Point(219, 130);
+            this.lbl_pfeilSpieler4.Location = new System.Drawing.Point(330, 200);
+            this.lbl_pfeilSpieler4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_pfeilSpieler4.Name = "lbl_pfeilSpieler4";
-            this.lbl_pfeilSpieler4.Size = new System.Drawing.Size(28, 30);
+            this.lbl_pfeilSpieler4.Size = new System.Drawing.Size(43, 46);
             this.lbl_pfeilSpieler4.TabIndex = 8;
             this.lbl_pfeilSpieler4.Text = "<--";
             this.lbl_pfeilSpieler4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -745,9 +759,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_pfeilSpieler5.AutoSize = true;
-            this.lbl_pfeilSpieler5.Location = new System.Drawing.Point(219, 160);
+            this.lbl_pfeilSpieler5.Location = new System.Drawing.Point(330, 246);
+            this.lbl_pfeilSpieler5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_pfeilSpieler5.Name = "lbl_pfeilSpieler5";
-            this.lbl_pfeilSpieler5.Size = new System.Drawing.Size(28, 30);
+            this.lbl_pfeilSpieler5.Size = new System.Drawing.Size(43, 46);
             this.lbl_pfeilSpieler5.TabIndex = 9;
             this.lbl_pfeilSpieler5.Text = "<--";
             this.lbl_pfeilSpieler5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -758,9 +773,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_pfeilSpieler6.AutoSize = true;
-            this.lbl_pfeilSpieler6.Location = new System.Drawing.Point(219, 190);
+            this.lbl_pfeilSpieler6.Location = new System.Drawing.Point(330, 292);
+            this.lbl_pfeilSpieler6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_pfeilSpieler6.Name = "lbl_pfeilSpieler6";
-            this.lbl_pfeilSpieler6.Size = new System.Drawing.Size(28, 30);
+            this.lbl_pfeilSpieler6.Size = new System.Drawing.Size(43, 46);
             this.lbl_pfeilSpieler6.TabIndex = 10;
             this.lbl_pfeilSpieler6.Text = "<--";
             this.lbl_pfeilSpieler6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -771,9 +787,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_pfeilSpieler7.AutoSize = true;
-            this.lbl_pfeilSpieler7.Location = new System.Drawing.Point(219, 220);
+            this.lbl_pfeilSpieler7.Location = new System.Drawing.Point(330, 338);
+            this.lbl_pfeilSpieler7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_pfeilSpieler7.Name = "lbl_pfeilSpieler7";
-            this.lbl_pfeilSpieler7.Size = new System.Drawing.Size(28, 30);
+            this.lbl_pfeilSpieler7.Size = new System.Drawing.Size(43, 46);
             this.lbl_pfeilSpieler7.TabIndex = 11;
             this.lbl_pfeilSpieler7.Text = "<--";
             this.lbl_pfeilSpieler7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -784,9 +801,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_pfeilSpieler8.AutoSize = true;
-            this.lbl_pfeilSpieler8.Location = new System.Drawing.Point(219, 250);
+            this.lbl_pfeilSpieler8.Location = new System.Drawing.Point(330, 384);
+            this.lbl_pfeilSpieler8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_pfeilSpieler8.Name = "lbl_pfeilSpieler8";
-            this.lbl_pfeilSpieler8.Size = new System.Drawing.Size(28, 38);
+            this.lbl_pfeilSpieler8.Size = new System.Drawing.Size(43, 59);
             this.lbl_pfeilSpieler8.TabIndex = 12;
             this.lbl_pfeilSpieler8.Text = "<--";
             this.lbl_pfeilSpieler8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -797,9 +815,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_setSpieler1.AutoSize = true;
-            this.lbl_setSpieler1.Location = new System.Drawing.Point(76, 40);
+            this.lbl_setSpieler1.Location = new System.Drawing.Point(116, 62);
+            this.lbl_setSpieler1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_setSpieler1.Name = "lbl_setSpieler1";
-            this.lbl_setSpieler1.Size = new System.Drawing.Size(37, 30);
+            this.lbl_setSpieler1.Size = new System.Drawing.Size(56, 46);
             this.lbl_setSpieler1.TabIndex = 21;
             this.lbl_setSpieler1.Text = "10";
             this.lbl_setSpieler1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -810,9 +829,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_legSpieler1.AutoSize = true;
-            this.lbl_legSpieler1.Location = new System.Drawing.Point(119, 40);
+            this.lbl_legSpieler1.Location = new System.Drawing.Point(180, 62);
+            this.lbl_legSpieler1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_legSpieler1.Name = "lbl_legSpieler1";
-            this.lbl_legSpieler1.Size = new System.Drawing.Size(37, 30);
+            this.lbl_legSpieler1.Size = new System.Drawing.Size(56, 46);
             this.lbl_legSpieler1.TabIndex = 22;
             this.lbl_legSpieler1.Text = "10";
             this.lbl_legSpieler1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -823,9 +843,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_restSpieler1.AutoSize = true;
-            this.lbl_restSpieler1.Location = new System.Drawing.Point(162, 40);
+            this.lbl_restSpieler1.Location = new System.Drawing.Point(244, 62);
+            this.lbl_restSpieler1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_restSpieler1.Name = "lbl_restSpieler1";
-            this.lbl_restSpieler1.Size = new System.Drawing.Size(51, 30);
+            this.lbl_restSpieler1.Size = new System.Drawing.Size(78, 46);
             this.lbl_restSpieler1.TabIndex = 23;
             this.lbl_restSpieler1.Text = "501";
             this.lbl_restSpieler1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -836,9 +857,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_setSpieler2.AutoSize = true;
-            this.lbl_setSpieler2.Location = new System.Drawing.Point(76, 70);
+            this.lbl_setSpieler2.Location = new System.Drawing.Point(116, 108);
+            this.lbl_setSpieler2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_setSpieler2.Name = "lbl_setSpieler2";
-            this.lbl_setSpieler2.Size = new System.Drawing.Size(37, 30);
+            this.lbl_setSpieler2.Size = new System.Drawing.Size(56, 46);
             this.lbl_setSpieler2.TabIndex = 24;
             this.lbl_setSpieler2.Text = "10";
             this.lbl_setSpieler2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -849,9 +871,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_legSpieler2.AutoSize = true;
-            this.lbl_legSpieler2.Location = new System.Drawing.Point(119, 70);
+            this.lbl_legSpieler2.Location = new System.Drawing.Point(180, 108);
+            this.lbl_legSpieler2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_legSpieler2.Name = "lbl_legSpieler2";
-            this.lbl_legSpieler2.Size = new System.Drawing.Size(37, 30);
+            this.lbl_legSpieler2.Size = new System.Drawing.Size(56, 46);
             this.lbl_legSpieler2.TabIndex = 25;
             this.lbl_legSpieler2.Text = "10";
             this.lbl_legSpieler2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -862,9 +885,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_restSpieler2.AutoSize = true;
-            this.lbl_restSpieler2.Location = new System.Drawing.Point(162, 70);
+            this.lbl_restSpieler2.Location = new System.Drawing.Point(244, 108);
+            this.lbl_restSpieler2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_restSpieler2.Name = "lbl_restSpieler2";
-            this.lbl_restSpieler2.Size = new System.Drawing.Size(51, 30);
+            this.lbl_restSpieler2.Size = new System.Drawing.Size(78, 46);
             this.lbl_restSpieler2.TabIndex = 26;
             this.lbl_restSpieler2.Text = "501";
             this.lbl_restSpieler2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -875,9 +899,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_setSpieler3.AutoSize = true;
-            this.lbl_setSpieler3.Location = new System.Drawing.Point(76, 100);
+            this.lbl_setSpieler3.Location = new System.Drawing.Point(116, 154);
+            this.lbl_setSpieler3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_setSpieler3.Name = "lbl_setSpieler3";
-            this.lbl_setSpieler3.Size = new System.Drawing.Size(37, 30);
+            this.lbl_setSpieler3.Size = new System.Drawing.Size(56, 46);
             this.lbl_setSpieler3.TabIndex = 27;
             this.lbl_setSpieler3.Text = "10";
             this.lbl_setSpieler3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -888,9 +913,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_legSpieler3.AutoSize = true;
-            this.lbl_legSpieler3.Location = new System.Drawing.Point(119, 100);
+            this.lbl_legSpieler3.Location = new System.Drawing.Point(180, 154);
+            this.lbl_legSpieler3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_legSpieler3.Name = "lbl_legSpieler3";
-            this.lbl_legSpieler3.Size = new System.Drawing.Size(37, 30);
+            this.lbl_legSpieler3.Size = new System.Drawing.Size(56, 46);
             this.lbl_legSpieler3.TabIndex = 28;
             this.lbl_legSpieler3.Text = "10";
             this.lbl_legSpieler3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -901,9 +927,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_restSpieler3.AutoSize = true;
-            this.lbl_restSpieler3.Location = new System.Drawing.Point(162, 100);
+            this.lbl_restSpieler3.Location = new System.Drawing.Point(244, 154);
+            this.lbl_restSpieler3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_restSpieler3.Name = "lbl_restSpieler3";
-            this.lbl_restSpieler3.Size = new System.Drawing.Size(51, 30);
+            this.lbl_restSpieler3.Size = new System.Drawing.Size(78, 46);
             this.lbl_restSpieler3.TabIndex = 29;
             this.lbl_restSpieler3.Text = "501";
             this.lbl_restSpieler3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -914,9 +941,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_setSpieler4.AutoSize = true;
-            this.lbl_setSpieler4.Location = new System.Drawing.Point(76, 130);
+            this.lbl_setSpieler4.Location = new System.Drawing.Point(116, 200);
+            this.lbl_setSpieler4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_setSpieler4.Name = "lbl_setSpieler4";
-            this.lbl_setSpieler4.Size = new System.Drawing.Size(37, 30);
+            this.lbl_setSpieler4.Size = new System.Drawing.Size(56, 46);
             this.lbl_setSpieler4.TabIndex = 30;
             this.lbl_setSpieler4.Text = "10";
             this.lbl_setSpieler4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -927,9 +955,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_legSpieler4.AutoSize = true;
-            this.lbl_legSpieler4.Location = new System.Drawing.Point(119, 130);
+            this.lbl_legSpieler4.Location = new System.Drawing.Point(180, 200);
+            this.lbl_legSpieler4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_legSpieler4.Name = "lbl_legSpieler4";
-            this.lbl_legSpieler4.Size = new System.Drawing.Size(37, 30);
+            this.lbl_legSpieler4.Size = new System.Drawing.Size(56, 46);
             this.lbl_legSpieler4.TabIndex = 31;
             this.lbl_legSpieler4.Text = "10";
             this.lbl_legSpieler4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -940,9 +969,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_restSpieler4.AutoSize = true;
-            this.lbl_restSpieler4.Location = new System.Drawing.Point(162, 130);
+            this.lbl_restSpieler4.Location = new System.Drawing.Point(244, 200);
+            this.lbl_restSpieler4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_restSpieler4.Name = "lbl_restSpieler4";
-            this.lbl_restSpieler4.Size = new System.Drawing.Size(51, 30);
+            this.lbl_restSpieler4.Size = new System.Drawing.Size(78, 46);
             this.lbl_restSpieler4.TabIndex = 32;
             this.lbl_restSpieler4.Text = "501";
             this.lbl_restSpieler4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -953,9 +983,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_setSpieler5.AutoSize = true;
-            this.lbl_setSpieler5.Location = new System.Drawing.Point(76, 160);
+            this.lbl_setSpieler5.Location = new System.Drawing.Point(116, 246);
+            this.lbl_setSpieler5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_setSpieler5.Name = "lbl_setSpieler5";
-            this.lbl_setSpieler5.Size = new System.Drawing.Size(37, 30);
+            this.lbl_setSpieler5.Size = new System.Drawing.Size(56, 46);
             this.lbl_setSpieler5.TabIndex = 33;
             this.lbl_setSpieler5.Text = "10";
             this.lbl_setSpieler5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -966,9 +997,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_legSpieler5.AutoSize = true;
-            this.lbl_legSpieler5.Location = new System.Drawing.Point(119, 160);
+            this.lbl_legSpieler5.Location = new System.Drawing.Point(180, 246);
+            this.lbl_legSpieler5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_legSpieler5.Name = "lbl_legSpieler5";
-            this.lbl_legSpieler5.Size = new System.Drawing.Size(37, 30);
+            this.lbl_legSpieler5.Size = new System.Drawing.Size(56, 46);
             this.lbl_legSpieler5.TabIndex = 34;
             this.lbl_legSpieler5.Text = "10";
             this.lbl_legSpieler5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -979,9 +1011,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_restSpieler5.AutoSize = true;
-            this.lbl_restSpieler5.Location = new System.Drawing.Point(162, 160);
+            this.lbl_restSpieler5.Location = new System.Drawing.Point(244, 246);
+            this.lbl_restSpieler5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_restSpieler5.Name = "lbl_restSpieler5";
-            this.lbl_restSpieler5.Size = new System.Drawing.Size(51, 30);
+            this.lbl_restSpieler5.Size = new System.Drawing.Size(78, 46);
             this.lbl_restSpieler5.TabIndex = 35;
             this.lbl_restSpieler5.Text = "501";
             this.lbl_restSpieler5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -992,9 +1025,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_setSpieler6.AutoSize = true;
-            this.lbl_setSpieler6.Location = new System.Drawing.Point(76, 190);
+            this.lbl_setSpieler6.Location = new System.Drawing.Point(116, 292);
+            this.lbl_setSpieler6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_setSpieler6.Name = "lbl_setSpieler6";
-            this.lbl_setSpieler6.Size = new System.Drawing.Size(37, 30);
+            this.lbl_setSpieler6.Size = new System.Drawing.Size(56, 46);
             this.lbl_setSpieler6.TabIndex = 36;
             this.lbl_setSpieler6.Text = "10";
             this.lbl_setSpieler6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1005,9 +1039,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_legSpieler6.AutoSize = true;
-            this.lbl_legSpieler6.Location = new System.Drawing.Point(119, 190);
+            this.lbl_legSpieler6.Location = new System.Drawing.Point(180, 292);
+            this.lbl_legSpieler6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_legSpieler6.Name = "lbl_legSpieler6";
-            this.lbl_legSpieler6.Size = new System.Drawing.Size(37, 30);
+            this.lbl_legSpieler6.Size = new System.Drawing.Size(56, 46);
             this.lbl_legSpieler6.TabIndex = 37;
             this.lbl_legSpieler6.Text = "10";
             this.lbl_legSpieler6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1018,9 +1053,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_restSpieler6.AutoSize = true;
-            this.lbl_restSpieler6.Location = new System.Drawing.Point(162, 190);
+            this.lbl_restSpieler6.Location = new System.Drawing.Point(244, 292);
+            this.lbl_restSpieler6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_restSpieler6.Name = "lbl_restSpieler6";
-            this.lbl_restSpieler6.Size = new System.Drawing.Size(51, 30);
+            this.lbl_restSpieler6.Size = new System.Drawing.Size(78, 46);
             this.lbl_restSpieler6.TabIndex = 38;
             this.lbl_restSpieler6.Text = "501";
             this.lbl_restSpieler6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1031,9 +1067,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_setSpieler7.AutoSize = true;
-            this.lbl_setSpieler7.Location = new System.Drawing.Point(76, 220);
+            this.lbl_setSpieler7.Location = new System.Drawing.Point(116, 338);
+            this.lbl_setSpieler7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_setSpieler7.Name = "lbl_setSpieler7";
-            this.lbl_setSpieler7.Size = new System.Drawing.Size(37, 30);
+            this.lbl_setSpieler7.Size = new System.Drawing.Size(56, 46);
             this.lbl_setSpieler7.TabIndex = 39;
             this.lbl_setSpieler7.Text = "10";
             this.lbl_setSpieler7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1044,9 +1081,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_legSpieler7.AutoSize = true;
-            this.lbl_legSpieler7.Location = new System.Drawing.Point(119, 220);
+            this.lbl_legSpieler7.Location = new System.Drawing.Point(180, 338);
+            this.lbl_legSpieler7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_legSpieler7.Name = "lbl_legSpieler7";
-            this.lbl_legSpieler7.Size = new System.Drawing.Size(37, 30);
+            this.lbl_legSpieler7.Size = new System.Drawing.Size(56, 46);
             this.lbl_legSpieler7.TabIndex = 40;
             this.lbl_legSpieler7.Text = "10";
             this.lbl_legSpieler7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1057,9 +1095,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_restSpieler7.AutoSize = true;
-            this.lbl_restSpieler7.Location = new System.Drawing.Point(162, 220);
+            this.lbl_restSpieler7.Location = new System.Drawing.Point(244, 338);
+            this.lbl_restSpieler7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_restSpieler7.Name = "lbl_restSpieler7";
-            this.lbl_restSpieler7.Size = new System.Drawing.Size(51, 30);
+            this.lbl_restSpieler7.Size = new System.Drawing.Size(78, 46);
             this.lbl_restSpieler7.TabIndex = 41;
             this.lbl_restSpieler7.Text = "501";
             this.lbl_restSpieler7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1070,9 +1109,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_setSpieler8.AutoSize = true;
-            this.lbl_setSpieler8.Location = new System.Drawing.Point(76, 250);
+            this.lbl_setSpieler8.Location = new System.Drawing.Point(116, 384);
+            this.lbl_setSpieler8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_setSpieler8.Name = "lbl_setSpieler8";
-            this.lbl_setSpieler8.Size = new System.Drawing.Size(37, 38);
+            this.lbl_setSpieler8.Size = new System.Drawing.Size(56, 59);
             this.lbl_setSpieler8.TabIndex = 42;
             this.lbl_setSpieler8.Text = "10";
             this.lbl_setSpieler8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1083,9 +1123,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_legSpieler8.AutoSize = true;
-            this.lbl_legSpieler8.Location = new System.Drawing.Point(119, 250);
+            this.lbl_legSpieler8.Location = new System.Drawing.Point(180, 384);
+            this.lbl_legSpieler8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_legSpieler8.Name = "lbl_legSpieler8";
-            this.lbl_legSpieler8.Size = new System.Drawing.Size(37, 38);
+            this.lbl_legSpieler8.Size = new System.Drawing.Size(56, 59);
             this.lbl_legSpieler8.TabIndex = 43;
             this.lbl_legSpieler8.Text = "10";
             this.lbl_legSpieler8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1096,9 +1137,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_restSpieler8.AutoSize = true;
-            this.lbl_restSpieler8.Location = new System.Drawing.Point(162, 250);
+            this.lbl_restSpieler8.Location = new System.Drawing.Point(244, 384);
+            this.lbl_restSpieler8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_restSpieler8.Name = "lbl_restSpieler8";
-            this.lbl_restSpieler8.Size = new System.Drawing.Size(51, 38);
+            this.lbl_restSpieler8.Size = new System.Drawing.Size(78, 59);
             this.lbl_restSpieler8.TabIndex = 44;
             this.lbl_restSpieler8.Text = "501";
             this.lbl_restSpieler8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1108,9 +1150,10 @@
             this.lbl_checkSpieler1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_checkSpieler1.AutoSize = true;
-            this.lbl_checkSpieler1.Location = new System.Drawing.Point(253, 40);
+            this.lbl_checkSpieler1.Location = new System.Drawing.Point(381, 62);
+            this.lbl_checkSpieler1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_checkSpieler1.Name = "lbl_checkSpieler1";
-            this.lbl_checkSpieler1.Size = new System.Drawing.Size(98, 30);
+            this.lbl_checkSpieler1.Size = new System.Drawing.Size(151, 46);
             this.lbl_checkSpieler1.TabIndex = 45;
             this.lbl_checkSpieler1.Text = "T20 T20 T20";
             this.lbl_checkSpieler1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1120,9 +1163,10 @@
             this.lbl_checkSpieler2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_checkSpieler2.AutoSize = true;
-            this.lbl_checkSpieler2.Location = new System.Drawing.Point(253, 70);
+            this.lbl_checkSpieler2.Location = new System.Drawing.Point(381, 108);
+            this.lbl_checkSpieler2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_checkSpieler2.Name = "lbl_checkSpieler2";
-            this.lbl_checkSpieler2.Size = new System.Drawing.Size(98, 30);
+            this.lbl_checkSpieler2.Size = new System.Drawing.Size(151, 46);
             this.lbl_checkSpieler2.TabIndex = 46;
             this.lbl_checkSpieler2.Text = "T20 T20 T20";
             this.lbl_checkSpieler2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1132,9 +1176,10 @@
             this.lbl_checkSpieler3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_checkSpieler3.AutoSize = true;
-            this.lbl_checkSpieler3.Location = new System.Drawing.Point(253, 100);
+            this.lbl_checkSpieler3.Location = new System.Drawing.Point(381, 154);
+            this.lbl_checkSpieler3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_checkSpieler3.Name = "lbl_checkSpieler3";
-            this.lbl_checkSpieler3.Size = new System.Drawing.Size(98, 30);
+            this.lbl_checkSpieler3.Size = new System.Drawing.Size(151, 46);
             this.lbl_checkSpieler3.TabIndex = 47;
             this.lbl_checkSpieler3.Text = "T20 T20 T20";
             this.lbl_checkSpieler3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1144,9 +1189,10 @@
             this.lbl_checkSpieler4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_checkSpieler4.AutoSize = true;
-            this.lbl_checkSpieler4.Location = new System.Drawing.Point(253, 130);
+            this.lbl_checkSpieler4.Location = new System.Drawing.Point(381, 200);
+            this.lbl_checkSpieler4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_checkSpieler4.Name = "lbl_checkSpieler4";
-            this.lbl_checkSpieler4.Size = new System.Drawing.Size(98, 30);
+            this.lbl_checkSpieler4.Size = new System.Drawing.Size(151, 46);
             this.lbl_checkSpieler4.TabIndex = 48;
             this.lbl_checkSpieler4.Text = "T20 T20 T20";
             this.lbl_checkSpieler4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1156,9 +1202,10 @@
             this.lbl_checkSpieler5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_checkSpieler5.AutoSize = true;
-            this.lbl_checkSpieler5.Location = new System.Drawing.Point(253, 160);
+            this.lbl_checkSpieler5.Location = new System.Drawing.Point(381, 246);
+            this.lbl_checkSpieler5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_checkSpieler5.Name = "lbl_checkSpieler5";
-            this.lbl_checkSpieler5.Size = new System.Drawing.Size(98, 30);
+            this.lbl_checkSpieler5.Size = new System.Drawing.Size(151, 46);
             this.lbl_checkSpieler5.TabIndex = 49;
             this.lbl_checkSpieler5.Text = "T20 T20 T20";
             this.lbl_checkSpieler5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1168,9 +1215,10 @@
             this.lbl_checkSpieler6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_checkSpieler6.AutoSize = true;
-            this.lbl_checkSpieler6.Location = new System.Drawing.Point(253, 190);
+            this.lbl_checkSpieler6.Location = new System.Drawing.Point(381, 292);
+            this.lbl_checkSpieler6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_checkSpieler6.Name = "lbl_checkSpieler6";
-            this.lbl_checkSpieler6.Size = new System.Drawing.Size(98, 30);
+            this.lbl_checkSpieler6.Size = new System.Drawing.Size(151, 46);
             this.lbl_checkSpieler6.TabIndex = 50;
             this.lbl_checkSpieler6.Text = "T20 T20 T20";
             this.lbl_checkSpieler6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1180,9 +1228,10 @@
             this.lbl_checkSpieler7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_checkSpieler7.AutoSize = true;
-            this.lbl_checkSpieler7.Location = new System.Drawing.Point(253, 220);
+            this.lbl_checkSpieler7.Location = new System.Drawing.Point(381, 338);
+            this.lbl_checkSpieler7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_checkSpieler7.Name = "lbl_checkSpieler7";
-            this.lbl_checkSpieler7.Size = new System.Drawing.Size(98, 30);
+            this.lbl_checkSpieler7.Size = new System.Drawing.Size(151, 46);
             this.lbl_checkSpieler7.TabIndex = 51;
             this.lbl_checkSpieler7.Text = "T20 T20 T20";
             this.lbl_checkSpieler7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1192,9 +1241,10 @@
             this.lbl_checkSpieler8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_checkSpieler8.AutoSize = true;
-            this.lbl_checkSpieler8.Location = new System.Drawing.Point(253, 250);
+            this.lbl_checkSpieler8.Location = new System.Drawing.Point(381, 384);
+            this.lbl_checkSpieler8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_checkSpieler8.Name = "lbl_checkSpieler8";
-            this.lbl_checkSpieler8.Size = new System.Drawing.Size(98, 38);
+            this.lbl_checkSpieler8.Size = new System.Drawing.Size(151, 59);
             this.lbl_checkSpieler8.TabIndex = 52;
             this.lbl_checkSpieler8.Text = "T20 T20 T20";
             this.lbl_checkSpieler8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1205,10 +1255,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_avgSpieler1.AutoSize = true;
-            this.lbl_avgSpieler1.Location = new System.Drawing.Point(356, 40);
-            this.lbl_avgSpieler1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_avgSpieler1.Location = new System.Drawing.Point(539, 62);
             this.lbl_avgSpieler1.Name = "lbl_avgSpieler1";
-            this.lbl_avgSpieler1.Size = new System.Drawing.Size(51, 30);
+            this.lbl_avgSpieler1.Size = new System.Drawing.Size(79, 46);
             this.lbl_avgSpieler1.TabIndex = 53;
             this.lbl_avgSpieler1.Text = "label2";
             this.lbl_avgSpieler1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1219,10 +1268,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_avgSpieler2.AutoSize = true;
-            this.lbl_avgSpieler2.Location = new System.Drawing.Point(356, 70);
-            this.lbl_avgSpieler2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_avgSpieler2.Location = new System.Drawing.Point(539, 108);
             this.lbl_avgSpieler2.Name = "lbl_avgSpieler2";
-            this.lbl_avgSpieler2.Size = new System.Drawing.Size(51, 30);
+            this.lbl_avgSpieler2.Size = new System.Drawing.Size(79, 46);
             this.lbl_avgSpieler2.TabIndex = 54;
             this.lbl_avgSpieler2.Text = "label3";
             this.lbl_avgSpieler2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1233,10 +1281,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_avgSpieler3.AutoSize = true;
-            this.lbl_avgSpieler3.Location = new System.Drawing.Point(356, 100);
-            this.lbl_avgSpieler3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_avgSpieler3.Location = new System.Drawing.Point(539, 154);
             this.lbl_avgSpieler3.Name = "lbl_avgSpieler3";
-            this.lbl_avgSpieler3.Size = new System.Drawing.Size(51, 30);
+            this.lbl_avgSpieler3.Size = new System.Drawing.Size(79, 46);
             this.lbl_avgSpieler3.TabIndex = 55;
             this.lbl_avgSpieler3.Text = "label4";
             this.lbl_avgSpieler3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1247,10 +1294,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_avgSpieler4.AutoSize = true;
-            this.lbl_avgSpieler4.Location = new System.Drawing.Point(356, 130);
-            this.lbl_avgSpieler4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_avgSpieler4.Location = new System.Drawing.Point(539, 200);
             this.lbl_avgSpieler4.Name = "lbl_avgSpieler4";
-            this.lbl_avgSpieler4.Size = new System.Drawing.Size(51, 30);
+            this.lbl_avgSpieler4.Size = new System.Drawing.Size(79, 46);
             this.lbl_avgSpieler4.TabIndex = 56;
             this.lbl_avgSpieler4.Text = "label5";
             this.lbl_avgSpieler4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1261,10 +1307,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_avgSpieler5.AutoSize = true;
-            this.lbl_avgSpieler5.Location = new System.Drawing.Point(356, 160);
-            this.lbl_avgSpieler5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_avgSpieler5.Location = new System.Drawing.Point(539, 246);
             this.lbl_avgSpieler5.Name = "lbl_avgSpieler5";
-            this.lbl_avgSpieler5.Size = new System.Drawing.Size(51, 30);
+            this.lbl_avgSpieler5.Size = new System.Drawing.Size(79, 46);
             this.lbl_avgSpieler5.TabIndex = 57;
             this.lbl_avgSpieler5.Text = "label6";
             this.lbl_avgSpieler5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1275,10 +1320,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_avgSpieler6.AutoSize = true;
-            this.lbl_avgSpieler6.Location = new System.Drawing.Point(356, 190);
-            this.lbl_avgSpieler6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_avgSpieler6.Location = new System.Drawing.Point(539, 292);
             this.lbl_avgSpieler6.Name = "lbl_avgSpieler6";
-            this.lbl_avgSpieler6.Size = new System.Drawing.Size(51, 30);
+            this.lbl_avgSpieler6.Size = new System.Drawing.Size(79, 46);
             this.lbl_avgSpieler6.TabIndex = 58;
             this.lbl_avgSpieler6.Text = "label7";
             this.lbl_avgSpieler6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1289,10 +1333,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_avgSpieler7.AutoSize = true;
-            this.lbl_avgSpieler7.Location = new System.Drawing.Point(356, 220);
-            this.lbl_avgSpieler7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_avgSpieler7.Location = new System.Drawing.Point(539, 338);
             this.lbl_avgSpieler7.Name = "lbl_avgSpieler7";
-            this.lbl_avgSpieler7.Size = new System.Drawing.Size(51, 30);
+            this.lbl_avgSpieler7.Size = new System.Drawing.Size(79, 46);
             this.lbl_avgSpieler7.TabIndex = 59;
             this.lbl_avgSpieler7.Text = "label8";
             this.lbl_avgSpieler7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1303,10 +1346,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_avgSpieler8.AutoSize = true;
-            this.lbl_avgSpieler8.Location = new System.Drawing.Point(356, 250);
-            this.lbl_avgSpieler8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_avgSpieler8.Location = new System.Drawing.Point(539, 384);
             this.lbl_avgSpieler8.Name = "lbl_avgSpieler8";
-            this.lbl_avgSpieler8.Size = new System.Drawing.Size(51, 38);
+            this.lbl_avgSpieler8.Size = new System.Drawing.Size(79, 59);
             this.lbl_avgSpieler8.TabIndex = 60;
             this.lbl_avgSpieler8.Text = "label9";
             this.lbl_avgSpieler8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1315,10 +1357,9 @@
             // 
             this.lbl_avg.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_avg.AutoSize = true;
-            this.lbl_avg.Location = new System.Drawing.Point(359, 0);
-            this.lbl_avg.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_avg.Location = new System.Drawing.Point(548, 0);
             this.lbl_avg.Name = "lbl_avg";
-            this.lbl_avg.Size = new System.Drawing.Size(44, 20);
+            this.lbl_avg.Size = new System.Drawing.Size(61, 29);
             this.lbl_avg.TabIndex = 61;
             this.lbl_avg.Text = "AVG";
             this.lbl_avg.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1327,10 +1368,9 @@
             // 
             this.lbl_dq.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_dq.AutoSize = true;
-            this.lbl_dq.Location = new System.Drawing.Point(420, 0);
-            this.lbl_dq.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_dq.Location = new System.Drawing.Point(639, 0);
             this.lbl_dq.Name = "lbl_dq";
-            this.lbl_dq.Size = new System.Drawing.Size(33, 20);
+            this.lbl_dq.Size = new System.Drawing.Size(49, 29);
             this.lbl_dq.TabIndex = 62;
             this.lbl_dq.Text = "DQ";
             this.lbl_dq.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1341,10 +1381,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_dqSpieler1.AutoSize = true;
-            this.lbl_dqSpieler1.Location = new System.Drawing.Point(411, 40);
-            this.lbl_dqSpieler1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_dqSpieler1.Location = new System.Drawing.Point(624, 62);
             this.lbl_dqSpieler1.Name = "lbl_dqSpieler1";
-            this.lbl_dqSpieler1.Size = new System.Drawing.Size(51, 30);
+            this.lbl_dqSpieler1.Size = new System.Drawing.Size(79, 46);
             this.lbl_dqSpieler1.TabIndex = 63;
             this.lbl_dqSpieler1.Text = "label2";
             this.lbl_dqSpieler1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1355,10 +1394,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_dqSpieler2.AutoSize = true;
-            this.lbl_dqSpieler2.Location = new System.Drawing.Point(411, 70);
-            this.lbl_dqSpieler2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_dqSpieler2.Location = new System.Drawing.Point(624, 108);
             this.lbl_dqSpieler2.Name = "lbl_dqSpieler2";
-            this.lbl_dqSpieler2.Size = new System.Drawing.Size(51, 30);
+            this.lbl_dqSpieler2.Size = new System.Drawing.Size(79, 46);
             this.lbl_dqSpieler2.TabIndex = 64;
             this.lbl_dqSpieler2.Text = "label3";
             this.lbl_dqSpieler2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1369,10 +1407,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_dqSpieler3.AutoSize = true;
-            this.lbl_dqSpieler3.Location = new System.Drawing.Point(411, 100);
-            this.lbl_dqSpieler3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_dqSpieler3.Location = new System.Drawing.Point(624, 154);
             this.lbl_dqSpieler3.Name = "lbl_dqSpieler3";
-            this.lbl_dqSpieler3.Size = new System.Drawing.Size(51, 30);
+            this.lbl_dqSpieler3.Size = new System.Drawing.Size(79, 46);
             this.lbl_dqSpieler3.TabIndex = 65;
             this.lbl_dqSpieler3.Text = "label4";
             this.lbl_dqSpieler3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1383,10 +1420,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_dqSpieler4.AutoSize = true;
-            this.lbl_dqSpieler4.Location = new System.Drawing.Point(411, 130);
-            this.lbl_dqSpieler4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_dqSpieler4.Location = new System.Drawing.Point(624, 200);
             this.lbl_dqSpieler4.Name = "lbl_dqSpieler4";
-            this.lbl_dqSpieler4.Size = new System.Drawing.Size(51, 30);
+            this.lbl_dqSpieler4.Size = new System.Drawing.Size(79, 46);
             this.lbl_dqSpieler4.TabIndex = 66;
             this.lbl_dqSpieler4.Text = "label5";
             this.lbl_dqSpieler4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1397,10 +1433,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_dqSpieler5.AutoSize = true;
-            this.lbl_dqSpieler5.Location = new System.Drawing.Point(411, 160);
-            this.lbl_dqSpieler5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_dqSpieler5.Location = new System.Drawing.Point(624, 246);
             this.lbl_dqSpieler5.Name = "lbl_dqSpieler5";
-            this.lbl_dqSpieler5.Size = new System.Drawing.Size(51, 30);
+            this.lbl_dqSpieler5.Size = new System.Drawing.Size(79, 46);
             this.lbl_dqSpieler5.TabIndex = 67;
             this.lbl_dqSpieler5.Text = "label6";
             this.lbl_dqSpieler5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1411,10 +1446,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_dqSpieler6.AutoSize = true;
-            this.lbl_dqSpieler6.Location = new System.Drawing.Point(411, 190);
-            this.lbl_dqSpieler6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_dqSpieler6.Location = new System.Drawing.Point(624, 292);
             this.lbl_dqSpieler6.Name = "lbl_dqSpieler6";
-            this.lbl_dqSpieler6.Size = new System.Drawing.Size(51, 30);
+            this.lbl_dqSpieler6.Size = new System.Drawing.Size(79, 46);
             this.lbl_dqSpieler6.TabIndex = 68;
             this.lbl_dqSpieler6.Text = "label7";
             this.lbl_dqSpieler6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1425,10 +1459,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_dqSpieler7.AutoSize = true;
-            this.lbl_dqSpieler7.Location = new System.Drawing.Point(411, 220);
-            this.lbl_dqSpieler7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_dqSpieler7.Location = new System.Drawing.Point(624, 338);
             this.lbl_dqSpieler7.Name = "lbl_dqSpieler7";
-            this.lbl_dqSpieler7.Size = new System.Drawing.Size(51, 30);
+            this.lbl_dqSpieler7.Size = new System.Drawing.Size(79, 46);
             this.lbl_dqSpieler7.TabIndex = 69;
             this.lbl_dqSpieler7.Text = "label8";
             this.lbl_dqSpieler7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1439,10 +1472,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_dqSpieler8.AutoSize = true;
-            this.lbl_dqSpieler8.Location = new System.Drawing.Point(411, 250);
-            this.lbl_dqSpieler8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_dqSpieler8.Location = new System.Drawing.Point(624, 384);
             this.lbl_dqSpieler8.Name = "lbl_dqSpieler8";
-            this.lbl_dqSpieler8.Size = new System.Drawing.Size(51, 38);
+            this.lbl_dqSpieler8.Size = new System.Drawing.Size(79, 59);
             this.lbl_dqSpieler8.TabIndex = 70;
             this.lbl_dqSpieler8.Text = "label9";
             this.lbl_dqSpieler8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1538,9 +1570,11 @@
             this.groupBox1.Controls.Add(this.btn_wurf1_3);
             this.groupBox1.Controls.Add(this.btn_wurf1_2);
             this.groupBox1.Controls.Add(this.tBx_wurf1);
-            this.groupBox1.Location = new System.Drawing.Point(0, 285);
+            this.groupBox1.Location = new System.Drawing.Point(0, 438);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(802, 289);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(1203, 445);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -1611,10 +1645,9 @@
             "1\tx\t1",
             "DBull\t\t",
             "SBull\t\t"});
-            this.cB_zielWurf3.Location = new System.Drawing.Point(367, 92);
-            this.cB_zielWurf3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cB_zielWurf3.Location = new System.Drawing.Point(550, 142);
             this.cB_zielWurf3.Name = "cB_zielWurf3";
-            this.cB_zielWurf3.Size = new System.Drawing.Size(174, 33);
+            this.cB_zielWurf3.Size = new System.Drawing.Size(259, 44);
             this.cB_zielWurf3.TabIndex = 2;
             this.cB_zielWurf3.Visible = false;
             // 
@@ -1685,10 +1718,9 @@
             "1\tx\t1",
             "DBull\t\t",
             "SBull\t\t"});
-            this.cB_zielWurf2.Location = new System.Drawing.Point(187, 92);
-            this.cB_zielWurf2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cB_zielWurf2.Location = new System.Drawing.Point(280, 142);
             this.cB_zielWurf2.Name = "cB_zielWurf2";
-            this.cB_zielWurf2.Size = new System.Drawing.Size(174, 33);
+            this.cB_zielWurf2.Size = new System.Drawing.Size(259, 44);
             this.cB_zielWurf2.TabIndex = 2;
             this.cB_zielWurf2.Visible = false;
             // 
@@ -1759,10 +1791,9 @@
             "1\tx\t1",
             "DBull\t\t",
             "SBull\t\t"});
-            this.cB_zielWurf1.Location = new System.Drawing.Point(8, 92);
-            this.cB_zielWurf1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cB_zielWurf1.Location = new System.Drawing.Point(12, 142);
             this.cB_zielWurf1.Name = "cB_zielWurf1";
-            this.cB_zielWurf1.Size = new System.Drawing.Size(174, 33);
+            this.cB_zielWurf1.Size = new System.Drawing.Size(259, 44);
             this.cB_zielWurf1.TabIndex = 1;
             this.cB_zielWurf1.Visible = false;
             // 
@@ -1771,10 +1802,9 @@
             this.btn_loeschen.BackColor = System.Drawing.Color.OrangeRed;
             this.btn_loeschen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_loeschen.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_loeschen.Location = new System.Drawing.Point(559, 56);
-            this.btn_loeschen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_loeschen.Location = new System.Drawing.Point(838, 86);
             this.btn_loeschen.Name = "btn_loeschen";
-            this.btn_loeschen.Size = new System.Drawing.Size(169, 66);
+            this.btn_loeschen.Size = new System.Drawing.Size(254, 102);
             this.btn_loeschen.TabIndex = 98;
             this.btn_loeschen.Text = "Löschen";
             this.btn_loeschen.UseVisualStyleBackColor = false;
@@ -1785,10 +1815,9 @@
             this.btn_uebernehmen.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.btn_uebernehmen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_uebernehmen.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_uebernehmen.Location = new System.Drawing.Point(559, 126);
-            this.btn_uebernehmen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_uebernehmen.Location = new System.Drawing.Point(838, 194);
             this.btn_uebernehmen.Name = "btn_uebernehmen";
-            this.btn_uebernehmen.Size = new System.Drawing.Size(169, 136);
+            this.btn_uebernehmen.Size = new System.Drawing.Size(254, 209);
             this.btn_uebernehmen.TabIndex = 97;
             this.btn_uebernehmen.Text = "Übernehmen";
             this.btn_uebernehmen.UseVisualStyleBackColor = false;
@@ -1796,10 +1825,9 @@
             // 
             // btn_nullWurf3
             // 
-            this.btn_nullWurf3.Location = new System.Drawing.Point(367, 235);
-            this.btn_nullWurf3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_nullWurf3.Location = new System.Drawing.Point(550, 362);
             this.btn_nullWurf3.Name = "btn_nullWurf3";
-            this.btn_nullWurf3.Size = new System.Drawing.Size(175, 30);
+            this.btn_nullWurf3.Size = new System.Drawing.Size(262, 46);
             this.btn_nullWurf3.TabIndex = 96;
             this.btn_nullWurf3.Text = "Null";
             this.btn_nullWurf3.UseVisualStyleBackColor = true;
@@ -1807,10 +1835,9 @@
             // 
             // btn_nullWurf2
             // 
-            this.btn_nullWurf2.Location = new System.Drawing.Point(187, 235);
-            this.btn_nullWurf2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_nullWurf2.Location = new System.Drawing.Point(280, 362);
             this.btn_nullWurf2.Name = "btn_nullWurf2";
-            this.btn_nullWurf2.Size = new System.Drawing.Size(175, 30);
+            this.btn_nullWurf2.Size = new System.Drawing.Size(262, 46);
             this.btn_nullWurf2.TabIndex = 95;
             this.btn_nullWurf2.Text = "Null";
             this.btn_nullWurf2.UseVisualStyleBackColor = true;
@@ -1818,10 +1845,9 @@
             // 
             // btn_nullWurf1
             // 
-            this.btn_nullWurf1.Location = new System.Drawing.Point(7, 235);
-            this.btn_nullWurf1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_nullWurf1.Location = new System.Drawing.Point(10, 362);
             this.btn_nullWurf1.Name = "btn_nullWurf1";
-            this.btn_nullWurf1.Size = new System.Drawing.Size(175, 30);
+            this.btn_nullWurf1.Size = new System.Drawing.Size(262, 46);
             this.btn_nullWurf1.TabIndex = 94;
             this.btn_nullWurf1.Text = "Null";
             this.btn_nullWurf1.UseVisualStyleBackColor = true;
@@ -1831,9 +1857,10 @@
             // 
             this.lbl_wurf3.AutoSize = true;
             this.lbl_wurf3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_wurf3.Location = new System.Drawing.Point(412, 16);
+            this.lbl_wurf3.Location = new System.Drawing.Point(618, 25);
+            this.lbl_wurf3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_wurf3.Name = "lbl_wurf3";
-            this.lbl_wurf3.Size = new System.Drawing.Size(93, 31);
+            this.lbl_wurf3.Size = new System.Drawing.Size(137, 46);
             this.lbl_wurf3.TabIndex = 93;
             this.lbl_wurf3.Text = "Wurf 3";
             // 
@@ -1841,9 +1868,10 @@
             // 
             this.lbl_wurf2.AutoSize = true;
             this.lbl_wurf2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_wurf2.Location = new System.Drawing.Point(232, 16);
+            this.lbl_wurf2.Location = new System.Drawing.Point(348, 25);
+            this.lbl_wurf2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_wurf2.Name = "lbl_wurf2";
-            this.lbl_wurf2.Size = new System.Drawing.Size(93, 31);
+            this.lbl_wurf2.Size = new System.Drawing.Size(137, 46);
             this.lbl_wurf2.TabIndex = 92;
             this.lbl_wurf2.Text = "Wurf 2";
             // 
@@ -1851,17 +1879,19 @@
             // 
             this.lbl_wurf1.AutoSize = true;
             this.lbl_wurf1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_wurf1.Location = new System.Drawing.Point(52, 16);
+            this.lbl_wurf1.Location = new System.Drawing.Point(78, 25);
+            this.lbl_wurf1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_wurf1.Name = "lbl_wurf1";
-            this.lbl_wurf1.Size = new System.Drawing.Size(93, 31);
+            this.lbl_wurf1.Size = new System.Drawing.Size(137, 46);
             this.lbl_wurf1.TabIndex = 91;
             this.lbl_wurf1.Text = "Wurf 1";
             // 
             // btn_doubleBullWurf3
             // 
-            this.btn_doubleBullWurf3.Location = new System.Drawing.Point(456, 200);
+            this.btn_doubleBullWurf3.Location = new System.Drawing.Point(684, 308);
+            this.btn_doubleBullWurf3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_doubleBullWurf3.Name = "btn_doubleBullWurf3";
-            this.btn_doubleBullWurf3.Size = new System.Drawing.Size(85, 30);
+            this.btn_doubleBullWurf3.Size = new System.Drawing.Size(128, 46);
             this.btn_doubleBullWurf3.TabIndex = 90;
             this.btn_doubleBullWurf3.Text = "2x Bull";
             this.btn_doubleBullWurf3.UseVisualStyleBackColor = true;
@@ -1869,9 +1899,10 @@
             // 
             // btn_bullWurf3
             // 
-            this.btn_bullWurf3.Location = new System.Drawing.Point(367, 200);
+            this.btn_bullWurf3.Location = new System.Drawing.Point(550, 308);
+            this.btn_bullWurf3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_bullWurf3.Name = "btn_bullWurf3";
-            this.btn_bullWurf3.Size = new System.Drawing.Size(85, 30);
+            this.btn_bullWurf3.Size = new System.Drawing.Size(128, 46);
             this.btn_bullWurf3.TabIndex = 89;
             this.btn_bullWurf3.Text = "Bull";
             this.btn_bullWurf3.UseVisualStyleBackColor = true;
@@ -1879,9 +1910,10 @@
             // 
             // btn_dreimalWurf3
             // 
-            this.btn_dreimalWurf3.Location = new System.Drawing.Point(367, 164);
+            this.btn_dreimalWurf3.Location = new System.Drawing.Point(550, 252);
+            this.btn_dreimalWurf3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_dreimalWurf3.Name = "btn_dreimalWurf3";
-            this.btn_dreimalWurf3.Size = new System.Drawing.Size(174, 30);
+            this.btn_dreimalWurf3.Size = new System.Drawing.Size(261, 46);
             this.btn_dreimalWurf3.TabIndex = 88;
             this.btn_dreimalWurf3.Text = "3x";
             this.btn_dreimalWurf3.UseVisualStyleBackColor = true;
@@ -1889,9 +1921,10 @@
             // 
             // btn_zweimalWurf3
             // 
-            this.btn_zweimalWurf3.Location = new System.Drawing.Point(367, 128);
+            this.btn_zweimalWurf3.Location = new System.Drawing.Point(550, 197);
+            this.btn_zweimalWurf3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_zweimalWurf3.Name = "btn_zweimalWurf3";
-            this.btn_zweimalWurf3.Size = new System.Drawing.Size(174, 30);
+            this.btn_zweimalWurf3.Size = new System.Drawing.Size(261, 46);
             this.btn_zweimalWurf3.TabIndex = 87;
             this.btn_zweimalWurf3.Text = "2x";
             this.btn_zweimalWurf3.UseVisualStyleBackColor = true;
@@ -1899,9 +1932,10 @@
             // 
             // btn_einmalWurf3
             // 
-            this.btn_einmalWurf3.Location = new System.Drawing.Point(367, 92);
+            this.btn_einmalWurf3.Location = new System.Drawing.Point(550, 142);
+            this.btn_einmalWurf3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_einmalWurf3.Name = "btn_einmalWurf3";
-            this.btn_einmalWurf3.Size = new System.Drawing.Size(174, 30);
+            this.btn_einmalWurf3.Size = new System.Drawing.Size(261, 46);
             this.btn_einmalWurf3.TabIndex = 86;
             this.btn_einmalWurf3.Text = "1x";
             this.btn_einmalWurf3.UseVisualStyleBackColor = true;
@@ -1909,9 +1943,10 @@
             // 
             // btn_wurf3_16
             // 
-            this.btn_wurf3_16.Location = new System.Drawing.Point(367, 200);
+            this.btn_wurf3_16.Location = new System.Drawing.Point(550, 308);
+            this.btn_wurf3_16.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf3_16.Name = "btn_wurf3_16";
-            this.btn_wurf3_16.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf3_16.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf3_16.TabIndex = 85;
             this.btn_wurf3_16.Text = "16";
             this.btn_wurf3_16.UseVisualStyleBackColor = true;
@@ -1919,9 +1954,10 @@
             // 
             // btn_wurf3_20
             // 
-            this.btn_wurf3_20.Location = new System.Drawing.Point(511, 200);
+            this.btn_wurf3_20.Location = new System.Drawing.Point(766, 308);
+            this.btn_wurf3_20.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf3_20.Name = "btn_wurf3_20";
-            this.btn_wurf3_20.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf3_20.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf3_20.TabIndex = 84;
             this.btn_wurf3_20.Text = "20";
             this.btn_wurf3_20.UseVisualStyleBackColor = true;
@@ -1929,9 +1965,10 @@
             // 
             // btn_wurf3_19
             // 
-            this.btn_wurf3_19.Location = new System.Drawing.Point(475, 200);
+            this.btn_wurf3_19.Location = new System.Drawing.Point(712, 308);
+            this.btn_wurf3_19.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf3_19.Name = "btn_wurf3_19";
-            this.btn_wurf3_19.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf3_19.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf3_19.TabIndex = 83;
             this.btn_wurf3_19.Text = "19";
             this.btn_wurf3_19.UseVisualStyleBackColor = true;
@@ -1939,9 +1976,10 @@
             // 
             // btn_wurf3_18
             // 
-            this.btn_wurf3_18.Location = new System.Drawing.Point(439, 200);
+            this.btn_wurf3_18.Location = new System.Drawing.Point(658, 308);
+            this.btn_wurf3_18.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf3_18.Name = "btn_wurf3_18";
-            this.btn_wurf3_18.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf3_18.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf3_18.TabIndex = 82;
             this.btn_wurf3_18.Text = "18";
             this.btn_wurf3_18.UseVisualStyleBackColor = true;
@@ -1949,9 +1987,10 @@
             // 
             // btn_wurf3_17
             // 
-            this.btn_wurf3_17.Location = new System.Drawing.Point(403, 200);
+            this.btn_wurf3_17.Location = new System.Drawing.Point(604, 308);
+            this.btn_wurf3_17.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf3_17.Name = "btn_wurf3_17";
-            this.btn_wurf3_17.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf3_17.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf3_17.TabIndex = 81;
             this.btn_wurf3_17.Text = "17";
             this.btn_wurf3_17.UseVisualStyleBackColor = true;
@@ -1959,9 +1998,10 @@
             // 
             // btn_wurf3_11
             // 
-            this.btn_wurf3_11.Location = new System.Drawing.Point(367, 164);
+            this.btn_wurf3_11.Location = new System.Drawing.Point(550, 252);
+            this.btn_wurf3_11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf3_11.Name = "btn_wurf3_11";
-            this.btn_wurf3_11.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf3_11.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf3_11.TabIndex = 80;
             this.btn_wurf3_11.Text = "11";
             this.btn_wurf3_11.UseVisualStyleBackColor = true;
@@ -1969,9 +2009,10 @@
             // 
             // btn_wurf3_15
             // 
-            this.btn_wurf3_15.Location = new System.Drawing.Point(511, 164);
+            this.btn_wurf3_15.Location = new System.Drawing.Point(766, 252);
+            this.btn_wurf3_15.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf3_15.Name = "btn_wurf3_15";
-            this.btn_wurf3_15.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf3_15.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf3_15.TabIndex = 79;
             this.btn_wurf3_15.Text = "15";
             this.btn_wurf3_15.UseVisualStyleBackColor = true;
@@ -1979,9 +2020,10 @@
             // 
             // btn_wurf3_14
             // 
-            this.btn_wurf3_14.Location = new System.Drawing.Point(475, 164);
+            this.btn_wurf3_14.Location = new System.Drawing.Point(712, 252);
+            this.btn_wurf3_14.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf3_14.Name = "btn_wurf3_14";
-            this.btn_wurf3_14.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf3_14.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf3_14.TabIndex = 78;
             this.btn_wurf3_14.Text = "14";
             this.btn_wurf3_14.UseVisualStyleBackColor = true;
@@ -1989,9 +2031,10 @@
             // 
             // btn_wurf3_13
             // 
-            this.btn_wurf3_13.Location = new System.Drawing.Point(439, 164);
+            this.btn_wurf3_13.Location = new System.Drawing.Point(658, 252);
+            this.btn_wurf3_13.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf3_13.Name = "btn_wurf3_13";
-            this.btn_wurf3_13.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf3_13.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf3_13.TabIndex = 77;
             this.btn_wurf3_13.Text = "13";
             this.btn_wurf3_13.UseVisualStyleBackColor = true;
@@ -1999,9 +2042,10 @@
             // 
             // btn_wurf3_12
             // 
-            this.btn_wurf3_12.Location = new System.Drawing.Point(403, 164);
+            this.btn_wurf3_12.Location = new System.Drawing.Point(604, 252);
+            this.btn_wurf3_12.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf3_12.Name = "btn_wurf3_12";
-            this.btn_wurf3_12.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf3_12.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf3_12.TabIndex = 76;
             this.btn_wurf3_12.Text = "12";
             this.btn_wurf3_12.UseVisualStyleBackColor = true;
@@ -2009,9 +2053,10 @@
             // 
             // btn_wurf3_6
             // 
-            this.btn_wurf3_6.Location = new System.Drawing.Point(367, 128);
+            this.btn_wurf3_6.Location = new System.Drawing.Point(550, 197);
+            this.btn_wurf3_6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf3_6.Name = "btn_wurf3_6";
-            this.btn_wurf3_6.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf3_6.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf3_6.TabIndex = 75;
             this.btn_wurf3_6.Text = "6";
             this.btn_wurf3_6.UseVisualStyleBackColor = true;
@@ -2019,9 +2064,10 @@
             // 
             // btn_wurf3_10
             // 
-            this.btn_wurf3_10.Location = new System.Drawing.Point(511, 128);
+            this.btn_wurf3_10.Location = new System.Drawing.Point(766, 197);
+            this.btn_wurf3_10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf3_10.Name = "btn_wurf3_10";
-            this.btn_wurf3_10.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf3_10.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf3_10.TabIndex = 74;
             this.btn_wurf3_10.Text = "10";
             this.btn_wurf3_10.UseVisualStyleBackColor = true;
@@ -2029,9 +2075,10 @@
             // 
             // btn_wurf3_9
             // 
-            this.btn_wurf3_9.Location = new System.Drawing.Point(475, 128);
+            this.btn_wurf3_9.Location = new System.Drawing.Point(712, 197);
+            this.btn_wurf3_9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf3_9.Name = "btn_wurf3_9";
-            this.btn_wurf3_9.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf3_9.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf3_9.TabIndex = 73;
             this.btn_wurf3_9.Text = "9";
             this.btn_wurf3_9.UseVisualStyleBackColor = true;
@@ -2039,9 +2086,10 @@
             // 
             // btn_wurf3_8
             // 
-            this.btn_wurf3_8.Location = new System.Drawing.Point(439, 128);
+            this.btn_wurf3_8.Location = new System.Drawing.Point(658, 197);
+            this.btn_wurf3_8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf3_8.Name = "btn_wurf3_8";
-            this.btn_wurf3_8.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf3_8.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf3_8.TabIndex = 72;
             this.btn_wurf3_8.Text = "8";
             this.btn_wurf3_8.UseVisualStyleBackColor = true;
@@ -2049,9 +2097,10 @@
             // 
             // btn_wurf3_7
             // 
-            this.btn_wurf3_7.Location = new System.Drawing.Point(403, 128);
+            this.btn_wurf3_7.Location = new System.Drawing.Point(604, 197);
+            this.btn_wurf3_7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf3_7.Name = "btn_wurf3_7";
-            this.btn_wurf3_7.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf3_7.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf3_7.TabIndex = 71;
             this.btn_wurf3_7.Text = "7";
             this.btn_wurf3_7.UseVisualStyleBackColor = true;
@@ -2059,9 +2108,10 @@
             // 
             // btn_wurf3_1
             // 
-            this.btn_wurf3_1.Location = new System.Drawing.Point(367, 92);
+            this.btn_wurf3_1.Location = new System.Drawing.Point(550, 142);
+            this.btn_wurf3_1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf3_1.Name = "btn_wurf3_1";
-            this.btn_wurf3_1.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf3_1.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf3_1.TabIndex = 70;
             this.btn_wurf3_1.Text = "1";
             this.btn_wurf3_1.UseVisualStyleBackColor = true;
@@ -2069,9 +2119,10 @@
             // 
             // btn_wurf3_5
             // 
-            this.btn_wurf3_5.Location = new System.Drawing.Point(511, 92);
+            this.btn_wurf3_5.Location = new System.Drawing.Point(766, 142);
+            this.btn_wurf3_5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf3_5.Name = "btn_wurf3_5";
-            this.btn_wurf3_5.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf3_5.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf3_5.TabIndex = 69;
             this.btn_wurf3_5.Text = "5";
             this.btn_wurf3_5.UseVisualStyleBackColor = true;
@@ -2079,9 +2130,10 @@
             // 
             // btn_wurf3_4
             // 
-            this.btn_wurf3_4.Location = new System.Drawing.Point(475, 92);
+            this.btn_wurf3_4.Location = new System.Drawing.Point(712, 142);
+            this.btn_wurf3_4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf3_4.Name = "btn_wurf3_4";
-            this.btn_wurf3_4.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf3_4.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf3_4.TabIndex = 68;
             this.btn_wurf3_4.Text = "4";
             this.btn_wurf3_4.UseVisualStyleBackColor = true;
@@ -2089,9 +2141,10 @@
             // 
             // btn_wurf3_3
             // 
-            this.btn_wurf3_3.Location = new System.Drawing.Point(439, 92);
+            this.btn_wurf3_3.Location = new System.Drawing.Point(658, 142);
+            this.btn_wurf3_3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf3_3.Name = "btn_wurf3_3";
-            this.btn_wurf3_3.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf3_3.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf3_3.TabIndex = 67;
             this.btn_wurf3_3.Text = "3";
             this.btn_wurf3_3.UseVisualStyleBackColor = true;
@@ -2099,9 +2152,10 @@
             // 
             // btn_wurf3_2
             // 
-            this.btn_wurf3_2.Location = new System.Drawing.Point(403, 92);
+            this.btn_wurf3_2.Location = new System.Drawing.Point(604, 142);
+            this.btn_wurf3_2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf3_2.Name = "btn_wurf3_2";
-            this.btn_wurf3_2.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf3_2.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf3_2.TabIndex = 66;
             this.btn_wurf3_2.Text = "2";
             this.btn_wurf3_2.UseVisualStyleBackColor = true;
@@ -2110,19 +2164,21 @@
             // tBx_wurf3
             // 
             this.tBx_wurf3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBx_wurf3.Location = new System.Drawing.Point(367, 56);
+            this.tBx_wurf3.Location = new System.Drawing.Point(550, 86);
+            this.tBx_wurf3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tBx_wurf3.Name = "tBx_wurf3";
             this.tBx_wurf3.ReadOnly = true;
-            this.tBx_wurf3.Size = new System.Drawing.Size(174, 30);
+            this.tBx_wurf3.Size = new System.Drawing.Size(259, 41);
             this.tBx_wurf3.TabIndex = 65;
             this.tBx_wurf3.Text = "3x20";
             this.tBx_wurf3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btn_doubleBullWurf2
             // 
-            this.btn_doubleBullWurf2.Location = new System.Drawing.Point(277, 200);
+            this.btn_doubleBullWurf2.Location = new System.Drawing.Point(416, 308);
+            this.btn_doubleBullWurf2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_doubleBullWurf2.Name = "btn_doubleBullWurf2";
-            this.btn_doubleBullWurf2.Size = new System.Drawing.Size(85, 30);
+            this.btn_doubleBullWurf2.Size = new System.Drawing.Size(128, 46);
             this.btn_doubleBullWurf2.TabIndex = 64;
             this.btn_doubleBullWurf2.Text = "2x Bull";
             this.btn_doubleBullWurf2.UseVisualStyleBackColor = true;
@@ -2130,9 +2186,10 @@
             // 
             // btn_bullWurf2
             // 
-            this.btn_bullWurf2.Location = new System.Drawing.Point(187, 200);
+            this.btn_bullWurf2.Location = new System.Drawing.Point(280, 308);
+            this.btn_bullWurf2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_bullWurf2.Name = "btn_bullWurf2";
-            this.btn_bullWurf2.Size = new System.Drawing.Size(85, 30);
+            this.btn_bullWurf2.Size = new System.Drawing.Size(128, 46);
             this.btn_bullWurf2.TabIndex = 63;
             this.btn_bullWurf2.Text = "Bull";
             this.btn_bullWurf2.UseVisualStyleBackColor = true;
@@ -2140,9 +2197,10 @@
             // 
             // btn_dreimalWurf2
             // 
-            this.btn_dreimalWurf2.Location = new System.Drawing.Point(187, 164);
+            this.btn_dreimalWurf2.Location = new System.Drawing.Point(280, 252);
+            this.btn_dreimalWurf2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_dreimalWurf2.Name = "btn_dreimalWurf2";
-            this.btn_dreimalWurf2.Size = new System.Drawing.Size(174, 30);
+            this.btn_dreimalWurf2.Size = new System.Drawing.Size(261, 46);
             this.btn_dreimalWurf2.TabIndex = 62;
             this.btn_dreimalWurf2.Text = "3x";
             this.btn_dreimalWurf2.UseVisualStyleBackColor = true;
@@ -2150,9 +2208,10 @@
             // 
             // btn_zweimalWurf2
             // 
-            this.btn_zweimalWurf2.Location = new System.Drawing.Point(187, 128);
+            this.btn_zweimalWurf2.Location = new System.Drawing.Point(280, 197);
+            this.btn_zweimalWurf2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_zweimalWurf2.Name = "btn_zweimalWurf2";
-            this.btn_zweimalWurf2.Size = new System.Drawing.Size(174, 30);
+            this.btn_zweimalWurf2.Size = new System.Drawing.Size(261, 46);
             this.btn_zweimalWurf2.TabIndex = 61;
             this.btn_zweimalWurf2.Text = "2x";
             this.btn_zweimalWurf2.UseVisualStyleBackColor = true;
@@ -2160,9 +2219,10 @@
             // 
             // btn_einmalWurf2
             // 
-            this.btn_einmalWurf2.Location = new System.Drawing.Point(187, 92);
+            this.btn_einmalWurf2.Location = new System.Drawing.Point(280, 142);
+            this.btn_einmalWurf2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_einmalWurf2.Name = "btn_einmalWurf2";
-            this.btn_einmalWurf2.Size = new System.Drawing.Size(174, 30);
+            this.btn_einmalWurf2.Size = new System.Drawing.Size(261, 46);
             this.btn_einmalWurf2.TabIndex = 60;
             this.btn_einmalWurf2.Text = "1x";
             this.btn_einmalWurf2.UseVisualStyleBackColor = true;
@@ -2170,9 +2230,10 @@
             // 
             // btn_wurf2_16
             // 
-            this.btn_wurf2_16.Location = new System.Drawing.Point(187, 200);
+            this.btn_wurf2_16.Location = new System.Drawing.Point(280, 308);
+            this.btn_wurf2_16.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf2_16.Name = "btn_wurf2_16";
-            this.btn_wurf2_16.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf2_16.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf2_16.TabIndex = 59;
             this.btn_wurf2_16.Text = "16";
             this.btn_wurf2_16.UseVisualStyleBackColor = true;
@@ -2180,9 +2241,10 @@
             // 
             // btn_wurf2_20
             // 
-            this.btn_wurf2_20.Location = new System.Drawing.Point(331, 200);
+            this.btn_wurf2_20.Location = new System.Drawing.Point(496, 308);
+            this.btn_wurf2_20.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf2_20.Name = "btn_wurf2_20";
-            this.btn_wurf2_20.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf2_20.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf2_20.TabIndex = 58;
             this.btn_wurf2_20.Text = "20";
             this.btn_wurf2_20.UseVisualStyleBackColor = true;
@@ -2190,9 +2252,10 @@
             // 
             // btn_wurf2_19
             // 
-            this.btn_wurf2_19.Location = new System.Drawing.Point(295, 200);
+            this.btn_wurf2_19.Location = new System.Drawing.Point(442, 308);
+            this.btn_wurf2_19.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf2_19.Name = "btn_wurf2_19";
-            this.btn_wurf2_19.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf2_19.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf2_19.TabIndex = 57;
             this.btn_wurf2_19.Text = "19";
             this.btn_wurf2_19.UseVisualStyleBackColor = true;
@@ -2200,9 +2263,10 @@
             // 
             // btn_wurf2_18
             // 
-            this.btn_wurf2_18.Location = new System.Drawing.Point(259, 200);
+            this.btn_wurf2_18.Location = new System.Drawing.Point(388, 308);
+            this.btn_wurf2_18.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf2_18.Name = "btn_wurf2_18";
-            this.btn_wurf2_18.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf2_18.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf2_18.TabIndex = 56;
             this.btn_wurf2_18.Text = "18";
             this.btn_wurf2_18.UseVisualStyleBackColor = true;
@@ -2210,9 +2274,10 @@
             // 
             // btn_wurf2_17
             // 
-            this.btn_wurf2_17.Location = new System.Drawing.Point(223, 200);
+            this.btn_wurf2_17.Location = new System.Drawing.Point(334, 308);
+            this.btn_wurf2_17.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf2_17.Name = "btn_wurf2_17";
-            this.btn_wurf2_17.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf2_17.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf2_17.TabIndex = 55;
             this.btn_wurf2_17.Text = "17";
             this.btn_wurf2_17.UseVisualStyleBackColor = true;
@@ -2220,9 +2285,10 @@
             // 
             // btn_wurf2_11
             // 
-            this.btn_wurf2_11.Location = new System.Drawing.Point(187, 164);
+            this.btn_wurf2_11.Location = new System.Drawing.Point(280, 252);
+            this.btn_wurf2_11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf2_11.Name = "btn_wurf2_11";
-            this.btn_wurf2_11.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf2_11.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf2_11.TabIndex = 54;
             this.btn_wurf2_11.Text = "11";
             this.btn_wurf2_11.UseVisualStyleBackColor = true;
@@ -2230,9 +2296,10 @@
             // 
             // btn_wurf2_15
             // 
-            this.btn_wurf2_15.Location = new System.Drawing.Point(331, 164);
+            this.btn_wurf2_15.Location = new System.Drawing.Point(496, 252);
+            this.btn_wurf2_15.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf2_15.Name = "btn_wurf2_15";
-            this.btn_wurf2_15.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf2_15.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf2_15.TabIndex = 53;
             this.btn_wurf2_15.Text = "15";
             this.btn_wurf2_15.UseVisualStyleBackColor = true;
@@ -2240,9 +2307,10 @@
             // 
             // btn_wurf2_14
             // 
-            this.btn_wurf2_14.Location = new System.Drawing.Point(295, 164);
+            this.btn_wurf2_14.Location = new System.Drawing.Point(442, 252);
+            this.btn_wurf2_14.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf2_14.Name = "btn_wurf2_14";
-            this.btn_wurf2_14.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf2_14.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf2_14.TabIndex = 52;
             this.btn_wurf2_14.Text = "14";
             this.btn_wurf2_14.UseVisualStyleBackColor = true;
@@ -2250,9 +2318,10 @@
             // 
             // btn_wurf2_13
             // 
-            this.btn_wurf2_13.Location = new System.Drawing.Point(259, 164);
+            this.btn_wurf2_13.Location = new System.Drawing.Point(388, 252);
+            this.btn_wurf2_13.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf2_13.Name = "btn_wurf2_13";
-            this.btn_wurf2_13.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf2_13.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf2_13.TabIndex = 51;
             this.btn_wurf2_13.Text = "13";
             this.btn_wurf2_13.UseVisualStyleBackColor = true;
@@ -2260,9 +2329,10 @@
             // 
             // btn_wurf2_12
             // 
-            this.btn_wurf2_12.Location = new System.Drawing.Point(223, 164);
+            this.btn_wurf2_12.Location = new System.Drawing.Point(334, 252);
+            this.btn_wurf2_12.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf2_12.Name = "btn_wurf2_12";
-            this.btn_wurf2_12.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf2_12.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf2_12.TabIndex = 50;
             this.btn_wurf2_12.Text = "12";
             this.btn_wurf2_12.UseVisualStyleBackColor = true;
@@ -2270,9 +2340,10 @@
             // 
             // btn_wurf2_6
             // 
-            this.btn_wurf2_6.Location = new System.Drawing.Point(187, 128);
+            this.btn_wurf2_6.Location = new System.Drawing.Point(280, 197);
+            this.btn_wurf2_6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf2_6.Name = "btn_wurf2_6";
-            this.btn_wurf2_6.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf2_6.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf2_6.TabIndex = 49;
             this.btn_wurf2_6.Text = "6";
             this.btn_wurf2_6.UseVisualStyleBackColor = true;
@@ -2280,9 +2351,10 @@
             // 
             // btn_wurf2_10
             // 
-            this.btn_wurf2_10.Location = new System.Drawing.Point(331, 128);
+            this.btn_wurf2_10.Location = new System.Drawing.Point(496, 197);
+            this.btn_wurf2_10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf2_10.Name = "btn_wurf2_10";
-            this.btn_wurf2_10.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf2_10.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf2_10.TabIndex = 48;
             this.btn_wurf2_10.Text = "10";
             this.btn_wurf2_10.UseVisualStyleBackColor = true;
@@ -2290,9 +2362,10 @@
             // 
             // btn_wurf2_9
             // 
-            this.btn_wurf2_9.Location = new System.Drawing.Point(295, 128);
+            this.btn_wurf2_9.Location = new System.Drawing.Point(442, 197);
+            this.btn_wurf2_9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf2_9.Name = "btn_wurf2_9";
-            this.btn_wurf2_9.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf2_9.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf2_9.TabIndex = 47;
             this.btn_wurf2_9.Text = "9";
             this.btn_wurf2_9.UseVisualStyleBackColor = true;
@@ -2300,9 +2373,10 @@
             // 
             // btn_wurf2_8
             // 
-            this.btn_wurf2_8.Location = new System.Drawing.Point(259, 128);
+            this.btn_wurf2_8.Location = new System.Drawing.Point(388, 197);
+            this.btn_wurf2_8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf2_8.Name = "btn_wurf2_8";
-            this.btn_wurf2_8.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf2_8.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf2_8.TabIndex = 46;
             this.btn_wurf2_8.Text = "8";
             this.btn_wurf2_8.UseVisualStyleBackColor = true;
@@ -2310,9 +2384,10 @@
             // 
             // btn_wurf2_7
             // 
-            this.btn_wurf2_7.Location = new System.Drawing.Point(223, 128);
+            this.btn_wurf2_7.Location = new System.Drawing.Point(334, 197);
+            this.btn_wurf2_7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf2_7.Name = "btn_wurf2_7";
-            this.btn_wurf2_7.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf2_7.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf2_7.TabIndex = 45;
             this.btn_wurf2_7.Text = "7";
             this.btn_wurf2_7.UseVisualStyleBackColor = true;
@@ -2320,9 +2395,10 @@
             // 
             // btn_wurf2_1
             // 
-            this.btn_wurf2_1.Location = new System.Drawing.Point(187, 92);
+            this.btn_wurf2_1.Location = new System.Drawing.Point(280, 142);
+            this.btn_wurf2_1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf2_1.Name = "btn_wurf2_1";
-            this.btn_wurf2_1.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf2_1.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf2_1.TabIndex = 44;
             this.btn_wurf2_1.Text = "1";
             this.btn_wurf2_1.UseVisualStyleBackColor = true;
@@ -2330,9 +2406,10 @@
             // 
             // btn_wurf2_5
             // 
-            this.btn_wurf2_5.Location = new System.Drawing.Point(331, 92);
+            this.btn_wurf2_5.Location = new System.Drawing.Point(496, 142);
+            this.btn_wurf2_5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf2_5.Name = "btn_wurf2_5";
-            this.btn_wurf2_5.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf2_5.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf2_5.TabIndex = 43;
             this.btn_wurf2_5.Text = "5";
             this.btn_wurf2_5.UseVisualStyleBackColor = true;
@@ -2340,9 +2417,10 @@
             // 
             // btn_wurf2_4
             // 
-            this.btn_wurf2_4.Location = new System.Drawing.Point(295, 92);
+            this.btn_wurf2_4.Location = new System.Drawing.Point(442, 142);
+            this.btn_wurf2_4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf2_4.Name = "btn_wurf2_4";
-            this.btn_wurf2_4.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf2_4.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf2_4.TabIndex = 42;
             this.btn_wurf2_4.Text = "4";
             this.btn_wurf2_4.UseVisualStyleBackColor = true;
@@ -2350,9 +2428,10 @@
             // 
             // btn_wurf2_3
             // 
-            this.btn_wurf2_3.Location = new System.Drawing.Point(259, 92);
+            this.btn_wurf2_3.Location = new System.Drawing.Point(388, 142);
+            this.btn_wurf2_3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf2_3.Name = "btn_wurf2_3";
-            this.btn_wurf2_3.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf2_3.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf2_3.TabIndex = 41;
             this.btn_wurf2_3.Text = "3";
             this.btn_wurf2_3.UseVisualStyleBackColor = true;
@@ -2360,9 +2439,10 @@
             // 
             // btn_wurf2_2
             // 
-            this.btn_wurf2_2.Location = new System.Drawing.Point(223, 92);
+            this.btn_wurf2_2.Location = new System.Drawing.Point(334, 142);
+            this.btn_wurf2_2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf2_2.Name = "btn_wurf2_2";
-            this.btn_wurf2_2.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf2_2.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf2_2.TabIndex = 40;
             this.btn_wurf2_2.Text = "2";
             this.btn_wurf2_2.UseVisualStyleBackColor = true;
@@ -2371,19 +2451,21 @@
             // tBx_wurf2
             // 
             this.tBx_wurf2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBx_wurf2.Location = new System.Drawing.Point(187, 56);
+            this.tBx_wurf2.Location = new System.Drawing.Point(280, 86);
+            this.tBx_wurf2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tBx_wurf2.Name = "tBx_wurf2";
             this.tBx_wurf2.ReadOnly = true;
-            this.tBx_wurf2.Size = new System.Drawing.Size(174, 30);
+            this.tBx_wurf2.Size = new System.Drawing.Size(259, 41);
             this.tBx_wurf2.TabIndex = 39;
             this.tBx_wurf2.Text = "3x20";
             this.tBx_wurf2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btn_doubleBullWurf1
             // 
-            this.btn_doubleBullWurf1.Location = new System.Drawing.Point(97, 200);
+            this.btn_doubleBullWurf1.Location = new System.Drawing.Point(146, 308);
+            this.btn_doubleBullWurf1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_doubleBullWurf1.Name = "btn_doubleBullWurf1";
-            this.btn_doubleBullWurf1.Size = new System.Drawing.Size(85, 30);
+            this.btn_doubleBullWurf1.Size = new System.Drawing.Size(128, 46);
             this.btn_doubleBullWurf1.TabIndex = 38;
             this.btn_doubleBullWurf1.Text = "2x Bull";
             this.btn_doubleBullWurf1.UseVisualStyleBackColor = true;
@@ -2391,9 +2473,10 @@
             // 
             // btn_bullWurf1
             // 
-            this.btn_bullWurf1.Location = new System.Drawing.Point(7, 200);
+            this.btn_bullWurf1.Location = new System.Drawing.Point(10, 308);
+            this.btn_bullWurf1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_bullWurf1.Name = "btn_bullWurf1";
-            this.btn_bullWurf1.Size = new System.Drawing.Size(85, 30);
+            this.btn_bullWurf1.Size = new System.Drawing.Size(128, 46);
             this.btn_bullWurf1.TabIndex = 37;
             this.btn_bullWurf1.Text = "Bull";
             this.btn_bullWurf1.UseVisualStyleBackColor = true;
@@ -2401,9 +2484,10 @@
             // 
             // btn_dreimalWurf1
             // 
-            this.btn_dreimalWurf1.Location = new System.Drawing.Point(7, 164);
+            this.btn_dreimalWurf1.Location = new System.Drawing.Point(10, 252);
+            this.btn_dreimalWurf1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_dreimalWurf1.Name = "btn_dreimalWurf1";
-            this.btn_dreimalWurf1.Size = new System.Drawing.Size(174, 30);
+            this.btn_dreimalWurf1.Size = new System.Drawing.Size(261, 46);
             this.btn_dreimalWurf1.TabIndex = 36;
             this.btn_dreimalWurf1.Text = "3x";
             this.btn_dreimalWurf1.UseVisualStyleBackColor = true;
@@ -2411,9 +2495,10 @@
             // 
             // btn_zweimalWurf1
             // 
-            this.btn_zweimalWurf1.Location = new System.Drawing.Point(7, 128);
+            this.btn_zweimalWurf1.Location = new System.Drawing.Point(10, 197);
+            this.btn_zweimalWurf1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_zweimalWurf1.Name = "btn_zweimalWurf1";
-            this.btn_zweimalWurf1.Size = new System.Drawing.Size(174, 30);
+            this.btn_zweimalWurf1.Size = new System.Drawing.Size(261, 46);
             this.btn_zweimalWurf1.TabIndex = 35;
             this.btn_zweimalWurf1.Text = "2x";
             this.btn_zweimalWurf1.UseVisualStyleBackColor = true;
@@ -2421,9 +2506,10 @@
             // 
             // btn_einmalWurf1
             // 
-            this.btn_einmalWurf1.Location = new System.Drawing.Point(7, 92);
+            this.btn_einmalWurf1.Location = new System.Drawing.Point(10, 142);
+            this.btn_einmalWurf1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_einmalWurf1.Name = "btn_einmalWurf1";
-            this.btn_einmalWurf1.Size = new System.Drawing.Size(174, 30);
+            this.btn_einmalWurf1.Size = new System.Drawing.Size(261, 46);
             this.btn_einmalWurf1.TabIndex = 34;
             this.btn_einmalWurf1.Text = "1x";
             this.btn_einmalWurf1.UseVisualStyleBackColor = true;
@@ -2431,9 +2517,10 @@
             // 
             // btn_wurf1_16
             // 
-            this.btn_wurf1_16.Location = new System.Drawing.Point(7, 200);
+            this.btn_wurf1_16.Location = new System.Drawing.Point(10, 308);
+            this.btn_wurf1_16.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf1_16.Name = "btn_wurf1_16";
-            this.btn_wurf1_16.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf1_16.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf1_16.TabIndex = 33;
             this.btn_wurf1_16.Text = "16";
             this.btn_wurf1_16.UseVisualStyleBackColor = true;
@@ -2441,9 +2528,10 @@
             // 
             // btn_wurf1_20
             // 
-            this.btn_wurf1_20.Location = new System.Drawing.Point(151, 200);
+            this.btn_wurf1_20.Location = new System.Drawing.Point(226, 308);
+            this.btn_wurf1_20.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf1_20.Name = "btn_wurf1_20";
-            this.btn_wurf1_20.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf1_20.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf1_20.TabIndex = 32;
             this.btn_wurf1_20.Text = "20";
             this.btn_wurf1_20.UseVisualStyleBackColor = true;
@@ -2451,9 +2539,10 @@
             // 
             // btn_wurf1_19
             // 
-            this.btn_wurf1_19.Location = new System.Drawing.Point(115, 200);
+            this.btn_wurf1_19.Location = new System.Drawing.Point(172, 308);
+            this.btn_wurf1_19.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf1_19.Name = "btn_wurf1_19";
-            this.btn_wurf1_19.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf1_19.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf1_19.TabIndex = 31;
             this.btn_wurf1_19.Text = "19";
             this.btn_wurf1_19.UseVisualStyleBackColor = true;
@@ -2461,9 +2550,10 @@
             // 
             // btn_wurf1_18
             // 
-            this.btn_wurf1_18.Location = new System.Drawing.Point(79, 200);
+            this.btn_wurf1_18.Location = new System.Drawing.Point(118, 308);
+            this.btn_wurf1_18.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf1_18.Name = "btn_wurf1_18";
-            this.btn_wurf1_18.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf1_18.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf1_18.TabIndex = 30;
             this.btn_wurf1_18.Text = "18";
             this.btn_wurf1_18.UseVisualStyleBackColor = true;
@@ -2471,9 +2561,10 @@
             // 
             // btn_wurf1_17
             // 
-            this.btn_wurf1_17.Location = new System.Drawing.Point(43, 200);
+            this.btn_wurf1_17.Location = new System.Drawing.Point(64, 308);
+            this.btn_wurf1_17.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf1_17.Name = "btn_wurf1_17";
-            this.btn_wurf1_17.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf1_17.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf1_17.TabIndex = 29;
             this.btn_wurf1_17.Text = "17";
             this.btn_wurf1_17.UseVisualStyleBackColor = true;
@@ -2481,9 +2572,10 @@
             // 
             // btn_wurf1_11
             // 
-            this.btn_wurf1_11.Location = new System.Drawing.Point(7, 164);
+            this.btn_wurf1_11.Location = new System.Drawing.Point(10, 252);
+            this.btn_wurf1_11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf1_11.Name = "btn_wurf1_11";
-            this.btn_wurf1_11.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf1_11.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf1_11.TabIndex = 28;
             this.btn_wurf1_11.Text = "11";
             this.btn_wurf1_11.UseVisualStyleBackColor = true;
@@ -2491,9 +2583,10 @@
             // 
             // btn_wurf1_15
             // 
-            this.btn_wurf1_15.Location = new System.Drawing.Point(151, 164);
+            this.btn_wurf1_15.Location = new System.Drawing.Point(226, 252);
+            this.btn_wurf1_15.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf1_15.Name = "btn_wurf1_15";
-            this.btn_wurf1_15.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf1_15.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf1_15.TabIndex = 27;
             this.btn_wurf1_15.Text = "15";
             this.btn_wurf1_15.UseVisualStyleBackColor = true;
@@ -2501,9 +2594,10 @@
             // 
             // btn_wurf1_14
             // 
-            this.btn_wurf1_14.Location = new System.Drawing.Point(115, 164);
+            this.btn_wurf1_14.Location = new System.Drawing.Point(172, 252);
+            this.btn_wurf1_14.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf1_14.Name = "btn_wurf1_14";
-            this.btn_wurf1_14.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf1_14.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf1_14.TabIndex = 26;
             this.btn_wurf1_14.Text = "14";
             this.btn_wurf1_14.UseVisualStyleBackColor = true;
@@ -2511,9 +2605,10 @@
             // 
             // btn_wurf1_13
             // 
-            this.btn_wurf1_13.Location = new System.Drawing.Point(79, 164);
+            this.btn_wurf1_13.Location = new System.Drawing.Point(118, 252);
+            this.btn_wurf1_13.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf1_13.Name = "btn_wurf1_13";
-            this.btn_wurf1_13.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf1_13.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf1_13.TabIndex = 25;
             this.btn_wurf1_13.Text = "13";
             this.btn_wurf1_13.UseVisualStyleBackColor = true;
@@ -2521,9 +2616,10 @@
             // 
             // btn_wurf1_12
             // 
-            this.btn_wurf1_12.Location = new System.Drawing.Point(43, 164);
+            this.btn_wurf1_12.Location = new System.Drawing.Point(64, 252);
+            this.btn_wurf1_12.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf1_12.Name = "btn_wurf1_12";
-            this.btn_wurf1_12.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf1_12.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf1_12.TabIndex = 24;
             this.btn_wurf1_12.Text = "12";
             this.btn_wurf1_12.UseVisualStyleBackColor = true;
@@ -2531,9 +2627,10 @@
             // 
             // btn_wurf1_6
             // 
-            this.btn_wurf1_6.Location = new System.Drawing.Point(7, 128);
+            this.btn_wurf1_6.Location = new System.Drawing.Point(10, 197);
+            this.btn_wurf1_6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf1_6.Name = "btn_wurf1_6";
-            this.btn_wurf1_6.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf1_6.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf1_6.TabIndex = 23;
             this.btn_wurf1_6.Text = "6";
             this.btn_wurf1_6.UseVisualStyleBackColor = true;
@@ -2541,9 +2638,10 @@
             // 
             // btn_wurf1_10
             // 
-            this.btn_wurf1_10.Location = new System.Drawing.Point(151, 128);
+            this.btn_wurf1_10.Location = new System.Drawing.Point(226, 197);
+            this.btn_wurf1_10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf1_10.Name = "btn_wurf1_10";
-            this.btn_wurf1_10.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf1_10.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf1_10.TabIndex = 22;
             this.btn_wurf1_10.Text = "10";
             this.btn_wurf1_10.UseVisualStyleBackColor = true;
@@ -2551,9 +2649,10 @@
             // 
             // btn_wurf1_9
             // 
-            this.btn_wurf1_9.Location = new System.Drawing.Point(115, 128);
+            this.btn_wurf1_9.Location = new System.Drawing.Point(172, 197);
+            this.btn_wurf1_9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf1_9.Name = "btn_wurf1_9";
-            this.btn_wurf1_9.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf1_9.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf1_9.TabIndex = 21;
             this.btn_wurf1_9.Text = "9";
             this.btn_wurf1_9.UseVisualStyleBackColor = true;
@@ -2561,9 +2660,10 @@
             // 
             // btn_wurf1_8
             // 
-            this.btn_wurf1_8.Location = new System.Drawing.Point(79, 128);
+            this.btn_wurf1_8.Location = new System.Drawing.Point(118, 197);
+            this.btn_wurf1_8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf1_8.Name = "btn_wurf1_8";
-            this.btn_wurf1_8.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf1_8.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf1_8.TabIndex = 20;
             this.btn_wurf1_8.Text = "8";
             this.btn_wurf1_8.UseVisualStyleBackColor = true;
@@ -2571,9 +2671,10 @@
             // 
             // btn_wurf1_7
             // 
-            this.btn_wurf1_7.Location = new System.Drawing.Point(43, 128);
+            this.btn_wurf1_7.Location = new System.Drawing.Point(64, 197);
+            this.btn_wurf1_7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf1_7.Name = "btn_wurf1_7";
-            this.btn_wurf1_7.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf1_7.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf1_7.TabIndex = 19;
             this.btn_wurf1_7.Text = "7";
             this.btn_wurf1_7.UseVisualStyleBackColor = true;
@@ -2581,9 +2682,10 @@
             // 
             // btn_wurf1_1
             // 
-            this.btn_wurf1_1.Location = new System.Drawing.Point(7, 92);
+            this.btn_wurf1_1.Location = new System.Drawing.Point(10, 142);
+            this.btn_wurf1_1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf1_1.Name = "btn_wurf1_1";
-            this.btn_wurf1_1.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf1_1.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf1_1.TabIndex = 18;
             this.btn_wurf1_1.Text = "1";
             this.btn_wurf1_1.UseVisualStyleBackColor = true;
@@ -2591,9 +2693,10 @@
             // 
             // btn_wurf1_5
             // 
-            this.btn_wurf1_5.Location = new System.Drawing.Point(151, 92);
+            this.btn_wurf1_5.Location = new System.Drawing.Point(226, 142);
+            this.btn_wurf1_5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf1_5.Name = "btn_wurf1_5";
-            this.btn_wurf1_5.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf1_5.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf1_5.TabIndex = 17;
             this.btn_wurf1_5.Text = "5";
             this.btn_wurf1_5.UseVisualStyleBackColor = true;
@@ -2601,9 +2704,10 @@
             // 
             // btn_wurf1_4
             // 
-            this.btn_wurf1_4.Location = new System.Drawing.Point(115, 92);
+            this.btn_wurf1_4.Location = new System.Drawing.Point(172, 142);
+            this.btn_wurf1_4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf1_4.Name = "btn_wurf1_4";
-            this.btn_wurf1_4.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf1_4.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf1_4.TabIndex = 16;
             this.btn_wurf1_4.Text = "4";
             this.btn_wurf1_4.UseVisualStyleBackColor = true;
@@ -2611,9 +2715,10 @@
             // 
             // btn_wurf1_3
             // 
-            this.btn_wurf1_3.Location = new System.Drawing.Point(79, 92);
+            this.btn_wurf1_3.Location = new System.Drawing.Point(118, 142);
+            this.btn_wurf1_3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf1_3.Name = "btn_wurf1_3";
-            this.btn_wurf1_3.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf1_3.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf1_3.TabIndex = 15;
             this.btn_wurf1_3.Text = "3";
             this.btn_wurf1_3.UseVisualStyleBackColor = true;
@@ -2621,9 +2726,10 @@
             // 
             // btn_wurf1_2
             // 
-            this.btn_wurf1_2.Location = new System.Drawing.Point(43, 92);
+            this.btn_wurf1_2.Location = new System.Drawing.Point(64, 142);
+            this.btn_wurf1_2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_wurf1_2.Name = "btn_wurf1_2";
-            this.btn_wurf1_2.Size = new System.Drawing.Size(30, 30);
+            this.btn_wurf1_2.Size = new System.Drawing.Size(45, 46);
             this.btn_wurf1_2.TabIndex = 14;
             this.btn_wurf1_2.Text = "2";
             this.btn_wurf1_2.UseVisualStyleBackColor = true;
@@ -2632,24 +2738,26 @@
             // tBx_wurf1
             // 
             this.tBx_wurf1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tBx_wurf1.Location = new System.Drawing.Point(7, 56);
+            this.tBx_wurf1.Location = new System.Drawing.Point(10, 86);
+            this.tBx_wurf1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tBx_wurf1.Name = "tBx_wurf1";
             this.tBx_wurf1.ReadOnly = true;
-            this.tBx_wurf1.Size = new System.Drawing.Size(174, 30);
+            this.tBx_wurf1.Size = new System.Drawing.Size(259, 41);
             this.tBx_wurf1.TabIndex = 0;
             this.tBx_wurf1.Text = "3x20";
             this.tBx_wurf1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // SpielView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 561);
+            this.ClientSize = new System.Drawing.Size(1116, 863);
             this.ControlBox = false;
             this.Controls.Add(groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "SpielView";
             this.Text = "SpielView";
             this.Load += new System.EventHandler(this.SpielView_Load);

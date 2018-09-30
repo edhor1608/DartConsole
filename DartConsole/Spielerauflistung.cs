@@ -17,7 +17,7 @@ namespace DartConsole
         {
             InitializeComponent();
 
-            Dart.Init();
+            //Dart.Init();
         }
 
         private void MainView_Load(object sender, EventArgs e)

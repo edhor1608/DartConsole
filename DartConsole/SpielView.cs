@@ -886,5 +886,10 @@ namespace DartConsole
             Program.frmSpielView.Hide();
             Program.frmMainMenu.Show();
         }
+
+        private void progressBar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

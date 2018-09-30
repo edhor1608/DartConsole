@@ -17,6 +17,7 @@ namespace DartConsole
         public static SpielView frmSpielView;
         public static StatistikView frmStatistikView;
         public static WurfzielView frmWurfView;
+        public static LoadView frmLoad;
 
         /// <summary>
         /// Der Haupteinstiegspunkt für die Anwendung.
@@ -26,6 +27,9 @@ namespace DartConsole
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            frmLoad = new LoadView();
+            frmLoad.Show();
+            Dart.Init();
             frmMainMenu = new MainMenu();
             frmMainView = new Spielerauflistung();
             frmStartingScreen = new StartingScreen();
@@ -33,7 +37,7 @@ namespace DartConsole
             frmSpielView = new SpielView();
             frmStatistikView = new StatistikView();
             frmWurfView = new WurfzielView();
-            //frmMainView.Show();
+            frmLoad.Hide();
             frmStartingScreen.Show();
             Application.Run(); 
         }

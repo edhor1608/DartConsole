@@ -98,6 +98,12 @@
       <DependentUpon>InfoDartConsoleView.cs</DependentUpon>
     </Compile>
     <Compile Include="Leg.cs" />
+    <Compile Include="LoadView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadView.Designer.cs">
+      <DependentUpon>LoadView.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +214,9 @@
     <EmbeddedResource Include="data\checkout.txt" />
     <EmbeddedResource Include="InfoDartConsoleView.resx">
       <DependentUpon>InfoDartConsoleView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadView.resx">
+      <DependentUpon>LoadView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SpielEinstellungen.resx">
       <DependentUpon>SpielEinstellungen.cs</DependentUpon>
