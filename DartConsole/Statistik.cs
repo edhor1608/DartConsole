@@ -19,7 +19,7 @@ namespace DartConsole
             }
         }
 
-        public static double RoundDouble(double d, int r=2)
+        public static double RoundDouble(double d, int r = 2)
         {
             return Math.Round(d, r);
         }
@@ -48,7 +48,7 @@ namespace DartConsole
                             Dart.Confirm_Dialog();
                             break;
                         case 3:
-                            ShowSpiel(Dart.spiele.ElementAt(Dart.Int_Dialog("ID",0, Dart.spiele.Count-1)), s);
+                            ShowSpiel(Dart.spiele.ElementAt(Dart.Int_Dialog("ID", 0, Dart.spiele.Count - 1)), s);
                             Dart.Confirm_Dialog();
                             break;
                         case 4:
@@ -109,7 +109,8 @@ namespace DartConsole
                     Dart.WriteChar(' ', 2, false);
                     Console.WriteLine("Avg Finish: " + RoundDouble(Average_Finish_Set(sets.ElementAt(set)), 2));
                 }
-            }catch (Exception e)
+            }
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
                 Dart.Confirm_Dialog();
@@ -121,8 +122,8 @@ namespace DartConsole
             Console.Clear();
             Console.WriteLine("Gespielte Spiele: " + Dart.SearchSpielePlayedBy(s).Count);
             Console.WriteLine("Letztes Spiel: " + GetLastGame(s).GetDatum().ToString());
-            Console.WriteLine("Durchschnitt ohne Finishbereich: " + RoundDouble(Average_Finish_Gesamt(s),2));
-            Console.WriteLine("Doppelquote: " + RoundDouble(100*GetDoubleFinishQuoteAllSpieler(s)));
+            Console.WriteLine("Durchschnitt ohne Finishbereich: " + RoundDouble(Average_Finish_Gesamt(s), 2));
+            Console.WriteLine("Doppelquote: " + RoundDouble(100 * GetDoubleFinishQuoteAllSpieler(s)));
         }
 
         private static Spieler SpielerAuswählen()
@@ -495,7 +496,7 @@ namespace DartConsole
         {
             int summeWürfe = 0;
             int mögliche = 0;
-            int rest=501;
+            int rest = 501;
             bool finish = false;
             for (int z = 0; z < l.GetDurchgänge().Count; z++)
             {
@@ -552,14 +553,108 @@ namespace DartConsole
             return false;
         }
 
-        public static double GetTrefferQuoteAlleExaktDurchgang(Durchgang d)
+        public static int[] GetTrefferquoteDurchgang(Durchgang d, int feldMulti, int wurfEigenschaft = 0)
         {
-            double getroffen = 0;
-            for (int i = 0; i < d.GetAnzahlWürfe(); i++)
+            int getroffen = 0;
+            int versucht = 0;
+            if (feldMulti == 0)
             {
-                if (d.GetWürfe()[i].IsGetroffenExakt()) getroffen++;
+                versucht = d.GetAnzahlWürfe();
             }
-            return getroffen / d.GetAnzahlWürfe();
+            else
+            {
+                for (int i = 0; i < d.GetAnzahlWürfe(); i++)
+                {
+                    switch (feldMulti)
+                    {
+                        case 1:
+                            if (d.GetWürfe()[i].GetMultiZiel() == 1) versucht++;
+                            break;
+                        case 2:
+                            if (d.GetWürfe()[i].GetMultiZiel() == 2) versucht++;
+                            break;
+                        case 3:
+                            if (d.GetWürfe()[i].GetMultiZiel() == 3) versucht++;
+                            break;
+                        default:
+                            throw new Exception();
+                    }
+                }
+            }
+
+            for (int i = 0; i < versucht; i++)
+            {
+                switch (feldMulti)
+                {
+                    case 0:
+                        if (d.GetWürfe()[i].IsGetroffenExakt()) getroffen++;
+                        break;
+                    case 1:
+                        if (d.GetWürfe()[i].GetMultiZiel() == 1 && d.GetWürfe()[i].IsGetroffenExakt()) getroffen++;
+                        break;
+                    case 2:
+                        if (d.GetWürfe()[i].GetMultiZiel() == 2 && d.GetWürfe()[i].IsGetroffenExakt()) getroffen++;
+                        break;
+                    case 3:
+                        if (d.GetWürfe()[i].GetMultiZiel() == 3 && d.GetWürfe()[i].IsGetroffenExakt()) getroffen++;
+                        break;
+                    default:
+                        throw new Exception();
+                }
+            }
+            return new int[] { getroffen, versucht };
+        }
+
+        public static int[] GetTrefferquoteLeg(Leg l, int feldMulti, int finish, int wurfEigenschaft = 0)
+        {
+            int getroffen = 0;
+            int versucht = 0;
+            for (int i = 0; i < l.GetDurchgänge().Count; i++)
+            {
+                if ((finish == 0) || (!l.GetDurchgänge()[i].IsFinishBereich() && finish == 1) || (l.GetDurchgänge()[i].IsFinishBereich() && finish == 2))
+                {
+                    getroffen += GetTrefferquoteDurchgang(l.GetDurchgänge()[i], feldMulti, wurfEigenschaft)[0];
+                    versucht += GetTrefferquoteDurchgang(l.GetDurchgänge()[i], feldMulti, wurfEigenschaft)[1];
+                }
+            }
+            return new int[] { getroffen, versucht };
+        }
+
+        public static int[] GetTrefferquoteSet(Set s, int feldMulti, int finish, int wurfEigenschaft = 0)
+        {
+            int getroffen = 0;
+            int versucht = 0;
+            for (int i = 0; i < s.GetLegs().Count; i++)
+            {
+                getroffen += GetTrefferquoteLeg(s.GetLegs()[i], feldMulti, finish, wurfEigenschaft)[0];
+                versucht += GetTrefferquoteLeg(s.GetLegs()[i], feldMulti, finish, wurfEigenschaft)[1];
+            }
+            return new int[] { getroffen, versucht };
+        }
+
+        public static int[] GetTrefferquoteSpiel(Spiel s, Spieler sp, int feldMulti, int finish, int wurfEigenschaft = 0)
+        {
+            int getroffen = 0;
+            int versucht = 0;
+            for (int i = 0; i < s.GetSetsPlayer(sp).Count; i++)
+            {
+                getroffen += GetTrefferquoteSet(s.GetSetsPlayer(sp)[i], feldMulti, finish, wurfEigenschaft)[0];
+                versucht += GetTrefferquoteSet(s.GetSetsPlayer(sp)[i], feldMulti, finish, wurfEigenschaft)[1];
+            }
+            return new int[] { getroffen, versucht };
+        }
+
+        public static int[] GetTrefferquoteGesamt(Spieler sp, int feldMulti, int finish, int wurfEigenschaft = 0)
+        {
+            List<Spiel> s = Dart.SearchSpielePlayedBy(sp);
+            int getroffen = 0;
+            int versucht = 0;
+            for (int i = 0; i < s.Count; i++)
+            {
+                getroffen += GetTrefferquoteSpiel(s[i], sp, feldMulti, finish, wurfEigenschaft)[0];
+                versucht += GetTrefferquoteSpiel(s[i], sp, feldMulti, finish, wurfEigenschaft)[1];
+            }
+            return new int[] { getroffen, versucht };
         }
 
         public static double GetDoubleFinishQuoteLeg(Leg l)

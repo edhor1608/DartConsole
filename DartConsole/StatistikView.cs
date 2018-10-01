@@ -37,6 +37,25 @@ namespace DartConsole
         private void StatistikView_Load(object sender, EventArgs e)
         {
             Reset();
+            AllgemeineStatistikAktualisieren();
+        }
+
+        private void AllgemeineStatistikAktualisieren()
+        {
+            lblQuoteInsgesamtWertIns.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteGesamt(Program.spieler, 0, 0)[0])) / ((double)(Statistik.GetTrefferquoteGesamt(Program.spieler, 0, 0)[1]))) * 100, 2) + "%";
+            lblQuoteInsgesamtWertEinzel.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteGesamt(Program.spieler, 1, 0)[0])) / ((double)(Statistik.GetTrefferquoteGesamt(Program.spieler, 1, 0)[1]))) * 100, 2) + "%";
+            lblQuoteInsgesamtWertDoppel.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteGesamt(Program.spieler, 2, 0)[0])) / ((double)(Statistik.GetTrefferquoteGesamt(Program.spieler, 2, 0)[1]))) * 100, 2) + "%";
+            lblQuoteInsgesamtWertTriple.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteGesamt(Program.spieler, 3, 0)[0])) / ((double)(Statistik.GetTrefferquoteGesamt(Program.spieler, 3, 0)[1]))) * 100, 2) + "%";
+
+            lblQuoteNoFinishWertIns.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteGesamt(Program.spieler, 0, 1)[0])) / ((double)(Statistik.GetTrefferquoteGesamt(Program.spieler, 0, 1)[1]))) * 100, 2) + "%";
+            lblQuoteNoFinishWertEinzel.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteGesamt(Program.spieler, 1, 1)[0])) / ((double)(Statistik.GetTrefferquoteGesamt(Program.spieler, 1, 1)[1]))) * 100, 2) + "%";
+            lblQuoteNoFinishWertDoppel.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteGesamt(Program.spieler, 2, 1)[0])) / ((double)(Statistik.GetTrefferquoteGesamt(Program.spieler, 2, 1)[1]))) * 100, 2) + "%";
+            lblQuoteNoFinishWertTriple.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteGesamt(Program.spieler, 3, 1)[0])) / ((double)(Statistik.GetTrefferquoteGesamt(Program.spieler, 3, 1)[1]))) * 100, 2) + "%";
+
+            lblQuoteFinishWertIns.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteGesamt(Program.spieler, 0, 2)[0])) / ((double)(Statistik.GetTrefferquoteGesamt(Program.spieler, 0, 2)[1]))) * 100, 2) + "%";
+            lblQuoteFinishWertEinzel.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteGesamt(Program.spieler, 1, 2)[0])) / ((double)(Statistik.GetTrefferquoteGesamt(Program.spieler, 1, 2)[1]))) * 100, 2) + "%";
+            lblQuoteFinishWertDoppel.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteGesamt(Program.spieler, 2, 2)[0])) / ((double)(Statistik.GetTrefferquoteGesamt(Program.spieler, 2, 2)[1]))) * 100, 2) + "%";
+            lblQuoteFinishWertTriple.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteGesamt(Program.spieler, 3, 2)[0])) / ((double)(Statistik.GetTrefferquoteGesamt(Program.spieler, 3, 2)[1]))) * 100, 2) + "%";
         }
 
         private void cB_spielAuswahl_SelectedIndexChanged(object sender, EventArgs e)
@@ -76,6 +95,20 @@ namespace DartConsole
             {
                 cB_legAuswahl.SelectedIndex = 0;
                 rtbInfos.Text += Show_Spiel();
+                lblQuoteAuswahlInsWertIns.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteSpiel(spiel, Program.spieler, 0, 0)[0])) / ((double)(Statistik.GetTrefferquoteSpiel(spiel, Program.spieler, 0, 0)[1]))) * 100, 2) + "%";
+                lblQuoteAuswahlInsWertEinzel.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteSpiel(spiel, Program.spieler, 1, 0)[0])) / ((double)(Statistik.GetTrefferquoteSpiel(spiel, Program.spieler, 1, 0)[1]))) * 100, 2) + "%";
+                lblQuoteAuswahlInsWertDoppel.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteSpiel(spiel, Program.spieler, 2, 0)[0])) / ((double)(Statistik.GetTrefferquoteSpiel(spiel, Program.spieler, 2, 0)[1]))) * 100, 2) + "%";
+                lblQuoteAuswahlInsWertTriple.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteSpiel(spiel, Program.spieler, 3, 0)[0])) / ((double)(Statistik.GetTrefferquoteSpiel(spiel, Program.spieler, 3, 0)[1]))) * 100, 2) + "%";
+
+                lblQuoteAuswahlNoFinishWertIns.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteSpiel(spiel, Program.spieler, 0, 1)[0])) / ((double)(Statistik.GetTrefferquoteSpiel(spiel, Program.spieler, 0, 1)[1]))) * 100, 2) + "%";
+                lblQuoteAuswahlNoFinishWertEinzel.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteSpiel(spiel, Program.spieler, 1, 1)[0])) / ((double)(Statistik.GetTrefferquoteSpiel(spiel, Program.spieler, 1, 1)[1]))) * 100, 2) + "%";
+                lblQuoteAuswahlNoFinishWertDoppel.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteSpiel(spiel, Program.spieler, 2, 1)[0])) / ((double)(Statistik.GetTrefferquoteSpiel(spiel, Program.spieler, 2, 1)[1]))) * 100, 2) + "%";
+                lblQuoteAuswahlNoFinishWertTriple.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteSpiel(spiel, Program.spieler, 3, 1)[0])) / ((double)(Statistik.GetTrefferquoteSpiel(spiel, Program.spieler, 3, 1)[1]))) * 100, 2) + "%";
+
+                lblQuoteAuswahlFinishWertIns.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteSpiel(spiel, Program.spieler, 0, 2)[0])) / ((double)(Statistik.GetTrefferquoteSpiel(spiel, Program.spieler, 0, 2)[1]))) * 100, 2) + "%";
+                lblQuoteAuswahlFinishWertEinzel.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteSpiel(spiel, Program.spieler, 1, 2)[0])) / ((double)(Statistik.GetTrefferquoteSpiel(spiel, Program.spieler, 1, 2)[1]))) * 100, 2) + "%";
+                lblQuoteAuswahlFinishWertDoppel.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteSpiel(spiel, Program.spieler, 2, 2)[0])) / ((double)(Statistik.GetTrefferquoteSpiel(spiel, Program.spieler, 2, 2)[1]))) * 100, 2) + "%";
+                lblQuoteAuswahlFinishWertTriple.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteSpiel(spiel, Program.spieler, 3, 2)[0])) / ((double)(Statistik.GetTrefferquoteSpiel(spiel, Program.spieler, 3, 2)[1]))) * 100, 2) + "%";
             }
             else
             {
@@ -98,11 +131,39 @@ namespace DartConsole
             if(cB_legAuswahl.SelectedIndex == 0 && cB_setAuswahl.SelectedIndex > 0)
             {
                 rtbInfos.Text += Show_Set(set);
+                lblQuoteAuswahlInsWertIns.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteSet(set, 0, 0)[0])) / ((double)(Statistik.GetTrefferquoteSet(set, 0, 0)[1]))) * 100, 2) + "%";
+                lblQuoteAuswahlInsWertEinzel.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteSet(set, 1, 0)[0])) / ((double)(Statistik.GetTrefferquoteSet(set, 1, 0)[1]))) * 100, 2) + "%";
+                lblQuoteAuswahlInsWertDoppel.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteSet(set, 2, 0)[0])) / ((double)(Statistik.GetTrefferquoteSet(set, 2, 0)[1]))) * 100, 2) + "%";
+                lblQuoteAuswahlInsWertTriple.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteSet(set, 3, 0)[0])) / ((double)(Statistik.GetTrefferquoteSet(set, 3, 0)[1]))) * 100, 2) + "%";
+
+                lblQuoteAuswahlNoFinishWertIns.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteSet(set, 0, 1)[0])) / ((double)(Statistik.GetTrefferquoteSet(set, 0, 1)[1]))) * 100, 2) + "%";
+                lblQuoteAuswahlNoFinishWertEinzel.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteSet(set, 1, 1)[0])) / ((double)(Statistik.GetTrefferquoteSet(set, 1, 1)[1]))) * 100, 2) + "%";
+                lblQuoteAuswahlNoFinishWertDoppel.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteSet(set, 2, 1)[0])) / ((double)(Statistik.GetTrefferquoteSet(set, 2, 1)[1]))) * 100, 2) + "%";
+                lblQuoteAuswahlNoFinishWertTriple.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteSet(set, 3, 1)[0])) / ((double)(Statistik.GetTrefferquoteSet(set, 3, 1)[1]))) * 100, 2) + "%";
+
+                lblQuoteAuswahlFinishWertIns.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteSet(set, 0, 2)[0])) / ((double)(Statistik.GetTrefferquoteSet(set, 0, 2)[1]))) * 100, 2) + "%";
+                lblQuoteAuswahlFinishWertEinzel.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteSet(set, 1, 2)[0])) / ((double)(Statistik.GetTrefferquoteSet(set, 1, 2)[1]))) * 100, 2) + "%";
+                lblQuoteAuswahlFinishWertDoppel.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteSet(set, 2, 2)[0])) / ((double)(Statistik.GetTrefferquoteSet(set, 2, 2)[1]))) * 100, 2) + "%";
+                lblQuoteAuswahlFinishWertTriple.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteSet(set, 3, 2)[0])) / ((double)(Statistik.GetTrefferquoteSet(set, 3, 2)[1]))) * 100, 2) + "%";
             }
             if (cB_legAuswahl.SelectedIndex > 0)
             {
                 leg = set.GetLegs().ElementAt(cB_legAuswahl.SelectedIndex - 1);
                 rtbInfos.Text += Show_Leg(leg);
+                lblQuoteAuswahlInsWertIns.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteLeg(leg, 0, 0)[0])) / ((double)(Statistik.GetTrefferquoteLeg(leg, 0, 0)[1]))) * 100, 2) + "%";
+                lblQuoteAuswahlInsWertEinzel.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteLeg(leg, 1, 0)[0])) / ((double)(Statistik.GetTrefferquoteLeg(leg, 1, 0)[1]))) * 100, 2) + "%";
+                lblQuoteAuswahlInsWertDoppel.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteLeg(leg, 2, 0)[0])) / ((double)(Statistik.GetTrefferquoteLeg(leg, 2, 0)[1]))) * 100, 2) + "%";
+                lblQuoteAuswahlInsWertTriple.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteLeg(leg, 3, 0)[0])) / ((double)(Statistik.GetTrefferquoteLeg(leg, 3, 0)[1]))) * 100, 2) + "%";
+
+                lblQuoteAuswahlNoFinishWertIns.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteLeg(leg, 0, 1)[0])) / ((double)(Statistik.GetTrefferquoteLeg(leg, 0, 1)[1]))) * 100, 2) + "%";
+                lblQuoteAuswahlNoFinishWertEinzel.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteLeg(leg, 1, 1)[0])) / ((double)(Statistik.GetTrefferquoteLeg(leg, 1, 1)[1]))) * 100, 2) + "%";
+                lblQuoteAuswahlNoFinishWertDoppel.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteLeg(leg, 2, 1)[0])) / ((double)(Statistik.GetTrefferquoteLeg(leg, 2, 1)[1]))) * 100, 2) + "%";
+                lblQuoteAuswahlNoFinishWertTriple.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteLeg(leg, 3, 1)[0])) / ((double)(Statistik.GetTrefferquoteLeg(leg, 3, 1)[1]))) * 100, 2) + "%";
+
+                lblQuoteAuswahlFinishWertIns.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteLeg(leg, 0, 2)[0])) / ((double)(Statistik.GetTrefferquoteLeg(leg, 0, 2)[1]))) * 100, 2) + "%";
+                lblQuoteAuswahlFinishWertEinzel.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteLeg(leg, 1, 2)[0])) / ((double)(Statistik.GetTrefferquoteLeg(leg, 1, 2)[1]))) * 100, 2) + "%";
+                lblQuoteAuswahlFinishWertDoppel.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteLeg(leg, 2, 2)[0])) / ((double)(Statistik.GetTrefferquoteLeg(leg, 2, 2)[1]))) * 100, 2) + "%";
+                lblQuoteAuswahlFinishWertTriple.Text = "" + Statistik.RoundDouble((((double)(Statistik.GetTrefferquoteLeg(leg, 3, 2)[0])) / ((double)(Statistik.GetTrefferquoteLeg(leg, 3, 2)[1]))) * 100, 2) + "%";
             }
         }
 
@@ -150,6 +211,31 @@ namespace DartConsole
                 s += Show_Set(sets.ElementAt(i));
             }
             return s;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tP_Allgemein_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AllgemeineStatistikAktualisieren();
+        }
+
+        private void tP_Spiel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
