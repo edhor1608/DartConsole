@@ -40,7 +40,7 @@
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(800, 450);
             this.webBrowser1.TabIndex = 0;
-            this.webBrowser1.Url = new System.Uri("https://www.jonas-rohde.de/phpMyAdmin/", System.UriKind.Absolute);
+            this.webBrowser1.Url = new System.Uri("https://www.jonas-rohde.de:44344/phpmyadmin/", System.UriKind.Absolute);
             // 
             // PhpMyAdminView
             // 
