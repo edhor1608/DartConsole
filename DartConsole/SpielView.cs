@@ -2,16 +2,25 @@
 using System.Linq;
 using System.Windows.Forms;
 using System.Speech.Recognition;
+using System.Collections.Generic;
 
 namespace DartConsole
 {
     public partial class SpielView : Form
     {
-        Wurf wurf1 = new Wurf(0, 0);
+        SpeechRecognitionEngine SRE, SREStart, SREMulti;
+        RecognitionResult Result;
+        string ResultString;
+        GrammarBuilder GB;
+        Grammar CommandGrammarStart, CommandGrammarMulti, CommandGrammar;
+        Dictionary<string, int> umwandlungMulti = new Dictionary<string, int>();
+        Dictionary<string, int> umwandlungWert = new Dictionary<string, int>();
+
+        Wurf wurf1;
         int multi1;
-        Wurf wurf2 = new Wurf(0, 0);
+        Wurf wurf2;
         int multi2;
-        Wurf wurf3 = new Wurf(0, 0);
+        Wurf wurf3;
         int multi3;
 
         int multiAktuell;
@@ -23,6 +32,119 @@ namespace DartConsole
         {
             InitializeComponent();
             FillFormsInArrays();
+            InitSpeech();
+        }
+
+        private void CreateDics()
+        {
+            umwandlungMulti.Add("einfach", 0);
+            umwandlungMulti.Add("zweifach", 1);
+            umwandlungMulti.Add("doppel", 1);
+            umwandlungMulti.Add("dreifach", 2);
+            umwandlungMulti.Add("triple", 2);
+            umwandlungMulti.Add("tripple", 2);
+            umwandlungMulti.Add("bull", 3);
+            umwandlungMulti.Add("0", 5);
+
+            umwandlungWert.Add("1", 0);
+            umwandlungWert.Add("2", 1);
+            umwandlungWert.Add("3", 2);
+            umwandlungWert.Add("4", 3);
+            umwandlungWert.Add("5", 4);
+            umwandlungWert.Add("6", 5);
+            umwandlungWert.Add("7", 6);
+            umwandlungWert.Add("8", 7);
+            umwandlungWert.Add("9", 8);
+            umwandlungWert.Add("10", 9);
+            umwandlungWert.Add("11", 10);
+            umwandlungWert.Add("12", 11);
+            umwandlungWert.Add("13", 12);
+            umwandlungWert.Add("14", 13);
+            umwandlungWert.Add("15", 14);
+            umwandlungWert.Add("16", 15);
+            umwandlungWert.Add("17", 16);
+            umwandlungWert.Add("18", 17);
+            umwandlungWert.Add("19", 18);
+            umwandlungWert.Add("20", 19);
+            umwandlungWert.Add("bull", 25);
+        }
+
+        private void CreateGramma()
+        {
+            Choices CommandsStart = new Choices();
+            CommandsStart.Add("start");
+            CommandsStart.Add("starten");
+            CommandsStart.Add("starting");
+            CommandsStart.Add("anfangen");
+            CommandsStart.Add("beginnen");
+
+            Choices CommandsMulti = new Choices();
+            CommandsMulti.Add("einfach");
+            CommandsMulti.Add("zweifach");
+            CommandsMulti.Add("doppel");
+            CommandsMulti.Add("dreifach");
+            CommandsMulti.Add("triple");
+            CommandsMulti.Add("tripple");
+            CommandsMulti.Add("bull");
+            CommandsMulti.Add("0");
+
+            Choices Commands = new Choices();
+            Commands.Add("20");
+            Commands.Add("19");
+            Commands.Add("18");
+            Commands.Add("17");
+            Commands.Add("16");
+            Commands.Add("15");
+            Commands.Add("14");
+            Commands.Add("13");
+            Commands.Add("12");
+            Commands.Add("11");
+            Commands.Add("10");
+            Commands.Add("9");
+            Commands.Add("8");
+            Commands.Add("7");
+            Commands.Add("6");
+            Commands.Add("5");
+            Commands.Add("4");
+            Commands.Add("3");
+            Commands.Add("2");
+            Commands.Add("1");
+            Commands.Add("bull");
+
+            GB = new GrammarBuilder(CommandsMulti);
+            CommandGrammarMulti = new Grammar(GB);
+
+            GB = new GrammarBuilder(Commands);
+            CommandGrammar = new Grammar(GB);
+
+            GB = new GrammarBuilder(CommandsStart);
+            CommandGrammarStart = new Grammar(GB);
+        }
+
+        private void InitSpeech()
+        {
+            CreateGramma();
+
+            SRE = new SpeechRecognitionEngine();
+            SRE.LoadGrammar(CommandGrammar);
+            SRE.SetInputToDefaultAudioDevice();
+
+            SREMulti = new SpeechRecognitionEngine();
+            SREMulti.LoadGrammar(CommandGrammarMulti);
+            SREMulti.SetInputToDefaultAudioDevice();
+
+            SREStart = new SpeechRecognitionEngine();
+            SREStart.LoadGrammar(CommandGrammarStart);
+            SREStart.SetInputToDefaultAudioDevice();
+
+            CreateDics();
+        }
+
+        public void ClickButton(Button b)
+        {
+            b.Visible = true;
+            b.PerformClick();
+            b.Visible = false;
         }
 
         private void RefreshStand()
@@ -56,9 +178,9 @@ namespace DartConsole
 
         private void NewLeg()
         {
-            SetVisibleWurf1(true);
-            SetVisibleWurf2(false);
-            SetVisibleWurf3(false);
+            SetVisibleWurf1(true, Program.speech);
+            SetVisibleWurf2(false, Program.speech);
+            SetVisibleWurf3(false, Program.speech);
             btn_loeschen.Visible = false;
             btn_uebernehmen.Visible = false;
             Program.spielAktuell.AddLeg();
@@ -83,7 +205,7 @@ namespace DartConsole
                     }
                     else
                     {
-                        SetVisibleWurf2(true);
+                        SetVisibleWurf2(true, Program.speech);
                     }
                     wurf1 = new Wurf(multi, wert);
                     Program.frmWurfView.SetVisibleWurf1(true);
@@ -98,7 +220,7 @@ namespace DartConsole
                     }
                     else
                     {
-                        SetVisibleWurf3(true);
+                        SetVisibleWurf3(true, Program.speech);
                     }
                     wurf2 = new Wurf(multi, wert);
                     Program.frmWurfView.SetVisibleWurf2(true);
@@ -113,10 +235,11 @@ namespace DartConsole
                     Program.frmWurfView.SetVisibleWurf3(true);
                     Program.frmWurfView.tB_wurf3.Text = multi + "x" + wert;
                     Program.frmWurfView.SetGeworfenWurf3(multi, wert);
+                    if (Program.speech) btn_loeschen.Visible = true;
                     break;
             }
             RefreshStand();
-            btn_loeschen.Visible = true;
+            if (!Program.speech) btn_loeschen.Visible = true;
         }
 
         private void SpielBeenden()
@@ -139,17 +262,96 @@ namespace DartConsole
             tBx_wurf1.Text = "";
             tBx_wurf2.Text = "";
             tBx_wurf3.Text = "";
-            SetVisibleWurf1(true);
-            SetVisibleWurf2(false);
-            SetVisibleWurf3(false);
+            SetVisibleWurf1(true, Program.speech);
+            SetVisibleWurf2(false, Program.speech);
+            SetVisibleWurf3(false, Program.speech);
             RefreshStand();
             btn_loeschen.Visible = false;
             btn_uebernehmen.Visible = false;
         }
 
+        private void ChangeEingabe()
+        {
+            Program.speech = rbSpracheingabe.Checked;
+            if (Program.speech)
+            {
+                btnEingabeStarten.Visible = true;
+                btn_loeschen.Visible = false;
+
+                tBx_wurf1.Visible = true;
+                lbl_wurf1.Visible = true;
+                SetVisibleWurf1Multi(false);
+                SetVisibleWurf1Wert(false);
+
+                tBx_wurf2.Visible = true;
+                lbl_wurf2.Visible = true;
+                SetVisibleWurf2Multi(false);
+                SetVisibleWurf2Wert(false);
+
+                tBx_wurf3.Visible = true;
+                lbl_wurf3.Visible = true;
+                SetVisibleWurf3Multi(false);
+                SetVisibleWurf3Wert(false);
+
+                if (wurf1 == null)
+                {
+                    lblSpracheMultiW1.Visible = true;
+                }
+                else if (wurf2 == null)
+                {
+                    lblSpracheMultiW2.Visible = true;
+                }
+                else if (wurf3 == null)
+                {
+                    lblSpracheMultiW3.Visible = true;
+                }
+
+            }
+            else
+            {
+                btnEingabeStarten.Visible = false;
+                if (wurf1 != null) btn_loeschen.Visible = true;
+
+                lblSpracheMultiW1.Visible = false;
+                lblSpracheMultiW2.Visible = false;
+                lblSpracheMultiW3.Visible = false;
+                lblSpracheWertW1.Visible = false;
+                lblSpracheWertW2.Visible = false;
+                lblSpracheWertW3.Visible = false;
+                if (wurf1 == null)
+                {
+                    SetVisibleWurf1(true, false);
+                    SetVisibleWurf2(false, false);
+                    SetVisibleWurf3(false, false);
+                }
+                else if (wurf2 == null)
+                {
+                    SetVisibleWurf2(true, false);
+                    SetVisibleWurf3(false, false);
+                }
+                else if (wurf3 == null)
+                {
+                    SetVisibleWurf3(true, false);
+                }
+            }
+        }
+
         private int GetWuerfeGesamt()
         {
-            return wurf1.GetWurfGesamt() + wurf2.GetWurfGesamt() + wurf3.GetWurfGesamt();
+            int summe = 0;
+            if (wurf1 != null)
+            {
+                summe += wurf1.GetWurfGesamt();
+            }
+            if (wurf2 != null)
+            {
+                summe += wurf2.GetWurfGesamt();
+            }
+            if (wurf3 != null)
+            {
+                summe += wurf3.GetWurfGesamt();
+            }
+            return summe;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -164,25 +366,46 @@ namespace DartConsole
 
         private void SetVisibleWurf1Wert(bool visible)
         {
-            for (int i = 0; i < 20; i++)
+            if (visible == true && !Program.speech || visible == false)
             {
-                btnArrayWurf1Wert[i].Visible = visible;
+                for (int i = 0; i < 20; i++)
+                {
+                    btnArrayWurf1Wert[i].Visible = visible;
+                }
+            }
+            if (Program.speech)
+            {
+                lblSpracheWertW1.Visible = visible;
             }
         }
 
         private void SetVisibleWurf2Wert(bool visible)
         {
-            for (int i = 0; i < 20; i++)
+            if (visible == true && !Program.speech || visible == false)
             {
-                btnArrayWurf2Wert[i].Visible = visible;
+                for (int i = 0; i < 20; i++)
+                {
+                    btnArrayWurf2Wert[i].Visible = visible;
+                }
+            }
+            if (Program.speech)
+            {
+                lblSpracheWertW2.Visible = visible;
             }
         }
 
         private void SetVisibleWurf3Wert(bool visible)
         {
-            for (int i = 0; i < 20; i++)
+            if (visible == true && !Program.speech || visible == false)
             {
-                btnArrayWurf3Wert[i].Visible = visible;
+                for (int i = 0; i < 20; i++)
+                {
+                    btnArrayWurf3Wert[i].Visible = visible;
+                }
+            }
+            if (Program.speech)
+            {
+                lblSpracheWertW3.Visible = visible;
             }
         }
 
@@ -192,6 +415,7 @@ namespace DartConsole
             {
                 btnArrayWurf1Multi[i].Visible = visible;
             }
+            if(Program.speech) lblSpracheMultiW1.Visible = visible;
         }
 
         private void SetVisibleWurf2Multi(bool visible)
@@ -200,6 +424,7 @@ namespace DartConsole
             {
                 btnArrayWurf2Multi[i].Visible = visible;
             }
+            if (Program.speech) lblSpracheMultiW2.Visible = visible;
         }
 
         private void SetVisibleWurf3Multi(bool visible)
@@ -208,49 +433,108 @@ namespace DartConsole
             {
                 btnArrayWurf3Multi[i].Visible = visible;
             }
+            if (Program.speech) lblSpracheMultiW3.Visible = visible;
         }
 
-        private void SetVisibleWurf1(bool visible)
+        private void SetVisibleWurf1(bool visible, bool speech)
         {
-            tBx_wurf1.Visible = visible;
-            lbl_wurf1.Visible = visible;
-            SetVisibleWurf1Multi(visible);
-            if (visible)
+            if (speech)
             {
-                tBx_wurf1.Text = "";
-                visible = !visible;
+                tBx_wurf1.Visible = true;
+                lbl_wurf1.Visible = true;
+                SetVisibleWurf1Multi(false);
+                SetVisibleWurf1Wert(false);
+                lblSpracheMultiW1.Visible = visible;
+                if (visible)
+                {
+                    visible = !visible;
+                }
+                lblSpracheWertW1.Visible = visible;
             }
-            SetVisibleWurf1Wert(visible);
+            else
+            {
+                tBx_wurf1.Visible = visible;
+                lbl_wurf1.Visible = visible;
+                SetVisibleWurf1Multi(visible);
+                if (visible)
+                {
+                    tBx_wurf1.Text = "";
+                    visible = !visible;
+                }
+                SetVisibleWurf1Wert(visible);
+            }
         }
 
-        private void SetVisibleWurf2(bool visible)
+        private void SetVisibleWurf2(bool visible, bool speech)
         {
-            tBx_wurf2.Visible = visible;
-            lbl_wurf2.Visible = visible;
-            SetVisibleWurf2Multi(visible);
-            if (visible)
+            if (speech)
             {
-                tBx_wurf2.Text = "";
-                visible = !visible;
+                tBx_wurf2.Visible = true;
+                lbl_wurf2.Visible = true;
+                SetVisibleWurf2Multi(false);
+                SetVisibleWurf2Wert(false);
+                lblSpracheMultiW2.Visible = visible;
+                if (visible)
+                {
+                    visible = !visible;
+                }
+                lblSpracheWertW2.Visible = visible;
             }
-            SetVisibleWurf2Wert(visible);
+            else
+            {
+                tBx_wurf2.Visible = visible;
+                lbl_wurf2.Visible = visible;
+                SetVisibleWurf2Multi(visible);
+                if (visible)
+                {
+                    tBx_wurf2.Text = "";
+                    visible = !visible;
+                }
+                SetVisibleWurf2Wert(visible);
+            }
         }
 
-        private void SetVisibleWurf3(bool visible)
+        private void SetVisibleWurf3(bool visible, bool speech)
         {
-            tBx_wurf3.Visible = visible;
-            lbl_wurf3.Visible = visible;
-            SetVisibleWurf3Multi(visible);
-            if (visible)
+            if (speech)
             {
-                tBx_wurf3.Text = "";
-                visible = !visible;
+                tBx_wurf3.Visible = true;
+                lbl_wurf3.Visible = true;
+                SetVisibleWurf3Multi(false);
+                SetVisibleWurf3Wert(false);
+                lblSpracheMultiW3.Visible = visible;
+                if (visible)
+                {
+                    visible = !visible;
+                }
+                lblSpracheWertW3.Visible = visible;
             }
-            SetVisibleWurf3Wert(visible);
+            else
+            {
+                tBx_wurf3.Visible = visible;
+                lbl_wurf3.Visible = visible;
+                SetVisibleWurf3Multi(visible);
+                if (visible)
+                {
+                    tBx_wurf3.Text = "";
+                    visible = !visible;
+                }
+                SetVisibleWurf3Wert(visible);
+            }
         }
 
         private void SpielView_Load(object sender, EventArgs e)
         {
+            lblSpracheMultiW1.Visible = Program.speech;
+            lblSpracheMultiW2.Visible = Program.speech;
+            lblSpracheMultiW3.Visible = Program.speech;
+
+            lblSpracheWertW1.Visible = Program.speech;
+            lblSpracheWertW2.Visible = Program.speech;
+            lblSpracheWertW3.Visible = Program.speech;
+
+            btnEingabeStarten.Visible = Program.speech;
+
             for (int i = 0; i < Program.spielAktuell.GetSpieler().Count; i++)
             {
                 lblArraySpieler[i].Text = Program.spielAktuell.GetSpieler().ElementAt(i).Value.GetUsername();
@@ -274,6 +558,7 @@ namespace DartConsole
             progressBar.Visible = false;
             btn_weiter.Visible = false;
             ResetEingabe();
+            if (Program.speech) rbSpracheingabe.Checked = true;
         }
 
         private void btn_einmalWurf1_Click(object sender, EventArgs e)
@@ -789,12 +1074,13 @@ namespace DartConsole
             Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetDurchgangAktuell().ResetWürfe();
             Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().SetRest(Program.spielAktuell.GetSetAktuell(Program.spielAktuell.GetSpielerAktuell()).GetAktuellLeg().GetRest() + GetWuerfeGesamt());
             ResetEingabe();
-            wurf1 = new Wurf(0, 0);
-            wurf2 = new Wurf(0, 0);
-            wurf3 = new Wurf(0, 0);
+            wurf1 = null;
+            wurf2 = null;
+            wurf3 = null;
             multi1 = 0;
             multi2 = 0;
             multi3 = 0;
+            if (Program.speech) btnEingabeStarten.Visible = true;
         }
 
         private void btn_uebernehmen_Click(object sender, EventArgs e)
@@ -810,9 +1096,9 @@ namespace DartConsole
             //DialogResult dialogResult = MessageBox.Show("Würfe richtig?", "Übernehmen", MessageBoxButtons.YesNo);
             //if (dialogResult == DialogResult.Yes)
             //{
-            wurf1 = new Wurf(0, 0);
-            wurf2 = new Wurf(0, 0);
-            wurf3 = new Wurf(0, 0);
+            wurf1 = null;
+            wurf2 = null;
+            wurf3 = null;
 
             //Finish
             if (info == 1 && multiAktuell == 2)
@@ -868,6 +1154,7 @@ namespace DartConsole
             Program.spielAktuell.SpielerWeiter();
             Program.spielAktuell.AddDurchgangSpielerAktuell();
             ResetEingabe();
+            if (Program.speech) btnEingabeStarten.Visible = true;
             //}
             //return true;
             // }
@@ -878,6 +1165,86 @@ namespace DartConsole
             // }
             // return false;
 
+        }
+
+        private void btnEingabeStarten_Click(object sender, EventArgs e)
+        {
+            int j = 0;
+            int wert = 0;
+            int multi = 0;
+            if (wurf3 == null) j = 2;
+            if (wurf2 == null) j = 1;
+            if (wurf1 == null) j = 0;
+            btnEingabeStarten.Visible = false;
+            for (int i = j; i < 3; i++)
+            {
+                bool test = true;
+                while (test)
+                {
+                    try
+                    {
+                        Result = SREMulti.Recognize(); // Ton aufzeichnen und erkennen
+                        ResultString = "";
+                        // alle erkannten Wörter aus dem Ergebnis dem Ergebnisstring hinzufügen
+                        foreach (RecognizedWordUnit w in Result.Words)
+                        {
+                            ResultString += w.Text;
+                        }
+                        multi = umwandlungMulti[ResultString];
+                        ClickButton(btnArrayMulti[i][multi]);
+                        test = false;
+                    }
+                    catch
+                    {
+
+                    }
+                }
+
+                if (multi >= 0 && multi <= 2)
+                {
+                    test = true;
+                    while (test)
+                    {
+                        try
+                        {
+                            Result = SRE.Recognize(); // Ton aufzeichnen und erkennen
+                            ResultString = "";
+                            // alle erkannten Wörter aus dem Ergebnis dem Ergebnisstring hinzufügen
+                            foreach (RecognizedWordUnit w in Result.Words)
+                            {
+                                ResultString += w.Text;
+                            }
+                            wert = umwandlungWert[ResultString];
+                            if (wert != 25)
+                            {
+                                ClickButton(btnArrayWert[i][wert]);
+                            }
+                            else if (multi == 0)
+                            {
+                                ClickButton(btnArrayMulti[i][3]);
+                            }
+                            else if (multi == 1)
+                            {
+                                ClickButton(btnArrayMulti[i][4]);
+                            }
+                            else if (multi == 2)
+                            {
+                                Loeschen();
+                                break;
+                            }
+                            test = false;
+                        }
+                        catch
+                        {
+
+                        }
+                    }
+                }
+                if (info != 0 || (wert == 25 && multi == 2))
+                {
+                    break;
+                }
+            }
         }
 
         private void btn_weiter_Click(object sender, EventArgs e)
@@ -891,6 +1258,16 @@ namespace DartConsole
         private void progressBar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void rbKlickEingabe_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeEingabe();
+        }
+
+        private void rbSpracheingabe_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeEingabe();
         }
     }
 }

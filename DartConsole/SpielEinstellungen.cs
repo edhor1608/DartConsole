@@ -209,12 +209,11 @@ namespace DartConsole
             {
                 Program.frmGameOptions.Hide();
                 Program.spielAktuell = new Spiel(CreateSpielerDic(), (int)numUpDown_saetze.Value, (int)numUpDown_legs.Value, int.Parse(comB_rest.Text));
-                //Dart.AddSpiel(Program.spielAktuell);
                 Program.spielAktuell.AddSet();
                 Program.spielAktuell.AddLeg();
                 Program.spielAktuell.AddDurchgangSpielerAktuell();
                 Program.frmSpielView = new SpielView();
-                //Program.speech = cbSpeech.Checked;
+                Program.speech = cbSpeech.Checked;
                 Program.frmSpielView.Show();
             }
             else
@@ -237,7 +236,7 @@ namespace DartConsole
             return true;
         }
 
-        private bool IsUserValid(System.Windows.Forms.TextBox tBx)
+        private bool IsUserValid(TextBox tBx)
         {
             if (!Dart.IsSpielerVorhanden(tBx.Text))
             {
@@ -264,7 +263,7 @@ namespace DartConsole
 
         private void tBx_spieler1_TextChanged(object sender, EventArgs e)
         {
-            IsUserValid((System.Windows.Forms.TextBox)sender);
+            IsUserValid((TextBox)sender);
         }
     }
 }

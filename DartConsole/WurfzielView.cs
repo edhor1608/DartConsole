@@ -17,6 +17,21 @@ namespace DartConsole
             InitializeComponent();
         }
 
+        public bool GetVisibleWurf1()
+        {
+            return Program.frmWurfView.cB_zielWurf1.Visible & Program.frmWurfView.lbl_wurf1.Visible & Program.frmWurfView.tB_wurf1.Visible;
+        }
+
+        public bool GetVisibleWurf2()
+        {
+            return Program.frmWurfView.cB_zielWurf2.Visible & Program.frmWurfView.lbl_wurf2.Visible & Program.frmWurfView.tB_wurf2.Visible;
+        }
+
+        public bool GetVisibleWurf3()
+        {
+            return Program.frmWurfView.cB_zielWurf3.Visible & Program.frmWurfView.lbl_wurf3.Visible & Program.frmWurfView.tB_wurf3.Visible;
+        }
+
         public void SetVisibleWurf1(bool v)
         {
             Program.frmWurfView.cB_zielWurf1.Visible = v;
