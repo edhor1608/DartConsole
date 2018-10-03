@@ -22,12 +22,9 @@ namespace DartConsole
             SetIDFree();
             durchgangNummer = durchgangZähler;
             durchgangZähler++;
-            würfe[0] = new Wurf(0,0);
-            würfe[1] = new Wurf(0, 0);
-            würfe[2] = new Wurf(0, 0);
+            ResetWürfe();
             Wurf.id_wurf_zähler = Wurf.id_wurf_zähler - 3;
             Wurf.wurfZähler = Wurf.wurfZähler - 3;
-            anzahlWürfe = 0;
             this.finishBereich = finishBereich;
         }
 

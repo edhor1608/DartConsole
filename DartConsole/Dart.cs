@@ -162,31 +162,6 @@ namespace DartConsole
             return true;
         }
 
-        public static void Speichern()
-        {
-            //FileStream stream;
-            try
-            {
-                //daten[0] = spieler;
-                //daten[1] = spiele;
-                //stream = new FileStream(@"C:\Users\Public\Dart\Daten.dat", FileMode.Create);
-                //formatter.Serialize(stream, spiele);
-                //stream.Close();
-
-                SaveSpielerToDB();
-                SaveSpieleToDB();
-                SaveSetsToDB();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            finally
-            {
-                //stream.Close();
-            }
-        }
-
         /// <summary>	
         /// liest Daten aus der Datenbank komplett ein und erstellt alle Objekte, inklusive Verweise	
         /// </summary>
@@ -226,98 +201,6 @@ namespace DartConsole
             finally
             {
                 //stream.Close();
-            }
-        }
-
-        private static void Test()
-        {
-            // SPIEL ID
-            try
-            {
-                Console.WriteLine("ID " + spiele.ElementAt(0).GetId());
-                Console.ReadKey();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                Console.ReadKey();
-            }
-            // SPIELER SPIEL
-            try
-            {
-                spiele.First().ShowSpieler();
-                Console.ReadKey();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                Console.ReadKey();
-            }
-            // SETS GEWONNEN SPIEL 1
-            try
-            {
-                Console.WriteLine("SetsGewonnen " + spiele.First().GetSetsGewonnen()[0]);
-                Console.ReadKey();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                Console.ReadKey();
-            }
-            // SET 1 SPIEL 1 ID
-            try
-            {
-                Console.WriteLine("Set1 ID " + spiele.First().GetSetsAll().First().GetId());
-                Console.ReadKey();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                Console.ReadKey();
-            }
-            // SET 1 SPIEL 1 Spieler ID
-            try
-            {
-                Console.WriteLine("Set1 Spieler ID " + spiele.First().GetSetsAll().First().GetSpieler().GetId());
-                Console.ReadKey();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                Console.ReadKey();
-            }
-            // LEG 1 SET 1 SPIEL 1 ID
-            try
-            {
-                Console.WriteLine("LEG1 ID " + spiele.First().GetSetsAll().First().GetLegs().First().GetId());
-                Console.ReadKey();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                Console.ReadKey();
-            }
-            // Durchgang 1 LEG 1 SET 1 SPIEL 1 ID
-            try
-            {
-                Console.WriteLine("DURCHGANG1 ID " + spiele.First().GetSetsAll().First().GetLegs().First().GetDurchgänge().First().GetId());
-                Console.ReadKey();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                Console.ReadKey();
-            }
-            // Wurf 1 D 1 L 1 S 1 S 1
-            try
-            {
-                Console.WriteLine("Wurf " + spiele.First().GetSetsAll().First().GetLegs().First().GetDurchgänge().First().GetWürfe()[0].GetWurfGesamt());
-                Console.ReadKey();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                Console.ReadKey();
             }
         }
 
@@ -658,55 +541,6 @@ namespace DartConsole
             return integer;
         }
 
-        private static void Menu()
-        {
-            bool invalid = true;
-            while (invalid)
-            {
-                Console.Clear();
-                Console.WriteLine("--- Menü ---");
-                Console.WriteLine("(1)Zeige alle Spieler\n(2)Spieler hinzufügen\n(3)Spiel starten\n(4)Statistik aufrufen\n(5)Beenden");
-                invalid = false;
-                try
-                {
-                    int i = Convert.ToInt32(Console.ReadLine());
-                    switch (i)
-                    {
-                        case 0:
-                            Test();
-                            break;
-                        case 1:
-                            ShowSpielerConsole();
-                            break;
-                        case 2:
-                            AddSpielerMehrere();
-                            break;
-                        case 3:
-                            AddSpiel();
-                            break;
-                        case 4:
-                            Statistik.Starting();
-                            break;
-                        case 5:
-                            //running = false;
-                            //Speichern();
-                            //Console.WriteLine("Zum Beenden beliebige Taste drücken");
-                            //Console.ReadKey();
-                            break;
-                        default:
-                            Console.WriteLine("FLASCHE EINGABE");
-                            invalid = true;
-                            break;
-                    }
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("FALSCHE EINGABE");
-                    invalid = true;
-                }
-            }
-        }
-
         /// <summary>
         /// schreibt den Char c j-mal mit Zeilenumbruch, wenn line = true
         /// </summary>
@@ -755,10 +589,9 @@ namespace DartConsole
         /// <param name="d">Durchgang dessen Würfe gespeichert werden sollen</param>
         public static void SaveWürfeToDB(Durchgang d)
         {
-            for (int y = 0; y < d.GetWürfe().Count(); y++)
+            for (int y = 0; y < d.GetAnzahlWürfe(); y++)
             {
-                DBConnect.InsertWurf(d.GetWürfe().ElementAt(y), d
-                    );
+                DBConnect.InsertWurf(d.GetWürfe().ElementAt(y), d);
             }
         }
 

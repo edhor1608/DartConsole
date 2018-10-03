@@ -126,6 +126,7 @@
             this.btn_newSpieler = new System.Windows.Forms.Button();
             this.btn_starten = new System.Windows.Forms.Button();
             this.btn_zurueck = new System.Windows.Forms.Button();
+            this.cbSpeech = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDown_saetze)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDown_legs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDown_anzahlSpieler)).BeginInit();
@@ -572,9 +573,9 @@
             this.btn_starten.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.btn_starten.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_starten.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_starten.Location = new System.Drawing.Point(638, 147);
+            this.btn_starten.Location = new System.Drawing.Point(628, 147);
             this.btn_starten.Name = "btn_starten";
-            this.btn_starten.Size = new System.Drawing.Size(139, 271);
+            this.btn_starten.Size = new System.Drawing.Size(151, 271);
             this.btn_starten.TabIndex = 44;
             this.btn_starten.Text = "Starten";
             this.btn_starten.UseVisualStyleBackColor = false;
@@ -583,13 +584,24 @@
             // btn_zurueck
             // 
             this.btn_zurueck.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_zurueck.Location = new System.Drawing.Point(638, 7);
+            this.btn_zurueck.Location = new System.Drawing.Point(628, 7);
             this.btn_zurueck.Name = "btn_zurueck";
-            this.btn_zurueck.Size = new System.Drawing.Size(138, 74);
+            this.btn_zurueck.Size = new System.Drawing.Size(151, 74);
             this.btn_zurueck.TabIndex = 45;
             this.btn_zurueck.Text = "Zurück";
             this.btn_zurueck.UseVisualStyleBackColor = true;
             this.btn_zurueck.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // cbSpeech
+            // 
+            this.cbSpeech.AutoSize = true;
+            this.cbSpeech.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSpeech.Location = new System.Drawing.Point(628, 98);
+            this.cbSpeech.Name = "cbSpeech";
+            this.cbSpeech.Size = new System.Drawing.Size(151, 24);
+            this.cbSpeech.TabIndex = 46;
+            this.cbSpeech.Text = "Sprachsteuerung";
+            this.cbSpeech.UseVisualStyleBackColor = true;
             // 
             // SpielEinstellungen
             // 
@@ -597,6 +609,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(791, 432);
             this.ControlBox = false;
+            this.Controls.Add(this.cbSpeech);
             this.Controls.Add(this.btn_zurueck);
             this.Controls.Add(this.btn_starten);
             this.Controls.Add(this.btn_newSpieler);
@@ -687,5 +700,6 @@
         private System.Windows.Forms.Button btn_newSpieler;
         private System.Windows.Forms.Button btn_starten;
         private System.Windows.Forms.Button btn_zurueck;
+        private System.Windows.Forms.CheckBox cbSpeech;
     }
 }

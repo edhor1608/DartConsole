@@ -18,6 +18,7 @@ namespace DartConsole
         public static StatistikView frmStatistikView;
         public static WurfzielView frmWurfView;
         public static LoadView frmLoad;
+        public static bool speech = false;
 
         /// <summary>
         /// Der Haupteinstiegspunkt für die Anwendung.

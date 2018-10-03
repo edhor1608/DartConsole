@@ -214,6 +214,7 @@ namespace DartConsole
                 Program.spielAktuell.AddLeg();
                 Program.spielAktuell.AddDurchgangSpielerAktuell();
                 Program.frmSpielView = new SpielView();
+                //Program.speech = cbSpeech.Checked;
                 Program.frmSpielView.Show();
             }
             else
