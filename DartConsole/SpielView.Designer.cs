@@ -294,6 +294,7 @@
             this.lbl_dqSpieler7 = new System.Windows.Forms.Label();
             this.lbl_dqSpieler8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnEingabeStarten = new System.Windows.Forms.Button();
             this.lblSpracheWertW3 = new System.Windows.Forms.Label();
             this.lblSpracheMultiW1 = new System.Windows.Forms.Label();
             this.lblSpracheWertW2 = new System.Windows.Forms.Label();
@@ -391,7 +392,6 @@
             this.btn_wurf1_3 = new System.Windows.Forms.Button();
             this.btn_wurf1_2 = new System.Windows.Forms.Button();
             this.tBx_wurf1 = new System.Windows.Forms.TextBox();
-            this.btnEingabeStarten = new System.Windows.Forms.Button();
             groupBox2 = new System.Windows.Forms.GroupBox();
             groupBox2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -1575,22 +1575,35 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
+            // btnEingabeStarten
+            // 
+            this.btnEingabeStarten.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnEingabeStarten.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEingabeStarten.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEingabeStarten.Location = new System.Drawing.Point(559, 135);
+            this.btnEingabeStarten.Name = "btnEingabeStarten";
+            this.btnEingabeStarten.Size = new System.Drawing.Size(169, 135);
+            this.btnEingabeStarten.TabIndex = 100;
+            this.btnEingabeStarten.Text = "Eingabe starten";
+            this.btnEingabeStarten.UseVisualStyleBackColor = false;
+            this.btnEingabeStarten.Click += new System.EventHandler(this.btnEingabeStarten_Click);
+            // 
             // lblSpracheWertW3
             // 
             this.lblSpracheWertW3.AutoSize = true;
             this.lblSpracheWertW3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSpracheWertW3.Location = new System.Drawing.Point(439, 147);
+            this.lblSpracheWertW3.Location = new System.Drawing.Point(420, 137);
             this.lblSpracheWertW3.Name = "lblSpracheWertW3";
-            this.lblSpracheWertW3.Size = new System.Drawing.Size(39, 80);
+            this.lblSpracheWertW3.Size = new System.Drawing.Size(47, 100);
             this.lblSpracheWertW3.TabIndex = 105;
-            this.lblSpracheWertW3.Text = "\"20\"\r\n\"19\"\r\n\"18\"\r\n...";
+            this.lblSpracheWertW3.Text = "\"20\"\r\n\"19\"\r\n\"18\"\r\n\"Bull\"\r\n...";
             this.lblSpracheWertW3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblSpracheMultiW1
             // 
             this.lblSpracheMultiW1.AutoSize = true;
             this.lblSpracheMultiW1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSpracheMultiW1.Location = new System.Drawing.Point(54, 127);
+            this.lblSpracheMultiW1.Location = new System.Drawing.Point(54, 137);
             this.lblSpracheMultiW1.Name = "lblSpracheMultiW1";
             this.lblSpracheMultiW1.Size = new System.Drawing.Size(73, 100);
             this.lblSpracheMultiW1.TabIndex = 100;
@@ -1601,29 +1614,29 @@
             // 
             this.lblSpracheWertW2.AutoSize = true;
             this.lblSpracheWertW2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSpracheWertW2.Location = new System.Drawing.Point(255, 147);
+            this.lblSpracheWertW2.Location = new System.Drawing.Point(253, 137);
             this.lblSpracheWertW2.Name = "lblSpracheWertW2";
-            this.lblSpracheWertW2.Size = new System.Drawing.Size(39, 80);
+            this.lblSpracheWertW2.Size = new System.Drawing.Size(47, 100);
             this.lblSpracheWertW2.TabIndex = 104;
-            this.lblSpracheWertW2.Text = "\"20\"\r\n\"19\"\r\n\"18\"\r\n...";
+            this.lblSpracheWertW2.Text = "\"20\"\r\n\"19\"\r\n\"18\"\r\n\"Bull\"\r\n...";
             this.lblSpracheWertW2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblSpracheWertW1
             // 
             this.lblSpracheWertW1.AutoSize = true;
             this.lblSpracheWertW1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSpracheWertW1.Location = new System.Drawing.Point(76, 147);
+            this.lblSpracheWertW1.Location = new System.Drawing.Point(75, 137);
             this.lblSpracheWertW1.Name = "lblSpracheWertW1";
-            this.lblSpracheWertW1.Size = new System.Drawing.Size(39, 80);
+            this.lblSpracheWertW1.Size = new System.Drawing.Size(47, 100);
             this.lblSpracheWertW1.TabIndex = 103;
-            this.lblSpracheWertW1.Text = "\"20\"\r\n\"19\"\r\n\"18\"\r\n...";
+            this.lblSpracheWertW1.Text = "\"20\"\r\n\"19\"\r\n\"18\"\r\n\"Bull\"\r\n...";
             this.lblSpracheWertW1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblSpracheMultiW2
             // 
             this.lblSpracheMultiW2.AutoSize = true;
             this.lblSpracheMultiW2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSpracheMultiW2.Location = new System.Drawing.Point(227, 127);
+            this.lblSpracheMultiW2.Location = new System.Drawing.Point(234, 137);
             this.lblSpracheMultiW2.Name = "lblSpracheMultiW2";
             this.lblSpracheMultiW2.Size = new System.Drawing.Size(73, 100);
             this.lblSpracheMultiW2.TabIndex = 101;
@@ -1634,7 +1647,7 @@
             // 
             this.lblSpracheMultiW3.AutoSize = true;
             this.lblSpracheMultiW3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSpracheMultiW3.Location = new System.Drawing.Point(407, 127);
+            this.lblSpracheMultiW3.Location = new System.Drawing.Point(420, 137);
             this.lblSpracheMultiW3.Name = "lblSpracheMultiW3";
             this.lblSpracheMultiW3.Size = new System.Drawing.Size(73, 100);
             this.lblSpracheMultiW3.TabIndex = 102;
@@ -2762,19 +2775,6 @@
             this.tBx_wurf1.TabIndex = 0;
             this.tBx_wurf1.Text = "3x20";
             this.tBx_wurf1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnEingabeStarten
-            // 
-            this.btnEingabeStarten.BackColor = System.Drawing.Color.LimeGreen;
-            this.btnEingabeStarten.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEingabeStarten.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEingabeStarten.Location = new System.Drawing.Point(559, 135);
-            this.btnEingabeStarten.Name = "btnEingabeStarten";
-            this.btnEingabeStarten.Size = new System.Drawing.Size(169, 135);
-            this.btnEingabeStarten.TabIndex = 100;
-            this.btnEingabeStarten.Text = "Eingabe starten";
-            this.btnEingabeStarten.UseVisualStyleBackColor = false;
-            this.btnEingabeStarten.Click += new System.EventHandler(this.btnEingabeStarten_Click);
             // 
             // SpielView
             // 

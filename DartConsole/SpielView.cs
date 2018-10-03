@@ -275,9 +275,11 @@ namespace DartConsole
             Program.speech = rbSpracheingabe.Checked;
             if (Program.speech)
             {
-                btnEingabeStarten.Visible = true;
-                btn_loeschen.Visible = false;
-
+                if (wurf3 == null)
+                {
+                    btnEingabeStarten.Visible = true;
+                    btn_loeschen.Visible = false;
+                }
                 tBx_wurf1.Visible = true;
                 lbl_wurf1.Visible = true;
                 SetVisibleWurf1Multi(false);
