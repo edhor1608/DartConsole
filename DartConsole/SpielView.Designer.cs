@@ -404,17 +404,17 @@
             groupBox2.Controls.Add(this.btn_weiter);
             groupBox2.Controls.Add(this.btn_beenden);
             groupBox2.ForeColor = System.Drawing.SystemColors.ControlText;
-            groupBox2.Location = new System.Drawing.Point(516, -11);
+            groupBox2.Location = new System.Drawing.Point(559, -11);
             groupBox2.Margin = new System.Windows.Forms.Padding(2);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            groupBox2.Size = new System.Drawing.Size(233, 298);
+            groupBox2.Size = new System.Drawing.Size(190, 298);
             groupBox2.TabIndex = 2;
             groupBox2.TabStop = false;
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(43, 221);
+            this.progressBar.Location = new System.Drawing.Point(0, 221);
             this.progressBar.Margin = new System.Windows.Forms.Padding(2);
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(169, 64);
@@ -437,7 +437,7 @@
             // btn_beenden
             // 
             this.btn_beenden.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_beenden.Location = new System.Drawing.Point(43, 19);
+            this.btn_beenden.Location = new System.Drawing.Point(0, 17);
             this.btn_beenden.Margin = new System.Windows.Forms.Padding(2);
             this.btn_beenden.Name = "btn_beenden";
             this.btn_beenden.Size = new System.Drawing.Size(169, 29);
@@ -545,7 +545,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(520, 288);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(561, 288);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
@@ -1582,7 +1582,7 @@
             this.btnEingabeStarten.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEingabeStarten.Location = new System.Drawing.Point(559, 135);
             this.btnEingabeStarten.Name = "btnEingabeStarten";
-            this.btnEingabeStarten.Size = new System.Drawing.Size(169, 135);
+            this.btnEingabeStarten.Size = new System.Drawing.Size(169, 136);
             this.btnEingabeStarten.TabIndex = 100;
             this.btnEingabeStarten.Text = "Eingabe starten";
             this.btnEingabeStarten.UseVisualStyleBackColor = false;
